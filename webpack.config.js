@@ -1,6 +1,7 @@
 const path = require('path');
 const glob = require("glob");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HappyPack = require("happypack");
 
 module.exports = [
   {
@@ -24,6 +25,21 @@ module.exports = [
     externals: {
       "jquery": "jQuery"
     },
+    plugins: [
+      new HappyPack({
+        loaders: [{
+          path: 'babel-loader',
+          query: {
+            plugins: [
+              'transform-runtime',
+            ],
+            presets: ['es2015'],
+            cacheDirectory: false
+          }
+        }],
+        threads: 2
+      })
+    ],
     devtool: "#inline-source-map"
   },
   {
@@ -48,7 +64,12 @@ module.exports = [
   	},
     externals: {},
   	plugins: [
-  		new ExtractTextPlugin("[name].css")
+  		new ExtractTextPlugin("[name].css"),
+      new HappyPack({
+        cache: true,
+        loaders: ['css-loader?minimize=true&url=false!postcss-loader'],
+        threads: 4
+      })
   	],
     devtool: "#inline-source-map"
   }

@@ -144,6 +144,9 @@ Normalization for Third party
         }
       }
     }
+    &:first-child {
+      background: #ddd;
+    }
   }
 }
 
@@ -225,6 +228,7 @@ header
             display: block;
             padding: 10px;
             background: #ddd;
+						font-size: 1rem;
           }
         }
       }

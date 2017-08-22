@@ -1,0 +1,657 @@
+/* FormHack v1.2.0 (formhack.io) */
+
+/*Config -----------------------------*/
+
+/*Font*/
+$fh-font-family                : $fontfamily;
+$fh-font-size                  : $fontsize;
+$fh-font-color                 : $fontcolor;
+$fh-font-color-disabled        : #aaa;		/* Add code by SECT */
+
+/*Borders*/
+$fh-border-radius              : 5px;
+$fh-border-width               : 1px;
+$fh-border-style               : solid;
+$fh-border-color               : $bordercolor;
+
+/*Inputs, Textareas, Select, Option*/
+$fh-input-height               : 30px;
+$fh-input-width                : 100%;
+$fh-input-max-width            : 400px;
+$fh-input-bg-color             : #fff;
+$fh-focus-bg-color             : #fff;
+$fh-focus-border-color         : $fh-border-color;
+$fh-focus-font-color           : $fh-font-color;
+
+/*Inputs Vendor Styling*/
+$fh-allow-input-vendor-styling: false;
+
+/*Select Vendor Styling*/
+$fh-allow-select-vendor-styling: false;
+
+/*Fieldset & Legend Styling*/
+$fh-fieldset-bare              : false;
+
+/*Buttons & Input Submits*/
+$fh-button-height              : 40px;
+$fh-button-width               : 100%;
+$fh-button-max-width           : 200px;
+$fh-button-font-color          : $fh-font-color;
+$fh-button-bg-color            : $fh-focus-bg-color;
+$fh-button-hover-bg-color      : $fh-focus-bg-color;
+$fh-button-hover-font-color    : $fh-font-color;
+
+/*Layout*/
+$fh-centered                   : false;
+$fh-display                    : block;
+
+/*==================================================
+	Add code by SECT
+================================================== */
+/* field size */
+$field-size-s       : 50px;
+$field-size-m       : 200px;
+$field-size-l       : 400px;
+$field-size-full    : $fh-input-width;
+
+/*Center/Left-Aligned Layout*/
+@define-mixin center-layout {
+	@if $fh-centered == true {
+		margin: 0 auto;
+		text-align: center;
+	}
+	@else {
+		margin: 0;
+	}
+}
+
+/* Global Reset Styles ------------------ */
+
+input,
+textarea,
+select,
+option,
+optgroup,
+button,
+legend,
+fieldset {
+	box-sizing: border-box;
+	outline: none;
+
+	font-family: $fh-font-family;
+	@mixin font-size $fontsize;
+	color: $fh-font-color;
+	vertical-align: top;
+
+	display: $fh-display;
+	@mixin center-layout;
+}
+
+datalist {
+	font-family: $fh-font-family;
+	@mixin font-size $fontsize;
+}
+
+label {
+	display: $fh-display;
+	@mixin center-layout;
+}
+
+/* Input & Textarea ------------------ */
+
+/* Fields with standard width */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list],
+input[type="file"],
+select,
+textarea {
+	width: $fh-input-width;
+	max-width: $fh-input-max-width;
+	padding: $fh-input-height / 5;
+	background-color: $fh-input-bg-color;
+
+	border-radius: $fh-border-radius;
+	border: $fh-border-width $fh-border-style $fh-border-color;
+}
+
+/* Fields with standard height */
+
+input {
+  &[type="text"], &[type="email"], &[type="password"], &[type="search"], &[type="color"], &[type="date"], &[type="datetime-local"], &[type="month"], &[type="number"], &[type="tel"], &[type="time"], &[type="url"], &[type="week"], &[list] {
+		height: $fh-input-height;
+    -webkit-appearance: none;
+    @if $fh-allow-input-vendor-styling == false {
+      &::-ms-clear, &::-ms-reveal {
+        display: none;
+      }
+    }
+  }
+}
+
+/* Other */
+
+textarea {
+	-webkit-appearance: none;
+	overflow: auto;
+}
+
+input {
+  &[type="range"] {
+		height: $fh-input-height;
+		width: $fh-input-width;
+		max-width: $fh-input-max-width;
+  }
+  &[type="file"] {
+    min-height: $fh-input-height;
+  }
+  &[type="search"] {
+    height: $fh-input-height;
+    -webkit-appearance: none;
+		&::-webkit-search-cancel-button, &::-webkit-search-decoration {
+	    -webkit-appearance: none;
+	  }
+  }
+  &[type="checkbox"], &[type="radio"] {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+/*For checkbox and radio to be centered, need to wrap the input and label in a span -*/
+/*.checkbox-container {
+ 	display: block;
+	text-align: center;
+}*/
+
+
+/* Select ------------------ */
+
+select {
+	height: $fh-input-height;
+
+	@if $fh-allow-select-vendor-styling == false {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+		-o-appearance: none;
+		/*text-indent: .01px;		//	For Firefox (remove right side arrow)
+		text-overflow: "";			//	For Firefox (remove right side arrow)*/
+		&::-ms-expand {
+			display: none;
+		}
+	}
+}
+
+select[multiple] {
+	height: auto;
+	min-height: $fh-input-height;
+	padding: 0;
+	option {
+		margin: 0;
+		padding: $fh-input-height / 5;
+	}
+}
+
+/* Fieldset ------------------ */
+
+fieldset {
+	@if $fh-fieldset-bare == true {
+		padding: 0;
+		border: 0;
+	}
+	@else {
+		padding: 10px 25px;
+		border-radius: $fh-border-radius;
+		border: $fh-border-width $fh-border-style $fh-border-color;
+	}
+}
+
+legend {
+	@if $fh-fieldset-bare == true {
+		padding: 0;
+		font-weight: inherit;
+	}
+	@else {
+		padding: 0 5px;
+		font-weight: 700;
+	}
+}
+
+/* Buttons, Input Type Submit/Reset ------------------ */
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="image"] {
+	height: $fh-button-height;
+	width: $fh-button-width;
+	max-width: $fh-button-max-width;
+	background-color: $fh-button-bg-color;
+	padding: $fh-input-height / 3;
+	cursor: pointer;
+
+	color: $fh-button-font-color;
+	font-weight: 700;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	border-radius: $fh-border-radius;
+	border: $fh-border-width $fh-border-style $fh-border-color;
+}
+
+input[type="image"] {
+	text-align: center;
+	/*padding: $fh-input-height / 5;*/
+	padding: 0;
+	/*border: none;
+	border-radius: 0;*/
+}
+
+/* States ------------------ */
+
+input[disabled],
+textarea[disabled],
+select[disabled],
+option[disabled],
+button[disabled] {
+	cursor: not-allowed;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+option:focus,
+button:focus {
+	background-color: $fh-focus-bg-color;
+	border-color: $fh-focus-border-color;
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+	/*outline: $fh-focus-border-color solid 2px;*/
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus {
+	background-color: $fh-button-hover-bg-color;
+	color: $fh-button-hover-font-color;
+}
+
+/*==================================================
+	Add code by SECT
+================================================== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list],
+input[type="file"],
+select,
+textarea {
+	&.size_s{
+		max-width: initial;
+    max-width: auto;
+	}
+	&.size_m{
+		max-width: initial;
+    max-width: auto;
+	}
+	&.size_l{
+		max-width: initial;
+    max-width: auto;
+	}
+	&.size_full{
+		max-width: initial;
+    max-width: auto;
+	}
+	@media only screen and (min-width: $breakPoint) {
+		&.size_s{
+			width: $fh-input-width;
+			max-width: $field-size-s;
+		}
+		&.size_m{
+			width: $fh-input-width;
+			max-width: $field-size-m;
+		}
+		&.size_l{
+			width: $fh-input-width;
+			max-width: $field-size-l;
+		}
+		&.size_full{
+			width: $field-size-full;
+			max-width: initial;
+	    max-width: auto;
+		}
+	}
+}
+
+/* Disable autofill(yellow background) on Chrome */
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+/* placeholder */
+::placeholder{
+	color: #999;
+}
+
+/* [readonly=readonly] */
+input[readonly],
+textarea[readonly],
+select[readonly],
+option[readonly],
+button[readonly] {
+	border: none;
+	padding: 0;
+	/*background: none !important;*/
+}
+
+/* [readonly=disabled] */
+input[disabled],
+textarea[disabled],
+select[disabled],
+option[disabled],
+button[disabled] {
+	cursor: not-allowed;
+	color: $fh-font-color-disabled !important;
+	&:hover{
+		color: $fh-font-color-disabled;
+	}
+}
+
+
+/* input[type=file]	@ http://qiita.com/yasumodev/items/c9f8e8f588ded6b179c9 */
+$file-field-id : your-file;
+
+label[for=$(file-field-id)]{
+	b{
+		height: $fh-button-height;
+		width: $fh-button-width;
+		max-width: $fh-button-max-width;
+		background-color: $fh-button-bg-color;
+		padding: $fh-input-height / 3;
+		cursor: pointer;
+		color: $fh-button-font-color;
+		font-weight: 700;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		border-radius: $fh-border-radius;
+		border: $fh-border-width $fh-border-style $fh-border-color;
+		@mixin font-size $fontsize;
+		text-align: center;
+		display: block;
+	}
+	input[type=file] {
+		display: none;
+	}
+	#thumb{
+		img{
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}
+#cfm-$file-field-id {
+	img{
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+
+/* input[type=range]	@ range.css: https://github.com/danielstern/range.css/ */
+input[type=range] {
+  -webkit-appearance: none;
+	&.size_s{
+		max-width: initial;
+    max-width: auto;
+	}
+	&.size_m{
+		max-width: initial;
+    max-width: auto;
+	}
+	&.size_l{
+		max-width: initial;
+    max-width: auto;
+	}
+	&.size_full{
+		max-width: initial;
+    max-width: auto;
+	}
+	@media only screen and (min-width: $breakPoint) {
+		&.size_s{
+			/*width: $field-size-s;*/
+			width: $fh-input-width;
+			max-width: $field-size-s;
+		}
+		&.size_m{
+			/*width: $field-size-m;*/
+			width: $fh-input-width;
+			max-width: $field-size-m;
+		}
+		&.size_l{
+			/*width: $field-size-l;*/
+			width: $fh-input-width;
+			max-width: $field-size-l;
+		}
+		&.size_full{
+			width: $field-size-full;
+			max-width: initial;
+	    max-width: auto;
+		}
+	}
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: rgba(200, 200, 200, 0.78);
+    border-radius: 0px;
+    border: 0px solid #010101;
+  }
+  &::-webkit-slider-thumb {
+    border: 1.8px solid #444444;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #444444;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5px;
+  }
+  &:focus::-webkit-slider-runnable-track {
+    background: rgba(213, 213, 213, 0.78);
+  }
+  &::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: rgba(200, 200, 200, 0.78);
+    border-radius: 0px;
+    border: 0px solid #010101;
+  }
+  &::-moz-range-thumb {
+    border: 1.8px solid #444444;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #444444;
+    cursor: pointer;
+  }
+  &::-ms-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  &::-ms-fill-lower {
+    background: rgba(187, 187, 187, 0.78);
+    border: 0px solid #010101;
+    border-radius: 0px;
+  }
+  &::-ms-fill-upper {
+    background: rgba(200, 200, 200, 0.78);
+    border: 0px solid #010101;
+    border-radius: 0px;
+  }
+  &::-ms-thumb {
+    border: 1.8px solid #444444;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #444444;
+    cursor: pointer;
+    height: 2px;
+  }
+  &:focus {
+    &::-ms-fill-lower {
+      background: rgba(200, 200, 200, 0.78);
+    }
+    &::-ms-fill-upper {
+      background: rgba(213, 213, 213, 0.78);
+    }
+  }
+}
+
+/* For third party */
+
+/* select2.js - Reset default css */
+.select2-container--default{
+	.select2-selection--single, .select2-selection--multiple{
+		border: $fh-border-width $fh-border-style $bordercolor !important;
+		border-radius: $fh-border-radius !important;
+		height: $fh-input-height !important;
+		outline: none;
+		.select2-selection__rendered{
+			height: $fh-input-height !important;
+		}
+		.select2-selection__choice{
+			border: $fh-border-width $fh-border-style $bordercolor !important;
+			/*background-color: #999 !important;*/
+		}
+	}
+	&.select2-container--open.select2-container--below{
+		.select2-selection--single, .select2-selection--multiple{
+			border-bottom-left-radius: 0 !important;
+			border-bottom-right-radius: 0 !important;
+		}
+	}
+	.select2-search--dropdown .select2-search__field{
+		border-color: $bordercolor !important;
+		max-width: initial;
+		max-width: auto;
+	}
+}
+.select2-dropdown{
+	border-color: $bordercolor !important;
+}
+.select2-selection__clear{
+	color: $fontcolor;
+	@mixin font-size 13;
+}
+.select2-container{
+	width: 100% !important;
+	max-width: 100%;
+	.select2-search--inline{
+		.select2-search__field{
+			margin-top: 0 !important;
+		}
+	}
+}
+
+.size_s{
+	& + .select2-container{
+		max-width: initial;
+		max-width: auto;
+	}
+}
+.size_m{
+	& + .select2-container{
+		max-width: initial;
+		max-width: auto;
+	}
+}
+.size_l{
+	& + .select2-container{
+		max-width: initial;
+		max-width: auto;
+	}
+}
+.size_full{
+	& + .select2-container{
+		max-width: initial;
+		max-width: auto;
+	}
+}
+@media only screen and (min-width: $breakPoint) {
+	&.size_s{
+		& + .select2-container{
+			width: $fh-input-width;
+			max-width: $field-size-s;
+		}
+	}
+	&.size_m{
+		& + .select2-container{
+			width: $fh-input-width;
+			max-width: $field-size-m;
+		}
+	}
+	&.size_l{
+		& + .select2-container{
+			width: $fh-input-width;
+			max-width: $field-size-l;
+		}
+	}
+	&.size_full{
+		& + .select2-container{
+			width: $field-size-full;
+			max-width: initial;
+			max-width: auto;
+		}
+	}
+}
+
+
+/* contact form 7 */
+.wpcf7-form-control-wrap{
+	display: block;
+}
+
+
+/* For responsive */
+@media only screen and (min-width: $breakPoint) {
+
+}

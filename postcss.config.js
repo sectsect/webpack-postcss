@@ -7,6 +7,7 @@ module.exports = {
     require("postcss-simple-vars")({
       silent: true
     }),
+    require("postcss-css-variables"),
     require("postcss-mixins"),
     require("postcss-nested"),
     require('postcss-conditionals'),

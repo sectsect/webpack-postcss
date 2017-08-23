@@ -22,3 +22,7 @@ $mobileheaderH:	50px;
 
 /*$baseColor      :	#645d5d;*/
 /*$baseThemeColor :	#e8e6e6; */
+
+:root {
+	--main-color: #999;
+}

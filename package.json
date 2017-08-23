@@ -19,6 +19,7 @@
     "pixrem": "^4.0.1",
     "postcss-calc": "^6.0.0",
     "postcss-conditionals": "^2.1.0",
+    "postcss-css-variables": "^0.8.0",
     "postcss-extend": "^1.0.5",
     "postcss-for": "^2.1.1",
     "postcss-loader": "^2.0.6",

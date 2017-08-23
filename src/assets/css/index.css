@@ -74,6 +74,10 @@ $column: 200px;
   @mixin icon search;
 }
 
+/* postcss-css-variables */
+.box {
+	background-color: var(--main-color);
+}
 
 /* spinner */
 @keyframes spin {

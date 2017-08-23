@@ -5,7 +5,7 @@ const HappyPack = require("happypack");
 
 module.exports = [
   {
-    entry: toObjectJS(glob.sync('./src/assets/js/**/*.js*')),
+    entry: toObject(glob.sync('./src/assets/js/**/*.js*'), 'js'),
     output: {
       path: `${__dirname}/dist/assets/js`,
       filename: '[name].js'
@@ -43,7 +43,7 @@ module.exports = [
     devtool: "#inline-source-map"
   },
   {
-    entry: toObjectCSS(glob.sync('./src/assets/css/**/*.css*')),
+    entry: toObject(glob.sync('./src/assets/css/**/*.css*'), 'css'),
     output: {
       path: `${__dirname}/dist/assets/css`,
       filename: '[name].css'
@@ -76,9 +76,8 @@ module.exports = [
 ];
 
 // functions For multi-files
-
 function dropUnderscoreFiles(obj) {
-  var returnobj = {};
+  let returnobj = {};
   Object.keys(obj).forEach(function(key) {
     var val = this[key]; // this == obj
     if (key.substring(0, 1) != '_') {
@@ -90,20 +89,11 @@ function dropUnderscoreFiles(obj) {
 }
 
 // @ https://github.com/webpack/webpack/issues/1732#issuecomment-163522781
-function toObjectJS(paths) {
-  var retjs = {};
+function toObject(paths, ext) {
+  let ret = {};
   paths.forEach(function(path) {
-    retjs[path.split('/').slice(-1)[0].replace('.js', '')] = path;
+    ret[path.split('/').slice(-1)[0].replace(`.${ext}`, '')] = path;
   });
 
-  return dropUnderscoreFiles(retjs);
-}
-
-function toObjectCSS(paths) {
-  var retscss = {};
-  paths.forEach(function(path) {
-    retscss[path.split('/').slice(-1)[0].replace('.css', '')] = path;
-  });
-
-  return dropUnderscoreFiles(retscss);
+  return dropUnderscoreFiles(ret);
 }

@@ -64,7 +64,10 @@ module.exports = [
   	},
     externals: {},
   	plugins: [
-  		new ExtractTextPlugin("[name].css"),
+  		new ExtractTextPlugin({
+        filename: '[name].css',
+        allChunks: true,
+      }),
       new HappyPack({
         cache: true,
         loaders: ['css-loader?minimize=true&url=false!postcss-loader'],

@@ -1,7 +1,10 @@
-const path = require('path');
-const glob = require("glob");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HappyPack = require("happypack");
+const webpack = require('webpack'),
+      path = require('path');
+      glob = require("glob");
+      ExtractTextPlugin = require("extract-text-webpack-plugin");
+      HappyPack = require("happypack");
+
+const isProd = (process.env.NODE_ENV === 'production');
 
 module.exports = [
   {
@@ -26,6 +29,15 @@ module.exports = [
       "jquery": "jQuery"
     },
     plugins: [
+      new webpack.DefinePlugin({
+        'process.env': {
+          'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        }
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        sourceMap: isProd ? false : true,
+        comments: false
+      }),
       new HappyPack({
         loaders: [{
           path: 'babel-loader',
@@ -40,7 +52,7 @@ module.exports = [
         threads: 2
       })
     ],
-    devtool: "#inline-source-map"
+    devtool : isProd ? "" : "#inline-source-map"
   },
   {
     entry: toObject(glob.sync('./src/assets/css/**/*.css*'), 'css'),
@@ -74,7 +86,7 @@ module.exports = [
         threads: 4
       })
   	],
-    devtool: "#inline-source-map"
+    devtool : isProd ? "" : "#inline-source-map"
   }
 ];
 

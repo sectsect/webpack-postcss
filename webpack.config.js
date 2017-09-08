@@ -26,7 +26,7 @@ module.exports = [
       ]
     },
     externals: {
-      "jquery": "jQuery"
+      // "jquery": "jQuery"
     },
     plugins: [
       new webpack.DefinePlugin({

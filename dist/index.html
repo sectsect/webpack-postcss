@@ -1,10 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
-  <title>HELLO</title>
-  <link rel="stylesheet" href="./assets/css/style.css" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>HELLO</title>
+	<link href="./assets/css/style.css" rel="stylesheet">
 </head>
 <body>
+	<div id="wrap">
+		<header id="header">
+			<h1 id="logo">Your title</h1>
+			<nav>
+				<ul>
+					<li id="gnav1"><a href="#">01</a></li>
+					<li id="gnav2"><a href="#">02</a></li>
+					<li id="gnav3"><a href="#">03</a></li>
+					<li id="gnav4"><a href="#">04</a></li>
+					<li id="gnav5"><a href="#">05</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<aside>
+				<h3>Something aside</h3>
+			</aside>
+			<article>
+				<header>
+					<h2>Your article heading</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.</p>
+				</header>
+				<section>
+					<h3>A smaller heading</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.</p>
+				</section>
+				<section>
+					<h3>A smaller heading</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.</p>
+					<img src="images/retina.png" alt="retina" width="200" height="200">
+				</section>
+				<section>
+	    			<ul>
+	        			<li>
+							<img src="images/w320.png" srcset="images/w320.png 320w, images/w640.png 640w" alt="Example image">
+	        			</li>
+	        			<li>
+	                        <picture>
+	                        	<!--[if IE 9]><video style="display: none;"><![endif]-->
+	                        	<source srcset="images/w320.png, images/w640.png 2.0x" media="(max-width: 800px)">
+	                        	<!--[if IE 9]></video><![endif]-->
+	                        	<img srcset="images/w1000.png, images/w2000.png 2.0x" alt="desktop">
+	                        </picture>
+	        			</li>
+	    			</ul>
+				</section>
+				<footer>
+					<h3>About the author</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
+				</footer>
+
+				<ul class="flex">
+					<li>01</li>
+					<li>02</li>
+					<li>03</li>
+					<li>04</li>
+					<li>05</li>
+					<li>06</li>
+				</ul>
+			</article>
+		</main>
+		<footer id="footer">
+			<h3>footer</h3>
+		</footer>
+	</div>
+	<script async src="./assets/js/scripts.js"></script>
 </body>
 </html>

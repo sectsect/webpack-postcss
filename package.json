@@ -4,7 +4,8 @@
   "main": "src/js/scripts.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack --watch",
+    "start": "",
+    "watch": "webpack --watch",
     "build": "NODE_ENV='production' webpack -p"
   },
   "devDependencies": {

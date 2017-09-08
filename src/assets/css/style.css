@@ -17,9 +17,9 @@ $teal: #004D40;
 }
 
 body {
-  @extend %bg-teal;
+  /*@extend %bg-teal;*/
 
-  display: flex;
+  /*display: flex;
 
   @for $i from 0 to 10 {
     [data-index=$i] {
@@ -27,15 +27,15 @@ body {
         content: "$i";
       }
     }
-  }
+  }*/
   p {
     /*@include font-size(30);
     @include opacity(0.6);*/
 
-    @mixin font-size 30;
+    /*@mixin font-size 30;
     @mixin opacity 0.6;
 
-    background: url('../images/test/test.jpg') no-repeat 0 0;
+    background: url('../images/test/test.jpg') no-repeat 0 0;*/
   }
 
   /*$sect: 1;
@@ -176,5 +176,39 @@ Normalization for Third party
         }
       }
     }
+  }
+}
+
+#header {
+  nav {
+    ul {
+      li {
+        float: left;
+        width: 100px;
+      }
+    }
+  }
+}
+
+ul.flex {
+  display: flex;
+  flex-wrap: nowrap;								/* Default: nowrap (single-line) */
+  justify-content: space-between;		/* |□  □  □| */
+  align-items: center;						  /* Center */
+  li {
+  	flex: 0 1 90px;							    /* Default: 0 1 auto */
+  	border: 1px solid #ccc;
+  	&:nth-child(2) {
+  		flex-basis: 120px;
+  	}
+  }
+  @media only screen and (max-width: $breakPoint) {
+  	flex-direction: column;
+  	li {
+  		flex: 0 1 auto;
+  		&:nth-child(2) {
+  			flex-basis: auto;
+  		}
+  	}
   }
 }

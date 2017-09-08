@@ -1,7 +1,7 @@
 {
   "name": "webpack-postcss",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "src/js/scripts.js",
   "license": "MIT",
   "scripts": {
     "start": "webpack --watch",

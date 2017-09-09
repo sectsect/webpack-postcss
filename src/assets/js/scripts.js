@@ -1,4 +1,5 @@
 global.jQuery = require('jquery');
+global.isMobile = require('ismobilejs');
 // var jQuery = require("jquery");
 require('jquery.easing');
 require('jquery-smooth-scroll');
@@ -6,12 +7,96 @@ require('jquery.dotdotdot');
 require('jquery-match-height-browserify');
 require('jquery.browser');
 require('picturefill');
-// plugin will find marks and build sprite
-var __svg__ = { path: '../../../src/assets/images/svg/raw/**/*.svg', name: '../assets/images/svg/symbol.svg' };
+const __svg__ = {
+  path: '../../../src/assets/images/svg/raw/**/*.svg',
+  name: '../assets/images/svg/symbol.svg'
+};
 require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
-const isMobile = require('ismobilejs');
+const responsiveNav = require('responsive-nav');
+const WebFont = require('webfontloader');
+
 
 const sect = "sect!!";
+
+/*==================================================
+Google web-fonts
+================================================== */
+WebFont.load({
+  google: {
+    families: ['Crimson+Text::latin', 'Cinzel::latin', 'Italianno::latin', 'Pinyon+Script::latin']
+  }
+});
+
+jQuery(function() {
+  /*==================================================
+  switch viewport for tablet
+  ================================================== */
+  if ( isMobile.tablet ) {
+    jQuery("#viewport").attr("content", "width=1024");
+  }
+  /*==================================================
+  Detect the devicePixelRatio
+  ================================================== */
+  const hiDPI = ('devicePixelRatio' in window && devicePixelRatio > 1) ? true : false;
+  // console.log(hiDPI);
+  /*==================================================
+  Responsible menu (responsive-nav.min.js)
+  ================================================== */
+  responsiveNav("#nav", { // Selector
+    //	animate 		: true,								  // Boolean: Use CSS3 transitions, true or false
+    transition: 150,                        // Integer: Speed of the transition, in milliseconds
+    //	label 			: "<span>Menu</span>",	// String: Label for the navigation toggle
+    label: "<span>bar</span><i>MENU</i>",   // String: Label for the navigation toggle
+    //	insert 			: "before",							// String: Insert the toggle before or after the navigation
+    //	customToggle 	: "#nav-toggle",			// Selector: Specify the ID of a custom toggle
+    //	closeOnNavClick	: false,						// Boolean: Close the navigation when one of the links are clicked
+    //	openPos			: "static",							// String: Position of the opened nav, relative or static
+    //	navClass		: "nav-collapse",				// String: Default CSS class. If changed, you need to edit the CSS too!
+    //	navActiveClass	: "js-nav-active",	// String: Class that is added to element when nav is active
+    //	jsClass			: "js",								  // String: 'JS enabled' class which is added to element
+    init: function() {
+      jQuery("#nav").show();
+    }, // Function: Init callback
+    //	open	: function() {},							// Function: Open callback
+    //	close	: function() {}								// Function: Close callback
+  });
+  /*==================================================
+  fadein /fadeout button Pagetop
+  ================================================== */
+  /*
+  if ( !isMobile.phone ) {
+	  var topBtn = jQuery('#pagetop');
+	  //	スクロールが100に達したらボタン表示
+	  jQuery(window).scroll(function () {
+		  if (jQuery(this).scrollTop() > 100) {
+		  topBtn.addClass("show");
+			} else {
+				topBtn.removeClass("show");
+			}
+		});
+	}
+*/
+	/*==================================================
+	Image fadeIn / fadeOut
+	================================================== */
+	// we use touchstart and touchend events on buttons
+	let enterEvent = "touchstart";
+	let leaveEvent = "touchend";
+	// we use mousedown and mouseup events on big items
+	let enterBigEvent = "mousedown";
+	let leaveBigEvent = "mouseup";
+	if (!("ontouchstart" in window)) {
+	  // if no touch we use mouseenter and mouseleave events on buttons and big items
+	  enterEvent = enterBigEvent = "mouseenter";
+	  leaveEvent = leaveBigEvent = "mouseleave";
+	}
+	jQuery("main a").not(".home #sec_recommend .bxslider li a").on(enterEvent, function(e) {
+	  jQuery(this).find("img").addClass("on");
+	});
+	jQuery("main a").not(".home #sec_recommend .bxslider li a").on(leaveEvent, function(e) {
+	  jQuery(this).find("img").removeClass("on");
+	});
+});
 
 jQuery.event.add(window, "load", function() {
 	/*==================================================

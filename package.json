@@ -43,6 +43,9 @@
     "jquery.browser": "^0.1.0",
     "jquery.dotdotdot": "^2.0.1",
     "jquery.easing": "^1.4.1",
-    "picturefill": "^3.0.2"
+    "picturefill": "^3.0.2",
+    "responsive-nav": "^1.0.39",
+    "slick-carousel": "^1.7.1",
+    "webfontloader": "^1.6.28"
   }
 }

@@ -31,7 +31,8 @@
     "postcss-simple-vars": "^4.1.0",
     "postcss-strip-inline-comments": "^0.1.5",
     "style-loader": "^0.18.2",
-    "webpack": "^3.5.6"
+    "webpack": "^3.5.6",
+    "webpack-svgstore-plugin": "^4.0.1"
   },
   "dependencies": {
     "ismobilejs": "^0.4.1",

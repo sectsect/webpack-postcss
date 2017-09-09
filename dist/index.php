@@ -8,6 +8,7 @@
 	<link href="./assets/css/style.css" rel="stylesheet">
 </head>
 <body>
+	<?php include_once "./assets/images/svg/symbol.svg"; ?>
 	<div id="wrap">
 		<header id="header">
 			<h1 id="logo">Your title</h1>
@@ -54,6 +55,28 @@
 		</main>
 		<footer id="footer">
 			<h3>footer</h3>
+
+			<svg class="icon">
+				<use xlink:href="#icon-facebook"/>
+			</svg>
+			<svg class="icon">
+				<use xlink:href="#icon-twitter"/>
+			</svg>
+			<svg class="icon">
+				<use xlink:href="#icon-youtube"/>
+			</svg>
+			<svg class="icon">
+				<use xlink:href="#icon-instagram"/>
+			</svg>
+			<svg class="icon">
+				<use xlink:href="#icon-line"/>
+			</svg>
+			<svg class="icon">
+				<use xlink:href="#icon-arrow-top"/>
+			</svg>
+			<svg class="icon">
+				<use xlink:href="#icon-search"/>
+			</svg>
 		</footer>
 	</div>
 	<script async src="./assets/js/scripts.js"></script>

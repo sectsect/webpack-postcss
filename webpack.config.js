@@ -3,6 +3,7 @@ const webpack = require('webpack'),
       glob = require("glob");
       ExtractTextPlugin = require("extract-text-webpack-plugin");
       HappyPack = require("happypack");
+      SvgStore = require('webpack-svgstore-plugin');
 
 const isProd = (process.env.NODE_ENV === 'production');
 
@@ -50,6 +51,20 @@ module.exports = [
           }
         }],
         threads: 2
+      }),
+      // create svgStore instance object
+      new SvgStore.Options({
+        svg: {
+          style: '',
+          class: 'svg-icon-lib'
+        },
+        svgoOptions: {
+          plugins: [
+            { removeTitle: false },
+            { removeAttrs: {attrs: 'fill'} },
+            { removeStyleElement: true },
+          ]
+        }
       })
     ],
     devtool : isProd ? "" : "#inline-source-map"

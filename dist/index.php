@@ -77,6 +77,27 @@
 			<svg class="icon">
 				<use xlink:href="#icon-search"/>
 			</svg>
+
+			<ul class="sprites">
+				<li>
+					<i class="icon-author"></i>
+				</li>
+				<li>
+					<i class="icon-book"></i>
+				</li>
+				<li>
+					<i class="icon-contact"></i>
+				</li>
+				<li>
+					<i class="icon-download"></i>
+				</li>
+				<li>
+					<i class="icon-sample"></i>
+				</li>
+				<li>
+					<i class="icon-top"></i>
+				</li>
+			</ul>
 		</footer>
 	</div>
 	<script async src="./assets/js/scripts.js"></script>

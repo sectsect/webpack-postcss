@@ -1,9 +1,11 @@
 const webpack = require('webpack'),
-      path = require('path');
-      glob = require("glob");
-      ExtractTextPlugin = require("extract-text-webpack-plugin");
-      HappyPack = require("happypack");
-      SvgStore = require('webpack-svgstore-plugin');
+      path = require('path'),
+      glob = require("glob"),
+      ExtractTextPlugin = require("extract-text-webpack-plugin"),
+      HappyPack = require("happypack"),
+      SvgStore = require('webpack-svgstore-plugin'),
+      SpritesmithPlugin = require('webpack-spritesmith'),
+      spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const isProd = (process.env.NODE_ENV === 'production');
 
@@ -94,6 +96,32 @@ module.exports = [
   		new ExtractTextPlugin({
         filename: '[name].css',
         allChunks: true,
+      }),
+      new SpritesmithPlugin({
+        src: {
+          cwd: path.resolve(__dirname, 'src/assets/images/sprites/icon'),
+          glob: '*.png'
+        },
+        target: {
+          image: path.resolve(__dirname, 'dist/assets/images/sprites/icon.png'),
+          css: [
+            // path.resolve(__dirname, 'src/assets/css/_sprite.css'),
+            [path.resolve(__dirname, 'src/assets/css/_sprite.css'), {
+              format: 'custom_format'
+            }],
+          ]
+        },
+        apiOptions: {
+          cssImageRef: "../images/sprites/icon.png"
+        },
+        retina: '@2x',
+        spritesmithOptions: {
+          // padding: 10
+        },
+        customTemplates: {
+          'custom_format': spriteTemplate.customFormat,
+          'custom_format_retina': spriteTemplate.customFormatRetina
+        }
       }),
       new HappyPack({
         cache: true,

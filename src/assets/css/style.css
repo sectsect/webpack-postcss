@@ -4,6 +4,7 @@
 @import "mixin";
 @import "sanitize";
 @import "form";
+@import "sprite";
 @import "svg-icon";
 @import "wp-core";
 
@@ -210,5 +211,20 @@ ul.flex {
   			flex-basis: auto;
   		}
   	}
+  }
+}
+
+.sprites {
+  li {
+    float: left;
+    margin-left: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  i {
+    display: block;
+    width: 32px;
+    height: 32px;
   }
 }

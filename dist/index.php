@@ -8,7 +8,7 @@
 	<link href="./assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-	<?php include_once "./assets/images/svg/symbol.svg"; ?>
+	<?php // include_once "./assets/images/svg/symbol.svg"; ?>
 	<div id="wrap">
 		<header id="header">
 			<h1 id="logo">Your title</h1>

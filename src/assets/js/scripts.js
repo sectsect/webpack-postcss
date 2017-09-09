@@ -7,7 +7,7 @@ require('jquery-match-height-browserify');
 require('jquery.browser');
 require('picturefill');
 // plugin will find marks and build sprite
-var __svg__ = { path: '../../../src/assets/images/svg/raw/**/*.svg', name: '../images/svg/symbol.svg' };
+var __svg__ = { path: '../../../src/assets/images/svg/raw/**/*.svg', name: '../assets/images/svg/symbol.svg' };
 require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
 const isMobile = require('ismobilejs');
 

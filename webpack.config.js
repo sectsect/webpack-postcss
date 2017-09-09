@@ -5,7 +5,6 @@ const webpack = require('webpack'),
       HappyPack = require("happypack"),
       SvgStore = require('webpack-svgstore-plugin'),
       SpritesmithPlugin = require('webpack-spritesmith'),
-      // IconfontPlugin = require('webpack-iconfont-plugin'),
       spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const isProd = (process.env.NODE_ENV === 'production');
@@ -98,13 +97,6 @@ module.exports = [
         filename: '[name].css',
         allChunks: true,
       }),
-      // new IconfontPlugin({
-      //   svgs: path.resolve(__dirname, 'src/assets/fonts/svg/**/*.svg'),
-      //   fonts: path.resolve(__dirname, 'dist/assets/fonts'),
-      //   styles: path.resolve(__dirname, 'src/assets/css/_icon-font.css'),
-      //   fontName: 'icon-font'
-      //   // template: 'css'
-      // }),
       new SpritesmithPlugin({
         src: {
           cwd: path.resolve(__dirname, 'src/assets/images/sprites/icon'),

@@ -33,6 +33,25 @@ module.exports = [
     externals: {
       // "jquery": "jQuery"
     },
+    // Moderniz
+    module: {
+      rules: [
+        {
+          test: /\.modernizrrc.js$/,
+          use: [ 'modernizr-loader' ]
+        },
+        {
+          test: /\.modernizrrc(\.json)?$/,
+          use: [ 'modernizr-loader', 'json-loader' ]
+        }
+      ]
+    },
+    resolve: {
+      alias: {
+        modernizr$: path.resolve(__dirname, ".modernizrrc")
+      }
+    },
+    // Moderniz
     plugins: [
       new webpack.DefinePlugin({
         'process.env': {

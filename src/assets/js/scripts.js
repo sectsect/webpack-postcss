@@ -14,7 +14,14 @@ const __svg__ = {
 require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
 const responsiveNav = require('responsive-nav');
 const WebFont = require('webfontloader');
+import Modernizr from 'modernizr'
 
+
+if ( ! Modernizr.objectfit ) {
+  console.log('non-objectfit');
+} else {
+  console.log('objectfit');
+}
 
 const sect = "sect!!";
 
@@ -79,23 +86,23 @@ jQuery(function() {
 	/*==================================================
 	Image fadeIn / fadeOut
 	================================================== */
-	// we use touchstart and touchend events on buttons
-	let enterEvent = "touchstart";
-	let leaveEvent = "touchend";
-	// we use mousedown and mouseup events on big items
-	let enterBigEvent = "mousedown";
-	let leaveBigEvent = "mouseup";
-	if (!("ontouchstart" in window)) {
-	  // if no touch we use mouseenter and mouseleave events on buttons and big items
-	  enterEvent = enterBigEvent = "mouseenter";
-	  leaveEvent = leaveBigEvent = "mouseleave";
-	}
-	jQuery("main a").not(".home #sec_recommend .bxslider li a").on(enterEvent, function(e) {
-	  jQuery(this).find("img").addClass("on");
-	});
-	jQuery("main a").not(".home #sec_recommend .bxslider li a").on(leaveEvent, function(e) {
-	  jQuery(this).find("img").removeClass("on");
-	});
+	// // we use touchstart and touchend events on buttons
+	// let enterEvent = "touchstart";
+	// let leaveEvent = "touchend";
+	// // we use mousedown and mouseup events on big items
+	// let enterBigEvent = "mousedown";
+	// let leaveBigEvent = "mouseup";
+	// if (!("ontouchstart" in window)) {
+	//   // if no touch we use mouseenter and mouseleave events on buttons and big items
+	//   enterEvent = enterBigEvent = "mouseenter";
+	//   leaveEvent = leaveBigEvent = "mouseleave";
+	// }
+	// jQuery("main a").not(".home #sec_recommend .bxslider li a").on(enterEvent, function(e) {
+	//   jQuery(this).find("img").addClass("on");
+	// });
+	// jQuery("main a").not(".home #sec_recommend .bxslider li a").on(leaveEvent, function(e) {
+	//   jQuery(this).find("img").removeClass("on");
+	// });
 });
 
 jQuery.event.add(window, "load", function() {

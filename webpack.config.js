@@ -2,6 +2,7 @@ const webpack = require('webpack'),
       path = require('path'),
       glob = require("glob"),
       ExtractTextPlugin = require("extract-text-webpack-plugin"),
+      UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
       HappyPack = require("happypack"),
       SvgStore = require('webpack-svgstore-plugin'),
       SpritesmithPlugin = require('webpack-spritesmith'),
@@ -24,7 +25,15 @@ module.exports = [
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['env']
+              // presets: ['latest']
+              presets: [
+                ["env", {
+                  "targets": {
+                    "browsers": ["last 2 versions", "ie >= 11"]
+                  },
+                  "modules": false
+                }]
+              ]
             }
           }
         }
@@ -58,9 +67,13 @@ module.exports = [
           'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }
       }),
-      new webpack.optimize.UglifyJsPlugin({
+      new UglifyJSPlugin({
         sourceMap: isProd ? false : true,
-        comments: false
+        uglifyOptions: {
+          output: {
+            comments: false
+          }
+        }
       }),
       new HappyPack({
         loaders: [{
@@ -69,7 +82,14 @@ module.exports = [
             plugins: [
               'transform-runtime',
             ],
-            presets: ['es2015'],
+            presets: [
+              ["env", {
+                "targets": {
+                  "browsers": ["last 2 versions", "ie >= 11"]
+                },
+                "modules": false
+              }]
+            ],
             cacheDirectory: false
           }
         }],

@@ -110,7 +110,16 @@ module.exports = [
           loader: ExtractTextPlugin.extract({
             fallback: "style-loader",
             use: [
-              { loader: 'css-loader', options: {minimize: true, url: false} },
+              {
+                loader: 'css-loader',
+                options: {
+                  // minimize: true,
+                  url: false,
+                  minimize: {
+                    discardComments: { removeAll: true }
+                  }
+                }
+              },
               { loader: 'postcss-loader' },
             ]
           }),

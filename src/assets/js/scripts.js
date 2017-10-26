@@ -16,7 +16,6 @@ const responsiveNav = require('responsive-nav');
 const WebFont = require('webfontloader');
 import Modernizr from 'modernizr'
 
-
 if ( ! Modernizr.objectfit ) {
   console.log('non-objectfit');
 } else {

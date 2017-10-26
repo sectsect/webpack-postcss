@@ -21,30 +21,10 @@ module.exports = [
       rules: [
         {
           test: /\.js$/,
-          exclude: /(node_modules|bower_components)/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              // presets: ['latest']
-              presets: [
-                ["env", {
-                  "targets": {
-                    "browsers": ["last 2 versions", "ie >= 11"]
-                  },
-                  "modules": false
-                }]
-              ]
-            }
-          }
-        }
-      ]
-    },
-    externals: {
-      // "jquery": "jQuery"
-    },
-    // Moderniz
-    module: {
-      rules: [
+          exclude: /node_modules/,
+          loader: "babel-loader"
+        },
+        // Modernizr
         {
           test: /\.modernizrrc.js$/,
           use: [ 'modernizr-loader' ]
@@ -53,14 +33,19 @@ module.exports = [
           test: /\.modernizrrc(\.json)?$/,
           use: [ 'modernizr-loader', 'json-loader' ]
         }
+        // Modernizr
       ]
     },
+    externals: {
+      // "jquery": "jQuery"
+    },
+    // Modernizr
     resolve: {
       alias: {
         modernizr$: path.resolve(__dirname, ".modernizrrc")
       }
     },
-    // Moderniz
+    // Modernizr
     plugins: [
       new webpack.DefinePlugin({
         'process.env': {
@@ -85,7 +70,7 @@ module.exports = [
             presets: [
               ["env", {
                 "targets": {
-                  "browsers": ["last 2 versions", "ie >= 11"]
+                  "browsers": ["last 2 versions", "ie >= 9"]
                 },
                 "modules": false
               }]
@@ -93,7 +78,7 @@ module.exports = [
             cacheDirectory: false
           }
         }],
-        threads: 2
+        threads: 4
       }),
       // create svgStore instance object
       new SvgStore.Options({

@@ -6,7 +6,8 @@ const webpack = require('webpack'),
       HappyPack = require("happypack"),
       SvgStore = require('webpack-svgstore-plugin'),
       SpritesmithPlugin = require('webpack-spritesmith'),
-      spriteTemplate = require('./src/assets/js/_spriteTemplate');
+      spriteTemplate = require('./src/assets/js/_spriteTemplate'),
+      WebpackNotifierPlugin = require('webpack-notifier');
 
 const isProd = (process.env.NODE_ENV === 'production');
 
@@ -93,7 +94,8 @@ module.exports = [
             { removeStyleElement: true },
           ]
         }
-      })
+      }),
+      new WebpackNotifierPlugin({alwaysNotify: true, skipFirstNotification: true}),
     ],
     devtool : isProd ? "" : "#inline-source-map"
   },
@@ -162,7 +164,8 @@ module.exports = [
         cache: true,
         loaders: ['css-loader?minimize=true&url=false!postcss-loader'],
         threads: 4
-      })
+      }),
+      new WebpackNotifierPlugin({alwaysNotify: true, skipFirstNotification: true}),
   	],
     devtool : isProd ? "" : "#inline-source-map"
   }

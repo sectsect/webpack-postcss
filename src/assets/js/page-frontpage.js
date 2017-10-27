@@ -1,5 +1,5 @@
-const hello ="Hello!!";
+const hello = 'Hello!!';
 console.log(hello);
 
-const sect ="SECT!!";
+const sect = 'SECT!!';
 console.log(sect);

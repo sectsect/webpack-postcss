@@ -24,19 +24,6 @@ if (!Modernizr.objectfit) {
   console.log('objectfit');
 }
 
-
-const sect = 'sect!!';
-
-const first = 'Kentaro';
-const last = 'Kaneko';
-const id = '999';
-
-const name = `Your name is ${first} ${last}.`;
-const url = `http://localhost:3000/api/messages/${id}`;
-
-console.log(name);
-console.log(url);
-
 /*= =================================================
 Google web-fonts
 ================================================== */

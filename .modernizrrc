@@ -4,6 +4,8 @@
     "setClasses"
   ],
   "feature-detects": [
-    "css/objectfit"
+    "css/objectfit",
+    "css/flexbox",
+    "css/flexboxtweener"
   ]
 }

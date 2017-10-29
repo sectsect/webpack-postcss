@@ -19,6 +19,20 @@ const __svg__ = {
 const responsiveNav = require('responsive-nav');
 const WebFont = require('webfontloader');
 
+const detect = {
+  desktop: jQuery.browser.desktop,
+  mobile: isMobile.any,
+  phone: isMobile.phone,
+  tablet: isMobile.tablet,
+  ie: jQuery.browser.msie,
+  edge: jQuery.browser.msedge,
+  iPhone: isMobile.apple.phone,
+  androidphone: isMobile.android.phone,
+  iOS: isMobile.apple.device,
+  androidOS: isMobile.android.device,
+};
+// console.log(detect);
+
 if (!Modernizr.objectfit) {
   console.log('non-objectfit');
 } else {

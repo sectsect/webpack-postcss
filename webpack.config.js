@@ -47,7 +47,7 @@ module.exports = [
       ],
     },
     externals: {
-      jquery: 'jQuery',
+      // jquery: 'jQuery',
     },
     // Modernizr
     resolve: {

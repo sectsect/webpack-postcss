@@ -48,12 +48,12 @@
     "webpack-svgstore-plugin": "^4.0.1"
   },
   "dependencies": {
+    "bowser": "^1.8.1",
     "dedent": "^0.7.0",
     "ismobilejs": "^0.4.1",
     "jquery": "^3.2.1",
     "jquery-match-height-browserify": "^0.7.0",
     "jquery-smooth-scroll": "^2.2.0",
-    "jquery.browser": "^0.1.0",
     "jquery.dotdotdot": "^2.0.1",
     "jquery.easing": "^1.4.1",
     "picturefill": "^3.0.2",

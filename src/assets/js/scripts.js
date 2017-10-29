@@ -3,12 +3,12 @@ import dedent from 'dedent';
 
 global.jQuery = require('jquery');
 global.isMobile = require('ismobilejs');
-// var jQuery = require("jquery");
+global.bowser = require('bowser');
+// const jQuery = require('jquery');
 require('jquery.easing');
 require('jquery-smooth-scroll');
 require('jquery.dotdotdot');
 require('jquery-match-height-browserify');
-require('jquery.browser');
 require('picturefill');
 require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
 
@@ -20,18 +20,21 @@ const responsiveNav = require('responsive-nav');
 const WebFont = require('webfontloader');
 
 const detect = {
-  desktop: jQuery.browser.desktop,
+  desktop: !isMobile.any,
   mobile: isMobile.any,
   phone: isMobile.phone,
   tablet: isMobile.tablet,
-  ie: jQuery.browser.msie,
-  edge: jQuery.browser.msedge,
+  chrome: (bowser.chrome) ? bowser.version : false,
+  firefox: (bowser.firefox) ? bowser.version : false,
+  safari: (bowser.safari) ? bowser.version : false,
+  msie: (bowser.msie) ? bowser.version : false,
+  msedge: (bowser.msedge) ? bowser.version : false,
   iPhone: isMobile.apple.phone,
   androidphone: isMobile.android.phone,
   iOS: isMobile.apple.device,
   androidOS: isMobile.android.device,
 };
-// console.log(detect);
+console.log(detect);
 
 if (!Modernizr.objectfit) {
   console.log('non-objectfit');

@@ -1,4 +1,5 @@
 import Modernizr from 'modernizr';
+import dedent from 'dedent';
 
 global.jQuery = require('jquery');
 global.isMobile = require('ismobilejs');
@@ -23,6 +24,13 @@ if (!Modernizr.objectfit) {
 } else {
   console.log('objectfit');
 }
+
+// For dedent
+const sectsect = dedent`A string that gets so long you need to break it over
+                     multiple lines. Luckily dedent is here to keep it
+                     readable without lots of spaces ending up in the string
+                     itself.`;
+console.log(sectsect);
 
 /*= =================================================
 Google web-fonts

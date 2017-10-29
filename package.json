@@ -48,6 +48,7 @@
     "webpack-svgstore-plugin": "^4.0.1"
   },
   "dependencies": {
+    "dedent": "^0.7.0",
     "ismobilejs": "^0.4.1",
     "jquery": "^3.2.1",
     "jquery-match-height-browserify": "^0.7.0",

@@ -3,6 +3,7 @@ const path = require('path');
 const glob = require('glob');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const dotenv = require('dotenv').config();
 const Dotenv = require('dotenv-webpack');
 const HappyPack = require('happypack');
 const SvgStore = require('webpack-svgstore-plugin');
@@ -11,6 +12,9 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const isProd = (process.env.NODE_ENV === 'production');
+
+// For dotenv
+// console.log(process.env.AWS_ACCESS_KEY_ID);
 
 module.exports = [
   {

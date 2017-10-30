@@ -1,6 +1,8 @@
 # <img src="https://github-sect.s3-ap-northeast-1.amazonaws.com/logo.svg" width="28" height="auto"> webpack-postcss
 [![CircleCI](https://circleci.com/gh/sectsect/webpack-postcss.svg?style=svg)](https://circleci.com/gh/sectsect/webpack-postcss)
 
+## ⚒️ This Repo is still work in progress ⚒️
+
 - webpack 3
   > #### Partials (Support Dynamic entry points:icecream:)   
   > You can create partial JS files that contain little snippets of bundled JS that you can include in other JS files. This is a great way to modularize your JS and help keep things easier to maintain. A partial is simply a JS file named with a leading underscore. You might name it something like `_partial.js`. The underscore lets JS know that the file is only a partial file and that it should not be generated into a JS file.

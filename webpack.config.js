@@ -4,7 +4,6 @@ const glob = require('glob');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const dotenv = require('dotenv').config();
-const Dotenv = require('dotenv-webpack');
 const HappyPack = require('happypack');
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -66,10 +65,6 @@ module.exports = [
         'process.env': {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
         },
-      }),
-      new Dotenv({
-        path: './.env',
-        safe: false,
       }),
       new UglifyJSPlugin({
         sourceMap: !isProd,

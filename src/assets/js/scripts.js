@@ -18,9 +18,6 @@ const __svg__ = {
 const responsiveNav = require('responsive-nav');
 const WebFont = require('webfontloader');
 
-// For dotenv
-console.log(process.env.AWS_ACCESS_KEY_ID);
-
 const detect = {
   desktop: !isMobile.any,
   mobile: isMobile.any,

@@ -161,7 +161,7 @@ module.exports = [
           glob: '*.png',
         },
         target: {
-          image: path.resolve(__dirname, 'assets/images/sprites/icon.png'),
+          image: path.resolve(__dirname, 'dist/assets/images/sprites/icon.png'),
           css: [
             // path.resolve(__dirname, 'src/assets/css/_sprite.css'),
             [path.resolve(__dirname, 'src/assets/css/_sprite.css'), {

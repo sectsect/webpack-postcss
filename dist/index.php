@@ -100,6 +100,10 @@
 			</ul>
 		</footer>
 	</div>
-	<script async src="./assets/js/scripts.js"></script>
+	<script src="./assets/js/scripts.js"></script>
+	<script>
+		console.log(bowser.version);
+		$('body').addClass('sekt-dev');
+	</script>
 </body>
 </html>

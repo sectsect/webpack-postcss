@@ -1,6 +1,13 @@
 import Modernizr from 'modernizr';
 import dedent from 'dedent';
+import picturefill from 'picturefill';
+import WebFont from 'webfontloader';
+import responsiveNav from 'responsive-nav';
 
+const jquery = require('jquery');
+
+window.$ = jquery;
+window.jQuery = jquery;
 global.isMobile = require('ismobilejs');
 global.bowser = require('bowser');
 // const jQuery = require('jquery');
@@ -8,15 +15,12 @@ require('jquery.easing');
 require('jquery-smooth-scroll');
 require('jquery.dotdotdot');
 require('jquery-match-height-browserify');
-require('picturefill');
 require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
 
 const __svg__ = {
   path: '../../../src/assets/images/svg/raw/**/*.svg',
   name: '../images/svg/symbol.svg',
 };
-const responsiveNav = require('responsive-nav');
-const WebFont = require('webfontloader');
 
 const detect = {
   desktop: !isMobile.any,
@@ -47,6 +51,18 @@ const sectsect = dedent`A string that gets so long you need to break it over
                      readable without lots of spaces ending up in the string
                      itself.`;
 console.log(sectsect);
+
+// if (typeof picturefill === 'function') {
+//   console.log('picture!!!!!!!!');
+// }
+// if (typeof WebFont === 'object') {
+//   console.log('WebFont!!!!!!!!');
+// }
+// if (typeof responsiveNav === 'function') {
+//   console.log('responsiveNav!!!!!!!!');
+// }
+
+$('body').addClass('sektsekt');
 
 /*= =================================================
 Google web-fonts

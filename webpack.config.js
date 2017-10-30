@@ -15,6 +15,109 @@ const isProd = (process.env.NODE_ENV === 'production');
 // For dotenv
 // console.log(process.env.AWS_ACCESS_KEY_ID);
 
+// http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
+const getJSPlugins = () => {
+  const plugins = [];
+
+  plugins.push(new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+    },
+  }));
+  if (isProd) {
+    plugins.push(new UglifyJSPlugin({
+      sourceMap: !isProd,
+      uglifyOptions: {
+        // ie8: true,
+        output: {
+          comments: false,
+        },
+      },
+    }));
+  }
+  plugins.push(new HappyPack({
+    loaders: [{
+      path: 'babel-loader',
+      query: {
+        plugins: [
+          'transform-runtime',
+        ],
+        presets: [
+          ['env', {
+            targets: {
+              browsers: ['last 2 versions', 'ie >= 9'],
+            },
+            modules: false,
+          }],
+        ],
+        cacheDirectory: false,
+      },
+    }],
+    threads: 4,
+  }));
+  plugins.push(new SvgStore.Options({
+    svg: {
+      style: '',
+      class: 'svg-icon-lib',
+    },
+    svgoOptions: {
+      plugins: [
+        { removeTitle: false },
+        { removeAttrs: { attrs: 'fill' } },
+        { removeStyleElement: true },
+      ],
+    },
+  }));
+  plugins.push(new WebpackNotifierPlugin({ alwaysNotify: true, skipFirstNotification: true }));
+
+  return plugins;
+};
+
+const getCSSPlugins = () => {
+  const plugins = [];
+
+  const bool = (isProd) ? JSON.stringify({ discardComments: { removeAll: true } }) : 'false';
+  const cssloaders = `css-loader?minimize=${bool}&url=false!postcss-loader`;
+
+  plugins.push(new ExtractTextPlugin({
+    filename: '[name].css',
+    allChunks: true,
+  }));
+  plugins.push(new SpritesmithPlugin({
+    src: {
+      cwd: path.resolve(__dirname, 'src/assets/images/sprites/icon'),
+      glob: '*.png',
+    },
+    target: {
+      image: path.resolve(__dirname, 'dist/assets/images/sprites/icon.png'),
+      css: [
+        // path.resolve(__dirname, 'src/assets/css/_sprite.css'),
+        [path.resolve(__dirname, 'src/assets/css/_sprite.css'), {
+          format: 'custom_format',
+        }],
+      ],
+    },
+    apiOptions: {
+      cssImageRef: '../images/sprites/icon.png',
+    },
+    retina: '@2x',
+    spritesmithOptions: {
+      // padding: 10
+    },
+    customTemplates: {
+      custom_format: spriteTemplate.customFormat,
+      custom_format_retina: spriteTemplate.customFormatRetina,
+    },
+  }));
+  plugins.push(new HappyPack({
+    loaders: [cssloaders],
+    threads: 4,
+  }));
+  plugins.push(new WebpackNotifierPlugin({ alwaysNotify: true, skipFirstNotification: true }));
+
+  return plugins;
+};
+
 module.exports = [
   {
     entry: toObject(glob.sync('./src/assets/js/**/*.js*'), 'js'),
@@ -60,56 +163,7 @@ module.exports = [
       },
     },
     // Modernizr
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
-        },
-      }),
-      new UglifyJSPlugin({
-        sourceMap: !isProd,
-        uglifyOptions: {
-          output: {
-            comments: false,
-          },
-        },
-      }),
-      new HappyPack({
-        loaders: [{
-          path: 'babel-loader',
-          query: {
-            plugins: [
-              'transform-runtime',
-            ],
-            presets: [
-              ['env', {
-                targets: {
-                  browsers: ['last 2 versions', 'ie >= 9'],
-                },
-                modules: false,
-              }],
-            ],
-            cacheDirectory: false,
-          },
-        }],
-        threads: 4,
-      }),
-      // create svgStore instance object
-      new SvgStore.Options({
-        svg: {
-          style: '',
-          class: 'svg-icon-lib',
-        },
-        svgoOptions: {
-          plugins: [
-            { removeTitle: false },
-            { removeAttrs: { attrs: 'fill' } },
-            { removeStyleElement: true },
-          ],
-        },
-      }),
-      new WebpackNotifierPlugin({ alwaysNotify: true, skipFirstNotification: true }),
-    ],
+    plugins: getJSPlugins(),
     devtool: isProd ? '' : '#inline-source-map',
   },
   {
@@ -129,9 +183,10 @@ module.exports = [
                 loader: 'css-loader',
                 options: {
                   url: false,
-                  minimize: {
-                    discardComments: { removeAll: true },
-                  },
+                  // minimize: {
+                  //   discardComments: { removeAll: true },
+                  // },
+                  minimize: isProd ? { discardComments: { removeAll: true } } : false,
                 },
               },
               { loader: 'postcss-loader' },
@@ -141,44 +196,7 @@ module.exports = [
       ],
     },
     externals: {},
-    plugins: [
-      new ExtractTextPlugin({
-        filename: '[name].css',
-        allChunks: true,
-      }),
-      new SpritesmithPlugin({
-        src: {
-          cwd: path.resolve(__dirname, 'src/assets/images/sprites/icon'),
-          glob: '*.png',
-        },
-        target: {
-          image: path.resolve(__dirname, 'dist/assets/images/sprites/icon.png'),
-          css: [
-            // path.resolve(__dirname, 'src/assets/css/_sprite.css'),
-            [path.resolve(__dirname, 'src/assets/css/_sprite.css'), {
-              format: 'custom_format',
-            }],
-          ],
-        },
-        apiOptions: {
-          cssImageRef: '../images/sprites/icon.png',
-        },
-        retina: '@2x',
-        spritesmithOptions: {
-          // padding: 10
-        },
-        customTemplates: {
-          custom_format: spriteTemplate.customFormat,
-          custom_format_retina: spriteTemplate.customFormatRetina,
-        },
-      }),
-      new HappyPack({
-        cache: true,
-        loaders: ['css-loader?minimize=true&url=false!postcss-loader'],
-        threads: 4,
-      }),
-      new WebpackNotifierPlugin({ alwaysNotify: true, skipFirstNotification: true }),
-    ],
+    plugins: getCSSPlugins(),
     devtool: isProd ? '' : '#inline-source-map',
   },
 ];

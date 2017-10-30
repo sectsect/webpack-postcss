@@ -10,7 +10,7 @@
 - CircleCI 2.0
 
 ## :bookmark: NOTES
-- Rename `.env.example` to `.env` for [dotenv-webpack](https://github.com/mrsteele/dotenv-webpack)
+- Rename `.env.example` to `.env` for [dotenv](https://github.com/motdotla/dotenv) / [dotenv-webpack](https://github.com/mrsteele/dotenv-webpack)
   ```
   $ cp .env.example .env
   ```

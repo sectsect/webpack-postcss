@@ -8,3 +8,10 @@
 - Babel (ES6)
 - ESLint w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 - CircleCI 2.0
+
+## :bookmark: NOTES
+- Rename `.env.example` to `.env` for [dotenv-webpack](https://github.com/mrsteele/dotenv-webpack)
+  ```
+  $ cp .env.example .env
+  ```
+  :memo: `.env` file is already set to "ignore" within the `.giignore` file.

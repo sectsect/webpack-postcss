@@ -75,6 +75,10 @@ module.exports = [
           },
         },
       }),
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+      }),
       new HappyPack({
         loaders: [{
           path: 'babel-loader',

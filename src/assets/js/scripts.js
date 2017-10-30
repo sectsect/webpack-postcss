@@ -1,7 +1,6 @@
 import Modernizr from 'modernizr';
 import dedent from 'dedent';
 
-global.jQuery = require('jquery');
 global.isMobile = require('ismobilejs');
 global.bowser = require('bowser');
 // const jQuery = require('jquery');

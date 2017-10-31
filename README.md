@@ -1,7 +1,7 @@
 # <img src="https://github-sect.s3-ap-northeast-1.amazonaws.com/logo.svg" width="28" height="auto"> webpack-postcss
 [![CircleCI](https://circleci.com/gh/sectsect/webpack-postcss.svg?style=svg)](https://circleci.com/gh/sectsect/webpack-postcss)
 
-## ⚒️ This Repo is still work in progress ⚒️
+## ⚒️ This Repo still works-in-progress ⚒️
 
 - webpack 3
   > #### Partials (Support Dynamic entry points:icecream:)   

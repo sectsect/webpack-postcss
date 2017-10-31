@@ -83,32 +83,32 @@ const getCSSPlugins = () => {
     filename: '[name].css',
     allChunks: true,
   }));
-  plugins.push(new SpritesmithPlugin({
-    src: {
-      cwd: path.resolve(__dirname, 'src/assets/images/sprites/icon'),
-      glob: '*.png',
-    },
-    target: {
-      image: path.resolve(__dirname, 'dist/assets/images/sprites/icon.png'),
-      css: [
-        // path.resolve(__dirname, 'src/assets/css/_sprite.css'),
-        [path.resolve(__dirname, 'src/assets/css/_sprite.css'), {
-          format: 'custom_format',
-        }],
-      ],
-    },
-    apiOptions: {
-      cssImageRef: '../images/sprites/icon.png',
-    },
-    retina: '@2x',
-    spritesmithOptions: {
-      // padding: 10
-    },
-    customTemplates: {
-      custom_format: spriteTemplate.customFormat,
-      custom_format_retina: spriteTemplate.customFormatRetina,
-    },
-  }));
+  // plugins.push(new SpritesmithPlugin({
+  //   src: {
+  //     cwd: path.resolve(__dirname, 'src/assets/images/sprites/icon'),
+  //     glob: '*.png',
+  //   },
+  //   target: {
+  //     image: path.resolve(__dirname, 'dist/assets/images/sprites/icon.png'),
+  //     css: [
+  //       // path.resolve(__dirname, 'src/assets/css/_sprite.css'),
+  //       [path.resolve(__dirname, 'src/assets/css/_sprite.css'), {
+  //         format: 'custom_format',
+  //       }],
+  //     ],
+  //   },
+  //   apiOptions: {
+  //     cssImageRef: '../images/sprites/icon.png',
+  //   },
+  //   retina: '@2x',
+  //   spritesmithOptions: {
+  //     // padding: 10
+  //   },
+  //   customTemplates: {
+  //     custom_format: spriteTemplate.customFormat,
+  //     custom_format_retina: spriteTemplate.customFormatRetina,
+  //   },
+  // }));
   plugins.push(new HappyPack({
     loaders: [cssloaders],
     threads: 4,

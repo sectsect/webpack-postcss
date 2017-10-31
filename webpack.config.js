@@ -10,6 +10,8 @@ const SpritesmithPlugin = require('webpack-spritesmith');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
+const sourcePath = path.join(__dirname, 'src');
+const buildPath = path.join(__dirname, 'dist');
 const isProd = (process.env.NODE_ENV === 'production');
 
 // For dotenv
@@ -85,14 +87,13 @@ const getCSSPlugins = () => {
   }));
   // plugins.push(new SpritesmithPlugin({
   //   src: {
-  //     cwd: path.resolve(__dirname, 'src/assets/images/sprites/icon'),
+  //     cwd: path.resolve(sourcePath, 'assets/images/sprites/icon'),
   //     glob: '*.png',
   //   },
   //   target: {
-  //     image: path.resolve(__dirname, 'dist/assets/images/sprites/icon.png'),
+  //     image: path.resolve(buildPath, 'assets/images/sprites/icon.png'),
   //     css: [
-  //       // path.resolve(__dirname, 'src/assets/css/_sprite.css'),
-  //       [path.resolve(__dirname, 'src/assets/css/_sprite.css'), {
+  //       [path.resolve(sourcePath, 'assets/css/_sprite.css'), {
   //         format: 'custom_format',
   //       }],
   //     ],
@@ -120,9 +121,9 @@ const getCSSPlugins = () => {
 
 module.exports = [
   {
-    entry: toObject(glob.sync('./src/assets/js/**/*.js*'), 'js'),
+    entry: toObject(glob.sync(path.resolve(sourcePath, 'assets/js/**/*.js*')), 'js'),
     output: {
-      path: `${__dirname}/dist/assets/js`,
+      path: path.resolve(buildPath, 'assets/js'),
       filename: '[name].js',
     },
     module: {
@@ -167,9 +168,9 @@ module.exports = [
     devtool: isProd ? '' : '#inline-source-map',
   },
   {
-    entry: toObject(glob.sync('./src/assets/css/**/*.css*'), 'css'),
+    entry: toObject(glob.sync(path.resolve(sourcePath, 'assets/css/**/*.css*')), 'css'),
     output: {
-      path: `${__dirname}/dist/assets/css`,
+      path: path.resolve(buildPath, 'assets/css'),
       filename: '[name].css',
     },
     module: {

@@ -159,6 +159,7 @@ module.exports = [
     },
     // Modernizr
     resolve: {
+      modules: ['node_modules'],
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),
       },
@@ -197,6 +198,9 @@ module.exports = [
       ],
     },
     externals: {},
+    resolve: {
+      modules: ['node_modules'],
+    },
     plugins: getCSSPlugins(),
     devtool: isProd ? '' : '#inline-source-map',
   },

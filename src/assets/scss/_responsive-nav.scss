@@ -1,0 +1,78 @@
+//	! responsive-nav.js 1.0.39 by @viljamis
+.nav-collapse {
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    list-style: none;
+  }
+  li {
+    display: block;
+  }
+}
+
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.nav-collapse.opened {
+  max-height: 9999px;
+}
+
+.nav-toggle {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+	user-select: none;
+	display: block;
+	width: 50px;
+	height: 50px;
+	box-sizing: border-box;
+	padding: 10px;
+	span, &:before, &:after{
+		display: block;
+		content: "";
+		transition: transform 0.3s;
+		position: absolute;
+		top: 50%;
+		left: 10px;
+		width: 30px;
+		height: 3px;
+		background: #aaa;
+		font-size: 0px;
+		margin-top: -2px;
+	}
+	&:before{
+		transform: translateY(-8px);
+	}
+	&:after{
+		transform: translateY(8px);
+	}
+	&.active{
+		span{
+			background-color: transparent;
+		}
+		&:before{
+			transform: translateY(0) rotate(45deg);
+		}
+		&:after{
+			transform: translateY(0) rotate(-45deg);
+		}
+	}
+}
+@media screen and (min-width: $breakPoint) {
+  .js .nav-collapse {
+    position: relative;
+    &.closed {
+      max-height: none;
+    }
+  }
+  .nav-toggle {
+    display: none;
+  }
+}

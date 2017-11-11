@@ -1,61 +1,61 @@
 /* FormHack v1.2.0 (formhack.io) */
 
-/*Config -----------------------------*/
+// Config -----------------------------
 
-/*Font*/
-$fh-font-family                : $fontfamily;
-$fh-font-size                  : $fontsize;
-$fh-font-color                 : $fontcolor;
-$fh-font-color-disabled        : #aaa;		/* Add code by SECT */
+// Font
+$fh-font-family                : $fontfamily !default;
+$fh-font-size                  : $fontsize !default;
+$fh-font-color                 : $fontcolor !default;
+$fh-font-color-disabled        : #aaa !default;		// Add code by SECT
 
-/*Borders*/
-$fh-border-radius              : 5px;
-$fh-border-width               : 1px;
-$fh-border-style               : solid;
-$fh-border-color               : $bordercolor;
+// Borders
+$fh-border-radius              : 5px !default;
+$fh-border-width               : 1px !default;
+$fh-border-style               : solid !default;
+$fh-border-color               : $bordercolor !default;
 
-/*Inputs, Textareas, Select, Option*/
-$fh-input-height               : 30px;
-$fh-input-width                : 100%;
-$fh-input-max-width            : 400px;
-$fh-input-bg-color             : #fff;
-$fh-focus-bg-color             : #fff;
-$fh-focus-border-color         : $fh-border-color;
-$fh-focus-font-color           : $fh-font-color;
+// Inputs, Textareas, Select, Option
+$fh-input-height               : 30px !default;
+$fh-input-width                : 100% !default;
+$fh-input-max-width            : 400px !default;
+$fh-input-bg-color             : #fff !default;
+$fh-focus-bg-color             : #fff !default;
+$fh-focus-border-color         : $fh-border-color !default;
+$fh-focus-font-color           : $fh-font-color !default;
 
-/*Inputs Vendor Styling*/
-$fh-allow-input-vendor-styling: false;
+// Inputs Vendor Styling
+$fh-allow-input-vendor-styling: false !default;
 
-/*Select Vendor Styling*/
-$fh-allow-select-vendor-styling: false;
+// Select Vendor Styling
+$fh-allow-select-vendor-styling: false !default;
 
-/*Fieldset & Legend Styling*/
-$fh-fieldset-bare              : false;
+// Fieldset & Legend Styling
+$fh-fieldset-bare              : false !default;
 
-/*Buttons & Input Submits*/
-$fh-button-height              : 40px;
-$fh-button-width               : 100%;
-$fh-button-max-width           : 200px;
-$fh-button-font-color          : $fh-font-color;
-$fh-button-bg-color            : $fh-focus-bg-color;
-$fh-button-hover-bg-color      : $fh-focus-bg-color;
-$fh-button-hover-font-color    : $fh-font-color;
+// Buttons & Input Submits
+$fh-button-height              : 40px !default;
+$fh-button-width               : 100% !default;
+$fh-button-max-width           : 200px !default;
+$fh-button-font-color          : $fh-font-color !default;
+$fh-button-bg-color            : $fh-focus-bg-color !default;
+$fh-button-hover-bg-color      : $fh-focus-bg-color !default;
+$fh-button-hover-font-color    : $fh-font-color !default;
 
-/*Layout*/
-$fh-centered                   : false;
-$fh-display                    : block;
+// Layout
+$fh-centered                   : false !default;
+$fh-display                    : block !default;
 
 /*==================================================
 	Add code by SECT
 ================================================== */
 /* field size */
-$field-size-s       : 50px;
-$field-size-m       : 200px;
-$field-size-l       : 400px;
-$field-size-full    : $fh-input-width;
+$field-size-s       : 50px !default;
+$field-size-m       : 200px !default;
+$field-size-l       : 400px !default;
+$field-size-full    : $fh-input-width !default;
 
-/*Center/Left-Aligned Layout*/
-@define-mixin center-layout {
+// Center/Left-Aligned Layout
+@mixin center-layout {
 	@if $fh-centered == true {
 		margin: 0 auto;
 		text-align: center;
@@ -79,22 +79,22 @@ fieldset {
 	outline: none;
 
 	font-family: $fh-font-family;
-	@mixin font-size $fontsize;
+	@include font-size($fh-font-size);
 	color: $fh-font-color;
 	vertical-align: top;
 
 	display: $fh-display;
-	@mixin center-layout;
+	@include center-layout;
 }
 
 datalist {
 	font-family: $fh-font-family;
-	@mixin font-size $fontsize;
+	@include font-size($fh-font-size);
 }
 
 label {
 	display: $fh-display;
-	@mixin center-layout;
+	@include center-layout;
 }
 
 /* Input & Textarea ------------------ */
@@ -169,11 +169,11 @@ input {
   }
 }
 
-/*For checkbox and radio to be centered, need to wrap the input and label in a span -*/
-/*.checkbox-container {
- 	display: block;
-	text-align: center;
-}*/
+// For checkbox and radio to be centered, need to wrap the input and label in a span -
+// .checkbox-container {
+// 	display: block;
+// 	text-align: center;
+// }
 
 
 /* Select ------------------ */
@@ -186,10 +186,10 @@ select {
 		-moz-appearance: none;
 		-ms-appearance: none;
 		-o-appearance: none;
-		/*text-indent: .01px;		//	For Firefox (remove right side arrow)
-		text-overflow: "";			//	For Firefox (remove right side arrow)*/
+		// text-indent: .01px;		//	For Firefox (remove right side arrow)
+		// text-overflow: "";			//	For Firefox (remove right side arrow)
 		&::-ms-expand {
-			display: none;
+			display: none;					//	For IE10 (remove right side arrow)
 		}
 	}
 }
@@ -255,10 +255,10 @@ input[type="image"] {
 
 input[type="image"] {
 	text-align: center;
-	/*padding: $fh-input-height / 5;*/
+	// padding: $fh-input-height / 5;
 	padding: 0;
-	/*border: none;
-	border-radius: 0;*/
+	// border: none;
+	// border-radius: 0;
 }
 
 /* States ------------------ */
@@ -282,7 +282,7 @@ button:focus {
 
 input[type="checkbox"]:focus,
 input[type="radio"]:focus {
-	/*outline: $fh-focus-border-color solid 2px;*/
+//	outline: $fh-focus-border-color solid 2px;
 }
 
 button:hover,
@@ -372,7 +372,7 @@ option[readonly],
 button[readonly] {
 	border: none;
 	padding: 0;
-	/*background: none !important;*/
+//	background: none !important;
 }
 
 /* [readonly=disabled] */
@@ -390,9 +390,9 @@ button[disabled] {
 
 
 /* input[type=file]	@ http://qiita.com/yasumodev/items/c9f8e8f588ded6b179c9 */
-$file-field-id : your-file;
+$file-field-id : your-file !default;
 
-label[for=$(file-field-id)]{
+label[for=#{$file-field-id}]{
 	b{
 		height: $fh-button-height;
 		width: $fh-button-width;
@@ -406,7 +406,7 @@ label[for=$(file-field-id)]{
 		-moz-appearance: none;
 		border-radius: $fh-border-radius;
 		border: $fh-border-width $fh-border-style $fh-border-color;
-		@mixin font-size $fontsize;
+		@include font-size($fh-font-size);
 		text-align: center;
 		display: block;
 	}
@@ -420,7 +420,7 @@ label[for=$(file-field-id)]{
 		}
 	}
 }
-#cfm-$file-field-id {
+#cfm-#{$file-field-id}{
 	img{
 		max-width: 100%;
 		height: auto;
@@ -449,17 +449,17 @@ input[type=range] {
 	}
 	@media only screen and (min-width: $breakPoint) {
 		&.size_s{
-			/*width: $field-size-s;*/
+		//	width: $field-size-s;
 			width: $fh-input-width;
 			max-width: $field-size-s;
 		}
 		&.size_m{
-			/*width: $field-size-m;*/
+		//	width: $field-size-m;
 			width: $fh-input-width;
 			max-width: $field-size-m;
 		}
 		&.size_l{
-			/*width: $field-size-l;*/
+		//	width: $field-size-l;
 			width: $fh-input-width;
 			max-width: $field-size-l;
 		}
@@ -560,7 +560,7 @@ input[type=range] {
 		}
 		.select2-selection__choice{
 			border: $fh-border-width $fh-border-style $bordercolor !important;
-			/*background-color: #999 !important;*/
+		//	background-color: #999 !important;
 		}
 	}
 	&.select2-container--open.select2-container--below{
@@ -580,7 +580,7 @@ input[type=range] {
 }
 .select2-selection__clear{
 	color: $fontcolor;
-	@mixin font-size 13;
+	@include font-size(13);
 }
 .select2-container{
 	width: 100% !important;

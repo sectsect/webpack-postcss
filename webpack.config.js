@@ -79,7 +79,7 @@ const getCSSPlugins = () => {
   const plugins = [];
 
   const bool = (isProd) ? JSON.stringify({ discardComments: { removeAll: true } }) : 'false';
-  const cssloaders = `css-loader?minimize=${bool}&url=false!postcss-loader`;
+  const cssloaders = `css-loader?minimize=${bool}&url=false!sass-loader!postcss-loader`;
 
   plugins.push(new ExtractTextPlugin({
     filename: '[name].css',
@@ -93,7 +93,7 @@ const getCSSPlugins = () => {
   //   target: {
   //     image: path.resolve(buildPath, 'assets/images/sprites/icon.png'),
   //     css: [
-  //       [path.resolve(sourcePath, 'assets/css/_sprite.css'), {
+  //       [path.resolve(sourcePath, 'assets/css/_sprite.scss'), {
   //         format: 'custom_format',
   //       }],
   //     ],
@@ -169,7 +169,7 @@ module.exports = [
     devtool: isProd ? '' : '#inline-source-map',
   },
   {
-    entry: toObject(glob.sync(path.resolve(sourcePath, 'assets/css/**/*.css*')), 'css'),
+    entry: toObject(glob.sync(path.resolve(sourcePath, 'assets/scss/**/*.scss*')), 'scss'),
     output: {
       path: path.resolve(buildPath, 'assets/css'),
       filename: '[name].css',
@@ -177,7 +177,7 @@ module.exports = [
     module: {
       rules: [
         {
-          test: /\.css$/,
+          test: /\.(sass|scss)$/,
           loader: ExtractTextPlugin.extract({
             fallback: 'style-loader',
             use: [
@@ -191,6 +191,7 @@ module.exports = [
                   minimize: isProd ? { discardComments: { removeAll: true } } : false,
                 },
               },
+              { loader: 'sass-loader' },
               { loader: 'postcss-loader' },
             ],
           }),

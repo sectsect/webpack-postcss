@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+/* @import "settings","mixin","sanitize","form","sprite","icon-font","svg-icon","responsive-nav","wp-core","jquery.fancybox"; */
+@import "settings","mixin","sanitize","form","svg-icon","responsive-nav","wp-core";
+
+
+@import "phone";
+@media only screen and (min-width: $breakPoint) {
+  @import "desktop";
+}
+
+/*
+10px → font-size:77%;
+11px → font-size:85%;
+12px → font-size:93%;
+13px → font-size:100%;
+14px → font-size:108%;
+15px → font-size:116%;
+16px → font-size:123.1%;
+17px → font-size:131%;
+18px → font-size:138.5%;
+19px → font-size:146.5%;
+20px → font-size:153.9%;
+21px → font-size:161.6%;
+22px → font-size:167%;
+23px → font-size:174%;
+24px → font-size:182%;
+25px → font-size:189%;
+26px → font-size:197%;
+*/
+
+/*
+// @ http://v4-alpha.getbootstrap.com/layout/overview/
+// Small devices (landscape phones, 544px and up)
+@media (min-width: 544px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/

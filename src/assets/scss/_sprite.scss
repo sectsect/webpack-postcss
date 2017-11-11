@@ -1,0 +1,286 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$author-name: 'author';
+$author-x: 0px;
+$author-y: 0px;
+$author-offset-x: 0px;
+$author-offset-y: 0px;
+$author-width: 32px;
+$author-height: 32px;
+$author-total-width: 106px;
+$author-total-height: 69px;
+$author-image: '../assets/images/sprites/icon.png';
+$author: (0px, 0px, 0px, 0px, 32px, 32px, 106px, 69px, '../assets/images/sprites/icon.png', 'author', );
+$book-name: 'book';
+$book-x: 37px;
+$book-y: 0px;
+$book-offset-x: -37px;
+$book-offset-y: 0px;
+$book-width: 32px;
+$book-height: 32px;
+$book-total-width: 106px;
+$book-total-height: 69px;
+$book-image: '../assets/images/sprites/icon.png';
+$book: (37px, 0px, -37px, 0px, 32px, 32px, 106px, 69px, '../assets/images/sprites/icon.png', 'book', );
+$contact-name: 'contact';
+$contact-x: 0px;
+$contact-y: 37px;
+$contact-offset-x: 0px;
+$contact-offset-y: -37px;
+$contact-width: 32px;
+$contact-height: 32px;
+$contact-total-width: 106px;
+$contact-total-height: 69px;
+$contact-image: '../assets/images/sprites/icon.png';
+$contact: (0px, 37px, 0px, -37px, 32px, 32px, 106px, 69px, '../assets/images/sprites/icon.png', 'contact', );
+$download-name: 'download';
+$download-x: 37px;
+$download-y: 37px;
+$download-offset-x: -37px;
+$download-offset-y: -37px;
+$download-width: 32px;
+$download-height: 32px;
+$download-total-width: 106px;
+$download-total-height: 69px;
+$download-image: '../assets/images/sprites/icon.png';
+$download: (37px, 37px, -37px, -37px, 32px, 32px, 106px, 69px, '../assets/images/sprites/icon.png', 'download', );
+$sample-name: 'sample';
+$sample-x: 74px;
+$sample-y: 0px;
+$sample-offset-x: -74px;
+$sample-offset-y: 0px;
+$sample-width: 32px;
+$sample-height: 32px;
+$sample-total-width: 106px;
+$sample-total-height: 69px;
+$sample-image: '../assets/images/sprites/icon.png';
+$sample: (74px, 0px, -74px, 0px, 32px, 32px, 106px, 69px, '../assets/images/sprites/icon.png', 'sample', );
+$top-name: 'top';
+$top-x: 74px;
+$top-y: 37px;
+$top-offset-x: -74px;
+$top-offset-y: -37px;
+$top-width: 32px;
+$top-height: 32px;
+$top-total-width: 106px;
+$top-total-height: 69px;
+$top-image: '../assets/images/sprites/icon.png';
+$top: (74px, 37px, -74px, -37px, 32px, 32px, 106px, 69px, '../assets/images/sprites/icon.png', 'top', );
+$author-2x-name: 'author-2x';
+$author-2x-x: 0px;
+$author-2x-y: 0px;
+$author-2x-offset-x: 0px;
+$author-2x-offset-y: 0px;
+$author-2x-width: 64px;
+$author-2x-height: 64px;
+$author-2x-total-width: 212px;
+$author-2x-total-height: 138px;
+$author-2x-image: '../assets/images/sprites/icon-2x.png';
+$author-2x: (0px, 0px, 0px, 0px, 64px, 64px, 212px, 138px, '../assets/images/sprites/icon-2x.png', 'author-2x', );
+$book-2x-name: 'book-2x';
+$book-2x-x: 74px;
+$book-2x-y: 0px;
+$book-2x-offset-x: -74px;
+$book-2x-offset-y: 0px;
+$book-2x-width: 64px;
+$book-2x-height: 64px;
+$book-2x-total-width: 212px;
+$book-2x-total-height: 138px;
+$book-2x-image: '../assets/images/sprites/icon-2x.png';
+$book-2x: (74px, 0px, -74px, 0px, 64px, 64px, 212px, 138px, '../assets/images/sprites/icon-2x.png', 'book-2x', );
+$contact-2x-name: 'contact-2x';
+$contact-2x-x: 0px;
+$contact-2x-y: 74px;
+$contact-2x-offset-x: 0px;
+$contact-2x-offset-y: -74px;
+$contact-2x-width: 64px;
+$contact-2x-height: 64px;
+$contact-2x-total-width: 212px;
+$contact-2x-total-height: 138px;
+$contact-2x-image: '../assets/images/sprites/icon-2x.png';
+$contact-2x: (0px, 74px, 0px, -74px, 64px, 64px, 212px, 138px, '../assets/images/sprites/icon-2x.png', 'contact-2x', );
+$download-2x-name: 'download-2x';
+$download-2x-x: 74px;
+$download-2x-y: 74px;
+$download-2x-offset-x: -74px;
+$download-2x-offset-y: -74px;
+$download-2x-width: 64px;
+$download-2x-height: 64px;
+$download-2x-total-width: 212px;
+$download-2x-total-height: 138px;
+$download-2x-image: '../assets/images/sprites/icon-2x.png';
+$download-2x: (74px, 74px, -74px, -74px, 64px, 64px, 212px, 138px, '../assets/images/sprites/icon-2x.png', 'download-2x', );
+$sample-2x-name: 'sample-2x';
+$sample-2x-x: 148px;
+$sample-2x-y: 0px;
+$sample-2x-offset-x: -148px;
+$sample-2x-offset-y: 0px;
+$sample-2x-width: 64px;
+$sample-2x-height: 64px;
+$sample-2x-total-width: 212px;
+$sample-2x-total-height: 138px;
+$sample-2x-image: '../assets/images/sprites/icon-2x.png';
+$sample-2x: (148px, 0px, -148px, 0px, 64px, 64px, 212px, 138px, '../assets/images/sprites/icon-2x.png', 'sample-2x', );
+$top-2x-name: 'top-2x';
+$top-2x-x: 148px;
+$top-2x-y: 74px;
+$top-2x-offset-x: -148px;
+$top-2x-offset-y: -74px;
+$top-2x-width: 64px;
+$top-2x-height: 64px;
+$top-2x-total-width: 212px;
+$top-2x-total-height: 138px;
+$top-2x-image: '../assets/images/sprites/icon-2x.png';
+$top-2x: (148px, 74px, -148px, -74px, 64px, 64px, 212px, 138px, '../assets/images/sprites/icon-2x.png', 'top-2x', );
+$spritesheet-width: 106px;
+$spritesheet-height: 69px;
+$spritesheet-image: '../assets/images/sprites/icon.png';
+$spritesheet-sprites: ($author, $book, $contact, $download, $sample, $top, );
+$spritesheet: (106px, 69px, '../assets/images/sprites/icon.png', $spritesheet-sprites, );
+$retina-spritesheet-width: 212px;
+$retina-spritesheet-height: 138px;
+$retina-spritesheet-image: '../assets/images/sprites/icon-2x.png';
+$retina-spritesheet-sprites: ($author-2x, $book-2x, $contact-2x, $download-2x, $sample-2x, $top-2x, );
+$retina-spritesheet: (212px, 138px, '../assets/images/sprites/icon-2x.png', $retina-spritesheet-sprites, );
+
+/*
+These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+
+The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+*/
+$author-group-name: 'author';
+$author-group: ('author', $author, $author-2x, );
+$book-group-name: 'book';
+$book-group: ('book', $book, $book-2x, );
+$contact-group-name: 'contact';
+$contact-group: ('contact', $contact, $contact-2x, );
+$download-group-name: 'download';
+$download-group: ('download', $download, $download-2x, );
+$sample-group-name: 'sample';
+$sample-group: ('sample', $sample, $sample-2x, );
+$top-group-name: 'top';
+$top-group: ('top', $top, $top-2x, );
+$retina-groups: ($author-group, $book-group, $contact-group, $download-group, $sample-group, $top-group, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+  It should be used with a "retina group" variable.
+
+The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+
+$icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+
+.icon-home {
+  @include retina-sprite($icon-home-group);
+}
+*/
+@mixin sprite-background-size($sprite) {
+  $sprite-total-width: nth($sprite, 7);
+  $sprite-total-height: nth($sprite, 8);
+  background-size: $sprite-total-width $sprite-total-height;
+}
+
+@mixin retina-sprite($retina-group) {
+  $normal-sprite: nth($retina-group, 2);
+  $retina-sprite: nth($retina-group, 3);
+  @include sprite($normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    @include sprite-image($retina-sprite);
+    @include sprite-background-size($normal-sprite);
+  }
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+/*
+The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+  This yields the same output as CSS retina template but can be overridden in SCSS
+
+@include retina-sprites($retina-groups);
+*/
+@mixin retina-sprites($retina-groups) {
+  @each $retina-group in $retina-groups {
+    $sprite-name: nth($retina-group, 1);
+    .#{$sprite-name} {
+      @include retina-sprite($retina-group);
+    }
+  }
+}

@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-/*font settings*/
+// font settings
 $fontsize     : 11;
 $fontcolor    :	#000;
 $linkcolor    :	$fontcolor;
 $fontfamily   :	'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
 $fontmincho   :	"EB Garamond", "Times New Roman", "ＭＳ 明朝","MS Mincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
 
-/*General Settings*/
+// General Settings
 $lineheight   :	1.6;
 $transition   :	all .3s linear;
 $borderradius : 5px;
@@ -16,13 +16,9 @@ $bordercolor  :	#c8c8c8;
 $breakPoint   : 768px;
 $baseWidth    :	1000px;
 $postWidth    :	$baseWidth;
-/*$postWidth-pt-news   : 600px;*/
-/*$postWidth-pt-works  : 700px;*/
+// $postWidth-pt-news   : 600px;
+// $postWidth-pt-works  : 700px;
 $mobileheaderH:	50px;
 
-/*$baseColor      :	#645d5d;*/
-/*$baseThemeColor :	#e8e6e6; */
-
-:root {
-	--main-color: #999;
-}
+// $baseColor      :	#645d5d;
+// $baseThemeColor :	#e8e6e6;

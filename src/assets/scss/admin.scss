@@ -1,0 +1,127 @@
+@charset 'UTF-8';
+@import 'settings','mixin';
+
+.post-new-php,
+.post-php{
+	&.post-type-news{
+		#poststuff{
+      #note-sec{
+				margin-top: 15px;
+        padding: 1em;
+				p{
+					.pc{
+						@media only screen and (max-width:$breakPoint) {
+							display: none;
+						}
+					}
+				}
+      }
+			#postdivrich, #postbox-container-2{
+				max-height: 0;
+				@include opacity(0);
+				visibility: hidden;
+	      overflow-y: hidden;
+			}
+			#postdivrich{
+				margin-bottom: 0;
+			}
+      &.field-type-content, &.field-type-custom-field{
+        #note-sec{
+          display: none;
+        }
+      }
+			&.field-type-content{
+				#postdivrich{
+					max-height: initial;
+					max-height: auto;
+					@include opacity(1);
+					visibility: visible;
+				}
+			}
+			&.field-type-custom-field{
+				#postbox-container-2{
+					max-height: initial;
+					max-height: auto;
+					@include opacity(1);
+					visibility: visible;
+				}
+			}
+		}
+	}
+}
+/*==================================================
+  Display & limitation of the Actual-Width on MCE-Editor
+  NOTE: Required setting var $postWidth to "_settings.scss"
+================================================== */
+.post-php, .post-new-php {
+	&.post-type-post, &.post-type-page, &.post-type-news {
+		.wp-editor-container {
+			overflow: hidden;
+			.mce-tinymce {
+				.mce-container-body {
+					//  overflow: hidden;
+					.mce-toolbar-grp {
+						.mce-i-my-mce-icon+ .mce-txt {
+							font-size: 10px !important;
+							display: inline-block;
+							margin-top: 4px !important;
+						}
+					}
+					.mce-edit-area {
+						overflow: hidden;
+						iframe {
+							max-width: $postWidth + 20;
+							margin: 0 auto;
+							transition: max-width 0.15s linear;
+							border-right: 1px solid #ddd;
+							border-left: 1px solid #ddd;
+							box-shadow: 1000px 0 0 1000px rgba(0,0,0,0.03), -1000px 0 0 1000px rgba(0,0,0,0.03);
+							&.w320 {
+								max-width: 320px;
+							}
+							&.w375 {
+								max-width: 375px;
+							}
+							&.w414 {
+								max-width: 414px;
+							}
+							&.w768 {
+								max-width: 768px;
+							}
+						}
+					}
+					.mce-statusbar {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 850px) {
+	.post-php, .post-new-php {
+		&.post-type-post, &.post-type-page, &.post-type-news {
+			.mce-tinymce {
+				.mce-container-body {
+					overflow: hidden;
+					.mce-toolbar-grp {
+						.mce-widget.mce-last {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*==================================================
+	For custom field suite
+================================================== */
+.cfs_input {
+	.field input[type='url'] {
+		width: 99.8%;
+	}
+}

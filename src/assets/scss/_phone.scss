@@ -1,0 +1,524 @@
+/*==================================================
+	structure
+================================================== */
+body{
+	background: none;
+	font-family: $fontfamily;
+	@include font-size($fontsize);
+	color: $fontcolor;
+	line-height: $lineheight;
+//	-webkit-overflow-scrolling: touch;
+  background: url(../images/test.png) no-repeat 0 0;
+}
+// body, html{
+// 	width: 100%;
+// 	height: 100%;
+// 	max-width: 100%;
+// 	max-height: 100%;
+// 	min-width: 100%;
+// 	min-height: 100%;
+// 	overflow: auto;
+// }
+.inner{
+	width: 100%;
+	padding: 0 3.1%;
+	box-sizing: border-box;
+}
+.pc{display: none;}
+/*==================================================
+	common
+================================================== */
+a,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="image"]{
+	color: $linkcolor;
+	text-decoration: none;
+	transition: $transition;
+	&:hover, &:active, &:focus{
+		color: $linkcolor;
+	}
+	&:hover{
+		@include opacity(0.8);
+	}
+}
+h1,h2,h3,h4,h5{
+  font-weight: normal;
+}
+
+/* spinner */
+@keyframes spin{
+	0% {transform: rotate(0deg);}
+	50% {transform: rotate(180deg);	}
+	100% {transform: rotate(360deg);}
+}
+/*==================================================
+	Normalization for Third party
+================================================== */
+/* text truncation (dotdotdot) */
+.truncation{
+	transition: all 0.6s linear;
+	// transform: translate3d(0, -10px, 0);
+	@include opacity(0);
+	visibility: hidden;
+	&.ready{
+		// transform: translate3d(0, 0, 0);
+		@include opacity(1);
+		visibility: visible;
+	}
+}
+
+/* Web font		@ https://github.com/typekit/webfontloader#events */
+.wf{
+	transition: all .4s linear;
+	@include opacity(0);
+}
+.wf-active, .wf-inactive{
+	.wf{
+		@include opacity(1);
+	}
+}
+
+/* lazy load (lazysizes) */
+[data-src], [data-srcset], [data-bgset]{
+	transition: opacity .5s ease-in-out .1s;
+	// visibility: hidden;
+	@include opacity(0);
+	&.lazyloaded, &.loaded{
+		// visibility: visible;
+		@include opacity(1);
+	}
+}
+[data-sizes="auto"] {
+	display: block;
+	width: 100%;
+}
+
+/* slider (slick) */
+.slider_wrap{
+	position: relative;
+	@include spinner(absolute, 16px, 2px, #aaa, ready, visible);
+	.slider{
+		transition: all .3s linear .1s;
+		visibility: hidden;
+		@include opacity(0);
+	}
+	&.ready{
+		.slider{
+			@include opacity(1);
+			visibility: visible;
+		}
+	}
+	// [data-src], [data-srcset], [data-bgset]{
+	// 	transition: opacity .8s ease-in-out .3s;
+	// }
+}
+.slick-dots{
+	li{
+    vertical-align: top;
+		width: 21px;
+		height: 21px;
+		margin: 0 2px;
+		button{
+			width: 21px;
+			height: 21px;
+			padding: 0;
+			&:before{
+				content: "";
+				width: 13px;
+				height: 13px;
+				line-height: 13px;
+				top: 4px;
+				left: 4px;
+				border: 1px solid #000;
+				border-radius: 50%;
+				box-sizing: border-box;
+				@include opacity(1);
+			}
+		}
+		&.slick-active{
+			button{
+				&:before{
+					background: #000;
+				}
+			}
+		}
+	}
+}
+
+/*==================================================
+	modules
+================================================== */
+/* Paginate */
+.paginate{
+	margin-top: 28px;
+	line-height: 1.5;
+	.page-numbers{
+		text-align: center;
+		display: inline-block;
+		min-width: 15px;
+		margin: 0 2px;
+	}
+	.current{
+		text-decoration: underline;
+	}
+	.prev, .next{
+
+	}
+	.prev{
+
+	}
+	.next{
+
+	}
+}
+
+/*==================================================
+	header
+================================================== */
+#header{
+	width: 100%;
+	height: $mobileheaderH;
+	// position: fixed;
+	// top: 0;
+	// left: 0;
+	// z-index: 200;
+	// background: #fff;
+	#logo{
+		a{
+			position: relative;
+			z-index: 100;
+		}
+	}
+	#g_nav{
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 50;
+		width: 100%;
+		padding-top: $mobileheaderH;
+		.nav-toggle{
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 20;
+		//	padding-top: 15px;
+			i{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				text-align: center;
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-style: normal;
+				@include font-size(9);
+			}
+		}
+		nav{
+			display: none;
+			ul{
+				li{
+					border-bottom: 1px solid #aaa;
+					a{
+						display: block;
+						padding: 10px;
+						background: #ddd;
+					}
+				}
+			}
+		}
+	}
+}
+/*==================================================
+	aside
+================================================== */
+aside{
+	display: none;
+}
+/*==================================================
+	footer
+================================================== */
+#footer{
+	margin-top: 30px;
+}
+
+/*==================================================
+	main
+================================================== */
+main{
+	width: 100%;
+	// height: 5000px;
+	// padding: $mobileheaderH 0 0;
+}
+/*==================================================
+	home
+================================================== */
+.home{
+	main{
+		nav{
+			ul{
+				li{
+					float: left;
+					width: 32px;
+					margin-right: 5px;
+					a{
+						display: block;
+						text-indent: -9999px;
+					}
+				}
+			}
+		}
+		img{
+			width: 100%;
+			height: auto;
+		}
+
+		.sec_02{
+			.inner{
+				// ul{
+				// 	-js-display: flex;
+				// 	display: flex;
+				// 	// flex-wrap: wrap;						// Default: nowrap (single-line)
+				// 	// justify-content: flex-start;			// |□□□    |	(Default)
+				// 	// justify-content: center;					// |  □□□  |
+				// 	// justify-content: space-around;		// | □ □ □ |
+				// 	justify-content: space-between;			// |□  □  □|
+				// 	// align-items: center;							// Default: stretch
+				// 	li{
+				// 		flex: 0 1 90px;							// Default: 0 1 auto
+				// 		border: 1px solid #ccc;
+				// 		&:nth-child(2){
+				// 			flex-basis: 120px;
+				// 		}
+				// 		// &:nth-child(even){
+				// 		// 	height: 100px;
+				// 		// }
+				// 	}
+				// }
+
+				ul{
+					display: flex;
+					flex-wrap: wrap;									// Default: nowrap (single-line)
+					// justify-content: flex-start;			// |□□□    |	(Default)
+					// justify-content: center;					// |  □□□  |
+					// justify-content: space-around;		// | □ □ □ |
+					justify-content: space-between;			// |□  □  □|
+					// align-items: center;							// Default: stretch
+					li{
+						flex: 0 1 100%;							// Default: 0 1 auto
+						border: 1px solid #ccc;
+						// &:nth-child(2){
+						// 	flex-basis: 120px;
+						// }
+
+
+						// height: 50px;
+						position: relative;
+						// @include arrow(right, 10px, 2px, #333, right, 10px);
+						// @include arrow(right, 10px, 2px, #333, right, 10px);
+						@include arrow($margin: 20px);	// http://blog.teamtreehouse.com/smarter-sass-mixins-null
+						@include spinner(absolute, 16px, 2px, #aaa);
+
+						margin-top: 10px;
+
+
+
+						p{
+              @include multiline-truncate($font-size: 11px, $line-height: 1.6, $lines-to-show: 3, $type: fade, $excerpt-bg: #fff);
+            }
+					}
+				}
+			}
+		}
+	}
+}
+.lt-ie10{
+	.home{
+		main{
+			.sec_02{
+				.inner{
+					ul{
+						width: 100%;
+						overflow: hidden;
+						li{
+							float: left;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/*==================================================
+	page-form (page-id-3)
+================================================== */
+.page-id-3{
+	article{
+		#sec_01{
+			form{
+				position: relative;
+				@include spinner(fixed, 16px, 2px, #aaa, loading, hidden);
+				section{
+					background: #fff;			// Required
+					header{
+						padding: 0 0 20px;
+						margin-bottom: 13px;
+						p{
+							span{
+								font-weight: bold;
+							}
+						}
+					}
+				}
+				.btn{
+					width: 100%;
+					overflow: hidden;
+					margin-top: 20px;
+					button, span, input[type=submit], a{
+						display: block;
+						width: 100%;
+						padding: 10px 0;
+						text-align: center;
+						@include font-size(14);
+					}
+					span{
+
+					}
+					input[type=submit]{
+
+					}
+					.ajax-loader{
+						display: none;
+					}
+				}
+				#input{
+					span.wpcf7-form-control-wrap{
+						// For <select>
+						&.your-time, &.your-ceremony-year, &.your-ceremony-month, &.your-ceremony-capacity{
+							&:before, &:after{
+								content: "";
+								display: block;
+								position: absolute;
+								top: 50%;
+								right: 6px;
+								z-index: 1;
+								width: 0;
+								height: 0;
+								border-style: solid;
+							}
+							&:before{
+								border-width: 0 3px 5px 3px;
+								border-color: transparent transparent #8c8c8c transparent;
+								margin-top: -6px;
+							}
+							&:after{
+								border-width: 5px 3px 0 3px;
+								border-color: #8c8c8c transparent transparent transparent;
+								margin-top: 1px;
+							}
+						}
+					}
+					label[for=your-file]{
+						b{
+							@include font-size(14);
+						}
+					}
+					span{
+						&.caption{
+							display: none;
+							margin-left: 10px;
+							@include font-size(11);
+						}
+						&.label{
+							display: inline-block;
+							margin: 0 10px 0 5px;
+						}
+					}
+					button{
+						display: block;
+					}
+				}
+				#input, #confirm{
+					.items{
+						margin-top: 14px;
+						dl{
+							display: block;
+							margin-top: 16px;
+							dt{
+								.required{
+								//	color: $baseLightColor;
+								}
+							}
+							dd{
+								margin-top: 3px;
+							}
+						}
+					}
+					.notes{
+						margin-top: 25px;
+						a{
+							text-decoration: underline;
+							&:hover{
+								text-decoration: none;
+							}
+						}
+					}
+				}
+				#confirm{
+					.items{
+						dl{
+							dt{
+
+							}
+						}
+					}
+					.btn{
+						margin-top: 40px;
+						button, span{
+							float: left;
+							width: 48.3%;
+							margin-left: 3.4%;
+						}
+						button{
+							margin-left: 0;
+						}
+					}
+				}
+				#confirm, #result{
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+					width: 100%;
+					height: auto;
+					min-height: 100%;
+					background: #fff;
+					transition: all 0.2s ease-in-out;
+					visibility: hidden;
+					opacity: 0;
+					&.show{
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+				#result{
+					z-index: 2;
+					.btn{
+						margin-top: 40px;
+					}
+				}
+			}
+		}
+	}
+}
+span.wpcf7-list-item{
+	input, span{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	&.first{
+		margin-left: 0;
+	}
+}

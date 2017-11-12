@@ -98,6 +98,7 @@
 					<i class="icon-top"></i>
 				</li>
 			</ul>
+			<a href="#" v-scroll-to="'#wrap'">Scroll to #wrap</a>
 		</footer>
 	</div>
 	<script src="./assets/js/scripts.js"></script>

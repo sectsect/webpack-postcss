@@ -142,6 +142,10 @@ module.exports = [
             },
           ],
         },
+        {
+          test: /\.vue$/,
+          loader: 'vue-loader',
+        },
         // Modernizr
         {
           test: /\.modernizrrc.js$/,
@@ -161,6 +165,7 @@ module.exports = [
     resolve: {
       modules: ['node_modules'],
       alias: {
+        vue$: 'vue/dist/vue.esm.js', // Use the full build
         modernizr$: path.resolve(__dirname, '.modernizrrc'),
       },
     },

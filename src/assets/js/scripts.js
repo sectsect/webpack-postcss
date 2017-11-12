@@ -3,16 +3,19 @@ import dedent from 'dedent';
 import picturefill from 'picturefill';
 import WebFont from 'webfontloader';
 import responsiveNav from 'responsive-nav';
+import Vue from 'vue';
+import VueScrollTo from 'vue-scrollto';
 
 const jquery = require('jquery');
 
 window.$ = jquery;
 window.jQuery = jquery;
+window.Vue = Vue;
 global.isMobile = require('ismobilejs');
 global.bowser = require('bowser');
 // const jQuery = require('jquery');
 require('jquery.easing');
-require('jquery-smooth-scroll');
+// require('jquery-smooth-scroll');
 require('jquery.dotdotdot');
 require('jquery-match-height-browserify');
 require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
@@ -65,6 +68,28 @@ console.log(sectsect);
 $('body').addClass('sektsekt');
 
 /*= =================================================
+		smooth scroll (For VueScrollTo)
+================================================== */
+Vue.use(VueScrollTo, {
+  container: 'body',
+  duration: 500,
+  easing: 'ease',
+  offset: 0,
+  cancelable: true,
+  onDone: false,
+  onCancel: false,
+  x: false,
+  y: true,
+});
+
+// Vue.js
+const App = new Vue({
+  el: '#wrap',
+  methods: {
+  },
+});
+
+/*= =================================================
 Google web-fonts
 ================================================== */
 WebFont.load({
@@ -88,24 +113,24 @@ jQuery(() => {
   /*= =================================================
   Responsible menu (responsive-nav.min.js)
   ================================================== */
-  responsiveNav('#nav', { // Selector
-    //	animate 		: true,								  // Boolean: Use CSS3 transitions, true or false
-    transition: 150, // Integer: Speed of the transition, in milliseconds
-    //	label 			: "<span>Menu</span>",	// String: Label for the navigation toggle
-    label: '<span>bar</span><i>MENU</i>', // String: Label for the navigation toggle
-    //	insert 			: "before",							// String: Insert the toggle before or after the navigation
-    //	customToggle 	: "#nav-toggle",			// Selector: Specify the ID of a custom toggle
-    //	closeOnNavClick	: false,						// Boolean: Close the navigation when one of the links are clicked
-    //	openPos			: "static",							// String: Position of the opened nav, relative or static
-    //	navClass		: "nav-collapse",				// String: Default CSS class. If changed, you need to edit the CSS too!
-    //	navActiveClass	: "js-nav-active",	// String: Class that is added to element when nav is active
-    //	jsClass			: "js",								  // String: 'JS enabled' class which is added to element
-    init() {
-      jQuery('#nav').show();
-    }, // Function: Init callback
-    //	open	: function() {},							// Function: Open callback
-    //	close	: function() {}								// Function: Close callback
-  });
+  // responsiveNav('#nav', { // Selector
+  //   //	animate 		: true,								  // Boolean: Use CSS3 transitions, true or false
+  //   transition: 150, // Integer: Speed of the transition, in milliseconds
+  //   //	label 			: "<span>Menu</span>",	// String: Label for the navigation toggle
+  //   label: '<span>bar</span><i>MENU</i>', // String: Label for the navigation toggle
+  //   //	insert 			: "before",							// String: Insert the toggle before or after the navigation
+  //   //	customToggle 	: "#nav-toggle",			// Selector: Specify the ID of a custom toggle
+  //   //	closeOnNavClick	: false,						// Boolean: Close the navigation when one of the links are clicked
+  //   //	openPos			: "static",							// String: Position of the opened nav, relative or static
+  //   //	navClass		: "nav-collapse",				// String: Default CSS class. If changed, you need to edit the CSS too!
+  //   //	navActiveClass	: "js-nav-active",	// String: Class that is added to element when nav is active
+  //   //	jsClass			: "js",								  // String: 'JS enabled' class which is added to element
+  //   init() {
+  //     jQuery('#nav').show();
+  //   }, // Function: Init callback
+  //   //	open	: function() {},							// Function: Open callback
+  //   //	close	: function() {}								// Function: Close callback
+  // });
   /*= =================================================
   fadein /fadeout button Pagetop
   ================================================== */
@@ -160,34 +185,34 @@ jQuery.event.add(window, 'load', () => {
   /*= =================================================
 		smooth scroll
 	================================================== */
-  const h = parseInt(`-${jQuery('#header').outerHeight(true)}`, 10);
-  jQuery("a[href^='#']").on('click', function () {
-    const offset = (jQuery(this).parent().hasClass('pageTop')) ? 0 : h;
-    const target = jQuery(this).attr('href');
-    $.smoothScroll({
-      easing: 'easeOutQuint',
-      speed: 800,
-      offset,
-      scrollTarget: target,
-    });
-    return false;
-  });
-  const headerH = jQuery('#header').outerHeight(true);
-  //	外部からページリンクで飛んできた場合
-  const url = jQuery(window.location).attr('href');
-  if (url.indexOf('?id=') === -1) {
-    //	Do Noting
-  } else {
-    const urlsp = url.split('?id=');
-    const hash = `#${urlsp[urlsp.length - 1]}`;
-    const tgt = jQuery(hash);
-    setTimeout(() => {
-      const pos = tgt.offset().top - headerH; //	headerH でオフセット分を引く
-      jQuery('html, body').animate({
-        scrollTop: pos,
-      }, 1000, 'easeOutQuint');
-    }, 300);
-  }
+  // const h = parseInt(`-${jQuery('#header').outerHeight(true)}`, 10);
+  // jQuery("a[href^='#']").on('click', function () {
+  //   const offset = (jQuery(this).parent().hasClass('pageTop')) ? 0 : h;
+  //   const target = jQuery(this).attr('href');
+  //   $.smoothScroll({
+  //     easing: 'easeOutQuint',
+  //     speed: 800,
+  //     offset,
+  //     scrollTarget: target,
+  //   });
+  //   return false;
+  // });
+  // const headerH = jQuery('#header').outerHeight(true);
+  // //	外部からページリンクで飛んできた場合
+  // const url = jQuery(window.location).attr('href');
+  // if (url.indexOf('?id=') === -1) {
+  //   //	Do Noting
+  // } else {
+  //   const urlsp = url.split('?id=');
+  //   const hash = `#${urlsp[urlsp.length - 1]}`;
+  //   const tgt = jQuery(hash);
+  //   setTimeout(() => {
+  //     const pos = tgt.offset().top - headerH; //	headerH でオフセット分を引く
+  //     jQuery('html, body').animate({
+  //       scrollTop: pos,
+  //     }, 1000, 'easeOutQuint');
+  //   }, 300);
+  // }
 });
 
 jQuery(window).on('load orientationchange resize', () => {

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head id="head">
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" :content="viewport">
 	<title>HELLO</title>
 	<link rel="preload" href="./assets/js/scripts.js" as="script">
 	<link href="./assets/css/style.css" rel="stylesheet">

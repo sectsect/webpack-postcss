@@ -93,6 +93,16 @@ const App = new Vue({
   },
 });
 
+const vp = (detect.tablet) ? 'width=1024' : 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no';
+
+const AppMeta = new Vue({
+  el: '#head',
+  data: {
+    viewport: vp,
+  },
+  methods: {},
+});
+
 /*= =================================================
 Google web-fonts
 ================================================== */
@@ -106,9 +116,9 @@ jQuery(() => {
   /*= =================================================
   switch viewport for tablet
   ================================================== */
-  if (isMobile.tablet) {
-    jQuery('#viewport').attr('content', 'width=1024');
-  }
+  // if (isMobile.tablet) {
+  //   jQuery('#viewport').attr('content', 'width=1024');
+  // }
   /*= =================================================
   Detect the devicePixelRatio
   ================================================== */

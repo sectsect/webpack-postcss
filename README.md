@@ -11,6 +11,15 @@
 - ESLint w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 - CircleCI 2.0
 
+### Branch
+
+- `vuejs`
+  - \+ Vue.js  
+  (Default: jQuery only)
+- `sass`
+  - \+ sass
+  - \- PostCSS
+
 ## :bookmark: NOTES
 - Rename `.env.example` to `.env` for [dotenv](https://github.com/motdotla/dotenv)
   ```

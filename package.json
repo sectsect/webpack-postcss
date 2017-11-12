@@ -60,6 +60,7 @@
     "jquery-smooth-scroll": "^2.2.0",
     "jquery.dotdotdot": "^2.0.1",
     "jquery.easing": "^1.4.1",
+    "lazysizes": "^4.0.1",
     "picturefill": "^3.0.2",
     "responsive-nav": "^1.0.39",
     "slick-carousel": "^1.8.1",

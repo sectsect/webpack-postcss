@@ -6,6 +6,7 @@ import WebFont from 'webfontloader';
 import responsiveNav from 'responsive-nav';
 import Vue from 'vue';
 import VueScrollTo from 'vue-scrollto';
+import VueMatchHeights from 'vue-match-heights';
 
 window.$ = jquery;
 window.jQuery = jquery;
@@ -16,7 +17,7 @@ global.bowser = require('bowser');
 require('jquery.easing');
 // require('jquery-smooth-scroll');
 require('jquery.dotdotdot');
-require('jquery-match-height-browserify');
+// require('jquery-match-height-browserify');
 require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
 
 const __svg__ = {
@@ -80,6 +81,10 @@ Vue.use(VueScrollTo, {
   x: false,
   y: true,
 });
+/*= =================================================
+		match height (For VueMatchHeights)
+================================================== */
+Vue.use(VueMatchHeights);
 
 // Vue.js
 const App = new Vue({
@@ -270,8 +275,8 @@ jQuery(window).on('load orientationchange resize', () => {
   /*= =================================================
 		match height (jQuery.matchheight.js)
 	================================================== */
-  jQuery('.mh-byrow').matchHeight();
-  jQuery('.mh').matchHeight({ byRow: false });
+  // jQuery('.mh-byrow').matchHeight();
+  // jQuery('.mh').matchHeight({ byRow: false });
   // ▼USAGE:	Case: multiple
   // <ul>
   // 	<li data-mh="group-01" class="mh">My text</li>

@@ -66,6 +66,7 @@
     "responsive-nav": "^1.0.39",
     "slick-carousel": "^1.8.1",
     "vue": "^2.5.3",
+    "vue-match-heights": "^0.1.0",
     "vue-scrollto": "^2.7.10",
     "webfontloader": "^1.6.28"
   }

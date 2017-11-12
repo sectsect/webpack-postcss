@@ -12,13 +12,13 @@
 	<div id="wrap">
 		<header id="header">
 			<h1 id="logo">Your title</h1>
-			<nav>
+			<nav class="row" v-match-heights="{el: ['li']}">
 				<ul>
-					<li id="gnav1" class="mh-byrow"><a href="#">01</a></li>
-					<li id="gnav2" class="mh-byrow"><a href="#">02</a></li>
-					<li id="gnav3" class="mh-byrow"><a href="#">03</a></li>
-					<li id="gnav4" class="mh-byrow"><a href="#">04</a></li>
-					<li id="gnav5" class="mh-byrow"><a href="#">05</a></li>
+					<li id="gnav1"><a href="#">01</a></li>
+					<li id="gnav2"><a href="#">02</a></li>
+					<li id="gnav3"><a href="#">03</a></li>
+					<li id="gnav4"><a href="#">04</a></li>
+					<li id="gnav5"><a href="#">05<br>05</a></li>
 				</ul>
 			</nav>
 		</header>

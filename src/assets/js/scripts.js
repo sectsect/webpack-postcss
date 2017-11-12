@@ -1,10 +1,9 @@
+import jquery from 'jquery';
 import Modernizr from 'modernizr';
 import dedent from 'dedent';
 import picturefill from 'picturefill';
 import WebFont from 'webfontloader';
 import responsiveNav from 'responsive-nav';
-
-const jquery = require('jquery');
 
 window.$ = jquery;
 window.jQuery = jquery;

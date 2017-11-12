@@ -7,6 +7,10 @@ import responsiveNav from 'responsive-nav';
 import Vue from 'vue';
 import VueScrollTo from 'vue-scrollto';
 import VueMatchHeights from 'vue-match-heights';
+import lsAspectratio from 'lazysizes/plugins/aspectratio/ls.aspectratio';
+import lsBgset from 'lazysizes/plugins/bgset/ls.bgset';
+import lsUnveilhooks from 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
+import lazysizes from 'lazysizes';
 
 window.$ = jquery;
 window.jQuery = jquery;

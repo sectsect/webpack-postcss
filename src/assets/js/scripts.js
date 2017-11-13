@@ -11,13 +11,15 @@ import lsAspectratio from 'lazysizes/plugins/aspectratio/ls.aspectratio';
 import lsBgset from 'lazysizes/plugins/bgset/ls.bgset';
 import lsUnveilhooks from 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import lazysizes from 'lazysizes';
+import ismobilejs from 'ismobilejs';
+import bowser from 'bowser';
 
 window.$ = jquery;
 window.jQuery = jquery;
 window.Vue = Vue;
-global.isMobile = require('ismobilejs');
-global.bowser = require('bowser');
-// const jQuery = require('jquery');
+global.isMobile = ismobilejs;
+global.bowser = bowser;
+
 require('jquery.easing');
 // require('jquery-smooth-scroll');
 require('jquery.dotdotdot');

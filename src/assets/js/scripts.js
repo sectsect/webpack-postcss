@@ -196,8 +196,8 @@ jQuery.event.add(window, 'load', () => {
   if (jQuery('.truncation').length) {
     jQuery('.truncation').dotdotdot({
       watch: 'window',
-      wrap: 'letter',
-      callback(isTruncated, orgContent) {
+      truncate: 'letter',
+      callback(isTruncated) {
         jQuery(this).addClass('ready');
       },
     });

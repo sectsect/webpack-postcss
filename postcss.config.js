@@ -18,7 +18,9 @@ const cssMqpacker = require('css-mqpacker')({
 const autoprefixer = require('autoprefixer')({
   browsers: ['last 2 versions', 'ie >= 9', 'Android >= 4', 'ios_saf >= 8'],
 });
-const pixrem = require('pixrem');
+const pxtorem = require('postcss-pxtorem')({
+  replace: false,
+});
 const postcssReporter = require('postcss-reporter')({
   positionless: 'last',
 });
@@ -35,9 +37,9 @@ module.exports = {
     postcssFor,
     postcssExtend,
     postcssCalc,
+    pxtorem,
     cssMqpacker,
     autoprefixer,
-    pixrem,
     postcssReporter,
   ],
 };

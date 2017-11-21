@@ -79,7 +79,7 @@ fieldset {
 	outline: none;
 
 	font-family: $fh-font-family;
-	@mixin font-size $fontsize;
+  font-size: $(fontsize)px;
 	color: $fh-font-color;
 	vertical-align: top;
 
@@ -89,7 +89,7 @@ fieldset {
 
 datalist {
 	font-family: $fh-font-family;
-	@mixin font-size $fontsize;
+  font-size: $(fontsize)px;
 }
 
 label {
@@ -406,7 +406,7 @@ label[for=$(file-field-id)]{
 		-moz-appearance: none;
 		border-radius: $fh-border-radius;
 		border: $fh-border-width $fh-border-style $fh-border-color;
-		@mixin font-size $fontsize;
+    font-size: $(fontsize)px;
 		text-align: center;
 		display: block;
 	}
@@ -580,7 +580,7 @@ input[type=range] {
 }
 .select2-selection__clear{
 	color: $fontcolor;
-	@mixin font-size 13;
+  font-size: 13px;
 }
 .select2-container{
 	width: 100% !important;

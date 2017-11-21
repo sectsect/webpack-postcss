@@ -33,7 +33,7 @@ body {
     /*@include font-size(30);
     @include opacity(0.6);*/
 
-    /*@mixin font-size 30;
+    /*font-size: 30px;
     @mixin opacity 0.6;
 
     background: url('../images/test/test.jpg') no-repeat 0 0;*/

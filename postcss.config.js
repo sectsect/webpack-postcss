@@ -21,6 +21,7 @@ const autoprefixer = require('autoprefixer')({
 const pxtorem = require('postcss-pxtorem')({
   replace: false,
 });
+const validator = require('postcss-validator');
 const postcssReporter = require('postcss-reporter')({
   positionless: 'last',
 });
@@ -40,6 +41,7 @@ module.exports = {
     pxtorem,
     cssMqpacker,
     autoprefixer,
+    validator,
     postcssReporter,
   ],
 };

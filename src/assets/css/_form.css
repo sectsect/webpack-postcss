@@ -24,7 +24,7 @@ $fh-focus-border-color         : $fh-border-color;
 $fh-focus-font-color           : $fh-font-color;
 
 /*Inputs Vendor Styling*/
-$fh-allow-input-vendor-styling: false;
+$fh-allow-input-vendor-styling : false;
 
 /*Select Vendor Styling*/
 $fh-allow-select-vendor-styling: false;
@@ -127,15 +127,22 @@ textarea {
 }
 
 /* Fields with standard height */
-
-input {
-  &[type="text"], &[type="email"], &[type="password"], &[type="search"], &[type="color"], &[type="date"], &[type="datetime-local"], &[type="month"], &[type="number"], &[type="tel"], &[type="time"], &[type="url"], &[type="week"], &[list] {
-		height: $fh-input-height;
-    -webkit-appearance: none;
-    @if $fh-allow-input-vendor-styling == false {
+@if $fh-allow-input-vendor-styling == false {
+  input {
+    &[type="text"], &[type="email"], &[type="password"], &[type="search"], &[type="color"], &[type="date"], &[type="datetime-local"], &[type="month"], &[type="number"], &[type="tel"], &[type="time"], &[type="url"], &[type="week"], &[list] {
+  		height: $fh-input-height;
+      -webkit-appearance: none;
       &::-ms-clear, &::-ms-reveal {
         display: none;
       }
+    }
+  }
+}
+@else {
+  input {
+    &[type="text"], &[type="email"], &[type="password"], &[type="search"], &[type="color"], &[type="date"], &[type="datetime-local"], &[type="month"], &[type="number"], &[type="tel"], &[type="time"], &[type="url"], &[type="week"], &[list] {
+  		height: $fh-input-height;
+      -webkit-appearance: none;
     }
   }
 }
@@ -178,20 +185,22 @@ input {
 
 /* Select ------------------ */
 
-select {
-	height: $fh-input-height;
-
-	@if $fh-allow-select-vendor-styling == false {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		-ms-appearance: none;
-		-o-appearance: none;
-		/*text-indent: .01px;		//	For Firefox (remove right side arrow)
-		text-overflow: "";			//	For Firefox (remove right side arrow)*/
-		&::-ms-expand {
-			display: none;
-		}
-	}
+@if $fh-allow-select-vendor-styling == false {
+  select {
+    height: $fh-input-height;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /*text-indent: .01px;		//	For Firefox (remove right side arrow)
+    text-overflow: "";			//	For Firefox (remove right side arrow)*/
+    &::-ms-expand {
+      display: none;
+    }
+  }
+}
+@else {
+  select {
+  	height: $fh-input-height;
+  }
 }
 
 select[multiple] {
@@ -593,50 +602,50 @@ input[type=range] {
 }
 
 .size_s{
-	& + .select2-container{
+	+ .select2-container{
 		max-width: initial;
 		max-width: auto;
 	}
 }
 .size_m{
-	& + .select2-container{
+	+ .select2-container{
 		max-width: initial;
 		max-width: auto;
 	}
 }
 .size_l{
-	& + .select2-container{
+	+ .select2-container{
 		max-width: initial;
 		max-width: auto;
 	}
 }
 .size_full{
-	& + .select2-container{
+	+ .select2-container{
 		max-width: initial;
 		max-width: auto;
 	}
 }
 @media only screen and (min-width: $breakPoint) {
-	&.size_s{
-		& + .select2-container{
+	.size_s{
+		+ .select2-container{
 			width: $fh-input-width;
 			max-width: $field-size-s;
 		}
 	}
-	&.size_m{
-		& + .select2-container{
+	.size_m{
+		+ .select2-container{
 			width: $fh-input-width;
 			max-width: $field-size-m;
 		}
 	}
-	&.size_l{
-		& + .select2-container{
+	.size_l{
+		+ .select2-container{
 			width: $fh-input-width;
 			max-width: $field-size-l;
 		}
 	}
-	&.size_full{
-		& + .select2-container{
+	.size_full{
+		+ .select2-container{
 			width: $field-size-full;
 			max-width: initial;
 			max-width: auto;

@@ -4,7 +4,7 @@
 body{
 	background: none;
 	font-family: $fontfamily;
-	@include font-size($fontsize);
+  font-size: $fontsize + px;
 	color: $fontcolor;
 	line-height: $lineheight;
 //	-webkit-overflow-scrolling: touch;
@@ -213,7 +213,7 @@ h1,h2,h3,h4,h5{
 				text-align: center;
 				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 				font-style: normal;
-				@include font-size(9);
+        font-size: 9px;
 			}
 		}
 		nav{
@@ -381,7 +381,7 @@ main{
 						width: 100%;
 						padding: 10px 0;
 						text-align: center;
-						@include font-size(14);
+            font-size: 14px;
 					}
 					span{
 
@@ -422,14 +422,14 @@ main{
 					}
 					label[for=your-file]{
 						b{
-							@include font-size(14);
+              font-size: 14px;
 						}
 					}
 					span{
 						&.caption{
 							display: none;
 							margin-left: 10px;
-							@include font-size(11);
+              font-size: 11px;
 						}
 						&.label{
 							display: inline-block;

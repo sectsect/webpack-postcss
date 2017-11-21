@@ -67,7 +67,7 @@ $column: 200px;
   padding-left: 16px;
   &::after {
     content: "";
-    background-url: url('/icons/$(name).png');
+    background-image: url('/icons/$(name).png');
   }
 }
 

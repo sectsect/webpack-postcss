@@ -119,7 +119,7 @@ select,
 textarea {
 	width: $fh-input-width;
 	max-width: $fh-input-max-width;
-	padding: $fh-input-height / 5;
+  padding: calc($fh-input-height / 5);
 	background-color: $fh-input-bg-color;
 
 	border-radius: $fh-border-radius;

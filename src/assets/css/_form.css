@@ -190,8 +190,6 @@ input {
     height: $fh-input-height;
     -webkit-appearance: none;
     -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
     /*text-indent: .01px;		//	For Firefox (remove right side arrow)
     text-overflow: "";			//	For Firefox (remove right side arrow)*/
     &::-ms-expand {

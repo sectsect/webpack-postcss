@@ -12,14 +12,15 @@ const postcssConditionals = require('postcss-conditionals');
 const postcssFor = require('postcss-for');
 const postcssExtend = require('postcss-extend');
 const postcssCalc = require('postcss-calc');
+const pxtorem = require('postcss-pxtorem')({
+  replace: false,
+});
+const postcssHexrgba = require('postcss-hexrgba');
 const cssMqpacker = require('css-mqpacker')({
   sort: true,
 });
 const autoprefixer = require('autoprefixer')({
   browsers: ['last 2 versions', 'ie >= 9', 'Android >= 4', 'ios_saf >= 8'],
-});
-const pxtorem = require('postcss-pxtorem')({
-  replace: false,
 });
 const validator = require('postcss-validator');
 const postcssReporter = require('postcss-reporter')({
@@ -39,6 +40,7 @@ module.exports = {
     postcssExtend,
     postcssCalc,
     pxtorem,
+    postcssHexrgba,
     cssMqpacker,
     autoprefixer,
     validator,

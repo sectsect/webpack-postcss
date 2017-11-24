@@ -33,6 +33,7 @@
     "postcss-css-variables": "^0.8.0",
     "postcss-extend": "^1.0.5",
     "postcss-for": "^2.1.1",
+    "postcss-hexrgba": "^1.0.0",
     "postcss-loader": "^2.0.8",
     "postcss-mixins": "^6.2.0",
     "postcss-nested": "^2.1.2",

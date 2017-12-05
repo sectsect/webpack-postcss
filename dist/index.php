@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" id="viewport">
 	<title>HELLO</title>
 	<link rel="preload" href="./assets/js/scripts.js" as="script">
 	<link href="./assets/css/style.css" rel="stylesheet">
@@ -105,5 +105,6 @@
 		console.log(bowser.version);
 		$('body').addClass('sekt-dev');
 	</script>
+	<script async src="./assets/js/page-frontpage.js"></script>
 </body>
 </html>

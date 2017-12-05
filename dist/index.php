@@ -105,5 +105,6 @@
 		console.log(bowser.version);
 		$('body').addClass('sekt-dev');
 	</script>
+	<script async src="./assets/js/page-frontpage.js"></script>
 </body>
 </html>

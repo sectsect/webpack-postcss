@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" id="viewport">
 	<title>HELLO</title>
-	<link rel="preload" href="./assets/js/scripts.js" as="script">
+	<link rel="preload" href="./assets/js/commons.js" as="script">
 	<link href="./assets/css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -100,7 +100,8 @@
 			</ul>
 		</footer>
 	</div>
-	<script src="./assets/js/scripts.js"></script>
+	<script src="./assets/js/commons.js"></script>
+	<script src="./assets/js/page-frontpage.js"></script>
 	<script>
 		console.log(bowser.version);
 		$('body').addClass('sekt-dev');

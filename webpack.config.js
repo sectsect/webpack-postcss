@@ -37,6 +37,10 @@ const getJSPlugins = () => {
       },
     }));
   }
+  plugins.push(new webpack.optimize.CommonsChunkPlugin({
+    name: 'commons',
+    chunks: toArray(glob.sync(path.resolve(sourcePath, 'assets/js/**/*.js*')), 'js'),
+  }));
   plugins.push(new HappyPack({
     loaders: [{
       path: 'babel-loader',
@@ -224,6 +228,16 @@ function toObject(paths, ext) {
   const ret = {};
   paths.forEach((path) => {
     ret[path.split('/').slice(-1)[0].replace(`.${ext}`, '')] = path;
+  });
+
+  return dropUnderscoreFiles(ret);
+}
+
+function toArray(paths, ext) {
+  const ret = {};
+  paths.forEach((path) => {
+    const rawname = path.split('/').slice(-1)[0].replace(`.${ext}`, '');
+    ret[rawname] = rawname;
   });
 
   return dropUnderscoreFiles(ret);

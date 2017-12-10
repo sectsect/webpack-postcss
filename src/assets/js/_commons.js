@@ -8,24 +8,22 @@ import lsAspectratio from 'lazysizes/plugins/aspectratio/ls.aspectratio';
 import lsBgset from 'lazysizes/plugins/bgset/ls.bgset';
 import lsUnveilhooks from 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import lazysizes from 'lazysizes';
-import ismobilejs from 'ismobilejs';
+import isMobile from 'ismobilejs';
 import bowser from 'bowser';
 
 window.$ = jquery;
 window.jQuery = jquery;
-global.isMobile = ismobilejs;
-global.bowser = bowser;
 
 require('jquery.easing');
 require('jquery-smooth-scroll');
 require('jquery.dotdotdot');
 require('jquery-match-height-browserify');
-require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
 
 const __svg__ = {
   path: '../../../src/assets/images/svg/raw/**/*.svg',
-  name: '../images/svg/symbol.svg',
+  name: '../../assets/images/svg/symbol.svg',
 };
+require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
 
 const detect = {
   desktop: !isMobile.any,

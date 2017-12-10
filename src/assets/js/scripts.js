@@ -20,12 +20,12 @@ require('jquery.easing');
 require('jquery-smooth-scroll');
 require('jquery.dotdotdot');
 require('jquery-match-height-browserify');
-require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
 
 const __svg__ = {
   path: '../../../src/assets/images/svg/raw/**/*.svg',
-  name: '../images/svg/symbol.svg',
+  name: '../../assets/images/svg/symbol.svg',
 };
+require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
 
 const detect = {
   desktop: !isMobile.any,

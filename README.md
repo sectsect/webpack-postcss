@@ -4,6 +4,8 @@
 ## ⚒️ This Repo still works-in-progress ⚒️
 
 - webpack 3
+  - Support to keep directory structure for output file.
+  - You can create partial files. A partial is simply a CSS(SASS)/JS file named with a leading underscore.
   > #### Partials (Support Dynamic entry points:icecream:)   
   > You can create partial JS files that contain little snippets of bundled JS that you can include in other JS files. This is a great way to modularize your JS and help keep things easier to maintain. A partial is simply a JS file named with a leading underscore. You might name it something like `_partial.js`. The underscore lets JS know that the file is only a partial file and that it should not be generated into a JS file.
 - PostCSS

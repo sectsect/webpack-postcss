@@ -121,7 +121,7 @@ const getCSSPlugins = () => {
 
 module.exports = [
   {
-    entry: toObject(glob.sync(path.resolve(sourcePath, 'assets/js/**/*.js*')), 'js'),
+    entry: toObject(glob.sync(path.resolve(sourcePath, 'assets/js/**/*.js*')), 'js', 'js'),
     output: {
       path: path.resolve(buildPath, 'assets/js'),
       filename: '[name].js',
@@ -169,7 +169,7 @@ module.exports = [
     devtool: isProd ? '' : '#inline-source-map',
   },
   {
-    entry: toObject(glob.sync(path.resolve(sourcePath, 'assets/scss/**/*.scss*')), 'scss'),
+    entry: toObject(glob.sync(path.resolve(sourcePath, 'assets/scss/**/*.scss*')), 'scss', 'scss'),
     output: {
       path: path.resolve(buildPath, 'assets/css'),
       filename: '[name].css',
@@ -207,12 +207,18 @@ module.exports = [
   },
 ];
 
+function splitString(stringToSplit, separator) {
+  const arrayOfStrings = stringToSplit.split(separator);
+
+  return arrayOfStrings;
+}
+
 // functions For multi-files
 function dropUnderscoreFiles(obj) {
   const returnobj = {};
   Object.keys(obj).forEach(function (key) {
     const val = this[key]; // this == obj
-    if (key.substring(0, 1) !== '_') {
+    if (key.substring(0, 1) !== '_' && key.indexOf('/_') === -1) {
       returnobj[key] = val;
     }
   }, obj);
@@ -221,10 +227,13 @@ function dropUnderscoreFiles(obj) {
 }
 
 // @ https://github.com/webpack/webpack/issues/1732#issuecomment-163522781
-function toObject(paths, ext) {
+function toObject(paths, ext, parentdir) {
   const ret = {};
   paths.forEach((path) => {
-    ret[path.split('/').slice(-1)[0].replace(`.${ext}`, '')] = path;
+    const key = splitString(path, `/${parentdir}/`).slice(-1)[0].replace(`.${ext}`, '');
+
+    // ret[path.split('/').slice(-1)[0].replace(`.${ext}`, '')] = path;
+    ret[key] = path;
   });
 
   return dropUnderscoreFiles(ret);

@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const glob = require('glob');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const dotenv = require('dotenv').config();
@@ -8,6 +7,7 @@ const HappyPack = require('happypack');
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const WebpackSweetEntry = require('webpack-sweet-entry');
 const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
@@ -121,7 +121,7 @@ const getCSSPlugins = () => {
 
 module.exports = [
   {
-    entry: toObject(glob.sync(path.resolve(sourcePath, 'assets/js/**/*.js*')), 'js', 'js'),
+    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
     output: {
       path: path.resolve(buildPath, 'assets/js'),
       filename: '[name].js',
@@ -169,7 +169,7 @@ module.exports = [
     devtool: isProd ? '' : '#inline-source-map',
   },
   {
-    entry: toObject(glob.sync(path.resolve(sourcePath, 'assets/scss/**/*.scss*')), 'scss', 'scss'),
+    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/scss/**/*.scss*'), 'scss', 'scss'),
     output: {
       path: path.resolve(buildPath, 'assets/css'),
       filename: '[name].css',
@@ -206,35 +206,3 @@ module.exports = [
     devtool: isProd ? '' : '#inline-source-map',
   },
 ];
-
-function splitString(stringToSplit, separator) {
-  const arrayOfStrings = stringToSplit.split(separator);
-
-  return arrayOfStrings;
-}
-
-// functions For multi-files
-function dropUnderscoreFiles(obj) {
-  const returnobj = {};
-  Object.keys(obj).forEach(function (key) {
-    const val = this[key]; // this == obj
-    if (key.substring(0, 1) !== '_' && key.indexOf('/_') === -1) {
-      returnobj[key] = val;
-    }
-  }, obj);
-
-  return returnobj;
-}
-
-// @ https://github.com/webpack/webpack/issues/1732#issuecomment-163522781
-function toObject(paths, ext, parentdir) {
-  const ret = {};
-  paths.forEach((path) => {
-    const key = splitString(path, `/${parentdir}/`).slice(-1)[0].replace(`.${ext}`, '');
-
-    // ret[path.split('/').slice(-1)[0].replace(`.${ext}`, '')] = path;
-    ret[key] = path;
-  });
-
-  return dropUnderscoreFiles(ret);
-}

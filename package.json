@@ -36,9 +36,9 @@
     "uglifyjs-webpack-plugin": "^1.1.4",
     "webpack": "^3.10.0",
     "webpack-notifier": "^1.5.0",
-    "webpack-spritesmith": "^0.3.5",
+    "webpack-spritesmith": "^0.3.6",
     "webpack-svgstore-plugin": "^4.0.1",
-    "webpack-sweet-entry": "^1.1.1"
+    "webpack-sweet-entry": "^1.1.2"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",

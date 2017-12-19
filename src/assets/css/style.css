@@ -77,7 +77,7 @@ $column: 200px;
 
 /* postcss-css-variables */
 .box {
-	background-color: var(--main-color);
+  background-color: var(--main-color);
 }
 
 /* spinner */

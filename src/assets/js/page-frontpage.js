@@ -6,6 +6,8 @@ console.log(hello);
 const sect = 'SECT!!';
 console.log(sect);
 
+const ary = R.append('111', ['222', '333']);
+console.log(ary);
 
 jQuery(() => {
   jQuery('.slider_wrap').each(function () {

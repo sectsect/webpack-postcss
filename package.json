@@ -64,6 +64,7 @@
     "jquery.easing": "^1.4.1",
     "lazysizes": "^4.0.1",
     "picturefill": "^3.0.2",
+    "rambda": "^1.0.6",
     "responsive-nav": "^1.0.39",
     "slick-carousel": "^1.8.1",
     "webfontloader": "^1.6.28"

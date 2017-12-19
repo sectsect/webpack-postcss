@@ -9,8 +9,8 @@
   width: 1px !important;
 }
 /*For fill attr on <path> tag*/
-svg{
-  path{
+svg {
+  path {
     fill: currentColor;
   }
 }

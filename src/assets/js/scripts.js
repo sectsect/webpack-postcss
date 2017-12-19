@@ -11,8 +11,11 @@ import lazysizes from 'lazysizes';
 import ismobilejs from 'ismobilejs';
 import bowser from 'bowser';
 
+const R = require('rambda');
+
 window.$ = jquery;
 window.jQuery = jquery;
+window.R = R;
 global.isMobile = ismobilejs;
 global.bowser = bowser;
 
@@ -68,6 +71,9 @@ console.log(sectsect);
 // }
 
 $('body').addClass('sektsekt');
+
+const ary = R.append('foo', ['bar', 'baz']);
+console.log(ary);
 
 /*= =================================================
 Google web-fonts

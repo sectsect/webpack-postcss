@@ -1,4 +1,5 @@
 import slick from 'slick-carousel';
+import MyClass from './class/_myclass';
 
 const hello = 'Hello!!';
 console.log(hello);
@@ -42,3 +43,36 @@ jQuery(() => {
     });
   });
 });
+
+/**
+ * ES6 Class
+ *
+ * @param string  msg   Where something interesting takes place
+ *
+ * @return string
+ */
+// class MyClass {
+//   constructor(name, age, city, country, email) {
+//     this.name = name;
+//     this.age = age;
+//     this.city = city;
+//     this.country = country;
+//     this.email = email;
+//   }
+//
+//   toString() {
+//     return `${this.name} | ${this.age} | ${this.city} | ${this.email}`;
+//   }
+//
+//   addCountry() {
+//     return `${this.toString()} | ${this.country}`;
+//   }
+//
+//   run() {
+//     return this.addCountry();
+//   }
+// }
+const myClass = new MyClass('SECT', 37, 'Tokyo', 'Japan', 'info@xxxxxxxxx.com');
+const meta = myClass.run(); // 'SECT | 37 | Tokyo | info@xxxxxxxxx.com'
+console.log(meta);
+// console.log(myClass.email); // 'info@xxxxxxxxx.com'

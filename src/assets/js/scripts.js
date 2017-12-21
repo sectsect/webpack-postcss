@@ -10,8 +10,7 @@ import lsUnveilhooks from 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import lazysizes from 'lazysizes';
 import ismobilejs from 'ismobilejs';
 import bowser from 'bowser';
-
-const R = require('rambda');
+import * as R from 'rambda';
 
 window.$ = jquery;
 window.jQuery = jquery;

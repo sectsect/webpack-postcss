@@ -1,11 +1,15 @@
 {
   "extends": "airbnb",
   "env": {
+    "es6": true,
     "browser": true,
     "node": true,
   },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
   "rules": {
-    "no-console": 0,
     "indent": [2, 2],
     "func-names": 0,
     "import/no-extraneous-dependencies": ["error", {
@@ -14,10 +18,12 @@
     }],
     "max-len": [2, {"code": 200, "tabWidth": 2, "ignoreUrls": true, "ignoreComments": true, "ignoreTrailingComments": true, "ignoreStrings": true}],
     "no-alert": 0,
-    "no-underscore-dangle": 0,
+    "no-console": 0,
+    "no-new": 0,
     "no-shadow": 0,
     "no-tabs": 0,
     "no-undef": 0,
+    "no-underscore-dangle": 0,
     "no-unused-vars": 0,
     "no-use-before-define": 0,
   }

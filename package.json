@@ -44,7 +44,7 @@
     "postcss-strip-inline-comments": "^0.1.5",
     "postcss-validator": "^0.2.0",
     "style-loader": "^0.19.1",
-    "uglifyjs-webpack-plugin": "^1.1.4",
+    "uglifyjs-webpack-plugin": "^1.1.5",
     "vue-loader": "^13.6.1",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.10.0",

@@ -5,18 +5,35 @@
 
 - webpack 3
   - :icecream: [webpack sweet entry](https://github.com/sectsect/webpack-sweet-entry)
-- PostCSS
-- Babel (ES6)
-- ESLint w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
+- [PostCSS](https://github.com/postcss/postcss)
+- [Babel](https://babeljs.io/) (ES6)
+- [ESLint](https://eslint.org/) w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 - CircleCI 2.0
 
-### Branches
+## Branches
 
 | Branch | Description |
 | ------ | ----------- |
 | [master](https://github.com/sectsect/webpack-postcss) | ----- |
 | [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | \+ Vue.js<br>(Default: jQuery only) |
 | [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ sass<br>\- PostCSS |
+
+## :beer: Setup
+
+- **Setting for Support Browser (For [Autoprefixer](https://github.com/postcss/autoprefixer) / [Babel](https://github.com/babel/babel))**  
+  Edit the following Line  
+  [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L11)  
+
+  :memo: See [Browserslist](https://github.com/ai/browserslist) Doc
+
+## :hamburger: Commands
+
+See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L6-L10)
+
+| npm script | Description |
+| ------ | ----------- |
+| `npm run dev` | Watching for Dev |
+| `npm run build` | Building for Deploy |
 
 ## :bookmark: NOTES
 - Rename `.env.example` to `.env` for [dotenv](https://github.com/motdotla/dotenv)

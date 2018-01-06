@@ -3,7 +3,6 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const dotenv = require('dotenv').config();
-const HappyPack = require('happypack');
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const WebpackNotifierPlugin = require('webpack-notifier');
@@ -37,26 +36,6 @@ const getJSPlugins = () => {
       },
     }));
   }
-  plugins.push(new HappyPack({
-    loaders: [{
-      path: 'babel-loader',
-      query: {
-        plugins: [
-          'transform-runtime',
-        ],
-        presets: [
-          ['env', {
-            targets: {
-              browsers: ['last 2 versions', 'ie >= 11'],
-            },
-            modules: false,
-          }],
-        ],
-        cacheDirectory: false,
-      },
-    }],
-    threads: 4,
-  }));
   plugins.push(new SvgStore.Options({
     svg: {
       style: '',
@@ -110,10 +89,6 @@ const getCSSPlugins = () => {
   //     custom_format_retina: spriteTemplate.customFormatRetina,
   //   },
   // }));
-  plugins.push(new HappyPack({
-    loaders: [cssloaders],
-    threads: 4,
-  }));
   plugins.push(new WebpackNotifierPlugin({ alwaysNotify: true, skipFirstNotification: true }));
 
   return plugins;

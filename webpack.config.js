@@ -187,9 +187,6 @@ module.exports = [
                 loader: 'css-loader',
                 options: {
                   url: false,
-                  // minimize: {
-                  //   discardComments: { removeAll: true },
-                  // },
                   minimize: isProd ? { discardComments: { removeAll: true } } : false,
                 },
               },

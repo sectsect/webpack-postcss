@@ -5,8 +5,9 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
-const WebpackNotifierPlugin = require('webpack-notifier');
 const WebpackSweetEntry = require('webpack-sweet-entry');
+const NotifierPlugin = require('friendly-errors-webpack-plugin');
+const notifier = require('node-notifier');
 const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
@@ -49,7 +50,20 @@ const getJSPlugins = () => {
       ],
     },
   }));
-  plugins.push(new WebpackNotifierPlugin({ alwaysNotify: true, skipFirstNotification: true }));
+  plugins.push(new NotifierPlugin({
+    onErrors: (severity, errors) => {
+      if (severity !== 'error') {
+        return;
+      }
+      const error = errors[0];
+      notifier.notify({
+        title: 'Webpack error',
+        message: `${severity}: ${error.name}`,
+        sound: 'Bottle',
+        subtitle: error.file || '',
+      });
+    },
+  }));
 
   return plugins;
 };
@@ -89,7 +103,20 @@ const getCSSPlugins = () => {
   //     custom_format_retina: spriteTemplate.customFormatRetina,
   //   },
   // }));
-  plugins.push(new WebpackNotifierPlugin({ alwaysNotify: true, skipFirstNotification: true }));
+  plugins.push(new NotifierPlugin({
+    onErrors: (severity, errors) => {
+      if (severity !== 'error') {
+        return;
+      }
+      const error = errors[0];
+      notifier.notify({
+        title: 'Webpack error',
+        message: `${severity}: ${error.name}`,
+        sound: 'Bottle',
+        subtitle: error.file || '',
+      });
+    },
+  }));
 
   return plugins;
 };

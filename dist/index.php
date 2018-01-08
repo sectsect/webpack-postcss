@@ -102,10 +102,9 @@
 	</div>
 	<script src="./assets/js/commons.js"></script>
 	<script>
-
-		$('body').addClass('sekt-dev');
-		var ary = R.append('sect', ['brooklyn', 'bronx']);
-		console.log(ary);
+		// $('body').addClass('sekt-dev');
+		// var ary = R.append('sect', ['brooklyn', 'bronx']);
+		// console.log(ary);
 	</script>
 	<script async src="./assets/js/page-frontpage.js"></script>
 </body>

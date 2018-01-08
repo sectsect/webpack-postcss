@@ -1,4 +1,4 @@
-import jquery from 'jquery';
+// import jquery from 'jquery';
 import Modernizr from 'modernizr';
 import dedent from 'dedent';
 import picturefill from 'picturefill';
@@ -12,8 +12,11 @@ import isMobile from 'ismobilejs';
 import bowser from 'bowser';
 import * as R from 'rambda';
 
-window.$ = jquery;
-window.jQuery = jquery;
+// window.$ = jquery;
+// window.jQuery = jquery;
+window.R = R;
+global.isMobile = isMobile;
+global.bowser = bowser;
 
 require('jquery.easing');
 require('jquery-smooth-scroll');

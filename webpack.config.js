@@ -41,6 +41,11 @@ const getJSPlugins = () => {
     name: 'commons',
     chunks: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
   }));
+  plugins.push(new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+    'window.jQuery': 'jquery',
+  }));
   plugins.push(new SvgStore.Options({
     svg: {
       style: '',

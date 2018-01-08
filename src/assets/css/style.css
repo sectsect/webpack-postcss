@@ -197,7 +197,7 @@ ul.flex {
   justify-content: space-between;		/* |□  □  □| */
   align-items: center;						  /* Center */
   li {
-  	flex: 0 1 90px;							    /* Default: 0 1 auto */
+  	flex: 0 1 110px;							    /* Default: 0 1 auto */
   	border: 1px solid #ccc;
   	&:nth-child(2) {
   		flex-basis: 120px;

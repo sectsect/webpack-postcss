@@ -169,6 +169,16 @@ module.exports = [
     // Modernizr
     plugins: getJSPlugins(),
     devtool: isProd ? '' : '#inline-source-map',
+    // webpack-dev-server
+    devServer: {
+      port: 8080, // port
+      progress: true,
+      inline: true, // inline / iframe
+      clientLogLevel: 'info', // none / error / warning / info
+      contentBase: path.join(__dirname, 'dist'), // Document root
+      publicPath: '/assets/', // Virtual Path
+      hot: false, // Enable HMR
+    },
   },
   {
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css*'), 'css', 'css'),

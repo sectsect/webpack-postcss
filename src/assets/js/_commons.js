@@ -10,6 +10,7 @@ import lsUnveilhooks from 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import lazysizes from 'lazysizes';
 import isMobile from 'ismobilejs';
 import bowser from 'bowser';
+import * as R from 'rambda';
 
 window.$ = jquery;
 window.jQuery = jquery;
@@ -66,6 +67,9 @@ console.log(sectsect);
 // }
 
 $('body').addClass('sektsekt');
+
+const ary = R.append('foo', ['bar', 'baz']);
+console.log(ary);
 
 /*= =================================================
 Google web-fonts

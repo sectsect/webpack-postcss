@@ -4,25 +4,41 @@
 ## ⚒️ This Repo still works-in-progress ⚒️
 
 - webpack 3
-  > #### Partials (Support Dynamic entry points:icecream:)   
-  > You can create partial JS files that contain little snippets of bundled JS that you can include in other JS files. This is a great way to modularize your JS and help keep things easier to maintain. A partial is simply a JS file named with a leading underscore. You might name it something like `_partial.js`. The underscore lets JS know that the file is only a partial file and that it should not be generated into a JS file.
-- PostCSS
-- Babel (ES6)
-- ESLint w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
+  - :icecream: [webpack sweet entry](https://github.com/sectsect/webpack-sweet-entry)
+- [PostCSS](https://github.com/postcss/postcss)
+- [Babel](https://babeljs.io/) (ES6)
+- [ESLint](https://eslint.org/) w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 - CircleCI 2.0
 
-### Branch
+## Branches
 
-- `vuejs`
-  - \+ Vue.js  
-  (Default: jQuery only)
-- `sass`
-  - \+ sass
-  - \- PostCSS
+| Branch | Description |
+| ------ | ----------- |
+| [master](https://github.com/sectsect/webpack-postcss) | ----- |
+| [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | \+ Vue.js<br>(Default: jQuery only) |
+| [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ sass<br>\- PostCSS |
+| [webpack-dev-server](https://github.com/sectsect/webpack-postcss/tree/webpack-dev-server) | \+ webpack-dev-server |
+
+## :beer: Setup
+
+- **Setting for Support Browser (For [Autoprefixer](https://github.com/postcss/autoprefixer) / [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env))**  
+  Edit the following Line  
+  [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L11)  
+
+  :memo: See [Browserslist](https://github.com/ai/browserslist) Doc
+
+## :hamburger: Commands
+
+See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L6-L10)
+
+| npm script | Description |
+| ------ | ----------- |
+| `npm run dev` | Watching for Dev |
+| `npm run build` | Building for Deploy |
 
 ## :bookmark: NOTES
 - Rename `.env.example` to `.env` for [dotenv](https://github.com/motdotla/dotenv)
   ```
-  $ cp .env.example .env
+  $ mv .env.example .env
   ```
   :memo: `.env` file is already set to "ignore" within the `.giignore` file.

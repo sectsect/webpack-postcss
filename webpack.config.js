@@ -1,13 +1,13 @@
 const webpack = require('webpack');
 const path = require('path');
-const glob = require('glob');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const dotenv = require('dotenv').config();
-const HappyPack = require('happypack');
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
-const WebpackNotifierPlugin = require('webpack-notifier');
+const WebpackSweetEntry = require('webpack-sweet-entry');
+const NotifierPlugin = require('friendly-errors-webpack-plugin');
+const notifier = require('node-notifier');
 const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
@@ -39,27 +39,7 @@ const getJSPlugins = () => {
   }
   plugins.push(new webpack.optimize.CommonsChunkPlugin({
     name: 'commons',
-    chunks: toArray(glob.sync(path.resolve(sourcePath, 'assets/js/**/*.js*')), 'js'),
-  }));
-  plugins.push(new HappyPack({
-    loaders: [{
-      path: 'babel-loader',
-      query: {
-        plugins: [
-          'transform-runtime',
-        ],
-        presets: [
-          ['env', {
-            targets: {
-              browsers: ['last 2 versions', 'ie >= 11'],
-            },
-            modules: false,
-          }],
-        ],
-        cacheDirectory: false,
-      },
-    }],
-    threads: 4,
+    chunks: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
   }));
   plugins.push(new SvgStore.Options({
     svg: {
@@ -74,7 +54,20 @@ const getJSPlugins = () => {
       ],
     },
   }));
-  plugins.push(new WebpackNotifierPlugin({ alwaysNotify: true, skipFirstNotification: true }));
+  plugins.push(new NotifierPlugin({
+    onErrors: (severity, errors) => {
+      if (severity !== 'error') {
+        return;
+      }
+      const error = errors[0];
+      notifier.notify({
+        title: 'Webpack error',
+        message: `${severity}: ${error.name}`,
+        sound: 'Bottle',
+        subtitle: error.file || '',
+      });
+    },
+  }));
 
   return plugins;
 };
@@ -114,18 +107,27 @@ const getCSSPlugins = () => {
   //     custom_format_retina: spriteTemplate.customFormatRetina,
   //   },
   // }));
-  plugins.push(new HappyPack({
-    loaders: [cssloaders],
-    threads: 4,
+  plugins.push(new NotifierPlugin({
+    onErrors: (severity, errors) => {
+      if (severity !== 'error') {
+        return;
+      }
+      const error = errors[0];
+      notifier.notify({
+        title: 'Webpack error',
+        message: `${severity}: ${error.name}`,
+        sound: 'Bottle',
+        subtitle: error.file || '',
+      });
+    },
   }));
-  plugins.push(new WebpackNotifierPlugin({ alwaysNotify: true, skipFirstNotification: true }));
 
   return plugins;
 };
 
 module.exports = [
   {
-    entry: toObject(glob.sync(path.resolve(sourcePath, 'assets/js/**/*.js*')), 'js'),
+    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
     output: {
       path: path.resolve(buildPath, 'assets/js'),
       filename: '[name].js',
@@ -173,7 +175,7 @@ module.exports = [
     devtool: isProd ? '' : '#inline-source-map',
   },
   {
-    entry: toObject(glob.sync(path.resolve(sourcePath, 'assets/css/**/*.css*')), 'css'),
+    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css*'), 'css', 'css'),
     output: {
       path: path.resolve(buildPath, 'assets/css'),
       filename: '[name].css',
@@ -189,9 +191,6 @@ module.exports = [
                 loader: 'css-loader',
                 options: {
                   url: false,
-                  // minimize: {
-                  //   discardComments: { removeAll: true },
-                  // },
                   minimize: isProd ? { discardComments: { removeAll: true } } : false,
                 },
               },
@@ -209,36 +208,3 @@ module.exports = [
     devtool: isProd ? '' : '#inline-source-map',
   },
 ];
-
-// functions For multi-files
-function dropUnderscoreFiles(obj) {
-  const returnobj = {};
-  Object.keys(obj).forEach(function (key) {
-    const val = this[key]; // this == obj
-    if (key.substring(0, 1) !== '_') {
-      returnobj[key] = val;
-    }
-  }, obj);
-
-  return returnobj;
-}
-
-// @ https://github.com/webpack/webpack/issues/1732#issuecomment-163522781
-function toObject(paths, ext) {
-  const ret = {};
-  paths.forEach((path) => {
-    ret[path.split('/').slice(-1)[0].replace(`.${ext}`, '')] = path;
-  });
-
-  return dropUnderscoreFiles(ret);
-}
-
-function toArray(paths, ext) {
-  const ret = {};
-  paths.forEach((path) => {
-    const rawname = path.split('/').slice(-1)[0].replace(`.${ext}`, '');
-    ret[rawname] = rawname;
-  });
-
-  return dropUnderscoreFiles(ret);
-}

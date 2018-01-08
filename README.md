@@ -17,10 +17,11 @@
 | [master](https://github.com/sectsect/webpack-postcss) | ----- |
 | [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | \+ Vue.js<br>(Default: jQuery only) |
 | [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ sass<br>\- PostCSS |
+| [webpack-dev-server](https://github.com/sectsect/webpack-postcss/tree/webpack-dev-server) | \+ webpack-dev-server |
 
 ## :beer: Setup
 
-- **Setting for Support Browser (For [Autoprefixer](https://github.com/postcss/autoprefixer) / [Babel](https://github.com/babel/babel))**  
+- **Setting for Support Browser (For [Autoprefixer](https://github.com/postcss/autoprefixer) / [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env))**  
   Edit the following Line  
   [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L11)  
 
@@ -39,6 +40,6 @@ See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/packa
 ## :bookmark: NOTES
 - Rename `.env.example` to `.env` for [dotenv](https://github.com/motdotla/dotenv)
   ```
-  $ cp .env.example .env
+  $ mv .env.example .env
   ```
   :memo: `.env` file is already set to "ignore" within the `.giignore` file.

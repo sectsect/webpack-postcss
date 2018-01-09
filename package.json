@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "",
-    "dev": "NODE_ENV='development' webpack --watch --progress",
-    "build": "NODE_ENV='production' webpack"
+    "dev": "NODE_ENV='development' webpack --watch --progress --mode development",
+    "build": "NODE_ENV='production' webpack --mode production"
   },
   "browserslist": "last 2 versions, ie >= 11, Android >= 4, ios_saf >= 8",
   "devDependencies": {
@@ -48,7 +48,8 @@
     "postcss-validator": "^0.2.0",
     "style-loader": "^0.19.1",
     "uglifyjs-webpack-plugin": "^1.1.6",
-    "webpack": "^3.10.0",
+    "webpack": "^4.0.0-alpha.2",
+    "webpack-cli": "^2.0.2",
     "webpack-spritesmith": "^0.4.0",
     "webpack-svgstore-plugin": "^4.0.1",
     "webpack-sweet-entry": "^1.1.3"

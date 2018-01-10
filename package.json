@@ -56,7 +56,7 @@
     "lazysizes": "^4.0.1",
     "node-notifier": "^5.1.2",
     "picturefill": "^3.0.2",
-    "rambda": "^1.0.7",
+    "rambda": "^1.0.8",
     "responsive-nav": "^1.0.39",
     "slick-carousel": "^1.8.1",
     "webfontloader": "^1.6.28"

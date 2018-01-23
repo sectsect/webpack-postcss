@@ -28,9 +28,9 @@ const getJSPlugins = () => {
   }));
   if (isProd) {
     plugins.push(new UglifyJSPlugin({
+      parallel: true, // Default number of concurrent runs: os.cpus().length - 1.
       sourceMap: !isProd,
       uglifyOptions: {
-        // ie8: true,
         output: {
           comments: false,
         },
@@ -70,9 +70,6 @@ const getJSPlugins = () => {
 
 const getCSSPlugins = () => {
   const plugins = [];
-
-  const bool = (isProd) ? JSON.stringify({ discardComments: { removeAll: true } }) : 'false';
-  const cssloaders = `css-loader?minimize=${bool}&url=false!postcss-loader`;
 
   plugins.push(new ExtractTextPlugin({
     filename: '[name].css',
@@ -171,7 +168,7 @@ module.exports = [
     devtool: isProd ? '' : '#inline-source-map',
   },
   {
-    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css*'), 'css', 'css'),
+    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css'), 'css', 'css'),
     output: {
       path: path.resolve(buildPath, 'assets/css'),
       filename: '[name].css',

@@ -82,11 +82,7 @@ const getCSSPlugins = () => {
   //   },
   //   target: {
   //     image: path.resolve(buildPath, 'assets/images/sprites/icon.png'),
-  //     css: [
-  //       [path.resolve(sourcePath, 'assets/css/_sprite.scss'), {
-  //         format: 'custom_format',
-  //       }],
-  //     ],
+  //     css: path.resolve(sourcePath, 'assets/scss/_sprite.scss'),
   //   },
   //   apiOptions: {
   //     cssImageRef: '../images/sprites/icon.png',

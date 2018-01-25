@@ -1,25 +1,25 @@
 /*==================================================
 structure
 ================================================== */
-body{
+body {
 
 }
-.inner{
+.inner {
   width: $baseWidth;
   padding: 0;
   margin: 0 auto;
 }
-.pc{display: block;}
-.sp{display: none;}
+.pc {display: block;}
+.sp {display: none;}
 
 /*==================================================
 modules
 ================================================== */
 /* Paginate */
-.paginate{
+.paginate {
   text-align: center;
   margin-top: 15px;
-  .page-numbers{
+  .page-numbers {
     display: inline-block;
     min-width: 24px;
     margin: 0 2px;
@@ -29,18 +29,18 @@ modules
 /*==================================================
 header
 ================================================== */
-#header{
+#header {
   height: auto;
-  #g_nav{
+  #g_nav {
     position: relative;
-    nav{
-      ul{
+    nav {
+      ul {
         @include clearfix;
-        li{
+        li {
           float: left;
           width: 200px;
           border: none;
-          a{
+          a {
             background: none;
           }
         }
@@ -51,28 +51,28 @@ header
 /*==================================================
 aside
 ================================================== */
-aside{
+aside {
   display: block;
-  section{
+  section {
 
   }
 }
 /*==================================================
 footer
 ================================================== */
-#footer{
+#footer {
 
 }
 
 /*==================================================
 home
 ================================================== */
-.home{
-  main{
-    .sec_02{
-      .inner{
-        ul{
-          li{
+.home {
+  main {
+    .sec_02 {
+      .inner {
+        ul {
+          li {
             flex: 0 1 190px;
             margin-top: 0;
           }
@@ -86,48 +86,48 @@ home
 /*==================================================
 page-3 (contact)
 ================================================== */
-.page-id-3{
-  article{
-    #sec_01{
-      form{
-        section{
-          header{
+.page-id-3 {
+  article {
+    #sec_01 {
+      form {
+        section {
+          header {
 
           }
         }
-        .btn{
-          button, span, input[type=submit], a{
+        .btn {
+          button, span, input[type=submit], a {
             padding: 0;
           }
-          span{
+          span {
 
           }
-          input[type=submit]{
+          input[type=submit] {
 
           }
         }
-        #input{
-          span{
-            &.caption{
+        #input {
+          span {
+            &.caption {
               display: inline-block;
             }
           }
         }
-        #input, #confirm{
-          .items{
-            dl{
+        #input, #confirm {
+          .items {
+            dl {
               width: 100%;
               display: table;
-              dt, dd{
+              dt, dd {
                 display: table-cell;
                 vertical-align: top;
               }
-              dt{
+              dt {
                 width: 200px;
                 font-weight: bold;
                 padding-top: 4px;
               }
-              dd{
+              dd {
                 margin: 0;
               }
             }
@@ -138,15 +138,15 @@ page-3 (contact)
   }
 }
 
-.lt-ie10{
-  .page-form{
-    article{
-      #sec_01{
-        form{
-          #input{
-            span.wpcf7-form-control-wrap{
-              &.your-time, &.your-ceremony-year, &.your-ceremony-month, &.your-ceremony-capacity{
-                &:before, &:after{
+.lt-ie10 {
+  .page-form {
+    article {
+      #sec_01 {
+        form {
+          #input {
+            span.wpcf7-form-control-wrap {
+              &.your-time, &.your-ceremony-year, &.your-ceremony-month, &.your-ceremony-capacity {
+                &:before, &:after {
                   display: none;
                 }
               }

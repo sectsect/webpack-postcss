@@ -3,7 +3,6 @@
 /* @import "settings","mixin","sanitize","form","sprite","icon-font","svg-icon","responsive-nav","wp-core","jquery.fancybox"; */
 @import "settings","mixin","sanitize","form","svg-icon","responsive-nav","wp-core";
 
-
 @import "phone";
 @media only screen and (min-width: $breakPoint) {
   @import "desktop";

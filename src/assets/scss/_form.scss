@@ -282,7 +282,7 @@ button:focus {
 
 input[type="checkbox"]:focus,
 input[type="radio"]:focus {
-  //	outline: $fh-focus-border-color solid 2px;
+  // outline: $fh-focus-border-color solid 2px;
 }
 
 button:hover,
@@ -317,36 +317,36 @@ input[list],
 input[type="file"],
 select,
 textarea {
-  &.size_s{
+  &.size_s {
     max-width: initial;
     max-width: auto;
   }
-  &.size_m{
+  &.size_m {
     max-width: initial;
     max-width: auto;
   }
-  &.size_l{
+  &.size_l {
     max-width: initial;
     max-width: auto;
   }
-  &.size_full{
+  &.size_full {
     max-width: initial;
     max-width: auto;
   }
   @media only screen and (min-width: $breakPoint) {
-    &.size_s{
+    &.size_s {
       width: $fh-input-width;
       max-width: $field-size-s;
     }
-    &.size_m{
+    &.size_m {
       width: $fh-input-width;
       max-width: $field-size-m;
     }
-    &.size_l{
+    &.size_l {
       width: $fh-input-width;
       max-width: $field-size-l;
     }
-    &.size_full{
+    &.size_full {
       width: $field-size-full;
       max-width: initial;
       max-width: auto;
@@ -360,7 +360,7 @@ input:-webkit-autofill {
 }
 
 /* placeholder */
-::placeholder{
+::placeholder {
   color: #999;
 }
 
@@ -372,7 +372,7 @@ option[readonly],
 button[readonly] {
   border: none;
   padding: 0;
-  //	background: none !important;
+  // background: none !important;
 }
 
 /* [readonly=disabled] */
@@ -383,7 +383,7 @@ option[disabled],
 button[disabled] {
   cursor: not-allowed;
   color: $fh-font-color-disabled !important;
-  &:hover{
+  &:hover {
     color: $fh-font-color-disabled;
   }
 }
@@ -392,8 +392,8 @@ button[disabled] {
 /* input[type=file]	@ http://qiita.com/yasumodev/items/c9f8e8f588ded6b179c9 */
 $file-field-id : your-file !default;
 
-label[for=#{$file-field-id}]{
-  b{
+label[for=#{$file-field-id}] {
+  b {
     height: $fh-button-height;
     width: $fh-button-width;
     max-width: $fh-button-max-width;
@@ -413,57 +413,57 @@ label[for=#{$file-field-id}]{
   input[type=file] {
     display: none;
   }
-  #thumb{
-    img{
+  #thumb {
+    img {
       max-width: 100%;
       height: auto;
     }
   }
 }
-#cfm-#{$file-field-id}{
-  img{
+#cfm-#{$file-field-id} {
+  img {
     max-width: 100%;
     height: auto;
   }
 }
 
 
-/* input[type=range]	@ range.css: https://github.com/danielstern/range.css/ */
+/* input[type=range] @ range.css: https://github.com/danielstern/range.css/ */
 input[type=range] {
   -webkit-appearance: none;
-  &.size_s{
+  &.size_s {
     max-width: initial;
     max-width: auto;
   }
-  &.size_m{
+  &.size_m {
     max-width: initial;
     max-width: auto;
   }
-  &.size_l{
+  &.size_l {
     max-width: initial;
     max-width: auto;
   }
-  &.size_full{
+  &.size_full {
     max-width: initial;
     max-width: auto;
   }
   @media only screen and (min-width: $breakPoint) {
-    &.size_s{
-      //	width: $field-size-s;
+    &.size_s {
+      // width: $field-size-s;
       width: $fh-input-width;
       max-width: $field-size-s;
     }
-    &.size_m{
-      //	width: $field-size-m;
+    &.size_m {
+      // width: $field-size-m;
       width: $fh-input-width;
       max-width: $field-size-m;
     }
-    &.size_l{
-      //	width: $field-size-l;
+    &.size_l {
+      // width: $field-size-l;
       width: $fh-input-width;
       max-width: $field-size-l;
     }
-    &.size_full{
+    &.size_full {
       width: $field-size-full;
       max-width: initial;
       max-width: auto;
@@ -549,94 +549,94 @@ input[type=range] {
 /* For third party */
 
 /* select2.js - Reset default css */
-.select2-container--default{
-  .select2-selection--single, .select2-selection--multiple{
+.select2-container--default {
+  .select2-selection--single, .select2-selection--multiple {
     border: $fh-border-width $fh-border-style $bordercolor !important;
     border-radius: $fh-border-radius !important;
     height: $fh-input-height !important;
     outline: none;
-    .select2-selection__rendered{
+    .select2-selection__rendered {
       height: $fh-input-height !important;
     }
-    .select2-selection__choice{
+    .select2-selection__choice {
       border: $fh-border-width $fh-border-style $bordercolor !important;
       //	background-color: #999 !important;
     }
   }
-  &.select2-container--open.select2-container--below{
-    .select2-selection--single, .select2-selection--multiple{
+  &.select2-container--open.select2-container--below {
+    .select2-selection--single, .select2-selection--multiple {
       border-bottom-left-radius: 0 !important;
       border-bottom-right-radius: 0 !important;
     }
   }
-  .select2-search--dropdown .select2-search__field{
+  .select2-search--dropdown .select2-search__field {
     border-color: $bordercolor !important;
     max-width: initial;
     max-width: auto;
   }
 }
-.select2-dropdown{
+.select2-dropdown {
   border-color: $bordercolor !important;
 }
-.select2-selection__clear{
+.select2-selection__clear {
   color: $fontcolor;
   font-size: 13px;
 }
-.select2-container{
+.select2-container {
   width: 100% !important;
   max-width: 100%;
-  .select2-search--inline{
-    .select2-search__field{
+  .select2-search--inline {
+    .select2-search__field {
       margin-top: 0 !important;
     }
   }
 }
 
-.size_s{
-  & + .select2-container{
+.size_s {
+  & + .select2-container {
     max-width: initial;
     max-width: auto;
   }
 }
-.size_m{
-  & + .select2-container{
+.size_m {
+  & + .select2-container {
     max-width: initial;
     max-width: auto;
   }
 }
-.size_l{
-  & + .select2-container{
+.size_l {
+  & + .select2-container {
     max-width: initial;
     max-width: auto;
   }
 }
-.size_full{
-  & + .select2-container{
+.size_full {
+  & + .select2-container {
     max-width: initial;
     max-width: auto;
   }
 }
 @media only screen and (min-width: $breakPoint) {
-  &.size_s{
-    & + .select2-container{
+  &.size_s {
+    & + .select2-container {
       width: $fh-input-width;
       max-width: $field-size-s;
     }
   }
-  &.size_m{
-    & + .select2-container{
+  &.size_m {
+    & + .select2-container {
       width: $fh-input-width;
       max-width: $field-size-m;
     }
   }
-  &.size_l{
-    & + .select2-container{
+  &.size_l {
+    & + .select2-container {
       width: $fh-input-width;
       max-width: $field-size-l;
     }
   }
-  &.size_full{
-    & + .select2-container{
+  &.size_full {
+    & + .select2-container {
       width: $field-size-full;
       max-width: initial;
       max-width: auto;
@@ -646,7 +646,7 @@ input[type=range] {
 
 
 /* contact form 7 */
-.wpcf7-form-control-wrap{
+.wpcf7-form-control-wrap {
   display: block;
 }
 

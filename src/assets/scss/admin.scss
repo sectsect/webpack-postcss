@@ -2,44 +2,44 @@
 @import 'settings','mixin';
 
 .post-new-php,
-.post-php{
-  &.post-type-news{
-    #poststuff{
-      #note-sec{
+.post-php {
+  &.post-type-news {
+    #poststuff {
+      #note-sec {
         margin-top: 15px;
         padding: 1em;
-        p{
-          .pc{
+        p {
+          .pc {
             @media only screen and (max-width:$breakPoint) {
               display: none;
             }
           }
         }
       }
-      #postdivrich, #postbox-container-2{
+      #postdivrich, #postbox-container-2 {
         max-height: 0;
         @include opacity(0);
         visibility: hidden;
         overflow-y: hidden;
       }
-      #postdivrich{
+      #postdivrich {
         margin-bottom: 0;
       }
-      &.field-type-content, &.field-type-custom-field{
-        #note-sec{
+      &.field-type-content, &.field-type-custom-field {
+        #note-sec {
           display: none;
         }
       }
-      &.field-type-content{
-        #postdivrich{
+      &.field-type-content {
+        #postdivrich {
           max-height: initial;
           max-height: auto;
           @include opacity(1);
           visibility: visible;
         }
       }
-      &.field-type-custom-field{
-        #postbox-container-2{
+      &.field-type-custom-field {
+        #postbox-container-2 {
           max-height: initial;
           max-height: auto;
           @include opacity(1);

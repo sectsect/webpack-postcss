@@ -78,6 +78,21 @@ $('body').addClass('sektsekt');
 const ary = R.append('foo', ['bar', 'baz']);
 console.log(ary);
 
+// Example for Spread Operator
+const arr = [1, 2, 3];
+console.log(arr); // [1, 2, 3]
+console.log(...arr); // 1 2 3
+
+const arr1 = ['two', 'three'];
+const arr2 = ['one', ...arr1, 'four', 'five'];
+console.log(arr2);
+
+const numbers = [9, 4, 7, 1];
+console.log(Math.min(...numbers));
+
+const array = [1, 2, 3, 4, 5];
+console.log(array.includes(3));
+
 /*= =================================================
 		smooth scroll (For VueScrollTo)
 ================================================== */

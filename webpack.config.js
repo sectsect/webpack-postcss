@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -26,17 +25,6 @@ const getJSPlugins = () => {
       NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
     },
   }));
-  if (isProd) {
-    plugins.push(new UglifyJSPlugin({
-      parallel: true, // Default number of concurrent runs: os.cpus().length - 1.
-      sourceMap: !isProd,
-      uglifyOptions: {
-        output: {
-          comments: false,
-        },
-      },
-    }));
-  }
   plugins.push(new SvgStore.Options({
     svg: {
       style: '',

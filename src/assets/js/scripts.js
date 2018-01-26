@@ -86,6 +86,9 @@ console.log(arr2);
 const numbers = [9, 4, 7, 1];
 console.log(Math.min(...numbers));
 
+const array = [1, 2, 3, 4, 5];
+console.log(array.includes(3));
+
 /*= =================================================
 Google web-fonts
 ================================================== */

@@ -14,7 +14,6 @@
     "@babel/helpers": "^7.0.0-beta.38",
     "@babel/plugin-transform-runtime": "^7.0.0-beta.38",
     "@babel/preset-env": "^7.0.0-beta.38",
-    "@babel/runtime": "^7.0.0-beta.38",
     "autoprefixer": "^7.2.5",
     "babel-loader": "^8.0.0-beta.0",
     "css-loader": "^0.28.9",
@@ -54,7 +53,7 @@
     "webpack-sweet-entry": "^1.1.4"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
+    "@babel/runtime": "^7.0.0-beta.38",
     "bowser": "^1.9.1",
     "dedent": "^0.7.0",
     "dotenv": "^4.0.0",

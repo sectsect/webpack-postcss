@@ -48,7 +48,7 @@
     "style-loader": "^0.20.1",
     "uglifyjs-webpack-plugin": "^1.1.8",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.0",
+    "webpack-dev-server": "^2.11.1",
     "webpack-spritesmith": "^0.4.0",
     "webpack-svgstore-plugin": "^4.0.1",
     "webpack-sweet-entry": "^1.1.4"

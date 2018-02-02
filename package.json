@@ -31,7 +31,7 @@
     "modernizr-loader": "^1.0.1",
     "node-sass": "^4.7.2",
     "postcss-hexrgba": "^1.0.0",
-    "postcss-loader": "^2.0.9",
+    "postcss-loader": "^2.1.0",
     "postcss-pxtorem": "^4.0.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.1",
@@ -55,7 +55,7 @@
     "lazysizes": "^4.0.1",
     "node-notifier": "^5.2.1",
     "picturefill": "^3.0.2",
-    "rambda": "^1.0.9",
+    "rambda": "^1.0.10",
     "responsive-nav": "^1.0.39",
     "slick-carousel": "^1.8.1",
     "webfontloader": "^1.6.28"

@@ -48,6 +48,7 @@ const detect = {
   iOS: isMobile.apple.device,
   androidOS: isMobile.android.device,
 };
+global.detect = detect;
 console.log(detect);
 
 if (!Modernizr.objectfit) {

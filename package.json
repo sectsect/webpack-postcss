@@ -35,7 +35,7 @@
     "postcss-extend": "^1.0.5",
     "postcss-for": "^2.1.1",
     "postcss-hexrgba": "^1.0.0",
-    "postcss-loader": "^2.0.10",
+    "postcss-loader": "^2.1.0",
     "postcss-mixins": "^6.2.0",
     "postcss-nested": "^3.0.0",
     "postcss-partial-import": "^4.1.0",
@@ -66,7 +66,7 @@
     "lazysizes": "^4.0.1",
     "node-notifier": "^5.2.1",
     "picturefill": "^3.0.2",
-    "rambda": "^1.0.9",
+    "rambda": "^1.0.10",
     "responsive-nav": "^1.0.39",
     "slick-carousel": "^1.8.1",
     "webfontloader": "^1.6.28"

@@ -101,13 +101,13 @@
 			<a href="#" v-scroll-to="'#wrap'">Scroll to #wrap</a>
 		</footer>
 	</div>
-	<script src="./assets/js/scripts.js"></script>
-	<script>
+	<script defer src="./assets/js/scripts.js"></script>
+	<!-- <script>
 		console.log(bowser.version);
 		$('body').addClass('sekt-dev');
 		var ary = R.append('sect', ['brooklyn', 'bronx']);
 		console.log(ary);
-	</script>
-	<script async src="./assets/js/page-frontpage.js"></script>
+	</script> -->
+	<script defer src="./assets/js/page-frontpage.js"></script>
 </body>
 </html>

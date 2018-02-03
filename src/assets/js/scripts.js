@@ -1,4 +1,7 @@
-import jquery from 'jquery';
+// import jquery from 'jquery';
+// import ismobilejs from 'ismobilejs';
+// import bowser from 'bowser';
+// import * as R from 'rambda';
 import Modernizr from 'modernizr';
 import dedent from 'dedent';
 import picturefill from 'picturefill';
@@ -11,21 +14,21 @@ import lsAspectratio from 'lazysizes/plugins/aspectratio/ls.aspectratio';
 import lsBgset from 'lazysizes/plugins/bgset/ls.bgset';
 import lsUnveilhooks from 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import lazysizes from 'lazysizes';
-import ismobilejs from 'ismobilejs';
-import bowser from 'bowser';
-import * as R from 'rambda';
+import 'jquery.easing';
+import 'jquery-smooth-scroll';
+import 'jquery.dotdotdot';
+import 'jquery-match-height-browserify';
 
-window.$ = jquery;
-window.jQuery = jquery;
+// window.$ = jquery;
+// window.jQuery = jquery;
 window.Vue = Vue;
-window.R = R;
-global.isMobile = ismobilejs;
-global.bowser = bowser;
-
-require('jquery.easing');
+// window.R = R;
+// global.isMobile = ismobilejs;
+// global.bowser = bowser;
+// require('jquery.easing');
 // require('jquery-smooth-scroll');
-require('jquery.dotdotdot');
-require('jquery-match-height-browserify');
+// require('jquery.dotdotdot');
+// require('jquery-match-height-browserify');
 
 const __svg__ = {
   path: '../../../src/assets/images/svg/raw/**/*.svg',
@@ -143,9 +146,9 @@ jQuery(() => {
   /*= =================================================
   switch viewport for tablet
   ================================================== */
-  // if (isMobile.tablet) {
-  //   jQuery('#viewport').attr('content', 'width=1024');
-  // }
+  if (detect.tablet) {
+    jQuery('#viewport').attr('content', 'width=1024');
+  }
   /*= =================================================
   Detect the devicePixelRatio
   ================================================== */

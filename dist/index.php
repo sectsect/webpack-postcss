@@ -100,12 +100,13 @@
 			</ul>
 		</footer>
 	</div>
-	<script src="./assets/js/commons.js"></script>
-	<script>
-		// $('body').addClass('sekt-dev');
-		// var ary = R.append('sect', ['brooklyn', 'bronx']);
-		// console.log(ary);
-	</script>
-	<script async src="./assets/js/page-frontpage.js"></script>
+	<script defer src="./assets/js/commons.js"></script>
+	<!-- <script>
+		console.log(bowser.version);
+		$('body').addClass('sekt-dev');
+		var ary = R.append('sect', ['brooklyn', 'bronx']);
+		console.log(ary);
+	</script> -->
+	<script defer src="./assets/js/page-frontpage.js"></script>
 </body>
 </html>

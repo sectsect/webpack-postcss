@@ -25,6 +25,14 @@ const getJSPlugins = () => {
       NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
     },
   }));
+  plugins.push(new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+    'window.jQuery': 'jquery',
+    bowser: 'bowser',
+    isMobile: 'ismobilejs',
+    R: 'rambda',
+  }));
   plugins.push(new SvgStore.Options({
     svg: {
       style: '',

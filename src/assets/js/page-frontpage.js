@@ -1,4 +1,5 @@
 import slick from 'slick-carousel';
+import commons from './_commons';
 import MyClass from './class/_myclass';
 
 const hello = 'Hello!!';

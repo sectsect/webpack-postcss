@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "",
-    "dev": "webpack --watch --progress --mode development",
-    "build": "webpack --mode production"
+    "dev": "NODE_ENV='development' webpack --watch --progress --mode development",
+    "build": "NODE_ENV='production' webpack --mode production"
   },
   "browserslist": "last 2 versions, ie >= 11, Android >= 4, ios_saf >= 8",
   "devDependencies": {

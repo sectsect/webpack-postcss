@@ -55,6 +55,7 @@
     "webpack-sweet-entry": "^1.1.4"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0-beta.39",
     "@babel/runtime": "^7.0.0-beta.39",
     "bowser": "^1.9.1",
     "dedent": "^0.7.0",

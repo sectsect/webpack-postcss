@@ -93,6 +93,15 @@ console.log(Math.min(...numbers));
 const array = [1, 2, 3, 4, 5];
 console.log(array.includes(3));
 
+// Default Parameters
+const link = (height, color, url) => {
+  const h = height || 50;
+  const c = color || 'red';
+  const u = url || 'http://azat.co';
+  console.log(`${h} | ${c} | ${u}`);
+};
+link(100, false, 'https://www.nytimes.com/');
+
 /*= =================================================
 Google web-fonts
 ================================================== */

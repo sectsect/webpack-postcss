@@ -75,8 +75,8 @@ console.log(sectsect);
 
 $('body').addClass('sektsekt');
 
-const ary = R.append('foo', ['bar', 'baz']);
-console.log(ary);
+// const ary = R.append('foo', ['bar', 'baz']);
+// console.log(ary);
 
 // Example for Spread Operator
 const arr = [1, 2, 3];
@@ -127,41 +127,39 @@ jQuery(() => {
   Responsible menu (responsive-nav.min.js)
   ================================================== */
   responsiveNav('#nav', { // Selector
-    //	animate 		: true,								  // Boolean: Use CSS3 transitions, true or false
+    // animate: true,                  // Boolean: Use CSS3 transitions, true or false
     transition: 150, // Integer: Speed of the transition, in milliseconds
-    //	label 			: "<span>Menu</span>",	// String: Label for the navigation toggle
+    // label: "<span>Menu</span>",  // String: Label for the navigation toggle
     label: '<span>bar</span><i>MENU</i>', // String: Label for the navigation toggle
-    //	insert 			: "before",							// String: Insert the toggle before or after the navigation
-    //	customToggle 	: "#nav-toggle",			// Selector: Specify the ID of a custom toggle
-    //	closeOnNavClick	: false,						// Boolean: Close the navigation when one of the links are clicked
-    //	openPos			: "static",							// String: Position of the opened nav, relative or static
-    //	navClass		: "nav-collapse",				// String: Default CSS class. If changed, you need to edit the CSS too!
-    //	navActiveClass	: "js-nav-active",	// String: Class that is added to element when nav is active
-    //	jsClass			: "js",								  // String: 'JS enabled' class which is added to element
+    // insert: "before",                 // String: Insert the toggle before or after the navigation
+    // customToggle: "#nav-toggle",      // Selector: Specify the ID of a custom toggle
+    // closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
+    // openPos: "static",                // String: Position of the opened nav, relative or static
+    // navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+    // navActiveClass: "js-nav-active",  // String: Class that is added to element when nav is active
+    // jsClass: "js",                    // String: 'JS enabled' class which is added to element
     init() {
       jQuery('#nav').show();
     }, // Function: Init callback
-    //	open	: function() {},							// Function: Open callback
-    //	close	: function() {}								// Function: Close callback
+    //  open  : function() {},              // Function: Open callback
+    //  close  : function() {}                // Function: Close callback
   });
   /*= =================================================
-  fadein /fadeout button Pagetop
+    fadein /fadeout button Pagetop
   ================================================== */
-  /* if (!isMobile.phone) {
-	  const topBtn = jQuery('#pagetop');
-	  //	スクロールが100に達したらボタン表示
-	  jQuery(window).scroll(function () {
-		  if (jQuery(this).scrollTop() > 100) {
-		  topBtn.addClass('show');
-      } else {
-        topBtn.removeClass('show');
-      }
-    });
-  }
-*/
+  // if (!isMobile.phone) {
+  //   const topBtn = jQuery('#pagetop');
+  //   jQuery(window).scroll(function () {
+  //     if (jQuery(this).scrollTop() > 100) {
+  //       topBtn.addClass('show');
+  //     } else {
+  //       topBtn.removeClass('show');
+  //     }
+  //   });
+  // }
   /*= =================================================
-	Image fadeIn / fadeOut
-	================================================== */
+    Image fadeIn / fadeOut
+  ================================================== */
   // // we use touchstart and touchend events on buttons
   // let enterEvent = 'touchstart';
   // let leaveEvent = 'touchend';
@@ -184,7 +182,7 @@ jQuery(() => {
 
 jQuery.event.add(window, 'load', () => {
   /*= =================================================
-  	Text Truncation
+    Text Truncation
   ================================================== */
   if (jQuery('.truncation').length) {
     jQuery('.truncation').dotdotdot({
@@ -196,8 +194,8 @@ jQuery.event.add(window, 'load', () => {
     });
   }
   /*= =================================================
-		smooth scroll
-	================================================== */
+    smooth scroll
+  ================================================== */
   const h = parseInt(`-${jQuery('#header').outerHeight(true)}`, 10);
   jQuery("a[href^='#']").on('click', function () {
     const offset = (jQuery(this).parent().hasClass('pageTop')) ? 0 : h;
@@ -211,18 +209,16 @@ jQuery.event.add(window, 'load', () => {
     return false;
   });
   const headerH = jQuery('#header').outerHeight(true);
-  //	外部からページリンクで飛んできた場合
+  // 外部からページリンクで飛んできた場合
   const url = jQuery(window.location).attr('href');
-  if (url.indexOf('?id=') === -1) {
-    //	Do Noting
-  } else {
+  if (url.includes('?id=')) {
     const urlsp = url.split('?id=');
     const hash = `#${urlsp[urlsp.length - 1]}`;
-    const tgt = jQuery(hash);
+    const t = jQuery(hash);
     setTimeout(() => {
-      const pos = tgt.offset().top - headerH; //	headerH でオフセット分を引く
+      const p = t.offset().top - headerH; // headerH でオフセット分を引く
       jQuery('html, body').animate({
-        scrollTop: pos,
+        scrollTop: p,
       }, 1000, 'easeOutQuint');
     }, 300);
   }
@@ -230,69 +226,69 @@ jQuery.event.add(window, 'load', () => {
 
 jQuery(window).on('load orientationchange resize', () => {
   /*= =================================================
-		Lazyload
-	================================================== */
-  // // CASE: Less than Equal "IE8"
-  // if (typeof LazyLoad == "function") {
-  // 	new LazyLoad({
-  // 		data_src          : "src",
-  // 		data_srcset       : "srcset",
-  // 		threshold         : 200,
-  // 		show_while_loading: true,
-  // 		placeholder       : true,
-  // 		callback_set      : function(img) {
-  // 			picturefill({
-  // 				elements  : [img]
-  // 			});
-  // 		}
-  // 	});
-  // } else if (typeof lazySizes == "object") {
-  // 	lazySizes.init();
+    Lazyload
+  ================================================== */
+  // CASE: Less than Equal "IE8"
+  // if (typeof LazyLoad === 'function') {
+  //   new LazyLoad({
+  //     data_src: 'src',
+  //     data_srcset: 'srcset',
+  //     threshold: 200,
+  //     show_while_loading: true,
+  //     placeholder: true,
+  //     callback_set(img) {
+  //       picturefill({
+  //         elements: [img],
+  //       });
+  //     },
+  //   });
+  // } else if (typeof lazySizes === 'object') {
+  //   lazySizes.init();
   // }
   /*= =================================================
-		Trim words	(Supported Mobile-Device) & Setting same height on column
-	================================================== */
+    Truncate words
+  ================================================== */
   // if (jQuery('.trim_line1').length) {
-  // 	jQuery('.trim_line1').trunk8({
-  // 		tooltip: false
-  // 	});
+  //   jQuery('.trim_line1').trunk8({
+  //     tooltip: false,
+  //   });
   // }
   // if (jQuery('.trim_line2').length) {
-  // 	jQuery('.trim_line2').trunk8({
-  // 		tooltip: false,
-  // 		lines: 2
-  // 	});
+  //   jQuery('.trim_line2').trunk8({
+  //     tooltip: false,
+  //     lines: 2,
+  //   });
   // }
   // if (jQuery('.trim_line3').length) {
-  // 	jQuery('.trim_line3').trunk8({
-  // 		tooltip: false,
-  // 		lines: 3
-  // 	});
+  //   jQuery('.trim_line3').trunk8({
+  //     tooltip: false,
+  //     lines: 3,
+  //   });
   // }
   // if (jQuery('.trim_line4').length) {
-  // 	jQuery('.trim_line4').trunk8({
-  // 		tooltip: false,
-  // 		lines: 4
-  // 	});
+  //   jQuery('.trim_line4').trunk8({
+  //     tooltip: false,
+  //     lines: 4,
+  //   });
   // }
   // if (jQuery('.trim_line5').length) {
-  // 	jQuery('.trim_line5').trunk8({
-  // 		tooltip: false,
-  // 		lines: 5
-  // 	});
+  //   jQuery('.trim_line5').trunk8({
+  //     tooltip: false,
+  //     lines: 5,
+  //   });
   // }
   /*= =================================================
-		match height (jQuery.matchheight.js)
-	================================================== */
+  match height (jQuery.matchheight.js)
+  ================================================== */
   jQuery('.mh-byrow').matchHeight();
   jQuery('.mh').matchHeight({ byRow: false });
-  // ▼USAGE:	Case: multiple
+  // ▼USAGE:  Case: multiple
   // <ul>
-  // 	<li data-mh="group-01" class="mh">My text</li>
-  // 	<li data-mh="group-01" class="mh">My text</li>
+  //   <li data-mh="group-01" class="mh">My text</li>
+  //   <li data-mh="group-01" class="mh">My text</li>
   // </ul>
   // <ul>
-  // 	<li data-mh="group-02" class="mh">My text</li>
-  // 	<li data-mh="group-02" class="mh">My text</li>
+  //   <li data-mh="group-02" class="mh">My text</li>
+  //   <li data-mh="group-02" class="mh">My text</li>
   // </ul>
 });

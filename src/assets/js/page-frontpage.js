@@ -10,8 +10,8 @@ console.log(sect);
 
 console.log(detect);
 
-const ary = R.append('111', ['222', '333']);
-console.log(ary);
+// const ary = R.append('111', ['222', '333']);
+// console.log(ary);
 
 jQuery(() => {
   jQuery('.slider_wrap').each(function () {

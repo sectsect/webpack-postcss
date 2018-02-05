@@ -1,1 +1,1 @@
-webpackJsonp([1],{104:function(n,o,c){"use strict";c(5)(c(17));console.log("Single!!")}},[104]);
+webpackJsonp([1],{106:function(n,o,c){"use strict";c(5)(c(17));console.log("Single!!")}},[106]);

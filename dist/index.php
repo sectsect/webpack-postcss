@@ -100,7 +100,7 @@
 			</ul>
 		</footer>
 	</div>
-	<script defer src="./assets/js/scripts.js"></script>
+	<script defer src="./assets/js/commons.js"></script>
 	<!-- <script>
 		console.log(bowser.version);
 		$('body').addClass('sekt-dev');

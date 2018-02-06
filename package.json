@@ -56,7 +56,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0-beta.39",
     "@babel/runtime": "^7.0.0-beta.39",
-    "bowser": "^1.9.1",
+    "bowser": "^1.9.2",
     "dedent": "^0.7.0",
     "dotenv": "^5.0.0",
     "ismobilejs": "^0.4.1",
@@ -68,7 +68,7 @@
     "lazysizes": "^4.0.1",
     "node-notifier": "^5.2.1",
     "picturefill": "^3.0.2",
-    "rambda": "^1.0.10",
+    "rambda": "^1.0.11",
     "responsive-nav": "^1.0.39",
     "slick-carousel": "^1.8.1",
     "webfontloader": "^1.6.28"

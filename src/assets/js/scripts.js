@@ -106,6 +106,15 @@ const link = (height, color, url) => {
 };
 link(100, false, 'https://www.nytimes.com/');
 
+// Object.assign()
+const object1 = {
+  a: 1,
+  b: 2,
+  c: 3,
+};
+const object2 = Object.assign({ d: 4 }, object1);
+console.log(object2.d);
+
 /*= =================================================
 		smooth scroll (For VueScrollTo)
 ================================================== */

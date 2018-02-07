@@ -78,7 +78,7 @@ $('body').addClass('sektsekt');
 // const ary = R.append('foo', ['bar', 'baz']);
 // console.log(ary);
 
-// Example for Spread Operator
+// Spread Operator
 const arr = [1, 2, 3];
 console.log(arr); // [1, 2, 3]
 console.log(...arr); // 1 2 3
@@ -90,17 +90,19 @@ console.log(arr2);
 const numbers = [9, 4, 7, 1];
 console.log(Math.min(...numbers));
 
+// Array.prototype.includes() (ES7)
 const array = [1, 2, 3, 4, 5];
 console.log(array.includes(3));
 
 // Default Parameters
-const link = (height, color, url) => {
-  const h = height || 50;
-  const c = color || 'red';
-  const u = url || 'http://azat.co';
-  console.log(`${h} | ${c} | ${u}`);
+const foo = (a = 5, b = 10) => {
+  console.log(a + b);
 };
-link(100, false, 'https://www.nytimes.com/');
+foo(); // 15
+foo(7, 12); // 19
+foo(undefined, 8); // 13
+foo(8); // 18
+foo(null); // 10 as null is coerced to 0
 
 // Object.assign()
 const object1 = {

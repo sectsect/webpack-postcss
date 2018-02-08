@@ -78,7 +78,7 @@ $('body').addClass('sektsekt');
 // const ary = R.append('foo', ['bar', 'baz']);
 // console.log(ary);
 
-// Example for Spread Operator
+// Spread Operator
 const arr = [1, 2, 3];
 console.log(arr); // [1, 2, 3]
 console.log(...arr); // 1 2 3
@@ -90,17 +90,19 @@ console.log(arr2);
 const numbers = [9, 4, 7, 1];
 console.log(Math.min(...numbers));
 
+// Array.prototype.includes() (ES7)
 const array = [1, 2, 3, 4, 5];
 console.log(array.includes(3));
 
 // Default Parameters
-const link = (height, color, url) => {
-  const h = height || 50;
-  const c = color || 'red';
-  const u = url || 'http://azat.co';
-  console.log(`${h} | ${c} | ${u}`);
+const foo = (a = 5, b = 10) => {
+  console.log(a + b);
 };
-link(100, false, 'https://www.nytimes.com/');
+foo(); // 15
+foo(7, 12); // 19
+foo(undefined, 8); // 13
+foo(8); // 18
+foo(null); // 10 as null is coerced to 0
 
 // Object.assign()
 const object1 = {
@@ -110,6 +112,43 @@ const object1 = {
 };
 const object2 = Object.assign({ d: 4 }, object1);
 console.log(object2.d);
+
+// async / await (ES7)
+const resolveAfter2Seconds = () =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 2000);
+  });
+const asyncCall = async () => {
+  try {
+    console.log('calling');
+    const result = await resolveAfter2Seconds();
+    console.log(result);
+    // expected output: "resolved"
+  } catch (err) {
+    alert(err);
+  }
+};
+asyncCall();
+
+// async / await & fetch JSON (ES7)
+// @ http://blog.fixter.org/learn-es6-promise-and-es7-async-await/
+const doFetch = async (user) => {
+  try {
+    const url = `https://api.github.com/users/${user}`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('The user does not exist.');
+    return await response.json();
+  } catch (err) {
+    return err;
+  }
+};
+async function getUser(user) {
+  const userData = await doFetch(user);
+  console.log(userData);
+}
+getUser('sectsect');
 
 /*= =================================================
 Google web-fonts
@@ -205,27 +244,27 @@ jQuery.event.add(window, 'load', () => {
   /*= =================================================
     smooth scroll
   ================================================== */
-  const h = parseInt(`-${jQuery('#header').outerHeight(true)}`, 10);
-  jQuery("a[href^='#']").on('click', function () {
-    const offset = (jQuery(this).parent().hasClass('pageTop')) ? 0 : h;
-    const target = jQuery(this).attr('href');
-    $.smoothScroll({
+  jQuery("a[href^='#']").on('click', (e) => {
+    const h = parseInt(`-${jQuery('#header').outerHeight(true)}`, 10);
+    const ofs = (jQuery(e.currentTarget).parent().hasClass('pageTop')) ? 0 : h;
+    const tgt = jQuery(e.currentTarget).attr('href');
+    jQuery.smoothScroll({
       easing: 'easeOutQuint',
       speed: 800,
-      offset,
-      scrollTarget: target,
+      offset: ofs,
+      scrollTarget: tgt,
     });
     return false;
   });
-  const headerH = jQuery('#header').outerHeight(true);
-  // 外部からページリンクで飛んできた場合
+
+  // Run scroll on page load, if the URL has the parameter of '?id='.
   const url = jQuery(window.location).attr('href');
   if (url.includes('?id=')) {
     const urlsp = url.split('?id=');
     const hash = `#${urlsp[urlsp.length - 1]}`;
     const t = jQuery(hash);
     setTimeout(() => {
-      const p = t.offset().top - headerH; // headerH でオフセット分を引く
+      const p = t.offset().top - jQuery('#header').outerHeight(true); // Subtract the height of Header with variable "headerH"
       jQuery('html, body').animate({
         scrollTop: p,
       }, 1000, 'easeOutQuint');

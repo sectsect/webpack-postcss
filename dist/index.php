@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" id="viewport">
 	<title>HELLO</title>
-	<link rel="preload" href="./assets/js/scripts.js" as="script">
+	<link rel="preload" href="./assets/js/commons.js" as="script">
 	<link href="./assets/css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -98,6 +98,9 @@
 					<i class="icon-top"></i>
 				</li>
 			</ul>
+			<div class="pageTop">
+				<a href="#wrap">Page Top</a>
+			</div>
 		</footer>
 	</div>
 	<script defer src="./assets/js/commons.js"></script>

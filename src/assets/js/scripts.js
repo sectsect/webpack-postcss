@@ -113,6 +113,43 @@ const object1 = {
 const object2 = Object.assign({ d: 4 }, object1);
 console.log(object2.d);
 
+// async / await (ES7)
+const resolveAfter2Seconds = () =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 2000);
+  });
+const asyncCall = async () => {
+  try {
+    console.log('calling');
+    const result = await resolveAfter2Seconds();
+    console.log(result);
+    // expected output: "resolved"
+  } catch (err) {
+    alert(err);
+  }
+};
+asyncCall();
+
+// async / await & fetch JSON (ES7)
+// @ http://blog.fixter.org/learn-es6-promise-and-es7-async-await/
+const doFetch = async (user) => {
+  try {
+    const url = `https://api.github.com/users/${user}`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('The user does not exist.');
+    return await response.json();
+  } catch (err) {
+    return err;
+  }
+};
+async function getUser(user) {
+  const userData = await doFetch(user);
+  console.log(userData);
+}
+getUser('sectsect');
+
 /*= =================================================
 Google web-fonts
 ================================================== */

@@ -98,6 +98,9 @@
 					<i class="icon-top"></i>
 				</li>
 			</ul>
+			<div class="pageTop">
+				<a href="#wrap">Page Top</a>
+			</div>
 		</footer>
 	</div>
 	<script defer src="./assets/js/commons.js"></script>

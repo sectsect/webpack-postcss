@@ -1,4 +1,4 @@
-import slick from 'slick-carousel';
+import slider from './modules/_slider';
 import MyClass from './class/_myclass';
 
 const hello = 'Hello!!';

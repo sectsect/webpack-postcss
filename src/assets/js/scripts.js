@@ -5,7 +5,6 @@
 import Modernizr from 'modernizr';
 import dedent from 'dedent';
 import picturefill from 'picturefill';
-import WebFont from 'webfontloader';
 import responsiveNav from 'responsive-nav';
 import lsAspectratio from 'lazysizes/plugins/aspectratio/ls.aspectratio';
 import lsBgset from 'lazysizes/plugins/bgset/ls.bgset';

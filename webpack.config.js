@@ -174,37 +174,37 @@ module.exports = [
     plugins: getJSPlugins(),
     devtool: isProd ? false : '#inline-source-map',
   },
-  // {
-  //   entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css'), 'css', 'css'),
-  //   output: {
-  //     path: path.resolve(buildPath, 'assets/css'),
-  //     filename: '[name].css',
-  //   },
-  //   module: {
-  //     rules: [
-  //       {
-  //         test: /\.css$/,
-  //         loader: ExtractTextPlugin.extract({
-  //           fallback: 'style-loader',
-  //           use: [
-  //             {
-  //               loader: 'css-loader',
-  //               options: {
-  //                 url: false,
-  //                 minimize: isProd ? { discardComments: { removeAll: true } } : false,
-  //               },
-  //             },
-  //             { loader: 'postcss-loader' },
-  //           ],
-  //         }),
-  //       },
-  //     ],
-  //   },
-  //   externals: {},
-  //   resolve: {
-  //     modules: ['node_modules'],
-  //   },
-  //   plugins: getCSSPlugins(),
-  //   devtool: isProd ? false : '#inline-source-map',
-  // },
+  {
+    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css'), 'css', 'css'),
+    output: {
+      path: path.resolve(buildPath, 'assets/css'),
+      filename: '[name].css',
+    },
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          loader: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              {
+                loader: 'css-loader',
+                options: {
+                  url: false,
+                  minimize: isProd ? { discardComments: { removeAll: true } } : false,
+                },
+              },
+              { loader: 'postcss-loader' },
+            ],
+          }),
+        },
+      ],
+    },
+    externals: {},
+    resolve: {
+      modules: ['node_modules'],
+    },
+    plugins: getCSSPlugins(),
+    devtool: isProd ? false : '#inline-source-map',
+  },
 ];

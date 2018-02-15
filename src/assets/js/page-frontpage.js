@@ -1,5 +1,5 @@
-import slick from 'slick-carousel';
-import commons from './_commons';
+import commons from './modules/_commons';
+import slider from './modules/_slider';
 import MyClass from './class/_myclass';
 
 const hello = 'Hello!!';

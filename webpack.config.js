@@ -29,8 +29,8 @@ const getJSPlugins = () => {
     $: 'jquery',
     jQuery: 'jquery',
     'window.jQuery': 'jquery',
-    bowser: 'bowser',
-    isMobile: 'ismobilejs',
+    // bowser: 'bowser',
+    // isMobile: 'ismobilejs',
     R: 'rambda',
   }));
   plugins.push(new SvgStore.Options({

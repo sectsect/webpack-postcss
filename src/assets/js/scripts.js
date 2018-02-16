@@ -1,11 +1,10 @@
 // import jquery from 'jquery';
+// import * as R from 'rambda';
 // import ismobilejs from 'ismobilejs';
 // import bowser from 'bowser';
-// import * as R from 'rambda';
-import Modernizr from 'modernizr';
+// import Modernizr from 'modernizr';
 import dedent from 'dedent';
 import picturefill from 'picturefill';
-import WebFont from 'webfontloader';
 import responsiveNav from 'responsive-nav';
 import Vue from 'vue';
 import lsAspectratio from 'lazysizes/plugins/aspectratio/ls.aspectratio';
@@ -40,15 +39,6 @@ window.detect = detect();
   Detect Testing
 ================================================== */
 console.log(detect());
-
-/*= =================================================
-  Modernizr Example
-================================================== */
-if (!Modernizr.objectfit) {
-  console.log('non-objectfit');
-} else {
-  console.log('objectfit');
-}
 
 /*= =================================================
   Dedent Example

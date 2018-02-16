@@ -37,6 +37,11 @@ const getJSPlugins = () => {
       },
     }));
   }
+  plugins.push(new webpack.optimize.CommonsChunkPlugin({
+    name: 'commons',
+    // chunks: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
+    // minChunks: 2,
+  }));
   plugins.push(new webpack.ProvidePlugin({
     $: 'jquery',
     jQuery: 'jquery',

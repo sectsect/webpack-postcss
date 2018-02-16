@@ -1,3 +1,4 @@
+import commons from './modules/_commons';
 import slider from './modules/_slider';
 import MyClass from './class/_myclass';
 

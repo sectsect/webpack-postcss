@@ -19,13 +19,18 @@ export default () => {
       iOS: isMobile.apple.device,
       androidOS: isMobile.android.device,
     },
-    css: {
+    htmlcss: {
       cssgrid: Modernizr.cssgrid,
       flexbox: Modernizr.flexbox,
       flexboxtweener: Modernizr.flexboxtweener,
       objectfit: Modernizr.objectfit,
     },
-    breakpoint: 768,
+    breakpoints: {
+      sm: 768,
+      md: 992,
+      lg: 1920,
+      xl: 2048,
+    },
   };
   return detect;
 };

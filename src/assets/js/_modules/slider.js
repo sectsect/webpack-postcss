@@ -1,5 +1,5 @@
 import slick from 'slick-carousel';
-import unveil from './_unveil-lazysizes';
+import unveil from './unveil-lazysizes';
 
 export default () => {
   jQuery('.slider_wrap').each(function () {

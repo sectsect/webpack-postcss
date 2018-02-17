@@ -1,6 +1,6 @@
-import commons from './modules/_commons';
-import slider from './modules/_slider';
-import MyClass from './class/_myclass';
+import commons from './_modules/commons';
+import slider from './_modules/slider';
+import MyClass from './_class/myclass';
 
 const hello = 'Hello!!';
 console.log(hello);

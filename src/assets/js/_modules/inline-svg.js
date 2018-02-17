@@ -8,7 +8,7 @@ export default (detect) => {
   /*= =================================================
   Fix bug that inline svg does not inserted on IE10
   ================================================== */
-  if (detect.msie && Number(detect.msie) <= 10) {
+  if (detect.device.msie && detect.device.msie <= 10) {
     jQuery.ajax({
       type: 'get',
       url: '/assets/images/svg/symbol.svg',

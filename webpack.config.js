@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -37,6 +39,25 @@ const getJSPlugins = () => {
       },
     }));
   }
+  plugins.push(new HtmlWebpackPlugin({
+    filename: '../../index.html',
+    template: 'ejs-render-loader!./src/index.ejs',
+    chunks: ['commons', 'page-frontpage'],
+    minify: {
+      collapseWhitespace: true,
+      preserveLineBreaks: true,
+      collapseInlineTagWhitespace: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      useShortDoctype: true,
+    },
+  }));
+  plugins.push(new ScriptExtHtmlWebpackPlugin({
+    // sync: 'important',
+    // async: 'commons',
+    preload: /\.js$/, // preload: ['commons', 'page-frontpage'],
+    defaultAttribute: 'defer',
+  }));
   plugins.push(new webpack.optimize.CommonsChunkPlugin({
     name: 'commons',
     // chunks: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
@@ -137,6 +158,7 @@ module.exports = [
     output: {
       path: path.resolve(buildPath, 'assets/js'),
       filename: '[name].js',
+      publicPath: '/assets/js',
     },
     module: {
       rules: [

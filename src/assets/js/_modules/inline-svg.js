@@ -1,6 +1,6 @@
 const __svg__ = {
   path: '../../../../src/assets/images/svg/raw/**/*.svg',
-  name: '../../assets/images/svg/symbol.svg',
+  name: '/images/svg/symbol.svg',
 };
 require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
 

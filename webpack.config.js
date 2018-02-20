@@ -11,11 +11,13 @@ const WebpackSweetEntry = require('webpack-sweet-entry');
 const NotifierPlugin = require('friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
 const spriteTemplate = require('./src/assets/js/_spriteTemplate');
+const config = require('./src/config.json');
 
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');
 const isProd = (process.env.NODE_ENV === 'production');
 
+console.log(JSON.stringify(config.home));
 // For dotenv
 // console.log(process.env.AWS_ACCESS_KEY_ID);
 
@@ -41,8 +43,11 @@ const getJSPlugins = () => {
   }
   plugins.push(new HtmlWebpackPlugin({
     filename: '../../index.html',
-    template: 'ejs-render-loader!./src/index.ejs',
+    template: 'ejs-compiled-loader!./src/index.ejs',
     chunks: ['commons', 'page-frontpage'],
+    version: '1.0',
+    meta: { description: 'Desc!!', keywords: 'xxx,xxx,xxx' },
+    config: config.home,
     minify: {
       collapseWhitespace: true,
       preserveLineBreaks: true,

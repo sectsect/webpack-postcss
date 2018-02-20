@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" id="viewport">
-<title>Title</title>
+<title>Title<% if(page == 'home'){ %> home<% } %></title>
 <meta name="description" content="xxxxxxxxxxxxxxxxxxx">
 <meta name="keywords" content="xxxxxxxxxxxxxxxxxxx">
 <meta property="og:title" content="xxxxxxxxxxxxxxxxxxx">
@@ -22,3 +22,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/josefinsans/v12/Qw3FZQNVED7rKGKxtqIqX5EctlltdV0hoJky_MiS.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/josefinsans/v12/Qw3FZQNVED7rKGKxtqIqX5Ectllte10hoJky_A.woff2">
 <link href="/assets/css/style.css" rel="stylesheet">
+<% var meta = htmlWebpackPlugin.options.meta %>
+<!-- Version: <%= htmlWebpackPlugin.options.version %> -->
+<!-- description: <%= htmlWebpackPlugin.options.meta.description %> -->
+<!-- meta: <%= meta.description %> -->
+<!-- config: <%= htmlWebpackPlugin.options.config.canonical %> -->

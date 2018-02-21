@@ -5,11 +5,15 @@
     "canonical": "http://xxxx.com/"
   },
   "home": {
+    "id": 1,
+    "slug": "home",
     "title": "Home - document",
     "description": "Home description",
     "canonical": "http://xxxx.com/"
   },
   "about": {
+    "id": 2,
+    "slug": "about",
     "title": "About - document",
     "description": "About description",
     "canonical": "http://xxxx.com/about/"

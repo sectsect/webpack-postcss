@@ -1,14 +1,14 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" id="viewport">
-<title>Title<% if(page == 'home'){ %> home<% } %></title>
-<meta name="description" content="xxxxxxxxxxxxxxxxxxx">
+<title><%= data.title %></title>
+<meta name="description" content="<%= data.description %>">
 <meta name="keywords" content="xxxxxxxxxxxxxxxxxxx">
-<meta property="og:title" content="xxxxxxxxxxxxxxxxxxx">
+<meta property="og:title" content="<%= data.title %>">
 <meta property="og:site_name" content="xxxxxxxxxxxxxxxxxxx">
 <meta property="og:type" content="website">
-<meta property="og:description" content="xxxxxxxxxxxxxxxxxxx">
-<meta property="og:url" content="http://xxxxxx.com/">
+<meta property="og:description" content="<%= data.description %>">
+<meta property="og:url" content="<%= data.canonical %>">
 <meta property="og:image" content="/assets/images/ogp.jpg">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700">
@@ -22,8 +22,3 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/josefinsans/v12/Qw3FZQNVED7rKGKxtqIqX5EctlltdV0hoJky_MiS.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/josefinsans/v12/Qw3FZQNVED7rKGKxtqIqX5Ectllte10hoJky_A.woff2">
 <link href="/assets/css/style.css" rel="stylesheet">
-<% var meta = htmlWebpackPlugin.options.meta %>
-<!-- Version: <%= htmlWebpackPlugin.options.version %> -->
-<!-- description: <%= htmlWebpackPlugin.options.meta.description %> -->
-<!-- meta: <%= meta.description %> -->
-<!-- config: <%= htmlWebpackPlugin.options.config.canonical %> -->

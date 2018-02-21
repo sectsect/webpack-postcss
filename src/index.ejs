@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<% var page = 'home' %>
+<% var data = htmlWebpackPlugin.options.data[page] %>
 <head>
-	<% var page = 'home' %>
 	<% include templates/head %>
 </head>
-<body>
-	<% include templates/header %>
-	<h1>Title</h1>
-	<% include templates/footer %>
+<body class="<%= page %>">
+	<header id="header">
+		<% include templates/header %>
+	</header>
+	<main>
+		<article>
+			<div class="inner">
+				<section>
+					Home 1st section
+				</section>
+			</div>
+		</article>
+		<aside>
+			<% include templates/aside %>
+		</aside>
+	</main>
+	<footer id="footer">
+		<% include templates/footer %>
+	</footer>
 </body>
 </html>

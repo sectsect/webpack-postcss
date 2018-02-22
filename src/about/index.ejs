@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<% var page = 'about' %>
+<% var data = htmlWebpackPlugin.options.data[page] %>
+<head>
+	<% include ../templates/head %>
+</head>
+<body class="<%= page %>">
+	<header id="header">
+		<% include ../templates/header %>
+	</header>
+	<main>
+		<article>
+			<div class="inner">
+				<section>
+					About 1st section
+				</section>
+			</div>
+		</article>
+		<aside>
+			<% include ../templates/aside %>
+		</aside>
+	</main>
+	<footer id="footer">
+		<% include ../templates/footer %>
+	</footer>
+</body>
+</html>

@@ -57,6 +57,21 @@ const getJSPlugins = () => {
       useShortDoctype: true,
     },
   }));
+  plugins.push(new HtmlWebpackPlugin({
+    filename: '../../about/index.html',
+    template: 'ejs-compiled-loader!./src/about/index.ejs',
+    chunks: ['commons', 'page-single'],
+    version: '1.0',
+    data: jsonData,
+    minify: {
+      collapseWhitespace: true,
+      preserveLineBreaks: true,
+      collapseInlineTagWhitespace: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      useShortDoctype: true,
+    },
+  }));
   plugins.push(new ScriptExtHtmlWebpackPlugin({
     // sync: 'important',
     // async: 'commons',

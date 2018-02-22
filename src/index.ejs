@@ -3,11 +3,11 @@
 <% var page = 'home' %>
 <% var data = htmlWebpackPlugin.options.data[page] %>
 <head>
-	<% include templates/head %>
+	<% include partials/head %>
 </head>
 <body class="<%= page %>">
 	<header id="header">
-		<% include templates/header %>
+		<% include partials/header %>
 	</header>
 	<main>
 		<article>
@@ -18,11 +18,11 @@
 			</div>
 		</article>
 		<aside>
-			<% include templates/aside %>
+			<% include partials/aside %>
 		</aside>
 	</main>
 	<footer id="footer">
-		<% include templates/footer %>
+		<% include partials/footer %>
 	</footer>
 </body>
 </html>

@@ -15,26 +15,24 @@ const jsonData = require('./src/data/data.json');
 
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');
-const isProd = (process.env.NODE_ENV === 'production');
 
 // console.log(JSON.stringify(jsonData));
 
 // For dotenv
 // console.log(process.env.AWS_ACCESS_KEY_ID);
 
+// For Detection Environment  @ https://webpack.js.org/api/cli/#environment-options
+const isProd = env => (env && env.production);
+const isDev = env => (env && env.development);
+
 // http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
-const getJSPlugins = () => {
+const getJSPlugins = (env) => {
   const plugins = [];
 
-  plugins.push(new webpack.DefinePlugin({
-    'process.env': {
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
-    },
-  }));
-  if (isProd) {
+  if (isProd(env)) {
     plugins.push(new UglifyJSPlugin({
       parallel: true, // Default number of concurrent runs: os.cpus().length - 1.
-      sourceMap: !isProd,
+      sourceMap: !isProd(env),
       uglifyOptions: {
         output: {
           comments: false,
@@ -172,7 +170,7 @@ const getCSSPlugins = () => {
   return plugins;
 };
 
-module.exports = [
+module.exports = env => [
   {
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
     output: {
@@ -219,8 +217,8 @@ module.exports = [
       },
     },
     // Modernizr
-    plugins: getJSPlugins(),
-    devtool: isProd ? '' : '#inline-source-map',
+    plugins: getJSPlugins(env),
+    devtool: isProd(env) ? '' : '#inline-source-map',
   },
   {
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css'), 'css', 'css'),
@@ -239,7 +237,7 @@ module.exports = [
                 loader: 'css-loader',
                 options: {
                   url: false,
-                  minimize: isProd ? { discardComments: { removeAll: true } } : false,
+                  minimize: isProd(env) ? { discardComments: { removeAll: true } } : false,
                 },
               },
               { loader: 'postcss-loader' },
@@ -252,7 +250,7 @@ module.exports = [
     resolve: {
       modules: ['node_modules'],
     },
-    plugins: getCSSPlugins(),
-    devtool: isProd ? '' : '#inline-source-map',
+    plugins: getCSSPlugins(env),
+    devtool: isProd(env) ? '' : '#inline-source-map',
   },
 ];

@@ -11,20 +11,18 @@ const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');
-const isProd = (process.env.NODE_ENV === 'production');
 
 // For dotenv
 // console.log(process.env.AWS_ACCESS_KEY_ID);
 
+// For Detection Environment  @ https://webpack.js.org/api/cli/#environment-options
+const isProd = env => (env && env.production);
+const isDev = env => (env && env.development);
+
 // http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
-const getJSPlugins = () => {
+const getJSPlugins = (env) => {
   const plugins = [];
 
-  plugins.push(new webpack.DefinePlugin({
-    'process.env': {
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
-    },
-  }));
   plugins.push(new webpack.ProvidePlugin({
     $: 'jquery',
     jQuery: 'jquery',
@@ -114,7 +112,7 @@ const getCSSPlugins = () => {
   return plugins;
 };
 
-module.exports = [
+module.exports = env => [
   {
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
     output: {
@@ -171,8 +169,8 @@ module.exports = [
         },
       },
     },
-    plugins: getJSPlugins(),
-    devtool: isProd ? false : '#inline-source-map',
+    plugins: getJSPlugins(env),
+    devtool: isProd(env) ? false : '#inline-source-map',
   },
   {
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css'), 'css', 'css'),
@@ -191,7 +189,7 @@ module.exports = [
                 loader: 'css-loader',
                 options: {
                   url: false,
-                  minimize: isProd ? { discardComments: { removeAll: true } } : false,
+                  minimize: isProd(env) ? { discardComments: { removeAll: true } } : false,
                 },
               },
               { loader: 'postcss-loader' },
@@ -204,7 +202,7 @@ module.exports = [
     resolve: {
       modules: ['node_modules'],
     },
-    plugins: getCSSPlugins(),
-    devtool: isProd ? false : '#inline-source-map',
+    plugins: getCSSPlugins(env),
+    devtool: isProd(env) ? false : '#inline-source-map',
   },
 ];

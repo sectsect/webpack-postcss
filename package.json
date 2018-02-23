@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "",
-    "dev": "NODE_ENV='development' webpack --watch --progress --mode development",
-    "build": "NODE_ENV='production' webpack --mode production"
+    "dev": "webpack --env.development --mode development --watch --progress",
+    "build": "webpack --env.production --mode production"
   },
   "browserslist": "last 2 versions, ie >= 11, Android >= 4, ios_saf >= 8",
   "devDependencies": {
@@ -16,7 +16,7 @@
     "@babel/preset-env": "^7.0.0-beta.40",
     "autoprefixer": "^8.0.0",
     "babel-loader": "^8.0.0-beta.0",
-    "css-loader": "^0.28.9",
+    "css-loader": "^0.28.10",
     "css-mqpacker": "^6.0.2",
     "eslint": "^4.18.1",
     "eslint-config-airbnb": "^16.1.0",

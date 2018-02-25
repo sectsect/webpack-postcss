@@ -171,6 +171,10 @@ module.exports = env => [
     },
     plugins: getJSPlugins(env),
     devtool: isProd(env) ? false : '#inline-source-map',
+    performance: {
+      hints: isProd(env) ? 'warning' : false,
+      maxEntrypointSize: 300000, // The default value is 250000 (bytes)
+    },
   },
   {
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css'), 'css', 'css'),
@@ -204,5 +208,9 @@ module.exports = env => [
     },
     plugins: getCSSPlugins(env),
     devtool: isProd(env) ? false : '#inline-source-map',
+    performance: {
+      hints: isProd(env) ? 'warning' : false,
+      maxEntrypointSize: 300000, // The default value is 250000 (bytes)
+    },
   },
 ];

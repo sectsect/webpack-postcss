@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "",
-    "dev": "webpack --env.development --watch --progress ",
-    "build": "webpack --env.production"
+    "dev": "webpack --env.development --mode development --watch --progress",
+    "build": "webpack --env.production --mode production"
   },
   "browserslist": "last 2 versions, ie >= 11, Android >= 4, ios_saf >= 8",
   "devDependencies": {
@@ -20,11 +20,11 @@
     "css-mqpacker": "^6.0.2",
     "eslint": "^4.18.1",
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-loader": "^1.9.0",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "extract-text-webpack-plugin": "^4.0.0-alpha.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "json-loader": "^0.5.7",
     "modernizr": "^3.5.0",
@@ -47,8 +47,8 @@
     "postcss-strip-inline-comments": "^0.1.5",
     "postcss-validator": "^0.2.0",
     "style-loader": "^0.20.2",
-    "uglifyjs-webpack-plugin": "^1.2.0",
-    "webpack": "^3.11.0",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^2.0.9",
     "webpack-spritesmith": "^0.4.0",
     "webpack-svgstore-plugin": "^4.0.1",
     "webpack-sweet-entry": "^1.1.4"

@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -24,22 +23,6 @@ const isDev = env => (env && env.development);
 const getJSPlugins = (env) => {
   const plugins = [];
 
-  if (isProd(env)) {
-    plugins.push(new UglifyJSPlugin({
-      parallel: true, // Default number of concurrent runs: os.cpus().length - 1.
-      sourceMap: !isProd(env),
-      uglifyOptions: {
-        output: {
-          comments: false,
-        },
-      },
-    }));
-  }
-  plugins.push(new webpack.optimize.CommonsChunkPlugin({
-    name: 'commons',
-    // chunks: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
-    // minChunks: 2,
-  }));
   plugins.push(new webpack.ProvidePlugin({
     $: 'jquery',
     jQuery: 'jquery',
@@ -175,8 +158,19 @@ module.exports = env => [
       },
     },
     // Modernizr
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          commons: {
+            name: 'commons',
+            chunks: 'initial',
+            minChunks: 2,
+          },
+        },
+      },
+    },
     plugins: getJSPlugins(env),
-    devtool: isProd(env) ? '' : '#inline-source-map',
+    devtool: isProd(env) ? false : '#inline-source-map',
     // webpack-dev-server
     devServer: {
       port: 8080, // port
@@ -186,6 +180,10 @@ module.exports = env => [
       contentBase: path.join(__dirname, 'dist'), // Document root
       publicPath: '/assets/', // Virtual Path
       hot: false, // Enable HMR
+    },
+    performance: {
+      hints: isProd(env) ? 'warning' : false,
+      maxEntrypointSize: 300000, // The default value is 250000 (bytes)
     },
   },
   {
@@ -219,6 +217,10 @@ module.exports = env => [
       modules: ['node_modules'],
     },
     plugins: getCSSPlugins(env),
-    devtool: isProd(env) ? '' : '#inline-source-map',
+    devtool: isProd(env) ? false : '#inline-source-map',
+    performance: {
+      hints: isProd(env) ? 'warning' : false,
+      maxEntrypointSize: 300000, // The default value is 250000 (bytes)
+    },
   },
 ];

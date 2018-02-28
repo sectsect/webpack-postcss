@@ -24,7 +24,7 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "extract-text-webpack-plugin": "^4.0.0-alpha.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "json-loader": "^0.5.7",
     "modernizr": "^3.5.0",
@@ -49,7 +49,7 @@
     "style-loader": "^0.20.2",
     "webpack": "^4.0.1",
     "webpack-cli": "^2.0.9",
-    "webpack-dev-server": "^3.0.1-beta.0",
+    "webpack-dev-server": "^3.1.0",
     "webpack-spritesmith": "^0.4.0",
     "webpack-svgstore-plugin": "^4.0.1",
     "webpack-sweet-entry": "^1.1.4"

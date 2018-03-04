@@ -332,7 +332,7 @@ textarea {
 
 button,
 input,
-input:not([type=checkbox]):not([type=radio]),	// for iOS by SECT
+input:not([type=checkbox]):not([type=radio]),  /* for iOS by SECT */
 select,
 textarea {
   background-color: transparent;

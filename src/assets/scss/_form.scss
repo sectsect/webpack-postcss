@@ -200,7 +200,7 @@ select[multiple] {
   padding: 0;
   option {
     margin: 0;
-    padding: $fh-input-height / 5;
+    padding: calc($fh-input-height / 5);
   }
 }
 
@@ -240,7 +240,7 @@ input[type="image"] {
   width: $fh-button-width;
   max-width: $fh-button-max-width;
   background-color: $fh-button-bg-color;
-  padding: $fh-input-height / 3;
+  padding: calc($fh-input-height / 3);
   cursor: pointer;
 
   color: $fh-button-font-color;
@@ -398,7 +398,7 @@ label[for=#{$file-field-id}] {
     width: $fh-button-width;
     max-width: $fh-button-max-width;
     background-color: $fh-button-bg-color;
-    padding: $fh-input-height / 3;
+    padding: calc($fh-input-height / 3);
     cursor: pointer;
     color: $fh-button-font-color;
     font-weight: 700;

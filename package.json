@@ -8,7 +8,7 @@
     "dev": "webpack --env.development --mode development --watch --progress",
     "build": "webpack --env.production --mode production"
   },
-  "browserslist": "last 2 versions, ie >= 11, Android >= 4, ios_saf >= 8",
+  "browserslist": "> 1%, last 1 versions, ie >= 11, Android >= 4.3",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.40",
     "@babel/helpers": "^7.0.0-beta.40",

@@ -117,9 +117,18 @@ Normalization for Third party
       @mixin opacity 1;
     }
   }
-  /*[data-src], [data-srcset], [data-bgset]{
+  /*[data-src], [data-srcset], [data-bgset] {
     transition: opacity .8s ease-in-out .3s;
   }*/
+  .slick-slide {
+    > div {
+      line-height: 0.8;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 .slick-dots {
   li {

@@ -108,9 +108,13 @@ Normalization for Third party
     @mixin opacity 0;
   }
   &.ready {
+    &:before {
+      visibility: hidden;
+      @mixin opacity 0;
+    }
     .slider {
-      @mixin opacity 1;
       visibility: visible;
+      @mixin opacity 1;
     }
   }
   /*[data-src], [data-srcset], [data-bgset]{

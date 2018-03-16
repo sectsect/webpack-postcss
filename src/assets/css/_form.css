@@ -57,11 +57,11 @@ $field-size-full    : $fh-input-width;
 /*Center/Left-Aligned Layout*/
 @define-mixin center-layout {
   @if $fh-centered == true {
-  margin: 0 auto;
-  text-align: center;
+    margin: 0 auto;
+    text-align: center;
   }
   @else {
-  margin: 0;
+    margin: 0;
   }
 }
 
@@ -130,7 +130,7 @@ textarea {
 @if $fh-allow-input-vendor-styling == false {
   input {
     &[type="text"], &[type="email"], &[type="password"], &[type="search"], &[type="color"], &[type="date"], &[type="datetime-local"], &[type="month"], &[type="number"], &[type="tel"], &[type="time"], &[type="url"], &[type="week"], &[list] {
-  		height: $fh-input-height;
+      height: $fh-input-height;
       -webkit-appearance: none;
       &::-ms-clear, &::-ms-reveal {
         display: none;
@@ -141,7 +141,7 @@ textarea {
 @else {
   input {
     &[type="text"], &[type="email"], &[type="password"], &[type="search"], &[type="color"], &[type="date"], &[type="datetime-local"], &[type="month"], &[type="number"], &[type="tel"], &[type="time"], &[type="url"], &[type="week"], &[list] {
-  		height: $fh-input-height;
+      height: $fh-input-height;
       -webkit-appearance: none;
     }
   }
@@ -166,7 +166,7 @@ input {
   &[type="search"] {
     height: $fh-input-height;
     -webkit-appearance: none;
-  &::-webkit-search-cancel-button, &::-webkit-search-decoration {
+    &::-webkit-search-cancel-button, &::-webkit-search-decoration {
       -webkit-appearance: none;
     }
   }
@@ -178,7 +178,7 @@ input {
 
 /*For checkbox and radio to be centered, need to wrap the input and label in a span -*/
 /*.checkbox-container {
- 	display: block;
+  display: block;
   text-align: center;
 }*/
 
@@ -199,7 +199,7 @@ input {
 }
 @else {
   select {
-  	height: $fh-input-height;
+    height: $fh-input-height;
   }
 }
 

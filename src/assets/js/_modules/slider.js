@@ -4,7 +4,7 @@ import unveil from './unveil-lazysizes';
 export default () => {
   jQuery('.slider_wrap').each(function () {
     const parentid = `#${jQuery(this).attr('id')}`;
-    jQuery('.slider').on('init', function (event, slick) {
+    jQuery(`${parentid} .slider`).on('init', function (event, slick) {
       jQuery(this).closest('.slider_wrap').addClass('ready');
       unveil(jQuery(this).find('.slick-slide img'));
     });

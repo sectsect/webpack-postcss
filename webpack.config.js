@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -168,6 +169,15 @@ module.exports = env => [
           },
         },
       },
+      minimizer: [
+        new UglifyJSPlugin({
+          uglifyOptions: {
+            output: {
+              comments: false,
+            },
+          },
+        }),
+      ],
     },
     plugins: getJSPlugins(env),
     devtool: isProd(env) ? false : '#inline-source-map',

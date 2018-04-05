@@ -123,7 +123,7 @@ module.exports = env => [
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: [
             { loader: 'babel-loader' },
@@ -153,6 +153,7 @@ module.exports = env => [
     },
     // Modernizr
     resolve: {
+      extensions: ['*', '.js', '.jsx'],
       modules: ['node_modules'],
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),
@@ -183,7 +184,7 @@ module.exports = env => [
     devtool: isProd(env) ? false : '#inline-source-map',
     performance: {
       hints: isProd(env) ? 'warning' : false,
-      maxEntrypointSize: 300000, // The default value is 250000 (bytes)
+      maxEntrypointSize: 350000, // The default value is 250000 (bytes)
     },
   },
   {

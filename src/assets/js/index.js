@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import commons from './_modules/commons';
+import App from './_App';
 
-const title = 'My Minimal React Webpack Babel Setup';
+ReactDOM.render(<App />, document.getElementById('app'));
 
-ReactDOM.render(
-  <div>{title}</div>,
-  document.getElementById('app'),
-);
-
+// const title = 'My Minimal React Webpack Babel Setup';
+//
+// ReactDOM.render(
+//   <div>{title}</div>,
+//   document.getElementById('app'),
+// );
 
 // class App extends React.Component {
 //   render() {

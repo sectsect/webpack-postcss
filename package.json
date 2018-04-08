@@ -52,7 +52,7 @@
     "webpack-cli": "^2.0.14",
     "webpack-spritesmith": "^0.4.1",
     "webpack-svgstore-plugin": "^4.0.1",
-    "webpack-sweet-entry": "^1.1.4"
+    "webpack-sweet-entry": "^1.1.5"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0-beta.44",

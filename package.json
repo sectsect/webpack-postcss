@@ -21,7 +21,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "^2.0.0",
-    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
@@ -69,7 +69,7 @@
     "lazysizes": "^4.0.2",
     "node-notifier": "^5.2.1",
     "picturefill": "^3.0.2",
-    "rambda": "^1.0.13",
+    "rambda": "^1.1.0",
     "responsive-nav": "^1.0.39",
     "slick-carousel": "^1.8.1",
     "webfontloader": "^1.6.28"

@@ -14,7 +14,7 @@
     "@babel/helpers": "^7.0.0-beta.46",
     "@babel/plugin-transform-runtime": "^7.0.0-beta.46",
     "@babel/preset-env": "^7.0.0-beta.46",
-    "autoprefixer": "^8.3.0",
+    "autoprefixer": "^8.4.1",
     "babel-loader": "^8.0.0-beta.2",
     "css-loader": "^0.28.11",
     "css-mqpacker": "^6.0.2",
@@ -57,7 +57,7 @@
     "lazysizes": "^4.0.2",
     "node-notifier": "^5.2.1",
     "picturefill": "^3.0.2",
-    "rambda": "^1.1.0",
+    "rambda": "^1.1.1",
     "responsive-nav": "^1.0.39",
     "slick-carousel": "^1.8.1",
     "webfontloader": "^1.6.28"

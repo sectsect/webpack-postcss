@@ -5,7 +5,7 @@
         "useBuiltIns": "usage"
       }
     ],
-    "@babel/preset-stage-2",
+    "@babel/preset-stage-3",
     "@babel/preset-react"
   ],
   "plugins": [

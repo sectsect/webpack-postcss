@@ -6,7 +6,7 @@
 $fh-font-family                : $fontfamily !default;
 $fh-font-size                  : $fontsize !default;
 $fh-font-color                 : $fontcolor !default;
-$fh-font-color-disabled        : #aaa !default;		// Add code by SECT
+$fh-font-color-disabled        : #aaa !default;  // Add code by SECT
 
 // Borders
 $fh-border-radius              : 5px !default;
@@ -184,8 +184,8 @@ select {
   @if $fh-allow-select-vendor-styling == false {
     -webkit-appearance: none;
     -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
+    // -ms-appearance: none;
+    // -o-appearance: none;
     // text-indent: .01px;		//	For Firefox (remove right side arrow)
     // text-overflow: "";			//	For Firefox (remove right side arrow)
     &::-ms-expand {

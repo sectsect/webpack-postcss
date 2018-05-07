@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "",
-    "lint": "eslint --ext .js,.vue src",
+    "lint": "eslint --ext .js,.vue src/assets/js",
     "dev": "webpack --env.development --mode development --watch --progress",
     "build": "webpack --env.production --mode production"
   },

@@ -24,13 +24,13 @@
 
 - **Setting for Support Browser (For [Autoprefixer](https://github.com/postcss/autoprefixer) / [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env))**  
   Edit the following Line  
-  [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L11)  
+  [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L12)  
 
   :memo: See [Browserslist](https://github.com/ai/browserslist) Doc
 
 ## :hamburger: Commands
 
-See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L6-L10)
+See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L6-L11)
 
 | npm script | Description |
 | ------ | ----------- |

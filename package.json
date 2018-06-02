@@ -15,7 +15,7 @@
     "@babel/helpers": "^7.0.0-beta.49",
     "@babel/plugin-transform-runtime": "^7.0.0-beta.49",
     "@babel/preset-env": "^7.0.0-beta.49",
-    "autoprefixer": "^8.5.2",
+    "autoprefixer": "^8.6.0",
     "babel-loader": "^8.0.0-beta.3",
     "css-loader": "^0.28.11",
     "css-mqpacker": "^6.0.2",
@@ -50,7 +50,7 @@
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.10.2",
-    "webpack-cli": "^2.1.4",
+    "webpack-cli": "^3.0.0",
     "webpack-spritesmith": "^0.4.1",
     "webpack-svgstore-plugin": "^4.0.3",
     "webpack-sweet-entry": "^1.1.5"

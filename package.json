@@ -19,7 +19,7 @@
     "babel-loader": "^8.0.0-beta.3",
     "css-loader": "^0.28.11",
     "css-mqpacker": "^6.0.2",
-    "eslint": "^4.19.1",
+    "eslint": "^5.0.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.12.0",

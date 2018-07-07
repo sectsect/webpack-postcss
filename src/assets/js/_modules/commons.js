@@ -118,12 +118,11 @@ console.log(object2.d);
   ES7 Example
 ================================================== */
 // async / await
-const resolveAfter2Seconds = () =>
-  new Promise((resolve) => {
-    setTimeout(() => {
-      resolve('resolved');
-    }, 2000);
-  });
+const resolveAfter2Seconds = () => new Promise((resolve) => {
+  setTimeout(() => {
+    resolve('resolved');
+  }, 2000);
+});
 const asyncCall = async () => {
   try {
     console.log('calling');

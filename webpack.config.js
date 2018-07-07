@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCssnanoPlugin = require('@intervolga/optimize-cssnano-plugin');
 const dotenv = require('dotenv').config();
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -63,7 +64,7 @@ const getJSPlugins = (env) => {
   return plugins;
 };
 
-const getCSSPlugins = () => {
+const getCSSPlugins = (env) => {
   const plugins = [];
 
   plugins.push(new ExtractTextPlugin({
@@ -95,6 +96,13 @@ const getCSSPlugins = () => {
   //     custom_format_retina: spriteTemplate.customFormatRetina,
   //   },
   // }));
+  if (isProd(env)) {
+    plugins.push(new OptimizeCssnanoPlugin({
+      cssnanoOptions: {
+        preset: ['default', isProd(env) ? { discardComments: { removeAll: true } } : false],
+      },
+    }));
+  }
   plugins.push(new NotifierPlugin({
     onErrors: (severity, errors) => {
       if (severity !== 'error') {
@@ -213,7 +221,6 @@ module.exports = env => [
                 loader: 'css-loader',
                 options: {
                   url: false,
-                  minimize: isProd(env) ? { discardComments: { removeAll: true } } : false,
                 },
               },
               { loader: 'postcss-loader' },

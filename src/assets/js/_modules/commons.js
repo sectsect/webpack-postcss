@@ -62,16 +62,16 @@ console.log(sectsect);
 $('body').addClass('sektsekt');
 
 /*= =================================================
-  Example for Rambda.js    Currently this version has known issue on IE. @ https://github.com/selfrefactor/rambda/issues/52
+  Example for Rambda.js
 ================================================== */
-// console.log(R.append('foo', ['bar', 'baz']));
-// console.log(R.flatten([1, [2, [3]]]));
-// console.log(R.init([1, 2, 3]));
-// console.log(R.is(String, 'foo')); // => true
-// console.log(R.is(Array, 1)); // => false
-// console.log(R.last(['foo', 'bar', 'baz']));
-// const mapFn = x => x * 2;
-// console.log(R.map(mapFn, [1, 2, 3]));
+console.log(R.append('foo', ['bar', 'baz']));
+console.log(R.flatten([1, [2, [3]]]));
+console.log(R.init([1, 2, 3]));
+console.log(R.is(String, 'foo')); // => true
+console.log(R.is(Array, 1)); // => false
+console.log(R.last(['foo', 'bar', 'baz']));
+const mapFn = x => x * 2;
+console.log(R.map(mapFn, [1, 2, 3]));
 // => [2, 4, 6]
 
 /*= =================================================
@@ -149,6 +149,17 @@ async function getUser(user) {
   console.log(userData);
 }
 getUser('sectsect');
+/*= =================================================
+  ES8 Example
+================================================== */
+// Map @ https://qiita.com/kws9/items/6ce80ae1c0fd28a3a9d7
+const obj = {
+  'key-1': 'value-1',
+  'key-2': 'value-2',
+  'key-3': 'value-3',
+};
+const converted = Object.entries(obj).map(([key, value]) => ({ key, value }));
+console.log(converted);
 
 /*= =================================================
   Run

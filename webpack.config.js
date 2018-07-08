@@ -95,7 +95,7 @@ const getCSSPlugins = (env) => {
   if (isProd(env)) {
     plugins.push(new OptimizeCssnanoPlugin({
       cssnanoOptions: {
-        preset: ['default', isProd(env) ? { discardComments: { removeAll: true } } : false],
+        preset: ['default', { discardComments: { removeAll: true } }],
       },
     }));
   }

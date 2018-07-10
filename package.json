@@ -59,7 +59,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0-beta.52",
     "@babel/runtime": "^7.0.0-beta.52",
-    "bowser": "^1.9.4",
+    "bowser": "^2.0.0-alpha.1",
     "dedent": "^0.7.0",
     "dotenv": "^6.0.0",
     "ismobilejs": "^0.4.1",

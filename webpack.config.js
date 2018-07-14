@@ -170,11 +170,18 @@ module.exports = env => [
     optimization: {
       splitChunks: {
         cacheGroups: {
-          commons: {
-            name: 'commons',
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
             chunks: 'initial',
-            minChunks: 2,
+            enforce: true
           },
+          modules: {
+            test: /src\/assets\/js\/_modules/,
+            name: 'modules',
+            chunks: 'initial',
+            enforce: true
+          }
         },
       },
       minimizer: [

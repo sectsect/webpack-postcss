@@ -16,6 +16,7 @@ const pxtorem = require('postcss-pxtorem')({
   replace: false,
 });
 const postcssHexrgba = require('postcss-hexrgba');
+const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 const cssMqpacker = require('css-mqpacker')({
   sort: true,
 });
@@ -42,6 +43,7 @@ module.exports = {
     postcssCalc,
     pxtorem,
     postcssHexrgba,
+    postcssFlexbugsFixes,
     cssMqpacker,
     autoprefixer,
     postcssSorting,

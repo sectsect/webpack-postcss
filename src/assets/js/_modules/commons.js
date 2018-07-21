@@ -108,9 +108,14 @@ const object1 = {
   a: 1,
   b: 2,
   c: 3,
+  x: {
+    y: {
+      z: 9999,
+    },
+  },
 };
 const object2 = Object.assign({ d: 4 }, object1);
-console.log(object2.d);
+console.log(object2);
 
 /*= =================================================
   ES7 Example

@@ -12,6 +12,7 @@ const postcssConditionals = require('postcss-conditionals');
 const postcssFor = require('postcss-for');
 const postcssExtend = require('postcss-extend');
 const postcssCalc = require('postcss-calc');
+const postcssClearfix = require('postcss-clearfix');
 const pxtorem = require('postcss-pxtorem')({
   replace: false,
 });
@@ -41,6 +42,7 @@ module.exports = {
     postcssFor,
     postcssExtend,
     postcssCalc,
+    postcssClearfix,
     pxtorem,
     postcssHexrgba,
     postcssFlexbugsFixes,

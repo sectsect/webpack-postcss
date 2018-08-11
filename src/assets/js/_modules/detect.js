@@ -1,5 +1,5 @@
 import isMobile from 'ismobilejs';
-import bowser from 'bowser/bundled';
+import bowser from 'bowser';
 import Modernizr from 'modernizr';
 
 export default () => {

@@ -38,6 +38,7 @@ input[type="reset"],
 input[type="image"] {
   color: $linkcolor;
   text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   transition: $transition;
   &:hover, &:active, &:focus {
     color: $linkcolor;

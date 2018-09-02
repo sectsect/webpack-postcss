@@ -1,3 +1,4 @@
+const postcssClearfix = require('postcss-clearfix');
 const pxtorem = require('postcss-pxtorem')({
   replace: false,
 });
@@ -17,6 +18,7 @@ const postcssReporter = require('postcss-reporter')({
 
 module.exports = {
   plugins: [
+    postcssClearfix,
     pxtorem,
     postcssHexrgba,
     postcssFlexbugsFixes,

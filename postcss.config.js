@@ -12,10 +12,12 @@ const postcssConditionals = require('postcss-conditionals');
 const postcssFor = require('postcss-for');
 const postcssExtend = require('postcss-extend');
 const postcssCalc = require('postcss-calc');
+const postcssClearfix = require('postcss-clearfix');
 const pxtorem = require('postcss-pxtorem')({
   replace: false,
 });
 const postcssHexrgba = require('postcss-hexrgba');
+const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 const cssMqpacker = require('css-mqpacker')({
   sort: true,
 });
@@ -40,8 +42,10 @@ module.exports = {
     postcssFor,
     postcssExtend,
     postcssCalc,
+    postcssClearfix,
     pxtorem,
     postcssHexrgba,
+    postcssFlexbugsFixes,
     cssMqpacker,
     autoprefixer,
     postcssSorting,

@@ -7,13 +7,6 @@
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacityIE);
   }
 }
-@define-mixin clearfix {
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
-  }
-}
 @define-mixin arrow $direction: right, $size: 10px, $borderwidth: 2px, $color: #333, $horizontal: right, $margin: 10px {
   &:after {
     content: "";

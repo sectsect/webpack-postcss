@@ -37,7 +37,7 @@ header
     position: relative;
     nav {
       ul {
-        @mixin clearfix;
+        clear: fix;
         li {
           float: left;
           width: 200px;

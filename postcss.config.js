@@ -1,10 +1,8 @@
-const postcssStripInlineComments = require('postcss-strip-inline-comments');
-const postcssPartialImport = require('postcss-partial-import')({
-  prefix: '_',
-});
+const postcssImport = require('postcss-import')();
 const postcssSimpleVars = require('postcss-simple-vars')({
   silent: true,
 });
+const postcssStripInlineComments = require('postcss-strip-inline-comments');
 const postcssCssVariables = require('postcss-css-variables');
 const postcssMixins = require('postcss-mixins');
 const postcssNested = require('postcss-nested');
@@ -32,8 +30,8 @@ const postcssReporter = require('postcss-reporter')({
 
 module.exports = {
   plugins: [
+    postcssImport,
     postcssStripInlineComments,
-    postcssPartialImport,
     postcssSimpleVars,
     postcssCssVariables,
     postcssMixins,

@@ -1,4 +1,4 @@
-const postcssImport = require('postcss-import')();
+const postcssImport = require('postcss-import');
 const postcssSimpleVars = require('postcss-simple-vars')({
   silent: true,
 });

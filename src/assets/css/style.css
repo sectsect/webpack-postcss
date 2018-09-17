@@ -1,15 +1,15 @@
 @charset "UTF-8";
 
-@import "settings";
-@import "mixin";
-@import "sanitize";
-@import "form";
-@import "sprite";
-@import "svg-icon";
-@import "wp-core";
+@import "_modules/settings.css";
+@import "_modules/mixin.css";
+@import "_modules/sanitize.css";
+@import "_modules/form.css";
+@import "_modules/sprite.css";
+@import "_modules/svg-icon.css";
+@import "_modules/wp-core.css";
 
-@import "phone";
-@import "desktop";
+@import "_modules/phone.css";
+@import "_modules/desktop.css";
 
 $teal: #004D40;
 

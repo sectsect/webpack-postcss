@@ -54,7 +54,7 @@
     "size-plugin": "^1.0.1",
     "style-loader": "^0.23.0",
     "uglifyjs-webpack-plugin": "^2.0.0",
-    "vue-loader": "^15.4.1",
+    "vue-loader": "^15.4.2",
     "vue-template-compiler": "^2.5.17",
     "webpack": "^4.19.0",
     "webpack-cli": "^3.1.0",
@@ -83,7 +83,7 @@
     "viewport-units-buggyfill": "^0.6.2",
     "vue": "^2.5.17",
     "vue-match-heights": "^0.1.1",
-    "vue-scrollto": "^2.11.0",
+    "vue-scrollto": "^2.13.0",
     "webfontloader": "^1.6.28"
   }
 }

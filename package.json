@@ -43,7 +43,6 @@
     "postcss-loader": "^3.0.0",
     "postcss-mixins": "^6.2.0",
     "postcss-nested": "^4.1.0",
-    "postcss-partial-import": "^4.1.0",
     "postcss-pxtorem": "^4.0.1",
     "postcss-reporter": "^6.0.0",
     "postcss-sassy-mixins": "^2.1.0",

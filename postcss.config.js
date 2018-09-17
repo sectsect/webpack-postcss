@@ -1,4 +1,7 @@
 const postcssImport = require('postcss-import');
+const postcssPresetEnv = require('postcss-preset-env')({
+  // stage: 3,  // Default: stage: 2   @ https://cssdb.org/#staging-process
+});
 const postcssSimpleVars = require('postcss-simple-vars')({
   silent: true,
 });
@@ -32,6 +35,7 @@ module.exports = {
   plugins: [
     postcssImport,
     postcssStripInlineComments,
+    postcssPresetEnv,
     postcssSimpleVars,
     postcssCssVariables,
     postcssMixins,

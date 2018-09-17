@@ -11,6 +11,7 @@ import lsBgset from 'lazysizes/plugins/bgset/ls.bgset';
 import lsUnveilhooks from 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import lazysizes from 'lazysizes';
 import 'jquery.easing';
+import viewportUnitsBuggyfill from 'viewport-units-buggyfill';
 import detect from './detect';
 import WebFontLoader from './webfont-loader';
 import inlineSVG from './inline-svg';
@@ -174,6 +175,13 @@ inlineSVG(detect());
 viewPort(detect());
 touchHover(['.slider img']);
 hamburgerMenu();
+
+// For dynamic height on iOS safari
+// @ https://github.com/rodneyrehm/viewport-units-buggyfill/issues/70
+viewportUnitsBuggyfill.init();
+jQuery(window).on('resize', () => {
+  viewportUnitsBuggyfill.refresh();
+});
 
 jQuery(window).on('load', () => {
   smoothScroll();

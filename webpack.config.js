@@ -7,6 +7,7 @@ const dotenv = require('dotenv').config();
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const WebpackSweetEntry = require('webpack-sweet-entry');
+const SizePlugin = require('size-plugin');
 const NotifierPlugin = require('friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
 const spriteTemplate = require('./src/assets/js/_spriteTemplate');
@@ -46,6 +47,9 @@ const getJSPlugins = (env) => {
       ],
     },
   }));
+  if (isProd(env)) {
+    plugins.push(new SizePlugin());
+  }
   plugins.push(new NotifierPlugin({
     onErrors: (severity, errors) => {
       if (severity !== 'error') {
@@ -102,6 +106,7 @@ const getCSSPlugins = (env) => {
         preset: ['default', { discardComments: { removeAll: true } }],
       },
     }));
+    plugins.push(new SizePlugin());
   }
   plugins.push(new NotifierPlugin({
     onErrors: (severity, errors) => {

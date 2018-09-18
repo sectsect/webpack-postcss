@@ -76,6 +76,7 @@
     "picturefill": "^3.0.2",
     "rambda": "^1.2.2",
     "responsive-nav": "^1.0.39",
+    "sanitize.css": "^7.0.3",
     "slick-carousel": "^1.8.1",
     "viewport-units-buggyfill": "^0.6.2",
     "webfontloader": "^1.6.28"

@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const OptimizeCssnanoPlugin = require('@intervolga/optimize-cssnano-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -101,8 +101,8 @@ const getCSSPlugins = (env) => {
   //   },
   // }));
   if (isProd(env)) {
-    plugins.push(new OptimizeCssnanoPlugin({
-      cssnanoOptions: {
+    plugins.push(new OptimizeCssAssetsPlugin({
+      cssProcessorPluginOptions: {
         preset: ['default', { discardComments: { removeAll: true } }],
       },
     }));

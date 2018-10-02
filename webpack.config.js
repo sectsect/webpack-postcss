@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssnanoPlugin = require('@intervolga/optimize-cssnano-plugin');
 const dotenv = require('dotenv').config();
 const SvgStore = require('webpack-svgstore-plugin');
@@ -183,12 +183,15 @@ module.exports = env => [
         },
       },
       minimizer: [
-        new UglifyJSPlugin({
-          uglifyOptions: {
+        new TerserPlugin({
+          cache: true,
+          parallel: true,
+          terserOptions: {
             output: {
               comments: false,
-            },
+            }
           },
+          extractComments: false,
         }),
       ],
     },

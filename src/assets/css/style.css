@@ -2,12 +2,11 @@
 
 @import "_modules/settings.css";
 @import "_modules/mixin.css";
-@import "_modules/sanitize.css";
+@import "../../../node_modules/sanitize.css/sanitize.css";
 @import "_modules/form.css";
 @import "_modules/sprite.css";
 @import "_modules/svg-icon.css";
 @import "_modules/wp-core.css";
-
 @import "_modules/phone.css";
 @import "_modules/desktop.css";
 

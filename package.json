@@ -25,9 +25,9 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "json-loader": "^0.5.7",
+    "mini-css-extract-plugin": "^0.4.3",
     "modernizr": "^3.6.0",
     "modernizr-loader": "^1.0.1",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
@@ -55,6 +55,7 @@
     "terser-webpack-plugin": "^1.1.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
+    "webpack-fix-style-only-entries": "0.0.4",
     "webpack-spritesmith": "^0.5.3",
     "webpack-svgstore-plugin": "^4.0.3",
     "webpack-sweet-entry": "^1.1.6"

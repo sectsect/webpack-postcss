@@ -1,8 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const OptimizeCssnanoPlugin = require('@intervolga/optimize-cssnano-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -71,7 +72,8 @@ const getJSPlugins = (env) => {
 const getCSSPlugins = (env) => {
   const plugins = [];
 
-  plugins.push(new ExtractTextPlugin({
+  plugins.push(new FixStyleOnlyEntriesPlugin());
+  plugins.push(new MiniCssExtractPlugin({
     filename: '[name].css',
     allChunks: true,
   }));
@@ -101,8 +103,8 @@ const getCSSPlugins = (env) => {
   //   },
   // }));
   if (isProd(env)) {
-    plugins.push(new OptimizeCssnanoPlugin({
-      cssnanoOptions: {
+    plugins.push(new OptimizeCssAssetsPlugin({
+      cssProcessorPluginOptions: {
         preset: ['default', { discardComments: { removeAll: true } }],
       },
     }));
@@ -183,12 +185,15 @@ module.exports = env => [
         },
       },
       minimizer: [
-        new UglifyJSPlugin({
-          uglifyOptions: {
+        new TerserPlugin({
+          cache: true,
+          parallel: true,
+          terserOptions: {
             output: {
               comments: false,
-            },
+            }
           },
+          extractComments: false,
         }),
       ],
     },
@@ -203,24 +208,22 @@ module.exports = env => [
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css'), 'css', 'css'),
     output: {
       path: path.resolve(buildPath, 'assets/css'),
-      filename: '[name].css',
+      // filename: '[name].css',
     },
     module: {
       rules: [
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  url: false,
-                },
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                url: false,
               },
-              { loader: 'postcss-loader' },
-            ],
-          }),
+            },
+            { loader: 'postcss-loader' },
+          ],
         },
       ],
     },

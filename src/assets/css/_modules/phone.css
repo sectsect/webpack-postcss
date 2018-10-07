@@ -1,4 +1,18 @@
 /*==================================================
+Reset
+================================================== */
+/* Remove margin, padding of all elements and set background-no-repeat as default */
+* {
+  padding: 0;
+  margin: 0;
+}
+picture, source {
+  display: block;
+}
+ol, ul {
+  list-style: none;
+}
+/*==================================================
 structure
 ================================================== */
 body {

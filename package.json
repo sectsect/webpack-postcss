@@ -62,6 +62,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "@babel/runtime": "^7.1.2",
+    "body-scroll-lock": "^2.5.10",
     "bowser": "^2.0.0-beta.3",
     "dedent": "^0.7.0",
     "dotenv": "^6.1.0",

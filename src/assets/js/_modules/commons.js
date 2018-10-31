@@ -20,7 +20,7 @@ import smoothScroll from './jquery-smooth-scroll';
 import matchHeight from './jquery-match-height';
 import dotdotdot from './jquery-dotdotdot';
 import touchHover from './touch-hover';
-import hamburgerMenu from './hamburger-menu';
+import menu from './menu';
 
 // window.$ = jquery;
 // window.jQuery = jquery;
@@ -174,7 +174,7 @@ WebFontLoader();
 inlineSVG(detect());
 viewPort(detect());
 touchHover(['.slider img']);
-hamburgerMenu();
+menu();
 
 // For dynamic height on iOS safari
 // @ https://github.com/rodneyrehm/viewport-units-buggyfill/issues/70

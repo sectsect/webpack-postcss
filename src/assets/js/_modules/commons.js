@@ -1,8 +1,3 @@
-// import jquery from 'jquery';
-// import * as R from 'rambda';
-// import ismobilejs from 'ismobilejs';
-// import bowser from 'bowser';
-// import Modernizr from 'modernizr';
 import dedent from 'dedent';
 import picturefill from 'picturefill';
 import responsiveNav from 'responsive-nav';
@@ -20,17 +15,7 @@ import smoothScroll from './jquery-smooth-scroll';
 import matchHeight from './jquery-match-height';
 import dotdotdot from './jquery-dotdotdot';
 import touchHover from './touch-hover';
-import hamburgerMenu from './hamburger-menu';
-
-// window.$ = jquery;
-// window.jQuery = jquery;
-// window.R = R;
-// global.isMobile = ismobilejs;
-// global.bowser = bowser;
-// require('jquery.easing');
-// require('jquery-smooth-scroll');
-// require('jquery.dotdotdot');
-// require('jquery-match-height-browserify');
+import menu from './menu';
 
 window.detect = detect();
 
@@ -174,7 +159,7 @@ WebFontLoader();
 inlineSVG(detect());
 viewPort(detect());
 touchHover(['.slider img']);
-hamburgerMenu();
+menu();
 
 // For dynamic height on iOS safari
 // @ https://github.com/rodneyrehm/viewport-units-buggyfill/issues/70

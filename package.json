@@ -30,7 +30,7 @@
     "mini-css-extract-plugin": "^0.4.4",
     "modernizr": "^3.6.0",
     "modernizr-loader": "^1.0.1",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.9.4",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-clearfix": "^2.0.1",
     "postcss-flexbugs-fixes": "^4.1.0",

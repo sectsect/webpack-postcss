@@ -2,14 +2,6 @@ import commons from './_modules/commons';
 import slider from './_modules/slider';
 import MyClass from './_class/myclass';
 
-const hello = 'Hello!!';
-console.log(hello);
-
-const sect = 'SECT!!';
-console.log(sect);
-
-console.log(detect);
-
 // const ary = R.append('111', ['222', '333']);
 // console.log(ary);
 

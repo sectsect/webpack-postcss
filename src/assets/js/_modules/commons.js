@@ -1,5 +1,5 @@
 import picturefill from 'picturefill';
-import responsiveNav from 'responsive-nav';
+// import responsiveNav from 'responsive-nav';
 import lsAspectratio from 'lazysizes/plugins/aspectratio/ls.aspectratio';
 import lsBgset from 'lazysizes/plugins/bgset/ls.bgset';
 import lsUnveilhooks from 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
@@ -85,41 +85,4 @@ jQuery(window).on('load orientationchange resize', () => {
 //       }
 //     });
 //   }
-// });
-
-// jQuery(window).on('load orientationchange resize', () => {
-//   /*= =================================================
-//     Lazyload
-//   ================================================== */
-//   CASE: Less than Equal "IE8"
-//   if (typeof LazyLoad === 'function') {
-//     new LazyLoad({
-//       data_src: 'src',
-//       data_srcset: 'srcset',
-//       threshold: 200,
-//       show_while_loading: true,
-//       placeholder: true,
-//       callback_set(img) {
-//         picturefill({
-//           elements: [img],
-//         });
-//       },
-//     });
-//   } else if (typeof lazySizes === 'object') {
-//     lazySizes.init();
-//   }
-//   /*= =================================================
-//   match height (jQuery.matchheight.js)
-//   ================================================== */
-//   jQuery('.mh-byrow').matchHeight();
-//   jQuery('.mh').matchHeight({ byRow: false });
-//   // ▼USAGE:  Case: multiple
-//   // <ul>
-//   //   <li data-mh="group-01" class="mh">My text</li>
-//   //   <li data-mh="group-01" class="mh">My text</li>
-//   // </ul>
-//   // <ul>
-//   //   <li data-mh="group-02" class="mh">My text</li>
-//   //   <li data-mh="group-02" class="mh">My text</li>
-//   // </ul>
 // });

@@ -113,6 +113,39 @@ export default () => {
     console.log(userData);
   }
   getUser('sectsect');
+
+  // async / await
+  const sampleResolve = value => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(value);
+      }, 1000);
+    })
+  }
+  const sample = async () => {
+    try {
+      return await sampleResolve(5) * await sampleResolve(10) + await sampleResolve(20);
+    } catch (error) {
+      return error;
+    }
+  }
+  const sample2 = async () => {
+    try {
+      const a = await sampleResolve(5);
+      const b = await sampleResolve(10);
+      const c = await sampleResolve(21);
+      return a * b + c;
+    } catch (error) {
+      return error;
+    }
+  }
+  sample().then((v) => {
+    console.log(v); // => 70
+  });
+  sample2().then((v) => {
+    console.log(v); // => 71
+  });
+
   /*= =================================================
     ES8 Example
   ================================================== */

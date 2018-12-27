@@ -31,8 +31,6 @@ const getJSPlugins = (env) => {
     $: 'jquery',
     jQuery: 'jquery',
     'window.jQuery': 'jquery',
-    // bowser: 'bowser',
-    // isMobile: 'ismobilejs',
     R: 'rambda',
   }));
   plugins.push(new SvgStore.Options({
@@ -140,6 +138,8 @@ module.exports = env => [
         {
           test: /\.js$/,
           exclude: /node_modules/,
+          // test: /\.(mjs|js)$/,
+          // exclude: /node_modules\/(?!(quicklink|sect)\/).*/,
           use: [
             { loader: 'babel-loader' },
             {

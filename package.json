@@ -52,12 +52,12 @@
     "postcss-validator": "^0.2.0",
     "size-plugin": "^1.1.1",
     "terser-webpack-plugin": "^1.2.1",
-    "webpack": "^4.28.3",
-    "webpack-cli": "^3.2.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
     "webpack-fix-style-only-entries": "0.1.0",
     "webpack-spritesmith": "^0.5.4",
     "webpack-svgstore-plugin": "^4.1.0",
-    "webpack-sweet-entry": "^1.1.8"
+    "webpack-sweet-entry": "^1.1.9"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",

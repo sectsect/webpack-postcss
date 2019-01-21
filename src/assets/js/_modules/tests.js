@@ -146,6 +146,17 @@ export default () => {
     console.log(v); // => 71
   });
 
+  // The await syntax can be used to wait for the completion of any thenable (an object containing a then function that takes a callback)!
+  // @ https://dev.to/spaciecat/thenables-await-objects-and-cancel-or-defer-your-promises-1f12
+  const wait = time => {
+    return {then: done => setTimeout(done, time)};
+  }
+  async function example() {
+    console.log('Hello...');
+    await wait(2000);
+    console.log('World!');
+  }
+  example();
   /*= =================================================
     ES8 Example
   ================================================== */

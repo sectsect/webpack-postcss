@@ -21,15 +21,15 @@ export default () => {
 
     // Restart autoplay (Slick Slider autoplay stops when touched on mobile/tablet)
     // @ https://stackoverflow.com/questions/48402481/slick-slider-autoplay-stops-when-touched-on-mobile-tablet
-    jQuery(`${parentid} .slider`).on('touchstart', e => {
+    jQuery(`${parentid} .slider`).on('touchstart', (e) => {
       jQuery(e.currentTarget).slick('slickPlay');
     });
 
     // Restart autoplay (Autoplay is stopped after clicking the slick-dot)
     // @ https://github.com/kenwheeler/slick/issues/2655#issuecomment-313923749
-    jQuery(`${parentid} .slider`).on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+    jQuery(`${parentid} .slider`).on('beforeChange', (event, slick, currentSlide, nextSlide) => {
       jQuery(`${parentid} .slider .slick-dots li`).removeClass('slick-active');
-      jQuery(`${parentid} .slider .slick-dots li button`).attr('aria-pressed', 'false').focus(function() {
+      jQuery(`${parentid} .slider .slick-dots li button`).attr('aria-pressed', 'false').focus(function () {
         this.blur();
       });
     });

@@ -65,6 +65,7 @@
     "body-scroll-lock": "^2.6.1",
     "bowser": "^2.1.0",
     "dedent": "^0.7.0",
+    "detect-browser": "^4.1.0",
     "dotenv": "^6.2.0",
     "ismobilejs": "^0.5.1",
     "jquery": "^3.3.1",

@@ -115,20 +115,18 @@ export default () => {
   getUser('sectsect');
 
   // async / await
-  const sampleResolve = value => {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve(value);
-      }, 1000);
-    })
-  }
+  const sampleResolve = value => new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(value);
+    }, 1000);
+  });
   const sample = async () => {
     try {
       return await sampleResolve(5) * await sampleResolve(10) + await sampleResolve(20);
     } catch (error) {
       return error;
     }
-  }
+  };
   const sample2 = async () => {
     try {
       const a = await sampleResolve(5);
@@ -138,7 +136,7 @@ export default () => {
     } catch (error) {
       return error;
     }
-  }
+  };
   sample().then((v) => {
     console.log(v); // => 70
   });

@@ -7,6 +7,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SvgStore = require('webpack-svgstore-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
+const { VueLoaderPlugin } = require("vue-loader");
 const WebpackSweetEntry = require('webpack-sweet-entry');
 const SizePlugin = require('size-plugin');
 const NotifierPlugin = require('friendly-errors-webpack-plugin');
@@ -46,6 +47,7 @@ const getJSPlugins = (env) => {
       ],
     },
   }));
+  plugins.push(new VueLoaderPlugin());
   if (isProd(env)) {
     plugins.push(new SizePlugin());
   }

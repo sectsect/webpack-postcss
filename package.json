@@ -52,8 +52,8 @@
     "postcss-validator": "^0.2.0",
     "size-plugin": "^1.2.0",
     "terser-webpack-plugin": "^1.2.3",
-    "vue-loader": "^15.4.2",
-    "vue-template-compiler": "^2.5.17",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",
     "webpack-fix-style-only-entries": "0.2.1",
@@ -81,9 +81,9 @@
     "sanitize.css": "^8.0.0",
     "slick-carousel": "^1.8.1",
     "viewport-units-buggyfill": "^0.6.2",
-    "vue": "^2.5.17",
+    "vue": "^2.6.10",
     "vue-match-heights": "^0.1.1",
-    "vue-scrollto": "^2.13.0",
+    "vue-scrollto": "^2.15.0",
     "webfontloader": "^1.6.28"
   }
 }

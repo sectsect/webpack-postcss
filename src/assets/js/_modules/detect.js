@@ -1,23 +1,23 @@
 import isMobile from 'ismobilejs';
-import bowser from 'bowser';
+import { detect } from 'detect-browser';
 import Modernizr from 'modernizr';
 
+const browser = detect();
+
 export default () => {
-  const browser = bowser.getParser(window.navigator.userAgent);
-  const browserInfo = browser.getBrowser();
-  const bn = browserInfo.name;
-  const bv = parseInt(browserInfo.version, 10);
+  const bn = browser.name;
+  const bv = parseInt(browser.version, 10);
   const detect = {
     device: {
       desktop: !isMobile.any,
       mobile: isMobile.any,
       phone: isMobile.phone,
       tablet: isMobile.tablet,
-      chrome: (bn === 'Chrome') ? bv : false,
-      firefox: (bn === 'Firefox') ? bv : false,
-      safari: (bn === 'Safari') ? bv : false,
-      msie: (bn === 'Internet Explorer') ? bv : false,
-      msedge: (bn === 'Microsoft Edge') ? bv : false,
+      chrome: (bn === 'chrome') ? bv : false,
+      firefox: (bn === 'firefox') ? bv : false,
+      safari: (bn === 'safari') ? bv : false,
+      msie: (bn === 'ie') ? bv : false,
+      msedge: (bn === 'edge') ? bv : false,
       iPhone: isMobile.apple.phone,
       androidphone: isMobile.android.phone,
       iOS: isMobile.apple.device,

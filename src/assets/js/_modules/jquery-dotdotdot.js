@@ -1,4 +1,4 @@
-import 'jquery.dotdotdot';
+import 'dotdotdot-js';
 
 export default () => {
   if (jQuery('.truncation').length) {

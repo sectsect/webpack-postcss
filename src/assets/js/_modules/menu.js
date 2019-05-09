@@ -1,7 +1,7 @@
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 export default () => {
-  const runModal = (c, t) => {
+  const togglePanel = (c, t) => {
     // Toggle Body Scroll
     const r = (jQuery('body').hasClass(c)) ? enableBodyScroll(t) : disableBodyScroll(t);
     // Add class to body
@@ -11,12 +11,6 @@ export default () => {
     // Lock the scroll for body
     const t = document.querySelector('#nav-panel');
     const c = 'menu-opened';
-    runModal(c, t);
-
-    // if (jQuery('body').hasClass('menu-opened')) {
-    //   jQuery('body').removeClass('menu-opened');
-    // } else {
-    //   jQuery('body').addClass('menu-opened');
-    // }
+    togglePanel(c, t);
   });
 };

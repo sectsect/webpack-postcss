@@ -72,7 +72,9 @@ const getJSPlugins = (env) => {
 const getCSSPlugins = (env) => {
   const plugins = [];
 
-  plugins.push(new FixStyleOnlyEntriesPlugin());
+  plugins.push(new FixStyleOnlyEntriesPlugin({
+    silent: true,
+  }));
   plugins.push(new MiniCssExtractPlugin({
     filename: '[name].css',
     allChunks: true,

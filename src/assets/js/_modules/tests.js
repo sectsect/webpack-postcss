@@ -115,20 +115,18 @@ export default () => {
   getUser('sectsect');
 
   // async / await
-  const sampleResolve = value => {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve(value);
-      }, 1000);
-    })
-  }
+  const sampleResolve = value => new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(value);
+    }, 1000);
+  });
   const sample = async () => {
     try {
       return await sampleResolve(5) * await sampleResolve(10) + await sampleResolve(20);
     } catch (error) {
       return error;
     }
-  }
+  };
   const sample2 = async () => {
     try {
       const a = await sampleResolve(5);
@@ -138,7 +136,7 @@ export default () => {
     } catch (error) {
       return error;
     }
-  }
+  };
   sample().then((v) => {
     console.log(v); // => 70
   });
@@ -146,6 +144,15 @@ export default () => {
     console.log(v); // => 71
   });
 
+  // The await syntax can be used to wait for the completion of any thenable (an object containing a then function that takes a callback)!
+  // @ https://dev.to/spaciecat/thenables-await-objects-and-cancel-or-defer-your-promises-1f12
+  const wait = time => ({ then: done => setTimeout(done, time) });
+  async function example() {
+    console.log('Hello...');
+    await wait(2000);
+    console.log('World!');
+  }
+  example();
   /*= =================================================
     ES8 Example
   ================================================== */

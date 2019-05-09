@@ -63,7 +63,6 @@
     "@babel/polyfill": "^7.4.0",
     "@babel/runtime": "^7.4.2",
     "body-scroll-lock": "^2.6.1",
-    "bowser": "^2.1.2",
     "dedent": "^0.7.0",
     "detect-browser": "^4.1.0",
     "dotdotdot-js": "^4.0.5",

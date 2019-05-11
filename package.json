@@ -9,7 +9,7 @@
     "dev": "webpack --env.development --mode development --watch --progress",
     "build": "webpack --env.production --mode production"
   },
-  "browserslist": "> 1%, last 1 versions, ie >= 11, Android >= 4.3",
+  "browserslist": "> 1%, last 2 versions, Firefox ESR, IE >= 11, not Android 4.4.3-4.4.4, not dead",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/helpers": "^7.4.4",

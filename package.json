@@ -62,7 +62,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@babel/runtime": "^7.4.4",
+    "@babel/runtime-corejs3": "^7.4.4",
     "body-scroll-lock": "^2.6.1",
+    "core-js": "^3.0.1",
     "dedent": "^0.7.0",
     "detect-browser": "^4.5.0",
     "dotdotdot-js": "^4.0.8",

@@ -78,6 +78,7 @@
     "node-notifier": "^5.4.0",
     "picturefill": "^3.0.3",
     "rambda": "^2.9.0",
+    "regenerator-runtime": "^0.13.2",
     "sanitize.css": "^9.0.0",
     "slick-carousel": "^1.8.1",
     "viewport-units-buggyfill": "^0.6.2",

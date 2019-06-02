@@ -24,7 +24,7 @@ window.detect = detect();
   Run
 ================================================== */
 WebFontLoader();
-inlineSVG(detect());
+inlineSVG();
 viewPort(detect());
 touchHover(['.slider img']);
 menu();

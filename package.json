@@ -57,7 +57,7 @@
     "webpack-fix-style-only-entries": "0.3.0",
     "webpack-spritesmith": "^1.0.1",
     "webpack-svgstore-plugin": "^4.1.0",
-    "webpack-sweet-entry": "^1.1.9"
+    "webpack-sweet-entry": "^1.1.10"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
@@ -77,7 +77,7 @@
     "lazysizes": "^5.1.0",
     "node-notifier": "^5.4.0",
     "picturefill": "^3.0.3",
-    "rambda": "^2.11.0",
+    "rambda": "^2.11.1",
     "regenerator-runtime": "^0.13.2",
     "sanitize.css": "^10.0.0",
     "slick-carousel": "^1.8.1",

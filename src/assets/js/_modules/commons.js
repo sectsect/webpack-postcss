@@ -1,3 +1,5 @@
+// import "core-js/stable";
+// import "regenerator-runtime/runtime";
 import 'picturefill';
 import 'lazysizes/plugins/aspectratio/ls.aspectratio';
 import 'lazysizes/plugins/bgset/ls.bgset';

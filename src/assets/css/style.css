@@ -3,6 +3,8 @@
 @import "_modules/settings.css";
 @import "_modules/mixin.css";
 @import "../../../node_modules/sanitize.css/sanitize.css";
+@import "../../../node_modules/sanitize.css/typography.css";
+/* @import "../../../node_modules/sanitize.css/forms.css"; */
 @import "_modules/form.css";
 @import "_modules/sprite.css";
 @import "_modules/svg-icon.css";

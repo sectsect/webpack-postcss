@@ -130,7 +130,7 @@ const getCSSPlugins = (env) => {
 
 module.exports = env => [
   {
-    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
+    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/ts/**/*.ts*'), 'ts', 'ts'),
     output: {
       path: path.resolve(buildPath, 'assets/js'),
       filename: '[name].js',
@@ -138,20 +138,20 @@ module.exports = env => [
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.ts$/,
           exclude: /node_modules/,
           // test: /\.(mjs|js)$/,
           // exclude: /node_modules\/(?!(quicklink|sect)\/).*/,
           use: [
             { loader: 'babel-loader' },
-            {
-              loader: 'eslint-loader',
-              options: {
-                fix: true,
-                failOnError: true,
-                cache: true,
-              },
-            },
+            // {
+            //   loader: 'eslint-loader',
+            //   options: {
+            //     fix: true,
+            //     failOnError: true,
+            //     cache: true,
+            //   },
+            // },
           ],
         },
         // Modernizr
@@ -171,6 +171,7 @@ module.exports = env => [
     },
     // Modernizr
     resolve: {
+      extensions: ['.ts'],
       modules: ['node_modules'],
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),

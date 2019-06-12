@@ -36,6 +36,8 @@ See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/packa
 | ------ | ----------- |
 | `npm run dev` | Watching for Dev |
 | `npm run build` | Building for Deploy |
+| `npm run check-types` | Types check for TypeScript |
+| `npm run check-types:watch` | Types check for TypeScript (watch) |
 
 ## :bookmark: NOTES
 - Rename `.env.example` to `.env` for [dotenv](https://github.com/motdotla/dotenv)
@@ -43,3 +45,16 @@ See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/packa
   $ mv .env.example .env
   ```
   :memo: `.env` file is already set to "ignore" within the `.giignore` file.
+
+## Automatically Fixing Code (w/ VS Cose)
+1. Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+2. Add following settings to `settings.json`
+  ```json
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {"language": "typescript", "autoFix": true },
+    {"language": "typescriptreact", "autoFix": true }
+  ]
+  ```

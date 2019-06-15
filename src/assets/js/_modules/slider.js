@@ -2,10 +2,12 @@ import slick from 'slick-carousel';
 import unveil from './unveil-lazysizes';
 
 export default () => {
-  jQuery('.slider_wrap').each(function () {
+  jQuery('.slider_wrap').each(function() {
     const parentid = `#${jQuery(this).attr('id')}`;
-    jQuery(`${parentid} .slider`).on('init', function (event, slick) {
-      jQuery(this).closest('.slider_wrap').addClass('ready');
+    jQuery(`${parentid} .slider`).on('init', function(event, slick) {
+      jQuery(this)
+        .closest('.slider_wrap')
+        .addClass('ready');
       unveil(jQuery(this).find('.slick-slide img'));
     });
     jQuery(`${parentid} .slider`).slick({
@@ -21,7 +23,7 @@ export default () => {
 
     // Restart autoplay (Slick Slider autoplay stops when touched on mobile/tablet)
     // @ https://stackoverflow.com/questions/48402481/slick-slider-autoplay-stops-when-touched-on-mobile-tablet
-    jQuery(`${parentid} .slider`).on('touchstart', (e) => {
+    jQuery(`${parentid} .slider`).on('touchstart', e => {
       jQuery(e.currentTarget).slick('slickPlay');
     });
 
@@ -29,9 +31,11 @@ export default () => {
     // @ https://github.com/kenwheeler/slick/issues/2655#issuecomment-313923749
     jQuery(`${parentid} .slider`).on('beforeChange', (event, slick, currentSlide, nextSlide) => {
       jQuery(`${parentid} .slider .slick-dots li`).removeClass('slick-active');
-      jQuery(`${parentid} .slider .slick-dots li button`).attr('aria-pressed', 'false').focus(function () {
-        this.blur();
-      });
+      jQuery(`${parentid} .slider .slick-dots li button`)
+        .attr('aria-pressed', 'false')
+        .focus(function() {
+          this.blur();
+        });
     });
   });
 };

@@ -3,7 +3,7 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
 export default () => {
   const togglePanel = (c, t) => {
     // Toggle Body Scroll
-    const r = (jQuery('body').hasClass(c)) ? enableBodyScroll(t) : disableBodyScroll(t);
+    const r = jQuery('body').hasClass(c) ? enableBodyScroll(t) : disableBodyScroll(t);
     // Add class to body
     jQuery('body').toggleClass(c);
   };

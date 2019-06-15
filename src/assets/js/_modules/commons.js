@@ -19,6 +19,7 @@ import matchHeight from './vue-match-heights';
 import dotdotdot from './jquery-dotdotdot';
 import touchHover from './touch-hover';
 import menu from './menu';
+import modal from './modal';
 import tests from './tests';
 
 window.Vue = Vue;
@@ -34,6 +35,7 @@ inlineSVG(detect());
 viewPort(detect());
 touchHover(['.slider img']);
 menu();
+modal();
 tests();
 
 // For dynamic height on iOS safari
@@ -47,10 +49,7 @@ jQuery(window).on('load', () => {
   dotdotdot();
 });
 
-jQuery(window).on('load orientationchange resize', () => {
-
-});
-
+jQuery(window).on('load orientationchange resize', () => {});
 
 // jQuery(() => {
 //   /*= =================================================

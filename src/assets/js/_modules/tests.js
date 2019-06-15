@@ -80,11 +80,12 @@ export default () => {
     ES7 Example
   ================================================== */
   // async / await
-  const resolveAfter2Seconds = () => new Promise((resolve) => {
-    setTimeout(() => {
-      resolve('resolved');
-    }, 2000);
-  });
+  const resolveAfter2Seconds = () =>
+    new Promise(resolve => {
+      setTimeout(() => {
+        resolve('resolved');
+      }, 2000);
+    });
   const asyncCall = async () => {
     try {
       console.log('calling');
@@ -98,7 +99,7 @@ export default () => {
   asyncCall();
 
   // async / await & fetch JSON   @ http://blog.fixter.org/learn-es6-promise-and-es7-async-await/
-  const doFetch = async (user) => {
+  const doFetch = async user => {
     try {
       const url = `https://api.github.com/users/${user}`;
       const response = await fetch(url);
@@ -115,14 +116,15 @@ export default () => {
   getUser('sectsect');
 
   // async / await
-  const sampleResolve = value => new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(value);
-    }, 1000);
-  });
+  const sampleResolve = value =>
+    new Promise(resolve => {
+      setTimeout(() => {
+        resolve(value);
+      }, 1000);
+    });
   const sample = async () => {
     try {
-      return await sampleResolve(5) * await sampleResolve(10) + await sampleResolve(20);
+      return (await sampleResolve(5)) * (await sampleResolve(10)) + (await sampleResolve(20));
     } catch (error) {
       return error;
     }
@@ -137,10 +139,10 @@ export default () => {
       return error;
     }
   };
-  sample().then((v) => {
+  sample().then(v => {
     console.log(v); // => 70
   });
-  sample2().then((v) => {
+  sample2().then(v => {
     console.log(v); // => 71
   });
 

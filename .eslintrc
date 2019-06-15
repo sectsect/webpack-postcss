@@ -1,5 +1,6 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["react", "prettier"],
   "env": {
     "es6": true,
     "browser": true,
@@ -17,7 +18,14 @@
       "devDependencies": true,
       "optionalDependencies": false
     }],
-    "max-len": [2, {"code": 200, "tabWidth": 2, "ignoreUrls": true, "ignoreComments": true, "ignoreTrailingComments": true, "ignoreStrings": true}],
+    "max-len": [2, {
+      "code": 200,
+      "tabWidth": 2,
+      "ignoreUrls": true,
+      "ignoreComments": true,
+      "ignoreTrailingComments": true,
+      "ignoreStrings": true
+    }],
     "no-alert": 0,
     "no-console": 0,
     "no-new": 0,
@@ -26,6 +34,11 @@
     "no-undef": 0,
     "no-underscore-dangle": 0,
     "no-unused-vars": 0,
-    "no-use-before-define": 0
+    "no-use-before-define": 0,
+    "prettier/prettier": ["error", {
+      "printWidth": 100,
+      "singleQuote": true,
+      "trailingComma": "all"
+    }]
   }
 }

@@ -48,7 +48,6 @@ jQuery(window).on('load orientationchange resize', () => {
   matchHeight();
 });
 
-
 // jQuery(() => {
 //   /*= =================================================
 //   Detect the devicePixelRatio

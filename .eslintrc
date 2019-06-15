@@ -1,22 +1,31 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["react", "prettier"],
   "env": {
     "es6": true,
     "browser": true,
-    "node": true,
+    "node": true
   },
+  "parser": "babel-eslint",
   "parserOptions": {
-    "ecmaVersion": 8,
-    "sourceType": "module",
+    "ecmaVersion": 2019,
+    "sourceType": "module"
   },
   "rules": {
     "indent": [2, 2],
     "func-names": 0,
     "import/no-extraneous-dependencies": ["error", {
-      devDependencies: true,
-      optionalDependencies: false,
+      "devDependencies": true,
+      "optionalDependencies": false
     }],
-    "max-len": [2, {"code": 200, "tabWidth": 2, "ignoreUrls": true, "ignoreComments": true, "ignoreTrailingComments": true, "ignoreStrings": true}],
+    "max-len": [2, {
+      "code": 200,
+      "tabWidth": 2,
+      "ignoreUrls": true,
+      "ignoreComments": true,
+      "ignoreTrailingComments": true,
+      "ignoreStrings": true
+    }],
     "no-alert": 0,
     "no-console": 0,
     "no-new": 0,
@@ -29,5 +38,10 @@
     "react/destructuring-assignment": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prefer-stateless-function": 0,
+    "prettier/prettier": ["error", {
+      "printWidth": 100,
+      "singleQuote": true,
+      "trailingComma": "all"
+    }]
   }
 }

@@ -12,13 +12,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>
-App component
-        </h1>
+        <h1>App component</h1>
         <p>
-Hello,
-          {this.state.who}
-!
+          Hello,
+          {this.state.who}!
         </p>
       </div>
     );

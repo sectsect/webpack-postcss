@@ -6,10 +6,12 @@ import MyClass from './_class/myclass';
 // console.log(ary);
 
 jQuery(() => {
-  jQuery('.slider_wrap').each(function () {
+  jQuery('.slider_wrap').each(function() {
     const parentid = `#${jQuery(this).attr('id')}`;
-    jQuery('.slider').on('init', function (event, slick) {
-      jQuery(this).closest('.slider_wrap').addClass('ready');
+    jQuery('.slider').on('init', function(event, slick) {
+      jQuery(this)
+        .closest('.slider_wrap')
+        .addClass('ready');
     });
     jQuery(`${parentid} .slider-for`).slick({
       slidesToShow: 1,
@@ -28,13 +30,15 @@ jQuery(() => {
       dots: false,
       //	centerMode		  : true,
       focusOnSelect: true,
-      responsive: [{
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+          },
         },
-      }],
+      ],
     });
   });
 });

@@ -18,6 +18,7 @@ import matchHeight from './jquery-match-height';
 import dotdotdot from './jquery-dotdotdot';
 import touchHover from './touch-hover';
 import menu from './menu';
+import modal from './modal';
 import tests from './tests';
 
 window.detect = detect();
@@ -30,6 +31,7 @@ inlineSVG(detect());
 viewPort(detect());
 touchHover(['.slider img']);
 menu();
+modal();
 tests();
 
 // For dynamic height on iOS safari

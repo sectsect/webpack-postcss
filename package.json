@@ -61,7 +61,6 @@
     "webpack-cli": "^3.3.4",
     "webpack-fix-style-only-entries": "0.3.0",
     "webpack-spritesmith": "^1.0.1",
-    "webpack-svgstore-plugin": "^4.1.0",
     "webpack-sweet-entry": "^1.1.10"
   },
   "dependencies": {

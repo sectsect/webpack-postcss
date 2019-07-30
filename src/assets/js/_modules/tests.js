@@ -76,6 +76,13 @@ export default () => {
   const object2 = Object.assign({ d: 4 }, object1);
   console.log(object2);
 
+  // Condition with 'Map' object
+  // @ https://twitter.com/sulco/status/1156194824866979840 https://qiita.com/chihiro/items/9965cd7eca0380cf288c
+  const size = 'lg';
+  const sizes = new Map([['sm', '10x10'], ['md', '60x25'], ['lg', '120x80']]);
+  const dimention = sizes.get(size);
+  console.log(dimention);
+
   /*= =================================================
     ES7 Example
   ================================================== */

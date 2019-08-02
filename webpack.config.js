@@ -156,7 +156,7 @@ module.exports = env => [
           test: /\.js$/,
           exclude: /node_modules/,
           // test: /\.(mjs|js)$/,
-          // exclude: /node_modules\/(?!(quicklink|sect)\/).*/,
+          // exclude: /node_modules\/(?!(rambda|quicklink)\/).*/,
           use: [
             { loader: 'babel-loader' },
             {

@@ -1,3 +1,5 @@
+import 'core-js/modules/es.object.assign';
+import 'core-js/modules/es.array.from';
 import MicroModal from 'micromodal';
 
 export default () => {

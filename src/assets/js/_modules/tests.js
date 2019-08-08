@@ -101,6 +101,10 @@ export default () => {
       // expected output: "resolved"
     } catch (err) {
       alert(err);
+    } finally {
+      console.log(
+        'Statements that are executed after the try statement completes. These statements execute regardless of whether an exception was thrown or caught.',
+      );
     }
   };
   asyncCall();

@@ -19,7 +19,9 @@ const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 const cssMqpacker = require('css-mqpacker')({
   sort: true,
 });
-const autoprefixer = require('autoprefixer');
+const autoprefixer = require('autoprefixer')({
+  grid: 'autoplace',
+});
 const postcssSorting = require('postcss-sorting')({
   'properties-order': 'alphabetical',
 });

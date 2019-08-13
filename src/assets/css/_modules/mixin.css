@@ -7,7 +7,8 @@
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacityIE);
   }
 }
-@define-mixin arrow $direction: right, $size: 10px, $borderwidth: 2px, $color: #333, $horizontal: right, $margin: 10px {
+@define-mixin arrow $direction: right, $size: 10px, $borderwidth: 2px,
+  $color: #333, $horizontal: right, $margin: 10px {
   &:after {
     content: "";
     display: block;
@@ -41,7 +42,8 @@
     @mixin arrow right, 10px, 2px, #333, right, 10px;
 }*/
 
-@define-mixin spinner $position: absolute, $size: 16px, $borderwidth: 2px, $color: #aaa, $parentclass: ready, $defaultdisplay: visible {
+@define-mixin spinner $position: absolute, $size: 16px, $borderwidth: 2px,
+  $color: #aaa, $parentclass: ready, $defaultdisplay: visible {
   &:before {
     content: "";
     position: $position;
@@ -61,17 +63,15 @@
       visibility: hidden;
       @mixin opacity 0;
     }
-    transition: all .3s linear .3s;
+    transition: all 0.3s linear 0.3s;
     animation: spin 1s linear infinite;
   }
-
 }
 /*Usage:*/
 /*div {
     @include spinner(absolute, 16px, 2px, #aaa, ready, visible/hidden);
     @mixin spinner absolute, 16px, 2px, #aaa, ready, visible/hidden;
 }*/
-
 
 /*
 @mixin image-2x($image, $width, $height) {
@@ -122,9 +122,11 @@ For Retine mix-in Sprite
 @define-mixin wp-editor $margin {
   .wp-editor {
     font-family: $fontfamily;
-    font-size: $(fontsize)px;
+    font-size: $(fontsize) px;
     line-height: $lineheight;
-    h3, h4, p {
+    h3,
+    h4,
+    p {
       margin: $margin 0;
       overflow: hidden;
       &:first-child {
@@ -211,16 +213,16 @@ For Retine mix-in Sprite
     }
   }
   .aligncenter {
-      display: block;
-      margin: 0 auto;
+    display: block;
+    margin: 0 auto;
   }
   .alignleft {
-      float: left;
-      margin: 0 $margin $margin 0;
+    float: left;
+    margin: 0 $margin $margin 0;
   }
   .alignright {
-      float: right;
-      margin: 0 0 $margin $margin;
+    float: right;
+    margin: 0 0 $margin $margin;
   }
   .wp-caption {
     border: 1px solid #ddd;

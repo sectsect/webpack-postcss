@@ -13,7 +13,7 @@
 @import "_modules/phone.css";
 @import "_modules/desktop.css";
 
-$teal: #004D40;
+$teal: #004d40;
 
 %bg-teal {
   background: $teal;
@@ -49,10 +49,9 @@ body {
   }*/
 }
 
-
 /* postcss-simple-vars */
-$dir:    top;
-$blue:   #056ef0;
+$dir: top;
+$blue: #056ef0;
 $column: 200px;
 
 .menu_link {
@@ -69,7 +68,7 @@ $column: 200px;
   padding-left: 16px;
   &::after {
     content: "";
-    background-image: url('/icons/$(name).png');
+    background-image: url("/icons/$(name).png");
   }
 }
 
@@ -84,9 +83,15 @@ $column: 200px;
 
 /* spinner */
 @keyframes spin {
-  0% {transform: rotate(0deg);}
-  50% {transform: rotate(180deg);}
-  100% {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 /*==================================================
 Normalization for Third party
@@ -106,21 +111,25 @@ Normalization for Third party
 
 /* Web font		@ https://github.com/typekit/webfontloader#events */
 .wf {
-  transition: all .4s linear;
+  transition: all 0.4s linear;
   @mixin opacity 0;
 }
-.wf-active, .wf-inactive {
+.wf-active,
+.wf-inactive {
   .wf {
     @mixin opacity 1;
   }
 }
 
 /* lazy load (lazysizes) */
-[data-src], [data-srcset], [data-bgset] {
-  transition: opacity .5s ease-in-out .1s;
+[data-src],
+[data-srcset],
+[data-bgset] {
+  transition: opacity 0.5s ease-in-out 0.1s;
   /*visibility: hidden;*/
   @mixin opacity 0;
-  &.lazyloaded, &.loaded {
+  &.lazyloaded,
+  &.loaded {
     /*visibility: visible;*/
     @mixin opacity 1;
   }
@@ -135,7 +144,7 @@ Normalization for Third party
   position: relative;
   @mixin spinner absolute, 16px, 2px, #aaa, ready, visible;
   .slider {
-    transition: all .3s linear .1s;
+    transition: all 0.3s linear 0.1s;
     visibility: hidden;
     @mixin opacity 0;
   }
@@ -195,24 +204,24 @@ Normalization for Third party
 
 ul.flex {
   display: flex;
-  flex-wrap: nowrap;								/* Default: nowrap (single-line) */
-  justify-content: space-between;		/* |□  □  □| */
-  align-items: center;						  /* Center */
+  flex-wrap: nowrap; /* Default: nowrap (single-line) */
+  justify-content: space-between; /* |□  □  □| */
+  align-items: center; /* Center */
   li {
-  	flex: 0 1 90px;							    /* Default: 0 1 auto */
-  	border: 1px solid #ccc;
-  	&:nth-child(2) {
-  		flex-basis: 120px;
-  	}
+    flex: 0 1 90px; /* Default: 0 1 auto */
+    border: 1px solid #ccc;
+    &:nth-child(2) {
+      flex-basis: 120px;
+    }
   }
   @media only screen and (max-width: $breakPoint) {
-  	flex-direction: column;
-  	li {
-  		flex: 0 1 auto;
-  		&:nth-child(2) {
-  			flex-basis: auto;
-  		}
-  	}
+    flex-direction: column;
+    li {
+      flex: 0 1 auto;
+      &:nth-child(2) {
+        flex-basis: auto;
+      }
+    }
   }
 }
 

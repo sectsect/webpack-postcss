@@ -90,8 +90,6 @@ const getCSSPlugins = (env) => {
     silent: true,
   }));
   plugins.push(new StyleLintPlugin({
-    // configFile: path.resolve(__dirname, 'stylelint.config.js'),
-    // context: path.resolve(__dirname, '../src/css'),
     files: 'src/assets/css/**/*.css',
   }));
   plugins.push(new MiniCssExtractPlugin({

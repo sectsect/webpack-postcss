@@ -3,64 +3,63 @@
 /*Config -----------------------------*/
 
 /*Font*/
-$fh-font-family                : $fontfamily;
-$fh-font-size                  : $fontsize;
-$fh-font-color                 : $fontcolor;
-$fh-font-color-disabled        : #aaa;  /* Add code by SECT */
+$fh-font-family: $fontfamily;
+$fh-font-size: $fontsize;
+$fh-font-color: $fontcolor;
+$fh-font-color-disabled: #aaa; /* Add code by SECT */
 
 /*Borders*/
-$fh-border-radius              : 5px;
-$fh-border-width               : 1px;
-$fh-border-style               : solid;
-$fh-border-color               : $bordercolor;
+$fh-border-radius: 5px;
+$fh-border-width: 1px;
+$fh-border-style: solid;
+$fh-border-color: $bordercolor;
 
 /*Inputs, Textareas, Select, Option*/
-$fh-input-height               : 30px;
-$fh-input-width                : 100%;
-$fh-input-max-width            : 400px;
-$fh-input-bg-color             : #fff;
-$fh-focus-bg-color             : #fff;
-$fh-focus-border-color         : $fh-border-color;
-$fh-focus-font-color           : $fh-font-color;
+$fh-input-height: 30px;
+$fh-input-width: 100%;
+$fh-input-max-width: 400px;
+$fh-input-bg-color: #fff;
+$fh-focus-bg-color: #fff;
+$fh-focus-border-color: $fh-border-color;
+$fh-focus-font-color: $fh-font-color;
 
 /*Inputs Vendor Styling*/
-$fh-allow-input-vendor-styling : false;
+$fh-allow-input-vendor-styling: false;
 
 /*Select Vendor Styling*/
 $fh-allow-select-vendor-styling: false;
 
 /*Fieldset & Legend Styling*/
-$fh-fieldset-bare              : false;
+$fh-fieldset-bare: false;
 
 /*Buttons & Input Submits*/
-$fh-button-height              : 40px;
-$fh-button-width               : 100%;
-$fh-button-max-width           : 200px;
-$fh-button-font-color          : $fh-font-color;
-$fh-button-bg-color            : $fh-focus-bg-color;
-$fh-button-hover-bg-color      : $fh-focus-bg-color;
-$fh-button-hover-font-color    : $fh-font-color;
+$fh-button-height: 40px;
+$fh-button-width: 100%;
+$fh-button-max-width: 200px;
+$fh-button-font-color: $fh-font-color;
+$fh-button-bg-color: $fh-focus-bg-color;
+$fh-button-hover-bg-color: $fh-focus-bg-color;
+$fh-button-hover-font-color: $fh-font-color;
 
 /*Layout*/
-$fh-centered                   : false;
-$fh-display                    : block;
+$fh-centered: false;
+$fh-display: block;
 
 /*==================================================
   Add code by SECT
 ================================================== */
 /* field size */
-$field-size-s       : 50px;
-$field-size-m       : 200px;
-$field-size-l       : 400px;
-$field-size-full    : $fh-input-width;
+$field-size-s: 50px;
+$field-size-m: 200px;
+$field-size-l: 400px;
+$field-size-full: $fh-input-width;
 
 /*Center/Left-Aligned Layout*/
 @define-mixin center-layout {
   @if $fh-centered == true {
     margin: 0 auto;
     text-align: center;
-  }
-  @else {
+  } @else {
     margin: 0;
   }
 }
@@ -79,7 +78,7 @@ fieldset {
   outline: none;
 
   font-family: $fh-font-family;
-  font-size: $(fontsize)px;
+  font-size: $(fontsize) px;
   color: $fh-font-color;
   vertical-align: top;
 
@@ -89,7 +88,7 @@ fieldset {
 
 datalist {
   font-family: $fh-font-family;
-  font-size: $(fontsize)px;
+  font-size: $(fontsize) px;
 }
 
 label {
@@ -129,18 +128,44 @@ textarea {
 /* Fields with standard height */
 @if $fh-allow-input-vendor-styling == false {
   input {
-    &[type="text"], &[type="email"], &[type="password"], &[type="search"], &[type="color"], &[type="date"], &[type="datetime-local"], &[type="month"], &[type="number"], &[type="tel"], &[type="time"], &[type="url"], &[type="week"], &[list] {
+    &[type="text"],
+    &[type="email"],
+    &[type="password"],
+    &[type="search"],
+    &[type="color"],
+    &[type="date"],
+    &[type="datetime-local"],
+    &[type="month"],
+    &[type="number"],
+    &[type="tel"],
+    &[type="time"],
+    &[type="url"],
+    &[type="week"],
+    &[list] {
       height: $fh-input-height;
       -webkit-appearance: none;
-      &::-ms-clear, &::-ms-reveal {
+      &::-ms-clear,
+      &::-ms-reveal {
         display: none;
       }
     }
   }
-}
-@else {
+} @else {
   input {
-    &[type="text"], &[type="email"], &[type="password"], &[type="search"], &[type="color"], &[type="date"], &[type="datetime-local"], &[type="month"], &[type="number"], &[type="tel"], &[type="time"], &[type="url"], &[type="week"], &[list] {
+    &[type="text"],
+    &[type="email"],
+    &[type="password"],
+    &[type="search"],
+    &[type="color"],
+    &[type="date"],
+    &[type="datetime-local"],
+    &[type="month"],
+    &[type="number"],
+    &[type="tel"],
+    &[type="time"],
+    &[type="url"],
+    &[type="week"],
+    &[list] {
       height: $fh-input-height;
       -webkit-appearance: none;
     }
@@ -156,9 +181,9 @@ textarea {
 
 input {
   &[type="range"] {
-  height: $fh-input-height;
-  width: $fh-input-width;
-  max-width: $fh-input-max-width;
+    height: $fh-input-height;
+    width: $fh-input-width;
+    max-width: $fh-input-max-width;
   }
   &[type="file"] {
     min-height: $fh-input-height;
@@ -166,11 +191,13 @@ input {
   &[type="search"] {
     height: $fh-input-height;
     -webkit-appearance: none;
-    &::-webkit-search-cancel-button, &::-webkit-search-decoration {
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
       -webkit-appearance: none;
     }
   }
-  &[type="checkbox"], &[type="radio"] {
+  &[type="checkbox"],
+  &[type="radio"] {
     display: inline-block;
     vertical-align: middle;
   }
@@ -181,7 +208,6 @@ input {
   display: block;
   text-align: center;
 }*/
-
 
 /* Select ------------------ */
 
@@ -196,8 +222,7 @@ input {
       display: none;
     }
   }
-}
-@else {
+} @else {
   select {
     height: $fh-input-height;
   }
@@ -219,8 +244,7 @@ fieldset {
   @if $fh-fieldset-bare == true {
     padding: 0;
     border: 0;
-  }
-  @else {
+  } @else {
     padding: 10px 25px;
     border-radius: $fh-border-radius;
     border: $fh-border-width $fh-border-style $fh-border-color;
@@ -231,8 +255,7 @@ legend {
   @if $fh-fieldset-bare == true {
     padding: 0;
     font-weight: inherit;
-  }
-  @else {
+  } @else {
     padding: 0 5px;
     font-weight: 700;
   }
@@ -392,14 +415,13 @@ option[disabled],
 button[disabled] {
   cursor: not-allowed;
   color: $fh-font-color-disabled !important;
-  &:hover{
+  &:hover {
     color: $fh-font-color-disabled;
   }
 }
 
-
 /* input[type=file]	@ http://qiita.com/yasumodev/items/c9f8e8f588ded6b179c9 */
-$file-field-id : your-file;
+$file-field-id: your-file;
 
 /* label[for=$(file-field-id)] {
   b {
@@ -558,7 +580,8 @@ input[type="range"] {
 
 /* select2.js - Reset default css */
 .select2-container--default {
-  .select2-selection--single, .select2-selection--multiple {
+  .select2-selection--single,
+  .select2-selection--multiple {
     border: $fh-border-width $fh-border-style $bordercolor !important;
     border-radius: $fh-border-radius !important;
     height: $fh-input-height !important;
@@ -572,7 +595,8 @@ input[type="range"] {
     }
   }
   &.select2-container--open.select2-container--below {
-    .select2-selection--single, .select2-selection--multiple {
+    .select2-selection--single,
+    .select2-selection--multiple {
       border-bottom-left-radius: 0 !important;
       border-bottom-right-radius: 0 !important;
     }
@@ -625,25 +649,25 @@ input[type="range"] {
   }
 }
 @media only screen and (min-width: $breakPoint) {
-  .size_s{
+  .size_s {
     + .select2-container {
       width: $fh-input-width;
       max-width: $field-size-s;
     }
   }
-  .size_m{
+  .size_m {
     + .select2-container {
       width: $fh-input-width;
       max-width: $field-size-m;
     }
   }
-  .size_l{
+  .size_l {
     + .select2-container {
       width: $fh-input-width;
       max-width: $field-size-l;
     }
   }
-  .size_full{
+  .size_full {
     + .select2-container {
       width: $field-size-full;
       max-width: initial;
@@ -652,12 +676,10 @@ input[type="range"] {
   }
 }
 
-
 /* contact form 7 */
 .wpcf7-form-control-wrap {
   display: block;
 }
-
 
 /* For responsive */
 /* @media only screen and (min-width: $breakPoint) {

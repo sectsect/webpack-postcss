@@ -3,7 +3,8 @@
 \**************************/
 
 .modal {
-  font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
 }
 
 .modal__overlay {
@@ -62,14 +63,14 @@
 }
 
 .modal__btn {
-  font-size: .875rem;
+  font-size: 0.875rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   background-color: #e6e6e6;
   color: rgba(0, 0, 0, 0.8);
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   border-style: none;
   border-width: 0;
   cursor: pointer;
@@ -84,10 +85,11 @@
   backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  transition: -webkit-transform .25s ease-out;
-  transition: transform .25s ease-out;
-  transition: transform .25s ease-out,-webkit-transform .25s ease-out;
-  &:focus, &:hover {
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  &:focus,
+  &:hover {
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
   }
@@ -111,7 +113,6 @@
   }
 }
 
-
 @keyframes mmfadeOut {
   from {
     opacity: 1;
@@ -121,7 +122,6 @@
     opacity: 0;
   }
 }
-
 
 @keyframes mmslideIn {
   from {
@@ -133,7 +133,6 @@
   }
 }
 
-
 @keyframes mmslideOut {
   from {
     transform: translateY(0);
@@ -143,7 +142,6 @@
     transform: translateY(-10%);
   }
 }
-
 
 .micromodal-slide {
   display: none;
@@ -166,7 +164,8 @@
       animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
     }
   }
-  .modal__container, .modal__overlay {
+  .modal__container,
+  .modal__overlay {
     will-change: transform;
   }
 }

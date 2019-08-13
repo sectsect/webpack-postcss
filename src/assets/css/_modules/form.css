@@ -401,7 +401,7 @@ button[disabled] {
 /* input[type=file]	@ http://qiita.com/yasumodev/items/c9f8e8f588ded6b179c9 */
 $file-field-id : your-file;
 
-label[for=$(file-field-id)] {
+/* label[for=$(file-field-id)] {
   b {
     height: $fh-button-height;
     width: $fh-button-width;
@@ -428,7 +428,7 @@ label[for=$(file-field-id)] {
       height: auto;
     }
   }
-}
+} */
 #cfm-$file-field-id {
   img {
     max-width: 100%;
@@ -436,9 +436,8 @@ label[for=$(file-field-id)] {
   }
 }
 
-
 /* input[type=range]	@ range.css: https://github.com/danielstern/range.css/ */
-input[type=range] {
+input[type="range"] {
   -webkit-appearance: none;
   &.size_s {
     max-width: initial;
@@ -543,7 +542,7 @@ input[type=range] {
     border-radius: 50%;
     background: #444444;
     cursor: pointer;
-    height: 2px;
+    /* height: 2px; */
   }
   &:focus {
     &::-ms-fill-lower {
@@ -661,6 +660,6 @@ input[type=range] {
 
 
 /* For responsive */
-@media only screen and (min-width: $breakPoint) {
+/* @media only screen and (min-width: $breakPoint) {
 
-}
+} */

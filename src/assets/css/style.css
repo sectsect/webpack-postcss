@@ -99,7 +99,7 @@ Normalization for Third party
   visibility: hidden;
   &.ready {
     /*transform: translate3d(0, 0, 0);*/
-    @mixin opacity 1 ;
+    @mixin opacity 1;
     visibility: visible;
   }
 }

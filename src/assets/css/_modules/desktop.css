@@ -3,9 +3,6 @@
 /*==================================================
 structure
 ================================================== */
-body {
-
-}
 .inner {
   width: $baseWidth;
   padding: 0;
@@ -55,16 +52,13 @@ aside
 ================================================== */
 aside {
   display: block;
-  section {
-
-  }
 }
 /*==================================================
 footer
 ================================================== */
-#footer {
+/* #footer {
 
-}
+} */
 
 /*==================================================
 home
@@ -91,20 +85,9 @@ page-3 (contact)
   article {
     #sec_01 {
       form {
-        section {
-          header {
-
-          }
-        }
         .btn {
-          button, span, input[type=submit], a {
+          button, span, input[type="submit"], a {
             padding: 0;
-          }
-          span {
-
-          }
-          input[type=submit] {
-
           }
         }
         #input {

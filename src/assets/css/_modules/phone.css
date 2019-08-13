@@ -197,15 +197,6 @@ modules
   .current {
     text-decoration: underline;
   }
-  .prev, .next {
-
-  }
-  .prev {
-
-  }
-  .next {
-
-  }
 }
 
 /* Grid */
@@ -308,9 +299,7 @@ main {
 /*==================================================
 home
 ================================================== */
-.home {
 
-}
 /*==================================================
 page-form (page-id-3)
 ================================================== */
@@ -336,19 +325,19 @@ page-form (page-id-3)
           width: 100%;
           overflow: hidden;
           margin-top: 20px;
-          button, span, input[type=submit], a {
+          button, span, input[type="submit"], a {
             display: block;
             width: 100%;
             padding: 10px 0;
             text-align: center;
             font-size: 14px;
           }
-          span {
+          /* span {
 
           }
           input[type=submit] {
 
-          }
+          } */
           .ajax-loader {
             display: none;
           }
@@ -380,7 +369,7 @@ page-form (page-id-3)
               }
             }
           }
-          label[for=your-file] {
+          label[for="your-file"] {
             b {
               font-size: 14px;
             }
@@ -427,13 +416,13 @@ page-form (page-id-3)
           }
         }
         #confirm {
-          .items {
+          /* .items {
             dl {
               dt {
 
               }
             }
-          }
+          } */
           .btn {
             margin-top: 40px;
             button, span {

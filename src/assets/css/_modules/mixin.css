@@ -122,7 +122,7 @@ For Retine mix-in Sprite
 @define-mixin wp-editor $margin {
   .wp-editor {
     font-family: $fontfamily;
-    font-size: $(fontsize) px;
+    font-size: $(fontsize);
     line-height: $lineheight;
     h3,
     h4,

@@ -20,7 +20,7 @@ structure
 body {
   background: none;
   font-family: $fontfamily;
-  font-size: $(fontsize) px;
+  font-size: $(fontsize);
   color: $fontcolor;
   line-height: $lineheight;
   -webkit-font-smoothing: antialiased;
@@ -315,7 +315,6 @@ main {
   width: 100%;
   /*height: 5000px;*/
   /*padding: $mobileheaderH 0 0;*/
-  color: #888;
 }
 /*==================================================
 home

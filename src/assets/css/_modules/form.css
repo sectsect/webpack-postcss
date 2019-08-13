@@ -78,7 +78,7 @@ fieldset {
   outline: none;
 
   font-family: $fh-font-family;
-  font-size: $(fontsize) px;
+  font-size: $(fontsize);
   color: $fh-font-color;
   vertical-align: top;
 
@@ -88,7 +88,7 @@ fieldset {
 
 datalist {
   font-family: $fh-font-family;
-  font-size: $(fontsize) px;
+  font-size: $(fontsize);
 }
 
 label {
@@ -437,7 +437,7 @@ $file-field-id: your-file;
     -moz-appearance: none;
     border-radius: $fh-border-radius;
     border: $fh-border-width $fh-border-style $fh-border-color;
-    font-size: $(fontsize)px;
+    font-size: $(fontsize);
     text-align: center;
     display: block;
   }

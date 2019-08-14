@@ -55,8 +55,8 @@ $blue: #056ef0;
 $column: 200px;
 
 .menu_link {
-  background: $blue;
   width: $column;
+  background: $blue;
 }
 .menu {
   width: calc(4 * $column);
@@ -98,10 +98,10 @@ Normalization for Third party
 ================================================== */
 /* text truncation (dotdotdot) */
 .truncation {
+  visibility: hidden;
   transition: all 0.6s linear;
   /*transform: translate3d(0, -10px, 0);*/
   @mixin opacity 0;
-  visibility: hidden;
   &.ready {
     /*transform: translate3d(0, 0, 0);*/
     @mixin opacity 1;
@@ -144,8 +144,8 @@ Normalization for Third party
   position: relative;
   @mixin spinner absolute, 16px, 2px, #aaa, ready, visible;
   .slider {
-    transition: all 0.3s linear 0.1s;
     visibility: hidden;
+    transition: all 0.3s linear 0.1s;
     @mixin opacity 0;
   }
   &.ready {
@@ -160,24 +160,24 @@ Normalization for Third party
 }
 .slick-dots {
   li {
-    vertical-align: top;
     width: 21px;
     height: 21px;
     margin: 0 2px;
+    vertical-align: top;
     button {
       width: 21px;
       height: 21px;
       padding: 0;
       &:before {
-        content: "";
+        top: 4px;
+        left: 4px;
+        box-sizing: border-box;
         width: 13px;
         height: 13px;
         line-height: 13px;
-        top: 4px;
-        left: 4px;
+        content: "";
         border: 1px solid #000;
         border-radius: 50%;
-        box-sizing: border-box;
         @mixin opacity 1;
       }
     }
@@ -205,8 +205,8 @@ Normalization for Third party
 ul.flex {
   display: flex;
   flex-wrap: nowrap; /* Default: nowrap (single-line) */
-  justify-content: space-between; /* |□  □  □| */
   align-items: center; /* Center */
+  justify-content: space-between; /* |□  □  □| */
   li {
     flex: 0 1 90px; /* Default: 0 1 auto */
     border: 1px solid #ccc;

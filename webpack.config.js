@@ -90,7 +90,7 @@ const getCSSPlugins = (env) => {
     silent: true,
   }));
   plugins.push(new StyleLintPlugin({
-    files: 'src/assets/css/**/*.css',
+    files: 'src/**/*.css',
   }));
   plugins.push(new MiniCssExtractPlugin({
     filename: '[name].css',

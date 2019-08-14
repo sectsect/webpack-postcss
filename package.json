@@ -6,7 +6,7 @@
   "scripts": {
     "start": "",
     "lint": "eslint --ext .js,.vue src/assets/js",
-    "lint:css": "stylelint src/assets/css/**/*.css --fix",
+    "lint:css": "stylelint src/**/*.css --fix",
     "dev": "webpack --env.development --mode development --watch --progress",
     "build": "webpack --env.production --mode production"
   },
@@ -58,6 +58,7 @@
     "size-plugin": "^1.2.0",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-recess-order": "^2.0.3",
     "stylelint-config-recommended": "^2.2.0",
     "stylelint-prettier": "^1.1.1",
     "stylelint-webpack-plugin": "^0.10.5",

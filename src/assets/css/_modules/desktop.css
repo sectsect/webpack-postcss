@@ -19,8 +19,8 @@ modules
 ================================================== */
   /* Paginate */
   .paginate {
-    text-align: center;
     margin-top: 15px;
+    text-align: center;
     .page-numbers {
       display: inline-block;
       min-width: 24px;
@@ -107,8 +107,8 @@ page-3 (contact)
           #confirm {
             .items {
               dl {
-                width: 100%;
                 display: table;
+                width: 100%;
                 dt,
                 dd {
                   display: table-cell;
@@ -116,8 +116,8 @@ page-3 (contact)
                 }
                 dt {
                   width: 200px;
-                  font-weight: bold;
                   padding-top: 4px;
+                  font-weight: bold;
                 }
                 dd {
                   margin: 0;

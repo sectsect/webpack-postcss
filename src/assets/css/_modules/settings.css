@@ -19,7 +19,9 @@ $breakPoint: 768px;
 $baseWidth: 1000px;
 $postWidth: $baseWidth;
 $mobileheaderH: 50px;
+
 /* $baseColor      : #645d5d; */
+
 /* $baseThemeColor : #e8e6e6; */
 
 :root {

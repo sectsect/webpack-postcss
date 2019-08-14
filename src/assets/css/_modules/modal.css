@@ -1,6 +1,6 @@
-/**************************\
+/**************************  \
   Basic Modal Styles
-\**************************/
+\  **************************/
 
 .modal {
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
@@ -51,7 +51,7 @@
   border: 0;
 }
 
-.modal__header .modal__close:before {
+.modal__header .modal__close::before {
   content: "\2715";
 }
 
@@ -100,9 +100,9 @@
   background-color: #00449e;
 }
 
-/**************************\
+/**************************  \
   Demo Animation Style
-\**************************/
+\  **************************/
 @keyframes mmfadeIn {
   from {
     opacity: 0;

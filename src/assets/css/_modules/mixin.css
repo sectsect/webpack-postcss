@@ -1,15 +1,16 @@
 @define-mixin opacity $opacity {
   opacity: $opacity;
   @if $opacity == 1 {
-    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    filter: progid:dximagetransform.microsoft.alpha(enabled=false);
   } @else {
     $opacityIE: calc($opacity * 100);
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacityIE);
+
+    filter: progid:dximagetransform.microsoft.alpha(Opacity=$opacityIE);
   }
 }
 @define-mixin arrow $direction: right, $size: 10px, $borderwidth: 2px,
   $color: #333, $horizontal: right, $margin: 10px {
-  &:after {
+  &::after {
     position: absolute;
     top: 50%;
     display: block;
@@ -35,16 +36,18 @@
     }
   }
 }
-/*Usage:*/
-/*div {
+
+/* Usage: */
+
+/* div {
     position: relative;
     @include arrow(right, 10px, 2px, #333, right, 10px);
     @mixin arrow right, 10px, 2px, #333, right, 10px;
-}*/
+} */
 
 @define-mixin spinner $position: absolute, $size: 16px, $borderwidth: 2px,
   $color: #aaa, $parentclass: ready, $defaultdisplay: visible {
-  &:before {
+  &::before {
     position: $position;
     top: 50%;
     left: 50%;
@@ -67,11 +70,13 @@
     }
   }
 }
-/*Usage:*/
-/*div {
+
+/* Usage: */
+
+/* div {
     @include spinner(absolute, 16px, 2px, #aaa, ready, visible/hidden);
     @mixin spinner absolute, 16px, 2px, #aaa, ready, visible/hidden;
-}*/
+} */
 
 /*
 @mixin image-2x($image, $width, $height) {
@@ -86,10 +91,11 @@
 }
 */
 
-/*==================================================
+/* ==================================================
 For Retine mix-in Sprite
 ================================================== */
-/*@define-mixin sprite-2x-width $sprite {
+
+/* @define-mixin sprite-2x-width $sprite {
   width: nth($sprite, 5) / 2;
 }
 @define-mixin sprite-2x-height $sprite {
@@ -114,9 +120,9 @@ For Retine mix-in Sprite
   @mixin sprite-2x-size $sprite;
   @mixin sprite-2x-width $sprite;
   @mixin sprite-2x-height $sprite;
-}*/
+} */
 
-/*==================================================
+/* ==================================================
 .wp-editor
 ================================================== */
 @define-mixin wp-editor $margin {
@@ -153,6 +159,7 @@ For Retine mix-in Sprite
       max-width: 100%;
       height: auto;
     }
+
     /*
     blockquote {
       margin: $margin 0;

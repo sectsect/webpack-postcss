@@ -8,6 +8,7 @@
     url("../fonts/NotoSansCJKjp-Thin.woff") format("woff"),
     url("../fonts/NotoSansCJKjp-Thin.ttf") format("truetype");
 } */
+
 /* @font-face {
   font-family: "NotoSansCJKjp";
   font-style: normal;
@@ -19,6 +20,7 @@
     url("../fonts/NotoSansCJKjp-Light.woff") format("woff"),
     url("../fonts/NotoSansCJKjp-Light.ttf") format("truetype");
 } */
+
 /* @font-face {
   font-family: "NotoSansCJKjp";
   font-style: normal;
@@ -41,6 +43,7 @@
     url("../fonts/NotoSansCJKjp-Regular.woff") format("woff"),
     url("../fonts/NotoSansCJKjp-Regular.ttf") format("truetype");
 }
+
 /* @font-face {
   font-family: "NotoSansCJKjp";
   font-style: normal;
@@ -63,6 +66,7 @@
     url("../fonts/NotoSansCJKjp-Bold.woff") format("woff"),
     url("../fonts/NotoSansCJKjp-Bold.ttf") format("truetype");
 }
+
 /* @font-face {
   font-family: "NotoSansCJKjp";
   font-style: normal;

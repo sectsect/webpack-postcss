@@ -4,6 +4,7 @@
 @import "_modules/mixin.css";
 @import "../../../node_modules/sanitize.css/sanitize.css";
 @import "../../../node_modules/sanitize.css/typography.css";
+
 /* @import "../../../node_modules/sanitize.css/forms.css"; */
 @import "_modules/form.css";
 @import "_modules/sprite.css";
@@ -20,9 +21,9 @@ $teal: #004d40;
 }
 
 body {
-  /*@extend %bg-teal;*/
+  /* @extend %bg-teal; */
 
-  /*display: flex;
+  /* display: flex;
 
   @for $i from 0 to 10 {
     [data-index=$i] {
@@ -30,23 +31,23 @@ body {
         content: "$i";
       }
     }
-  }*/
+  } */
   p {
-    /*@include font-size(30);
-    @include opacity(0.6);*/
+    /* @include font-size(30);
+    @include opacity(0.6); */
 
-    /*font-size: 30px;
+    /* font-size: 30px;
     @mixin opacity 0.6;
 
-    background: url('../images/test/test.jpg') no-repeat 0 0;*/
+    background: url('../images/test/test.jpg') no-repeat 0 0; */
   }
 
-  /*$sect: 1;
+  /* $sect: 1;
   @if $sect == 1 {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   } @else {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacityIE);
-  }*/
+  } */
 }
 
 /* postcss-simple-vars */
@@ -93,18 +94,22 @@ $column: 200px;
     transform: rotate(360deg);
   }
 }
-/*==================================================
+
+/* ==================================================
 Normalization for Third party
 ================================================== */
+
 /* text truncation (dotdotdot) */
 .truncation {
   visibility: hidden;
   transition: all 0.6s linear;
-  /*transform: translate3d(0, -10px, 0);*/
+
+  /* transform: translate3d(0, -10px, 0); */
   @mixin opacity 0;
   &.ready {
-    /*transform: translate3d(0, 0, 0);*/
+    /* transform: translate3d(0, 0, 0); */
     @mixin opacity 1;
+
     visibility: visible;
   }
 }
@@ -126,11 +131,12 @@ Normalization for Third party
 [data-srcset],
 [data-bgset] {
   transition: opacity 0.5s ease-in-out 0.1s;
-  /*visibility: hidden;*/
+
+  /* visibility: hidden; */
   @mixin opacity 0;
   &.lazyloaded,
   &.loaded {
-    /*visibility: visible;*/
+    /* visibility: visible; */
     @mixin opacity 1;
   }
 }
@@ -151,12 +157,14 @@ Normalization for Third party
   &.ready {
     .slider {
       @mixin opacity 1;
+
       visibility: visible;
     }
   }
-  /*[data-src], [data-srcset], [data-bgset] {
+
+  /* [data-src], [data-srcset], [data-bgset] {
   transition: opacity .8s ease-in-out .3s;
-  }*/
+  } */
 }
 .slick-dots {
   li {
@@ -168,7 +176,7 @@ Normalization for Third party
       width: 21px;
       height: 21px;
       padding: 0;
-      &:before {
+      &::before {
         top: 4px;
         left: 4px;
         box-sizing: border-box;
@@ -183,7 +191,7 @@ Normalization for Third party
     }
     &.slick-active {
       button {
-        &:before {
+        &::before {
           background: #000;
         }
       }

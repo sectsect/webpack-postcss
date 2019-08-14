@@ -2,7 +2,12 @@ module.exports = {
   extends: ["stylelint-config-recommended", "stylelint-config-prettier", "stylelint-config-recess-order"],
   plugins: ['stylelint-prettier'],
   rules: {
-    "at-rule-no-unknown": null,
+    "at-rule-no-unknown": [
+      true,
+      {
+        ignoreAtRules: ["mixin", "define-mixin", "if", "else"]
+      }
+    ],
     // "block-no-empty": true,
     // "color-no-invalid-hex": true,
     // "comment-no-empty": true,

@@ -135,10 +135,7 @@ export default () => {
     });
   const sample = async () => {
     try {
-      return (
-        (await sampleResolve(5)) * (await sampleResolve(10)) +
-        (await sampleResolve(20))
-      );
+      return (await sampleResolve(5)) * (await sampleResolve(10)) + (await sampleResolve(20));
     } catch (error) {
       return error;
     }

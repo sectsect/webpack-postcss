@@ -29,13 +29,18 @@ export default () => {
 
     // Restart autoplay (Autoplay is stopped after clicking the slick-dot)
     // @ https://github.com/kenwheeler/slick/issues/2655#issuecomment-313923749
-    jQuery(`${parentid} .slider`).on('beforeChange', (event, slick, currentSlide, nextSlide) => {
-      jQuery(`${parentid} .slider .slick-dots li`).removeClass('slick-active');
-      jQuery(`${parentid} .slider .slick-dots li button`)
-        .attr('aria-pressed', 'false')
-        .focus(function() {
-          this.blur();
-        });
-    });
+    jQuery(`${parentid} .slider`).on(
+      'beforeChange',
+      (event, slick, currentSlide, nextSlide) => {
+        jQuery(`${parentid} .slider .slick-dots li`).removeClass(
+          'slick-active',
+        );
+        jQuery(`${parentid} .slider .slick-dots li button`)
+          .attr('aria-pressed', 'false')
+          .focus(function() {
+            this.blur();
+          });
+      },
+    );
   });
 };

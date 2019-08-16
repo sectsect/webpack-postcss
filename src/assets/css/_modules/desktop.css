@@ -95,7 +95,7 @@
           .btn {
             button,
             span,
-            input[type="submit"],
+            input[type='submit'],
             a {
               padding: 0;
             }

@@ -8,8 +8,8 @@
     filter: progid:dximagetransform.microsoft.alpha(Opacity=$opacityIE);
   }
 }
-@define-mixin arrow $direction: right, $size: 10px, $borderwidth: 2px,
-  $color: #333, $horizontal: right, $margin: 10px {
+@define-mixin arrow $direction: right, $size: 10px, $borderwidth: 2px, $color: #333,
+  $horizontal: right, $margin: 10px {
   &::after {
     position: absolute;
     top: 50%;
@@ -17,7 +17,7 @@
     width: $size;
     height: $size;
     margin-top: round(-$size / 2);
-    content: "";
+    content: '';
     border-top: $borderwidth solid $color;
     border-right: $borderwidth solid $color;
     @if $direction == top {
@@ -45,8 +45,8 @@
     @mixin arrow right, 10px, 2px, #333, right, 10px;
 } */
 
-@define-mixin spinner $position: absolute, $size: 16px, $borderwidth: 2px,
-  $color: #aaa, $parentclass: ready, $defaultdisplay: visible {
+@define-mixin spinner $position: absolute, $size: 16px, $borderwidth: 2px, $color: #aaa,
+  $parentclass: ready, $defaultdisplay: visible {
   &::before {
     position: $position;
     top: 50%;
@@ -55,7 +55,7 @@
     width: $size;
     height: $size;
     margin: round(-$size / 2) 0 0 round(-$size / 2);
-    content: "";
+    content: '';
     border: $borderwidth solid $color;
     border-right-color: transparent;
     border-radius: 50%;

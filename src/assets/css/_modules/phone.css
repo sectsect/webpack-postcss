@@ -54,10 +54,10 @@ common
 ================================================== */
 a,
 button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="image"] {
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='image'] {
   color: $linkcolor;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -138,7 +138,7 @@ Normalization for Third party
     @mixin opacity 1;
   }
 }
-[data-sizes="auto"] {
+[data-sizes='auto'] {
   display: block;
   width: 100%;
 }
@@ -193,7 +193,7 @@ Normalization for Third party
         width: 13px;
         height: 13px;
         line-height: 13px;
-        content: "";
+        content: '';
         border: 1px solid #000;
         border-radius: 50%;
         @mixin opacity 1;
@@ -287,7 +287,7 @@ header
         bottom: 0;
         left: 0;
         width: 100%;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 9px;
         font-style: normal;
         text-align: center;
@@ -366,7 +366,7 @@ page-form (page-id-3)
           overflow: hidden;
           button,
           span,
-          input[type="submit"],
+          input[type='submit'],
           a {
             display: block;
             width: 100%;
@@ -401,7 +401,7 @@ page-form (page-id-3)
                 display: block;
                 width: 0;
                 height: 0;
-                content: "";
+                content: '';
                 border-style: solid;
               }
               &::before {
@@ -416,7 +416,7 @@ page-form (page-id-3)
               }
             }
           }
-          label[for="your-file"] {
+          label[for='your-file'] {
             b {
               font-size: 14px;
             }

@@ -3,8 +3,8 @@
 \  **************************/
 
 .modal {
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-    helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica,
+    ubuntu, roboto, noto, segoe ui, arial, sans-serif;
 }
 
 .modal__overlay {
@@ -52,7 +52,7 @@
 }
 
 .modal__header .modal__close::before {
-  content: "\2715";
+  content: '\2715';
 }
 
 .modal__content {
@@ -148,7 +148,7 @@
   &.is-open {
     display: block;
   }
-  &[aria-hidden="false"] {
+  &[aria-hidden='false'] {
     .modal__overlay {
       animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
     }
@@ -156,7 +156,7 @@
       animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
     }
   }
-  &[aria-hidden="true"] {
+  &[aria-hidden='true'] {
     .modal__overlay {
       animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
     }

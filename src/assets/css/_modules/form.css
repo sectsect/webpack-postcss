@@ -98,21 +98,21 @@ label {
 /* Input & Textarea ------------------ */
 
 /* Fields with standard width */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
-input[type="color"],
-input[type="date"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="number"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-input[type="week"],
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='search'],
+input[type='color'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='number'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
 input[list],
-input[type="file"],
+input[type='file'],
 select,
 textarea {
   width: $fh-input-width;
@@ -126,19 +126,19 @@ textarea {
 /* Fields with standard height */
 @if $fh-allow-input-vendor-styling == false {
   input {
-    &[type="text"],
-    &[type="email"],
-    &[type="password"],
-    &[type="search"],
-    &[type="color"],
-    &[type="date"],
-    &[type="datetime-local"],
-    &[type="month"],
-    &[type="number"],
-    &[type="tel"],
-    &[type="time"],
-    &[type="url"],
-    &[type="week"],
+    &[type='text'],
+    &[type='email'],
+    &[type='password'],
+    &[type='search'],
+    &[type='color'],
+    &[type='date'],
+    &[type='datetime-local'],
+    &[type='month'],
+    &[type='number'],
+    &[type='tel'],
+    &[type='time'],
+    &[type='url'],
+    &[type='week'],
     &[list] {
       height: $fh-input-height;
       -webkit-appearance: none;
@@ -150,19 +150,19 @@ textarea {
   }
 } @else {
   input {
-    &[type="text"],
-    &[type="email"],
-    &[type="password"],
-    &[type="search"],
-    &[type="color"],
-    &[type="date"],
-    &[type="datetime-local"],
-    &[type="month"],
-    &[type="number"],
-    &[type="tel"],
-    &[type="time"],
-    &[type="url"],
-    &[type="week"],
+    &[type='text'],
+    &[type='email'],
+    &[type='password'],
+    &[type='search'],
+    &[type='color'],
+    &[type='date'],
+    &[type='datetime-local'],
+    &[type='month'],
+    &[type='number'],
+    &[type='tel'],
+    &[type='time'],
+    &[type='url'],
+    &[type='week'],
     &[list] {
       height: $fh-input-height;
       -webkit-appearance: none;
@@ -178,15 +178,15 @@ textarea {
 }
 
 input {
-  &[type="range"] {
+  &[type='range'] {
     width: $fh-input-width;
     max-width: $fh-input-max-width;
     height: $fh-input-height;
   }
-  &[type="file"] {
+  &[type='file'] {
     min-height: $fh-input-height;
   }
-  &[type="search"] {
+  &[type='search'] {
     height: $fh-input-height;
     -webkit-appearance: none;
     &::-webkit-search-cancel-button,
@@ -194,8 +194,8 @@ input {
       -webkit-appearance: none;
     }
   }
-  &[type="checkbox"],
-  &[type="radio"] {
+  &[type='checkbox'],
+  &[type='radio'] {
     display: inline-block;
     vertical-align: middle;
   }
@@ -264,10 +264,10 @@ legend {
 /* Buttons, Input Type Submit/Reset ------------------ */
 
 button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="image"] {
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='image'] {
   width: $fh-button-width;
   max-width: $fh-button-max-width;
   height: $fh-button-height;
@@ -282,7 +282,7 @@ input[type="image"] {
   -moz-appearance: none;
 }
 
-input[type="image"] {
+input[type='image'] {
   /* padding: $fh-input-height / 5; */
   padding: 0;
   text-align: center;
@@ -310,19 +310,19 @@ button:focus {
   border-color: $fh-focus-border-color;
 }
 
-input[type="checkbox"]:focus,
-input[type="radio"]:focus {
+input[type='checkbox']:focus,
+input[type='radio']:focus {
   /* outline: $fh-focus-border-color solid 2px; */
 }
 
 button:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
+input[type='button']:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
 button:focus,
-input[type="button"]:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus {
+input[type='button']:focus,
+input[type='submit']:focus,
+input[type='reset']:focus {
   color: $fh-button-hover-font-color;
   background-color: $fh-button-hover-bg-color;
 }
@@ -330,21 +330,21 @@ input[type="reset"]:focus {
 /* ==================================================
   Add code by SECT
 ================================================== */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
-input[type="color"],
-input[type="date"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="number"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-input[type="week"],
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='search'],
+input[type='color'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='number'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
 input[list],
-input[type="file"],
+input[type='file'],
 select,
 textarea {
   &.size_s {
@@ -458,7 +458,7 @@ $file-field-id: your-file;
 }
 
 /* input[type=range]	@ range.css: https://github.com/danielstern/range.css/ */
-input[type="range"] {
+input[type='range'] {
   -webkit-appearance: none;
   &.size_s {
     max-width: initial;

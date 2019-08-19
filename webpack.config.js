@@ -5,7 +5,7 @@ const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const dotenv = require('dotenv').config();
-const SvgStore = require('webpack-svgstore-plugin');
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const WebpackSweetEntry = require('webpack-sweet-entry');
 const SizePlugin = require('size-plugin');
@@ -33,17 +33,32 @@ const getJSPlugins = (env) => {
     'window.jQuery': 'jquery',
     R: 'rambda',
   }));
-  plugins.push(new SvgStore.Options({
-    svg: {
-      style: '',
-      class: 'svg-icon-lib',
+  // plugins.push(new SvgStore.Options({
+  //   svg: {
+  //     style: '',
+  //     class: 'svg-icon-lib',
+  //   },
+  //   svgoOptions: {
+  //     plugins: [
+  //       { removeTitle: false },
+  //       { removeAttrs: { attrs: 'fill' } },
+  //       { removeStyleElement: true },
+  //     ],
+  //   },
+  // }));
+  plugins.push(new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
+    output: {
+      filename: '../../../dist/assets/images/svg/symbol.svg',
+      svgo: {
+        plugins: [
+          { removeTitle: false },
+          { removeAttrs: { attrs: 'fill' } },
+          { removeStyleElement: true },
+        ],
+      },
     },
-    svgoOptions: {
-      plugins: [
-        { removeTitle: false },
-        { removeAttrs: { attrs: 'fill' } },
-        { removeStyleElement: true },
-      ],
+    sprite: {
+      prefix: 'icon-',
     },
   }));
   if (isProd(env)) {
@@ -137,7 +152,7 @@ module.exports = env => [
           test: /\.js$/,
           exclude: /node_modules/,
           // test: /\.(mjs|js)$/,
-          // exclude: /node_modules\/(?!(quicklink|sect)\/).*/,
+          // exclude: /node_modules\/(?!(rambda|quicklink)\/).*/,
           use: [
             { loader: 'babel-loader' },
             {
@@ -188,6 +203,9 @@ module.exports = env => [
           cache: true,
           parallel: true,
           terserOptions: {
+            compress: {
+              drop_console: true,
+            },
             output: {
               comments: false,
             }

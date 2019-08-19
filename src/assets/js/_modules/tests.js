@@ -23,15 +23,15 @@ export default () => {
   /*= =================================================
     Example for Rambda.js
   ================================================== */
-  console.log(R.append('foo', ['bar', 'baz']));
-  console.log(R.flatten([1, [2, [3]]]));
-  console.log(R.init([1, 2, 3]));
-  console.log(R.is(String, 'foo')); // => true
-  console.log(R.is(Array, 1)); // => false
-  console.log(R.last(['foo', 'bar', 'baz']));
-  const mapFn = x => x * 2;
-  console.log(R.map(mapFn, [1, 2, 3]));
-  // => [2, 4, 6]
+  // console.log(R.append('foo', ['bar', 'baz']));
+  // console.log(R.flatten([1, [2, [3]]]));
+  // console.log(R.init([1, 2, 3]));
+  // console.log(R.is(String, 'foo')); // => true
+  // console.log(R.is(Array, 1)); // => false
+  // console.log(R.last(['foo', 'bar', 'baz']));
+  // const mapFn = x => x * 2;
+  // console.log(R.map(mapFn, [1, 2, 3]));
+  // // => [2, 4, 6]
 
   /*= =================================================
     ES6 Example
@@ -73,8 +73,16 @@ export default () => {
       },
     },
   };
-  const object2 = Object.assign({ d: 4 }, object1);
+  // const object2 = Object.assign({ d: 4 }, object1);
+  const object2 = { d: 4, ...object1 };
   console.log(object2);
+
+  // Condition with 'Map' object
+  // @ https://twitter.com/sulco/status/1156194824866979840 https://qiita.com/chihiro/items/9965cd7eca0380cf288c
+  const size = 'lg';
+  const sizes = new Map([['sm', '10x10'], ['md', '60x25'], ['lg', '120x80']]);
+  const dimention = sizes.get(size);
+  console.log(dimention);
 
   /*= =================================================
     ES7 Example
@@ -94,6 +102,10 @@ export default () => {
       // expected output: "resolved"
     } catch (err) {
       alert(err);
+    } finally {
+      console.log(
+        'Statements that are executed after the try statement completes. These statements execute regardless of whether an exception was thrown or caught.',
+      );
     }
   };
   asyncCall();
@@ -149,11 +161,11 @@ export default () => {
   // The await syntax can be used to wait for the completion of any thenable (an object containing a then function that takes a callback)!
   // @ https://dev.to/spaciecat/thenables-await-objects-and-cancel-or-defer-your-promises-1f12
   const wait = time => ({ then: done => setTimeout(done, time) });
-  async function example() {
+  const example = async () => {
     console.log('Hello...');
     await wait(2000);
     console.log('World!');
-  }
+  };
   example();
   /*= =================================================
     ES8 Example

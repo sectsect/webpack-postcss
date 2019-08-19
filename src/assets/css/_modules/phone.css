@@ -208,6 +208,24 @@ modules
   }
 }
 
+/* Grid */
+.parent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  .div1 {
+    grid-area: 1 / 1 / 2 / 7;
+  }
+  .div2 {
+    grid-area: 2 / 1 / 6 / 2;
+  }
+  .div3 {
+    grid-area: 2 / 2 / 3 / 7;
+  }
+}
+
 /*==================================================
 header
 ================================================== */

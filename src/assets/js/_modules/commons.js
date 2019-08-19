@@ -31,7 +31,7 @@ window.detect = detect();
 smoothScroll();
 matchHeight();
 WebFontLoader();
-inlineSVG(detect());
+inlineSVG();
 viewPort(detect());
 touchHover(['.slider img']);
 menu();

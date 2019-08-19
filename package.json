@@ -60,7 +60,7 @@
     "terser-webpack-plugin": "^1.4.1",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.7.1",
+    "webpack-dev-server": "^3.8.0",
     "webpack-fix-style-only-entries": "0.3.0",
     "webpack-spritesmith": "^1.0.1",
     "webpack-sweet-entry": "^1.1.11"

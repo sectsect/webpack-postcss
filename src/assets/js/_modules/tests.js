@@ -73,7 +73,8 @@ export default () => {
       },
     },
   };
-  const object2 = Object.assign({ d: 4 }, object1);
+  // const object2 = Object.assign({ d: 4 }, object1);
+  const object2 = { d: 4, ...object1 };
   console.log(object2);
 
   // Condition with 'Map' object

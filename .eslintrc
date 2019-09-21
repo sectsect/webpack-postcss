@@ -41,11 +41,7 @@
     "no-underscore-dangle": 0,
     "no-unused-vars": 0,
     "no-use-before-define": 0,
-    "prettier/prettier": ["error", {
-      "printWidth": 100,
-      "singleQuote": true,
-      "trailingComma": "all"
-    }]
+    "prettier/prettier": "error"
   },
   "settings": {
     "import/resolver": {

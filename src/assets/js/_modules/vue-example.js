@@ -1,4 +1,6 @@
+import Vue from 'vue';
 import VueScrollTo from 'vue-scrollto';
+import VueMatchHeights from 'vue-match-heights';
 
 export default () => {
   Vue.use(VueScrollTo, {
@@ -11,5 +13,12 @@ export default () => {
     onCancel: false,
     x: false,
     y: true,
+  });
+
+  Vue.use(VueMatchHeights);
+
+  new Vue({
+    el: '#wrap',
+    methods: {},
   });
 };

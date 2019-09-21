@@ -1,6 +1,6 @@
 // import "core-js/stable";
 // import "regenerator-runtime/runtime";
-import Vue from 'vue';
+// import Vue from 'vue';
 import 'picturefill';
 import 'lazysizes/plugins/aspectratio/ls.aspectratio';
 import 'lazysizes/plugins/bgset/ls.bgset';
@@ -14,22 +14,23 @@ import detect from './detect';
 import WebFontLoader from './webfont-loader';
 import inlineSVG from './inline-svg';
 import viewPort from './viewport';
-import smoothScroll from './vue-scrollto';
-import matchHeight from './vue-match-heights';
+import vueExample from './vue-example';
+// import matchHeight from './vue-match-heights';
 import dotdotdot from './jquery-dotdotdot';
 import touchHover from './touch-hover';
 import menu from './menu';
 import modal from './modal';
 import tests from './tests';
 
-window.Vue = Vue;
+// window.Vue = Vue;
 window.detect = detect();
 
 /*= =================================================
   Run
 ================================================== */
-smoothScroll();
-matchHeight();
+vueExample();
+// smoothScroll();
+// matchHeight();
 WebFontLoader();
 inlineSVG();
 viewPort(detect());

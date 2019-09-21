@@ -1,5 +1,5 @@
-import VueMatchHeights from 'vue-match-heights';
+// import VueMatchHeights from 'vue-match-heights';
 
-export default () => {
-  Vue.use(VueMatchHeights);
-};
+// export default () => {
+//   Vue.use(VueMatchHeights);
+// };

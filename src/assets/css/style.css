@@ -5,6 +5,8 @@
 @import "../../../node_modules/sanitize.css/sanitize.css";
 @import "../../../node_modules/sanitize.css/typography.css";
 /* @import "../../../node_modules/sanitize.css/forms.css"; */
+@import "../../../node_modules/@glidejs/glide/dist/css/glide.core";
+@import "../../../node_modules/@glidejs/glide/dist/css/glide.theme";
 @import "_modules/form.css";
 @import "_modules/sprite.css";
 @import "_modules/svg-icon.css";

@@ -148,7 +148,7 @@ module.exports = env => [
               options: {
                 fix: true,
                 failOnError: true,
-                cache: true,
+                cache: false,
               },
             },
           ],

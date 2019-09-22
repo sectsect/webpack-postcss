@@ -180,6 +180,89 @@ Normalization for Third party
     }
   }
 }
+/* slider (glide) */
+.glide_wrap {
+  position: relative;
+  @mixin spinner absolute, 16px, 2px, #aaa, ready, visible;
+  .glide {
+    transition: all .3s linear .1s;
+    visibility: hidden;
+    opacity: 0;
+  }
+  &.ready {
+    &:before {
+      visibility: hidden;
+      opacity: 0;
+    }
+    .glide {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .glide__track {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .glide__arrows {
+    .glide__arrow {
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+      text-shadow: none;
+      text-indent: -9999px;
+      background: #fff;
+      width: 60px;
+      height: 60px;
+      &:after {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-top: 1px solid #333;
+        border-right: 1px solid #333;
+        position: absolute;
+        top: 50%;
+        margin-top: -7px;
+      }
+      &.glide__arrow--left {
+        left: 0;
+        &:after {
+          transform: rotate(225deg);
+          -ms-transform: rotate(225deg);
+          left: 50%;
+          margin-left: -4px;
+        }
+      }
+      &.glide__arrow--right {
+        right: 0;
+        &:after {
+          transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          right: 50%;
+          margin-right: -4px;
+        }
+      }
+    }
+  }
+  .glide__bullets {
+    bottom: -27px;
+    .glide__bullet {
+      background-color: #bbb;
+      border: none;
+      box-shadow: none;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      margin: 0 8px;
+      &.glide__bullet--active {
+        background-color: #111;
+      }
+    }
+  }
+}
 
 /*==================================================
 modules

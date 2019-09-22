@@ -1,4 +1,7 @@
 import './_modules/commons';
+import glide from './_modules/glide';
+
+glide();
 
 // console.log(add(10, 5));
 

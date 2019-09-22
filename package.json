@@ -79,6 +79,7 @@
     "@babel/polyfill": "^7.4.4",
     "@babel/runtime": "^7.4.5",
     "@babel/runtime-corejs3": "^7.4.5",
+    "@glidejs/glide": "^3.4.0",
     "@types/body-scroll-lock": "^2.6.1",
     "@types/dedent": "^0.7.0",
     "@types/ismobilejs": "^0.4.1",

@@ -1,0 +1,26 @@
+import detect from './detect';
+
+const __svg__ = {
+  path: '../../../../src/assets/images/svg/raw/**/*.svg',
+  name: '../../assets/images/svg/symbol.svg',
+};
+require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
+
+declare var jQuery: any;
+
+export default (): void => {
+  /*= =================================================
+  Fix bug that inline svg does not inserted on IE10
+  ================================================== */
+  if (detect().device.msie && detect().device.msie <= 10) {
+    jQuery
+      .ajax({
+        type: 'get',
+        url: '/assets/images/svg/symbol.svg',
+      })
+      .done((data: object): void => {
+        const svg = jQuery(data).find('svg');
+        jQuery('body').prepend(svg);
+      });
+  }
+};

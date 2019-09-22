@@ -6,12 +6,10 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SvgStore = require('webpack-svgstore-plugin');
-const SpritesmithPlugin = require('webpack-spritesmith');
 const WebpackSweetEntry = require('webpack-sweet-entry');
 const SizePlugin = require('size-plugin');
 const NotifierPlugin = require('friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
-const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');
@@ -138,7 +136,8 @@ module.exports = env => [
     module: {
       rules: [
         {
-          test: /\.ts$/,
+          // test: /\.ts$/,
+          test: /\.(ts|js)$/,
           exclude: /node_modules/,
           // test: /\.(mjs|js)$/,
           // exclude: /node_modules\/(?!(quicklink|sect)\/).*/,
@@ -171,7 +170,7 @@ module.exports = env => [
     },
     // Modernizr
     resolve: {
-      extensions: ['.ts'],
+      extensions: [ '.tsx', '.ts', '.js' ],
       modules: ['node_modules'],
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),

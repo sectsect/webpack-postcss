@@ -41,24 +41,23 @@ export default (): void => {
     ES6 Example
   ================================================== */
   // Spread Operator
-  const arr = [1, 2, 3];
+  const arr: number[] = [1, 2, 3];
   console.log(arr); // [1, 2, 3]
   console.log(...arr); // 1 2 3
 
-  const arr1 = ['two', 'three'];
-  const arr2 = ['one', ...arr1, 'four', 'five'];
+  const arr1: string[] = ['two', 'three'];
+  const arr2: string[] = ['one', ...arr1, 'four', 'five'];
   console.log(arr2);
 
-  const numbers = [9, 4, 7, 1];
+  const numbers: number[] = [9, 4, 7, 1];
   console.log(Math.min(...numbers));
 
   // Array.prototype.includes() (ES7)
-  const array = [1, 2, 3, 4, 5];
+  const array: number[] = [1, 2, 3, 4, 5];
   console.log(array.includes(3));
 
   // Default Parameters
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  const foo = (a = 5, b = 10) => {
+  const foo = (a = 5, b = 10): void => {
     console.log(a + b);
   };
   foo(); // 15
@@ -67,7 +66,17 @@ export default (): void => {
   foo(8); // 18
 
   // Object.assign()
-  const object1 = {
+  interface object1Type {
+    a: number;
+    b: number;
+    c: number;
+    x: {
+      y: {
+        z: number;
+      };
+    };
+  }
+  const object1: object1Type = {
     a: 1,
     b: 2,
     c: 3,
@@ -85,8 +94,7 @@ export default (): void => {
   ================================================== */
   // async / await
   const resolveAfter2Seconds = (): any =>
-    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-    new Promise<string>((resolve: any | null) => {
+    new Promise<string>((resolve: any | null): any => {
       setTimeout((): any => {
         resolve('resolved');
       }, 2000);
@@ -96,8 +104,7 @@ export default (): void => {
   //     resolve('resolved');
   //   }, 2000);
   // });
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  const asyncCall = async () => {
+  const asyncCall = async (): Promise<void> => {
     try {
       console.log('calling');
       const result = await resolveAfter2Seconds();
@@ -127,35 +134,35 @@ export default (): void => {
   getUser('sectsect');
 
   // async / await
-  // const sampleResolve = (value: number): void =>
-  //   new Promise((resolve): void => {
-  //     setTimeout((): void => {
-  //       resolve(value);
-  //     }, 1000);
-  //   });
-  // const sample = async (): Promise<string> => {
-  //   try {
-  //     return (await sampleResolve(5)) * (await sampleResolve(10)) + (await sampleResolve(20));
-  //   } catch (error) {
-  //     return error;
-  //   }
-  // };
-  // const sample2 = async (): Promise<string> => {
-  //   try {
-  //     const a = await sampleResolve(5);
-  //     const b = await sampleResolve(10);
-  //     const c = await sampleResolve(21);
-  //     return a * b + c;
-  //   } catch (error) {
-  //     return error;
-  //   }
-  // };
-  // sample().then((v: string): void => {
-  //   console.log(v); // => 70
-  // });
-  // sample2().then((v: string): void => {
-  //   console.log(v); // => 71
-  // });
+  const sampleResolve = (value: number): any =>
+    new Promise<string>((resolve: any | null): any => {
+      setTimeout((): any => {
+        resolve(value);
+      }, 1000);
+    });
+  const sample = async (): Promise<string> => {
+    try {
+      return (await sampleResolve(5)) * (await sampleResolve(10)) + (await sampleResolve(20));
+    } catch (error) {
+      return error;
+    }
+  };
+  const sample2 = async (): Promise<string> => {
+    try {
+      const a = await sampleResolve(5);
+      const b = await sampleResolve(10);
+      const c = await sampleResolve(21);
+      return a * b + c;
+    } catch (error) {
+      return error;
+    }
+  };
+  sample().then((v: string): void => {
+    console.log(v); // => 70
+  });
+  sample2().then((v: string): void => {
+    console.log(v); // => 71
+  });
 
   // The await syntax can be used to wait for the completion of any thenable (an object containing a then function that takes a callback)!
   // @ https://dev.to/spaciecat/thenables-await-objects-and-cancel-or-defer-your-promises-1f12
@@ -171,11 +178,16 @@ export default (): void => {
     ES8 Example
   ================================================== */
   // Map @ https://qiita.com/kws9/items/6ce80ae1c0fd28a3a9d7
-  // const obj = {
-  //   'key-1': 'value-1',
-  //   'key-2': 'value-2',
-  //   'key-3': 'value-3',
-  // };
-  // const converted = Object.entries(obj).map(([key, value]) => ({ key, value }));
-  // console.log(converted);
+  interface objType {
+    'key-1': string;
+    'key-2': string;
+    'key-3': string;
+  }
+  const obj: objType = {
+    'key-1': 'value-1',
+    'key-2': 'value-2',
+    'key-3': 'value-3',
+  };
+  const converted = Object.entries(obj).map(([key, value]): any => ({ key, value }));
+  console.log(converted);
 };

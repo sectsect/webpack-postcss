@@ -3,8 +3,9 @@ module.exports = api => {
   const presets = [
     [
       "@babel/preset-env", {
-        useBuiltIns: "usage",
-        corejs: 3,
+        "modules": false,
+        "useBuiltIns": "usage",
+        "corejs": 3,
       },
     ],
     "@babel/typescript"
@@ -12,7 +13,7 @@ module.exports = api => {
   const plugins = [
     [
       "@babel/plugin-transform-runtime", {
-        corejs: 3,
+        "corejs": 3,
       },
     ],
     "@babel/proposal-class-properties",

@@ -19,7 +19,13 @@ module.exports = {
   "rules": {
     "indent": [2, 2],
     "func-names": 0,
-    "import/extensions": [".js", ".jsx", ".json", ".ts", ".tsx"],
+    "import/extensions": 0,
+    // "import/extensions": ["error", "always", {
+    //     "js": "never",
+    //     "jsx": "never",
+    //     "ts": "never",
+    //     "tsx": "never"
+    // }],
     "import/no-extraneous-dependencies": ["error", {
       "devDependencies": true,
       "optionalDependencies": false
@@ -44,6 +50,7 @@ module.exports = {
     "prettier/prettier": "error"
   },
   "settings": {
+    "import/extensions": [".js", ".jsx", ".json", ".ts", ".tsx"],
     "import/resolver": {
       "webpack": {
         "config": "webpack.config.js"

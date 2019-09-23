@@ -86,7 +86,7 @@ export default (): void => {
       },
     },
   };
-  const object2 = Object.assign({ d: 4 }, object1);
+  const object2 = { d: 4, ...object1 };
   console.log(object2);
 
   /*= =================================================

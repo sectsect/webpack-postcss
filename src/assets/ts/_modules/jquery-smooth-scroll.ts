@@ -1,6 +1,6 @@
 import 'jquery-smooth-scroll';
 
-declare var jQuery: any;
+declare let jQuery: any;
 
 export default (): void => {
   jQuery("a[href^='#']").on('click', (e: any): boolean => {

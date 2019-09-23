@@ -1,8 +1,8 @@
 import dedent from 'dedent';
 import detect from './detect';
 
-declare var jQuery: any;
-declare var R: any;
+declare let jQuery: any;
+declare let R: any;
 
 export default (): void => {
   /*= =================================================
@@ -66,7 +66,7 @@ export default (): void => {
   foo(8); // 18
 
   // Object.assign()
-  interface object1Type {
+  interface Object1Type {
     a: number;
     b: number;
     c: number;
@@ -76,7 +76,7 @@ export default (): void => {
       };
     };
   }
-  const object1: object1Type = {
+  const object1: Object1Type = {
     a: 1,
     b: 2,
     c: 3,
@@ -178,12 +178,12 @@ export default (): void => {
     ES8 Example
   ================================================== */
   // Map @ https://qiita.com/kws9/items/6ce80ae1c0fd28a3a9d7
-  interface objType {
+  interface ObjType {
     'key-1': string;
     'key-2': string;
     'key-3': string;
   }
-  const obj: objType = {
+  const obj: ObjType = {
     'key-1': 'value-1',
     'key-2': 'value-2',
     'key-3': 'value-3',

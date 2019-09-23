@@ -1,6 +1,6 @@
 import 'dotdotdot-js';
 
-declare var jQuery: any;
+declare let jQuery: any;
 
 export default (): void => {
   if (jQuery('.truncation').length) {

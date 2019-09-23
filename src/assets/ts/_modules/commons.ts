@@ -22,7 +22,7 @@ import menu from './menu';
 import modal from './modal';
 import tests from './tests';
 
-declare var jQuery: any;
+declare let jQuery: any;
 
 // window.detect = detect();
 

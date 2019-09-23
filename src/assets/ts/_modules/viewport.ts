@@ -1,6 +1,6 @@
 import detect from './detect';
 
-declare var jQuery: any;
+declare let jQuery: any;
 
 export default (): void => {
   if (detect().device.tablet) {

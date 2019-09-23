@@ -1,4 +1,4 @@
-declare var jQuery: any;
+declare let jQuery: any;
 
 export default (): void => {
   jQuery

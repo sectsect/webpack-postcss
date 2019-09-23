@@ -1,6 +1,6 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-declare var jQuery: any;
+declare let jQuery: any;
 
 export default (): void => {
   const togglePanel = (c: string, t: any): any => {

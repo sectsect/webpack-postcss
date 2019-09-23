@@ -1,7 +1,7 @@
 import Glide from '@glidejs/glide';
 // import unveil from './unveil-lazysizes';
 
-declare var jQuery: any;
+declare let jQuery: any;
 
 export default (): void => {
   jQuery('.glide_wrap').each(function(): void {

@@ -4,12 +4,11 @@ module.exports = {
     "browser": true,
     "node": true
   },
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  // "parser": "@typescript-eslint/parser",
   "extends": [
     "airbnb-typescript",
     "plugin:@typescript-eslint/recommended",
@@ -47,6 +46,7 @@ module.exports = {
     "no-underscore-dangle": 0,
     "no-unused-vars": 0,
     "no-use-before-define": 0,
+    "@typescript-eslint/no-explicit-any": 0,
     "prettier/prettier": "error"
   },
   "settings": {

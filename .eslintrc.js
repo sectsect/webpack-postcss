@@ -1,4 +1,4 @@
-{
+module.exports = {
   "extends": ["airbnb", "prettier", "prettier/react"],
   "plugins": ["react", "prettier"],
   "env": {
@@ -37,4 +37,4 @@
     "no-use-before-define": 0,
     "prettier/prettier": "error",
   }
-}
+};

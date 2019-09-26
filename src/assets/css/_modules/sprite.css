@@ -1,27 +1,34 @@
-
-.icon-author, .icon-book, .icon-contact, .icon-download, .icon-sample, .icon-top {
+.icon-author,
+.icon-book,
+.icon-contact,
+.icon-download,
+.icon-sample,
+.icon-top {
   background-image: url(../images/sprites/icon.png);
 }
 
-
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .icon-author, .icon-book, .icon-contact, .icon-download, .icon-sample, .icon-top {
+  .icon-author,
+  .icon-book,
+  .icon-contact,
+  .icon-download,
+  .icon-sample,
+  .icon-top {
     background-image: url(../images/sprites/icon@2x.png);
     background-size: 96px 64px;
   }
 }
 
-
 .icon-author {
-  background-position: 0px 0px;
+  background-position: 0 0;
 }
 
 .icon-book {
-  background-position: -32px 0px;
+  background-position: -32px 0;
 }
 
 .icon-contact {
-  background-position: 0px -32px;
+  background-position: 0 -32px;
 }
 
 .icon-download {
@@ -29,7 +36,7 @@
 }
 
 .icon-sample {
-  background-position: -64px 0px;
+  background-position: -64px 0;
 }
 
 .icon-top {

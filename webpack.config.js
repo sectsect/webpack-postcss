@@ -12,6 +12,7 @@ const SizePlugin = require('size-plugin');
 const NotifierPlugin = require('friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
 const spriteTemplate = require('./src/assets/js/_spriteTemplate');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');
@@ -87,6 +88,10 @@ const getCSSPlugins = (env) => {
 
   plugins.push(new FixStyleOnlyEntriesPlugin({
     silent: true,
+  }));
+  plugins.push(new StyleLintPlugin({
+    files: 'src/**/*.css',
+    fix: true
   }));
   plugins.push(new MiniCssExtractPlugin({
     filename: '[name].css',

@@ -1,18 +1,23 @@
 @define-mixin opacity $opacity {
   opacity: $opacity;
   @if $opacity == 1 {
-    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    filter: progid:dximagetransform.microsoft.alpha(enabled=false);
   } @else {
     $opacityIE: calc($opacity * 100);
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacityIE);
+
+    filter: progid:dximagetransform.microsoft.alpha(Opacity=$opacityIE);
   }
 }
-@define-mixin arrow $direction: right, $size: 10px, $borderwidth: 2px, $color: #333, $horizontal: right, $margin: 10px {
-  &:after {
-    content: "";
+@define-mixin arrow $direction: right, $size: 10px, $borderwidth: 2px, $color: #333,
+  $horizontal: right, $margin: 10px {
+  &::after {
+    position: absolute;
+    top: 50%;
     display: block;
     width: $size;
     height: $size;
+    margin-top: round(-$size / 2);
+    content: '';
     border-top: $borderwidth solid $color;
     border-right: $borderwidth solid $color;
     @if $direction == top {
@@ -24,36 +29,38 @@
     } @else {
       transform: rotate(45deg);
     }
-    position: absolute;
-    top: 50%;
     @if $horizontal == left {
       left: -(round($size / 2) - 1px);
     } @else {
       right: $margin + round($size / 5);
     }
-    margin-top: round(-$size / 2);
   }
 }
-/*Usage:*/
-/*div {
+
+/* Usage: */
+
+/* div {
     position: relative;
     @include arrow(right, 10px, 2px, #333, right, 10px);
     @mixin arrow right, 10px, 2px, #333, right, 10px;
-}*/
+} */
 
-@define-mixin spinner $position: absolute, $size: 16px, $borderwidth: 2px, $color: #aaa, $parentclass: ready, $defaultdisplay: visible {
-  &:before {
-    content: "";
+@define-mixin spinner $position: absolute, $size: 16px, $borderwidth: 2px, $color: #aaa,
+  $parentclass: ready, $defaultdisplay: visible {
+  &::before {
     position: $position;
     top: 50%;
     left: 50%;
     z-index: 100;
-    margin: round(-$size / 2) 0 0 round(-$size / 2);
     width: $size;
     height: $size;
-    border-radius: 50%;
+    margin: round(-$size / 2) 0 0 round(-$size / 2);
+    content: '';
     border: $borderwidth solid $color;
     border-right-color: transparent;
+    border-radius: 50%;
+    transition: all 0.3s linear 0.3s;
+    animation: spin 1s linear infinite;
     @if $defaultdisplay == visible {
       visibility: visible;
       @mixin opacity 1;
@@ -61,17 +68,15 @@
       visibility: hidden;
       @mixin opacity 0;
     }
-    transition: all .3s linear .3s;
-    animation: spin 1s linear infinite;
   }
-
 }
-/*Usage:*/
-/*div {
+
+/* Usage: */
+
+/* div {
     @include spinner(absolute, 16px, 2px, #aaa, ready, visible/hidden);
     @mixin spinner absolute, 16px, 2px, #aaa, ready, visible/hidden;
-}*/
-
+} */
 
 /*
 @mixin image-2x($image, $width, $height) {
@@ -86,10 +91,11 @@
 }
 */
 
-/*==================================================
+/* ==================================================
 For Retine mix-in Sprite
 ================================================== */
-/*@define-mixin sprite-2x-width $sprite {
+
+/* @define-mixin sprite-2x-width $sprite {
   width: nth($sprite, 5) / 2;
 }
 @define-mixin sprite-2x-height $sprite {
@@ -114,17 +120,19 @@ For Retine mix-in Sprite
   @mixin sprite-2x-size $sprite;
   @mixin sprite-2x-width $sprite;
   @mixin sprite-2x-height $sprite;
-}*/
+} */
 
-/*==================================================
+/* ==================================================
 .wp-editor
 ================================================== */
 @define-mixin wp-editor $margin {
   .wp-editor {
     font-family: $fontfamily;
-    font-size: $(fontsize)px;
+    font-size: $(fontsize);
     line-height: $lineheight;
-    h3, h4, p {
+    h3,
+    h4,
+    p {
       margin: $margin 0;
       overflow: hidden;
       &:first-child {
@@ -151,6 +159,7 @@ For Retine mix-in Sprite
       max-width: 100%;
       height: auto;
     }
+
     /*
     blockquote {
       margin: $margin 0;
@@ -199,10 +208,10 @@ For Retine mix-in Sprite
     }
 */
     blockquote {
-      margin: $margin 0;
-      border-left: 5px solid $bordercolor;
       padding-left: 15px;
+      margin: $margin 0;
       font-weight: bold;
+      border-left: 5px solid $bordercolor;
     }
     @media only screen and (min-width: $breakPoint) {
       blockquote {
@@ -211,34 +220,34 @@ For Retine mix-in Sprite
     }
   }
   .aligncenter {
-      display: block;
-      margin: 0 auto;
+    display: block;
+    margin: 0 auto;
   }
   .alignleft {
-      float: left;
-      margin: 0 $margin $margin 0;
+    float: left;
+    margin: 0 $margin $margin 0;
   }
   .alignright {
-      float: right;
-      margin: 0 0 $margin $margin;
+    float: right;
+    margin: 0 0 $margin $margin;
   }
   .wp-caption {
-    border: 1px solid #ddd;
-    text-align: center;
-    background-color: #f3f3f3;
     padding-top: 4px;
     margin: 10px;
+    text-align: center;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
     border-radius: 3px;
     img {
-      margin: 0;
       padding: 0;
+      margin: 0;
       border: 0 none;
     }
     p.wp-caption-text {
-      font-size: 11px;
-      line-height: 17px;
       padding: 0 4px 5px;
       margin: 0;
+      font-size: 11px;
+      line-height: 17px;
     }
   }
 }

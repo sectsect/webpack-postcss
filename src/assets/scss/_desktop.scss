@@ -1,91 +1,92 @@
-/*==================================================
+/* ==================================================
 structure
 ================================================== */
 body {
-
 }
 .inner {
   width: $baseWidth;
   padding: 0;
   margin: 0 auto;
 }
-.pc {display: block;}
-.sp {display: none;}
+.pc {
+  display: block;
+}
+.sp {
+  display: none;
+}
 
 /* ==================================================
 modules
 ================================================== */
-  /* Paginate */
-  .paginate {
-    margin-top: 15px;
-    text-align: center;
-    .page-numbers {
-      display: inline-block;
-      min-width: 24px;
-      margin: 0 2px;
-    }
-  }
 
-  /* ==================================================
-  header
-  ================================================== */
-  #header {
-    height: auto;
-    #g_nav {
-      position: relative;
-      nav {
-        ul {
-          clear: fix;
-          li {
-            float: left;
-            width: 200px;
-            border: none;
-            a {
-              background: none;
-            }
+/* Paginate */
+.paginate {
+  margin-top: 15px;
+  text-align: center;
+  .page-numbers {
+    display: inline-block;
+    min-width: 24px;
+    margin: 0 2px;
+  }
+}
+
+/* ==================================================
+header
+================================================== */
+#header {
+  height: auto;
+  #g_nav {
+    position: relative;
+    nav {
+      ul {
+        clear: fix;
+        li {
+          float: left;
+          width: 200px;
+          border: none;
+          a {
+            background: none;
           }
         }
       }
     }
   }
+}
 
-  /* ==================================================
-  aside
-  ================================================== */
-  aside {
-    display: block;
-  }
+/* ==================================================
+aside
+================================================== */
+aside {
+  display: block;
+}
 
-  /* ==================================================
-  footer
-  ================================================== */
+/* ==================================================
+footer
+================================================== */
 
-  /* #footer {
+/* #footer {
 
   } */
 
-  /* ==================================================
-  home
-  ================================================== */
-  .home {
-    main {
-      .sec_02 {
-        .inner {
-          ul {
-            li {
-              flex: 0 1 190px;
-              margin-top: 0;
-            }
+/* ==================================================
+home
+================================================== */
+.home {
+  main {
+    .sec_02 {
+      .inner {
+        ul {
+          li {
+            flex: 0 1 190px;
+            margin-top: 0;
           }
         }
       }
     }
   }
-<<<<<<< HEAD:src/assets/scss/_desktop.scss
 }
 
-
-/*==================================================
+/* ==================================================
 page-3 (contact)
 ================================================== */
 .page-id-3 {
@@ -93,9 +94,6 @@ page-3 (contact)
     #sec_01 {
       form {
         section {
-          header {
-
-          }
           .btn {
             button,
             span,

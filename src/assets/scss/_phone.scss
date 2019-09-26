@@ -22,14 +22,13 @@ structure
 body {
   font-family: $fontfamily;
   font-size: $fontsize + px;
-  color: $fontcolor;
   line-height: $lineheight;
   color: $fontcolor;
   background: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   // -webkit-overflow-scrolling: touch;
   background: url(../images/test.png) no-repeat 0 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 // body, html {
 //   width: 100%;
@@ -71,15 +70,25 @@ input[type='image'] {
     @include opacity(0.8);
   }
 }
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-weight: normal;
 }
 
 /* spinner */
 @keyframes spin {
-  0% {transform: rotate(0deg);}
-  50% {transform: rotate(180deg);	}
-  100% {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* ==================================================
@@ -92,17 +101,17 @@ Normalization for Third party
   transition: all 0.6s linear;
   // transform: translate3d(0, -10px, 0);
   @include opacity(0);
-  visibility: hidden;
   &.ready {
     // transform: translate3d(0, 0, 0);
     @include opacity(1);
+
     visibility: visible;
   }
 }
 
 /* Web font		@ https://github.com/typekit/webfontloader#events */
 .wf {
-  transition: all .4s linear;
+  transition: all 0.4s linear;
   @include opacity(0);
 }
 .wf-active,
@@ -113,11 +122,14 @@ Normalization for Third party
 }
 
 /* lazy load (lazysizes) */
-[data-src], [data-srcset], [data-bgset] {
-  transition: opacity .5s ease-in-out .1s;
+[data-src],
+[data-srcset],
+[data-bgset] {
+  transition: opacity 0.5s ease-in-out 0.1s;
   // visibility: hidden;
   @include opacity(0);
-  &.lazyloaded, &.loaded {
+  &.lazyloaded,
+  &.loaded {
     // visibility: visible;
     @include opacity(1);
   }
@@ -178,7 +190,6 @@ Normalization for Third party
         content: '';
         border: 1px solid #000;
         border-radius: 50%;
-        box-sizing: border-box;
         @include opacity(1);
       }
     }
@@ -357,27 +368,33 @@ home
 
         ul {
           display: flex;
-          flex-wrap: wrap;                      // Default: nowrap (single-line)
+          flex-wrap: wrap; // Default: nowrap (single-line)
           // justify-content: flex-start;       // |□□□    |	(Default)
           // justify-content: center;           // |  □□□  |
           // justify-content: space-around;     // | □ □ □ |
-          justify-content: space-between;       // |□  □  □|
+          justify-content: space-between; // |□  □  □|
           // align-items: center;               // Default: stretch
           li {
-            flex: 0 1 100%;                     // Default: 0 1 auto
-            border: 1px solid #ccc;
             // &:nth-child(2){
             //   flex-basis: 120px;
             // }
             // height: 50px;
             position: relative;
-            // @include arrow(right, 10px, 2px, #333, right, 10px);
-            // @include arrow(right, 10px, 2px, #333, right, 10px);
-            @include arrow($margin: 20px);	// http://blog.teamtreehouse.com/smarter-sass-mixins-null
-            @include spinner(absolute, 16px, 2px, #aaa);
+            flex: 0 1 100%; // Default: 0 1 auto
             margin-top: 10px;
+            border: 1px solid #ccc;
+            // @include arrow(right, 10px, 2px, #333, right, 10px);
+            // @include arrow(right, 10px, 2px, #333, right, 10px);
+            @include arrow($margin: 20px); // http://blog.teamtreehouse.com/smarter-sass-mixins-null
+            @include spinner(absolute, 16px, 2px, #aaa);
             p {
-              @include multiline-truncate($font-size: 11px, $line-height: 1.6, $lines-to-show: 3, $type: fade, $excerpt-bg: #fff);
+              @include multiline-truncate(
+                $font-size: 11px,
+                $line-height: 1.6,
+                $lines-to-show: 3,
+                $type: fade,
+                $excerpt-bg: #fff
+              );
             }
           }
         }
@@ -402,7 +419,8 @@ home
     }
   }
 }
-/*==================================================
+
+/* ==================================================
 page-form (page-id-3)
 ================================================== */
 .page-id-3 {
@@ -412,7 +430,7 @@ page-form (page-id-3)
         position: relative;
         @include spinner(fixed, 16px, 2px, #aaa, loading, hidden);
         section {
-          background: #fff;			// Required
+          background: #fff; // Required
           header {
             padding: 0 0 20px;
             margin-bottom: 13px;
@@ -451,10 +469,12 @@ page-form (page-id-3)
         #input {
           span.wpcf7-form-control-wrap {
             // For <select>
-            &.your-time, &.your-ceremony-year, &.your-ceremony-month, &.your-ceremony-capacity {
-              &:before, &:after {
-                content: "";
-                display: block;
+            &.your-time,
+            &.your-ceremony-year,
+            &.your-ceremony-month,
+            &.your-ceremony-capacity {
+              &::before,
+              &::after {
                 position: absolute;
                 top: 50%;
                 right: 6px;
@@ -505,7 +525,7 @@ page-form (page-id-3)
               display: block;
               margin-top: 16px;
               dt {
-                .required{
+                .required {
                   //	color: $baseLightColor;
                 }
               }

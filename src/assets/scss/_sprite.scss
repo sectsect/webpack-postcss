@@ -10,38 +10,38 @@
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
 $author-name: 'author';
-$author-x: 0px;
-$author-y: 0px;
-$author-offset-x: 0px;
-$author-offset-y: 0px;
+$author-x: 0;
+$author-y: 0;
+$author-offset-x: 0;
+$author-offset-y: 0;
 $author-width: 32px;
 $author-height: 32px;
 $author-total-width: 96px;
 $author-total-height: 64px;
 $author-image: '../images/sprites/icon.png';
-$author: (0px, 0px, 0px, 0px, 32px, 32px, 96px, 64px, '../images/sprites/icon.png', 'author', );
+$author: (0, 0, 0, 0, 32px, 32px, 96px, 64px, '../images/sprites/icon.png', 'author');
 $book-name: 'book';
 $book-x: 32px;
-$book-y: 0px;
+$book-y: 0;
 $book-offset-x: -32px;
-$book-offset-y: 0px;
+$book-offset-y: 0;
 $book-width: 32px;
 $book-height: 32px;
 $book-total-width: 96px;
 $book-total-height: 64px;
 $book-image: '../images/sprites/icon.png';
-$book: (32px, 0px, -32px, 0px, 32px, 32px, 96px, 64px, '../images/sprites/icon.png', 'book', );
+$book: (32px, 0, -32px, 0, 32px, 32px, 96px, 64px, '../images/sprites/icon.png', 'book');
 $contact-name: 'contact';
-$contact-x: 0px;
+$contact-x: 0;
 $contact-y: 32px;
-$contact-offset-x: 0px;
+$contact-offset-x: 0;
 $contact-offset-y: -32px;
 $contact-width: 32px;
 $contact-height: 32px;
 $contact-total-width: 96px;
 $contact-total-height: 64px;
 $contact-image: '../images/sprites/icon.png';
-$contact: (0px, 32px, 0px, -32px, 32px, 32px, 96px, 64px, '../images/sprites/icon.png', 'contact', );
+$contact: (0, 32px, 0, -32px, 32px, 32px, 96px, 64px, '../images/sprites/icon.png', 'contact');
 $download-name: 'download';
 $download-x: 32px;
 $download-y: 32px;
@@ -52,18 +52,29 @@ $download-height: 32px;
 $download-total-width: 96px;
 $download-total-height: 64px;
 $download-image: '../images/sprites/icon.png';
-$download: (32px, 32px, -32px, -32px, 32px, 32px, 96px, 64px, '../images/sprites/icon.png', 'download', );
+$download: (
+  32px,
+  32px,
+  -32px,
+  -32px,
+  32px,
+  32px,
+  96px,
+  64px,
+  '../images/sprites/icon.png',
+  'download'
+);
 $sample-name: 'sample';
 $sample-x: 64px;
-$sample-y: 0px;
+$sample-y: 0;
 $sample-offset-x: -64px;
-$sample-offset-y: 0px;
+$sample-offset-y: 0;
 $sample-width: 32px;
 $sample-height: 32px;
 $sample-total-width: 96px;
 $sample-total-height: 64px;
 $sample-image: '../images/sprites/icon.png';
-$sample: (64px, 0px, -64px, 0px, 32px, 32px, 96px, 64px, '../images/sprites/icon.png', 'sample', );
+$sample: (64px, 0, -64px, 0, 32px, 32px, 96px, 64px, '../images/sprites/icon.png', 'sample');
 $top-name: 'top';
 $top-x: 64px;
 $top-y: 32px;
@@ -74,40 +85,73 @@ $top-height: 32px;
 $top-total-width: 96px;
 $top-total-height: 64px;
 $top-image: '../images/sprites/icon.png';
-$top: (64px, 32px, -64px, -32px, 32px, 32px, 96px, 64px, '../images/sprites/icon.png', 'top', );
+$top: (64px, 32px, -64px, -32px, 32px, 32px, 96px, 64px, '../images/sprites/icon.png', 'top');
 $retina-author-name: 'retina_author';
-$retina-author-x: 0px;
-$retina-author-y: 0px;
-$retina-author-offset-x: 0px;
-$retina-author-offset-y: 0px;
+$retina-author-x: 0;
+$retina-author-y: 0;
+$retina-author-offset-x: 0;
+$retina-author-offset-y: 0;
 $retina-author-width: 64px;
 $retina-author-height: 64px;
 $retina-author-total-width: 192px;
 $retina-author-total-height: 128px;
 $retina-author-image: '../images/sprites/icon@2x.png';
-$retina-author: (0px, 0px, 0px, 0px, 64px, 64px, 192px, 128px, '../images/sprites/icon@2x.png', 'retina_author', );
+$retina-author: (
+  0,
+  0,
+  0,
+  0,
+  64px,
+  64px,
+  192px,
+  128px,
+  '../images/sprites/icon@2x.png',
+  'retina_author'
+);
 $retina-book-name: 'retina_book';
 $retina-book-x: 64px;
-$retina-book-y: 0px;
+$retina-book-y: 0;
 $retina-book-offset-x: -64px;
-$retina-book-offset-y: 0px;
+$retina-book-offset-y: 0;
 $retina-book-width: 64px;
 $retina-book-height: 64px;
 $retina-book-total-width: 192px;
 $retina-book-total-height: 128px;
 $retina-book-image: '../images/sprites/icon@2x.png';
-$retina-book: (64px, 0px, -64px, 0px, 64px, 64px, 192px, 128px, '../images/sprites/icon@2x.png', 'retina_book', );
+$retina-book: (
+  64px,
+  0,
+  -64px,
+  0,
+  64px,
+  64px,
+  192px,
+  128px,
+  '../images/sprites/icon@2x.png',
+  'retina_book'
+);
 $retina-contact-name: 'retina_contact';
-$retina-contact-x: 0px;
+$retina-contact-x: 0;
 $retina-contact-y: 64px;
-$retina-contact-offset-x: 0px;
+$retina-contact-offset-x: 0;
 $retina-contact-offset-y: -64px;
 $retina-contact-width: 64px;
 $retina-contact-height: 64px;
 $retina-contact-total-width: 192px;
 $retina-contact-total-height: 128px;
 $retina-contact-image: '../images/sprites/icon@2x.png';
-$retina-contact: (0px, 64px, 0px, -64px, 64px, 64px, 192px, 128px, '../images/sprites/icon@2x.png', 'retina_contact', );
+$retina-contact: (
+  0,
+  64px,
+  0,
+  -64px,
+  64px,
+  64px,
+  192px,
+  128px,
+  '../images/sprites/icon@2x.png',
+  'retina_contact'
+);
 $retina-download-name: 'retina_download';
 $retina-download-x: 64px;
 $retina-download-y: 64px;
@@ -118,18 +162,40 @@ $retina-download-height: 64px;
 $retina-download-total-width: 192px;
 $retina-download-total-height: 128px;
 $retina-download-image: '../images/sprites/icon@2x.png';
-$retina-download: (64px, 64px, -64px, -64px, 64px, 64px, 192px, 128px, '../images/sprites/icon@2x.png', 'retina_download', );
+$retina-download: (
+  64px,
+  64px,
+  -64px,
+  -64px,
+  64px,
+  64px,
+  192px,
+  128px,
+  '../images/sprites/icon@2x.png',
+  'retina_download'
+);
 $retina-sample-name: 'retina_sample';
 $retina-sample-x: 128px;
-$retina-sample-y: 0px;
+$retina-sample-y: 0;
 $retina-sample-offset-x: -128px;
-$retina-sample-offset-y: 0px;
+$retina-sample-offset-y: 0;
 $retina-sample-width: 64px;
 $retina-sample-height: 64px;
 $retina-sample-total-width: 192px;
 $retina-sample-total-height: 128px;
 $retina-sample-image: '../images/sprites/icon@2x.png';
-$retina-sample: (128px, 0px, -128px, 0px, 64px, 64px, 192px, 128px, '../images/sprites/icon@2x.png', 'retina_sample', );
+$retina-sample: (
+  128px,
+  0,
+  -128px,
+  0,
+  64px,
+  64px,
+  192px,
+  128px,
+  '../images/sprites/icon@2x.png',
+  'retina_sample'
+);
 $retina-top-name: 'retina_top';
 $retina-top-x: 128px;
 $retina-top-y: 64px;
@@ -140,34 +206,59 @@ $retina-top-height: 64px;
 $retina-top-total-width: 192px;
 $retina-top-total-height: 128px;
 $retina-top-image: '../images/sprites/icon@2x.png';
-$retina-top: (128px, 64px, -128px, -64px, 64px, 64px, 192px, 128px, '../images/sprites/icon@2x.png', 'retina_top', );
+$retina-top: (
+  128px,
+  64px,
+  -128px,
+  -64px,
+  64px,
+  64px,
+  192px,
+  128px,
+  '../images/sprites/icon@2x.png',
+  'retina_top'
+);
 $spritesheet-width: 96px;
 $spritesheet-height: 64px;
 $spritesheet-image: '../images/sprites/icon.png';
-$spritesheet-sprites: ($author, $book, $contact, $download, $sample, $top, );
-$spritesheet: (96px, 64px, '../images/sprites/icon.png', $spritesheet-sprites, );
+$spritesheet-sprites: ($author, $book, $contact, $download, $sample, $top);
+$spritesheet: (96px, 64px, '../images/sprites/icon.png', $spritesheet-sprites);
 $retina-spritesheet-width: 192px;
 $retina-spritesheet-height: 128px;
 $retina-spritesheet-image: '../images/sprites/icon@2x.png';
-$retina-spritesheet-sprites: ($retina-author, $retina-book, $retina-contact, $retina-download, $retina-sample, $retina-top, );
-$retina-spritesheet: (192px, 128px, '../images/sprites/icon@2x.png', $retina-spritesheet-sprites, );
+$retina-spritesheet-sprites: (
+  $retina-author,
+  $retina-book,
+  $retina-contact,
+  $retina-download,
+  $retina-sample,
+  $retina-top
+);
+$retina-spritesheet: (192px, 128px, '../images/sprites/icon@2x.png', $retina-spritesheet-sprites);
 
 // These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
 //
 // The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
 $author-group-name: 'author';
-$author-group: ('author', $author, $retina-author, );
+$author-group: ('author', $author, $retina-author);
 $book-group-name: 'book';
-$book-group: ('book', $book, $retina-book, );
+$book-group: ('book', $book, $retina-book);
 $contact-group-name: 'contact';
-$contact-group: ('contact', $contact, $retina-contact, );
+$contact-group: ('contact', $contact, $retina-contact);
 $download-group-name: 'download';
-$download-group: ('download', $download, $retina-download, );
+$download-group: ('download', $download, $retina-download);
 $sample-group-name: 'sample';
-$sample-group: ('sample', $sample, $retina-sample, );
+$sample-group: ('sample', $sample, $retina-sample);
 $top-group-name: 'top';
-$top-group: ('top', $top, $retina-top, );
-$retina-groups: ($author-group, $book-group, $contact-group, $download-group, $sample-group, $top-group, );
+$top-group: ('top', $top, $retina-top);
+$retina-groups: (
+  $author-group,
+  $book-group,
+  $contact-group,
+  $download-group,
+  $sample-group,
+  $top-group
+);
 
 // The provided mixins are intended to be used with the array-like variables
 //
@@ -204,11 +295,13 @@ $retina-groups: ($author-group, $book-group, $contact-group, $download-group, $s
 @mixin sprite-position($sprite) {
   $sprite-offset-x: nth($sprite, 3);
   $sprite-offset-y: nth($sprite, 4);
-  background-position: $sprite-offset-x  $sprite-offset-y;
+
+  background-position: $sprite-offset-x $sprite-offset-y;
 }
 
 @mixin sprite-image($sprite) {
   $sprite-image: nth($sprite, 9);
+
   background-image: url(#{$sprite-image});
 }
 
@@ -232,6 +325,7 @@ $retina-groups: ($author-group, $book-group, $contact-group, $download-group, $s
 @mixin sprite-background-size($sprite) {
   $sprite-total-width: nth($sprite, 7);
   $sprite-total-height: nth($sprite, 8);
+
   background-size: $sprite-total-width $sprite-total-height;
 }
 
@@ -240,8 +334,7 @@ $retina-groups: ($author-group, $book-group, $contact-group, $download-group, $s
   $retina-sprite: nth($retina-group, 3);
   @include sprite($normal-sprite);
 
-  @media (-webkit-min-device-pixel-ratio: 2),
-         (min-resolution: 192dpi) {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     @include sprite-image($retina-sprite);
     @include sprite-background-size($normal-sprite);
   }

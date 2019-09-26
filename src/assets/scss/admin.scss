@@ -1,31 +1,33 @@
 @charset 'UTF-8';
-@import 'settings','mixin';
+@import 'settings', 'mixin';
 
 .post-new-php,
 .post-php {
   &.post-type-news {
     #poststuff {
       #note-sec {
-        margin-top: 15px;
         padding: 1em;
+        margin-top: 15px;
         p {
           .pc {
-            @media only screen and (max-width:$breakPoint) {
+            @media only screen and (max-width: $breakPoint) {
               display: none;
             }
           }
         }
       }
-      #postdivrich, #postbox-container-2 {
+      #postdivrich,
+      #postbox-container-2 {
         max-height: 0;
-        @include opacity(0);
-        visibility: hidden;
         overflow-y: hidden;
+        visibility: hidden;
+        @include opacity(0);
       }
       #postdivrich {
         margin-bottom: 0;
       }
-      &.field-type-content, &.field-type-custom-field {
+      &.field-type-content,
+      &.field-type-custom-field {
         #note-sec {
           display: none;
         }
@@ -35,6 +37,7 @@
           max-height: initial;
           max-height: auto;
           @include opacity(1);
+
           visibility: visible;
         }
       }
@@ -43,28 +46,33 @@
           max-height: initial;
           max-height: auto;
           @include opacity(1);
+
           visibility: visible;
         }
       }
     }
   }
 }
-/*==================================================
+
+/* ==================================================
 Display & limitation of the Actual-Width on MCE-Editor
 NOTE: Required setting var $postWidth to "_settings.scss"
 ================================================== */
-.post-php, .post-new-php {
-  &.post-type-post, &.post-type-page, &.post-type-news {
+.post-php,
+.post-new-php {
+  &.post-type-post,
+  &.post-type-page,
+  &.post-type-news {
     .wp-editor-container {
       overflow: hidden;
       .mce-tinymce {
         .mce-container-body {
           //  overflow: hidden;
           .mce-toolbar-grp {
-            .mce-i-my-mce-icon+ .mce-txt {
-              font-size: 10px !important;
+            .mce-i-my-mce-icon + .mce-txt {
               display: inline-block;
               margin-top: 4px !important;
+              font-size: 10px !important;
             }
           }
           .mce-edit-area {
@@ -72,10 +80,11 @@ NOTE: Required setting var $postWidth to "_settings.scss"
             iframe {
               max-width: $postWidth + 20;
               margin: 0 auto;
-              transition: max-width 0.15s linear;
               border-right: 1px solid #ddd;
               border-left: 1px solid #ddd;
-              box-shadow: 1000px 0 0 1000px rgba(0,0,0,0.03), -1000px 0 0 1000px rgba(0,0,0,0.03);
+              box-shadow: 1000px 0 0 1000px rgba(0, 0, 0, 0.03),
+                -1000px 0 0 1000px rgba(0, 0, 0, 0.03);
+              transition: max-width 0.15s linear;
               &.w320 {
                 max-width: 320px;
               }
@@ -100,8 +109,11 @@ NOTE: Required setting var $postWidth to "_settings.scss"
 }
 
 @media only screen and (max-width: 850px) {
-  .post-php, .post-new-php {
-    &.post-type-post, &.post-type-page, &.post-type-news {
+  .post-php,
+  .post-new-php {
+    &.post-type-post,
+    &.post-type-page,
+    &.post-type-news {
       .mce-tinymce {
         .mce-container-body {
           overflow: hidden;
@@ -116,8 +128,7 @@ NOTE: Required setting var $postWidth to "_settings.scss"
   }
 }
 
-
-/*==================================================
+/* ==================================================
 For custom field suite
 ================================================== */
 .cfs_input {

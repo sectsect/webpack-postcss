@@ -54,6 +54,7 @@
     "stylelint-config-recess-order": "^2.0.3",
     "stylelint-config-standard": "^19.0.0",
     "stylelint-prettier": "^1.1.1",
+    "stylelint-scss": "^3.11.1",
     "stylelint-webpack-plugin": "^0.10.5",
     "svg-spritemap-webpack-plugin": "^3.5.0",
     "terser-webpack-plugin": "^2.1.0",

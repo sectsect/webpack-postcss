@@ -1,10 +1,10 @@
 //	! responsive-nav.js 1.0.39 by @viljamis
 .nav-collapse {
   ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
     display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
     list-style: none;
   }
   li {
@@ -13,11 +13,11 @@
 }
 
 .js .nav-collapse {
-  clip: rect(0 0 0 0);
-  max-height: 0;
   position: absolute;
   display: block;
+  max-height: 0;
   overflow: hidden;
+  clip: rect(0 0 0 0);
   zoom: 1;
 }
 
@@ -26,41 +26,43 @@
 }
 
 .nav-toggle {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-touch-callout: none;
-  user-select: none;
+  box-sizing: border-box;
   display: block;
   width: 50px;
   height: 50px;
-  box-sizing: border-box;
   padding: 10px;
-  span, &:before, &:after {
-    display: block;
-    content: "";
-    transition: transform 0.3s;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  span,
+  &::before,
+  &::after {
     position: absolute;
     top: 50%;
     left: 10px;
+    display: block;
     width: 30px;
     height: 3px;
-    background: #aaa;
-    font-size: 0px;
     margin-top: -2px;
+    font-size: 0;
+    content: '';
+    background: #aaa;
+    transition: transform 0.3s;
   }
-  &:before {
+  &::before {
     transform: translateY(-8px);
   }
-  &:after {
+  &::after {
     transform: translateY(8px);
   }
   &.active {
     span {
       background-color: transparent;
     }
-    &:before {
+    &::before {
       transform: translateY(0) rotate(45deg);
     }
-    &:after {
+    &::after {
       transform: translateY(0) rotate(-45deg);
     }
   }

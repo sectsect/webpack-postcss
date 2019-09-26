@@ -1,30 +1,41 @@
-@mixin font-size($size: 24, $base: 16){
+@mixin font-size($size: 24, $base: 16) {
   font-size: $size + px;
   font-size: ($size / $base) * 1rem;
 }
-@mixin opacity($opacity){
+@mixin opacity($opacity) {
   opacity: $opacity;
   @if $opacity == 1 {
-    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    filter: progid:dximagetransform.microsoft.alpha(enabled=false);
   } @else {
     $opacityIE: $opacity * 100;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacityIE);
+
+    filter: progid:dximagetransform.microsoft.alpha(Opacity=$opacityIE);
   }
 }
-@mixin clearfix(){
-  &:after{
-    content: "";
-    clear: both;
+@mixin clearfix() {
+  &::after {
     display: block;
+    clear: both;
+    content: '';
   }
 }
 
-@mixin arrow($direction: right, $size: 10px, $borderwidth: 2px, $color: #333, $horizontal: right, $margin: 10px){
-  &:after{
-    content: "";
+@mixin arrow(
+  $direction: right,
+  $size: 10px,
+  $borderwidth: 2px,
+  $color: #333,
+  $horizontal: right,
+  $margin: 10px
+) {
+  &::after {
+    position: absolute;
+    top: 50%;
     display: block;
     width: $size;
     height: $size;
+    margin-top: round(-$size / 2);
+    content: '';
     border-top: $borderwidth solid $color;
     border-right: $borderwidth solid $color;
     @if $direction == top {
@@ -36,14 +47,11 @@
     } @else {
       transform: rotate(45deg);
     }
-    position: absolute;
-    top: 50%;
     @if $horizontal == left {
       left: -(round($size / 2) - 1px);
     } @else {
       right: $margin + round($size / 5);
     }
-    margin-top: round(-$size / 2);
   }
 }
 // Usage:
@@ -52,19 +60,28 @@
 //   @include arrow(right, 10px, 2px, #333, right, 10px);
 // }
 
-@mixin spinner($position: absolute, $size: 16px, $borderwidth: 2px, $color: #aaa, $parentclass: ready, $defaultdisplay: visible){
-  &:before{
-    content: "";
+@mixin spinner(
+  $position: absolute,
+  $size: 16px,
+  $borderwidth: 2px,
+  $color: #aaa,
+  $parentclass: ready,
+  $defaultdisplay: visible
+) {
+  &::before {
     position: $position;
     top: 50%;
     left: 50%;
     z-index: 100;
-    margin: round(-$size / 2) 0 0 round(-$size / 2);
     width: $size;
     height: $size;
-    border-radius: 50%;
+    margin: round(-$size / 2) 0 0 round(-$size / 2);
+    content: '';
     border: $borderwidth solid $color;
     border-right-color: transparent;
+    border-radius: 50%;
+    transition: all 0.3s linear 0.3s;
+    animation: spin 1s linear infinite;
     @if $defaultdisplay == visible {
       visibility: visible;
       @include opacity(1);
@@ -72,11 +89,9 @@
       visibility: hidden;
       @include opacity(0);
     }
-    transition: all .3s linear .3s;
-    animation: spin 1s linear infinite;
   }
-  &.#{$parentclass}{
-    &:before{
+  &.#{$parentclass} {
+    &::before {
       @if $defaultdisplay == visible {
         visibility: hidden;
         @include opacity(0);
@@ -92,47 +107,61 @@
 //   @include spinner(absolute, 16px, 2px, #aaa, ready, visible/hidden);
 // }
 
-
-@mixin multiline-truncate($font-size: $paragraph-font-size, $line-height: 1.4, $lines-to-show: 3, $type: fade, $excerpt-bg: transparent) {
-  background: $excerpt-bg;
+@mixin multiline-truncate(
+  $font-size: $paragraph-font-size,
+  $line-height: 1.4,
+  $lines-to-show: 3,
+  $type: fade,
+  $excerpt-bg: transparent
+) {
+  position: relative;
   display: block; /* Fallback for non-webkit */
   display: -webkit-box;
-  max-height: $font-size * $line-height * $lines-to-show; /* Fallback for non-webkit */
   height: $font-size * $line-height * $lines-to-show;
-  font-size: $font-size;
-  line-height: $line-height;
+  max-height: $font-size * $line-height * $lines-to-show; /* Fallback for non-webkit */
   // -webkit-line-clamp: $lines-to-show;
   // -webkit-box-orient: vertical;
   // text-overflow: ellipsis;
   overflow: hidden;
-  word-break: break-all;
   // @-moz-document url-prefix() {
-  overflow: hidden;
-  position: relative;
-  &:before {
+  font-size: $font-size;
+  line-height: $line-height;
+  word-break: break-all;
+  background: $excerpt-bg;
+  &::before {
     position: absolute;
-    bottom: 0;
     right: 0;
+    bottom: 0;
     float: right;
-    margin-left: -3rem;
     width: 3rem;
+    margin-left: -3rem;
     @if $type == fade {
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 1) 90%);
-      content: '';
       height: $font-size * $line-height;
+      content: '';
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.7) 50%,
+        rgba(255, 255, 255, 1) 90%
+      );
     } @else {
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 62%, rgba(255, 255, 255, 1) 100%);
-      content: '\2026';
       padding-left: 2rem;
+      content: '\2026';
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 1) 62%,
+        rgba(255, 255, 255, 1) 100%
+      );
     }
   }
-  &:after {
+  &::after {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
     content: '';
     background: $excerpt-bg;
-    position: absolute;
-    height: 50px;
-    width: 100%;
-    z-index: 1;
   }
   // }
 }
@@ -195,7 +224,7 @@ background-size: $width $height;
 //   @include image-2x("logo2x.png", 100px, 25px);
 // }
 
-/*==================================================
+/* ==================================================
 For Retine mix-in Sprite
 ================================================== */
 @mixin sprite-2x-width($sprite) {
@@ -207,15 +236,17 @@ For Retine mix-in Sprite
 @mixin sprite-2x-position($sprite) {
   $sprite-offset-x: nth($sprite, 3) / 2;
   $sprite-offset-y: nth($sprite, 4) / 2;
-  background-position: $sprite-offset-x  $sprite-offset-y;
+
+  background-position: $sprite-offset-x $sprite-offset-y;
 }
 @mixin sprite-2x-image($sprite) {
   $sprite-image: nth($sprite, 9);
+
   background-image: url(#{$sprite-image});
 }
 
 @mixin sprite-2x-size($sprite) {
-  background-size: nth($sprite, 7)/2 nth($sprite, 8)/2;
+  background-size: nth($sprite, 7) / 2 nth($sprite, 8) / 2;
 }
 @mixin sprite-2x($sprite) {
   @include sprite-2x-image($sprite);
@@ -239,8 +270,7 @@ For Retine mix-in Sprite
 //   @include sprite-height($sprite);
 // }
 
-
-/*==================================================
+/* ==================================================
 .wp-editor
 ================================================== */
 @mixin wp-editor($margin) {
@@ -248,7 +278,9 @@ For Retine mix-in Sprite
     font-family: $fontfamily;
     font-size: $fontsize + px;
     line-height: $lineheight;
-    h3, h4, p {
+    h3,
+    h4,
+    p {
       margin: $margin 0;
       overflow: hidden;
       &:first-child {
@@ -275,6 +307,7 @@ For Retine mix-in Sprite
       max-width: 100%;
       height: auto;
     }
+
     /*
     blockquote {
     margin: $margin 0;
@@ -322,48 +355,48 @@ background-size: 36px 28px;
 }
 }
 */
-blockquote {
-  margin: $margin 0;
-  border-left: 5px solid $bordercolor;
-  padding-left: 15px;
-  font-weight: bold;
-}
-@media only screen and (min-width: $breakPoint) {
-  blockquote {
-    padding-left: 35px;
+    blockquote {
+      padding-left: 15px;
+      margin: $margin 0;
+      font-weight: bold;
+      border-left: 5px solid $bordercolor;
+    }
+    @media only screen and (min-width: $breakPoint) {
+      blockquote {
+        padding-left: 35px;
+      }
+    }
   }
-}
-}
-.aligncenter {
-  display: block;
-  margin: 0 auto;
-}
-.alignleft {
-  float: left;
-  margin: 0 $margin $margin 0;
-}
-.alignright {
-  float: right;
-  margin: 0 0 $margin $margin;
-}
-.wp-caption {
-  border: 1px solid #ddd;
-  text-align: center;
-  background-color: #f3f3f3;
-  padding-top: 4px;
-  margin: 10px;
-  // optional rounded corners for browsers that support it
-  border-radius: 3px;
-  img{
-    margin: 0;
-    padding: 0;
-    border: 0 none;
+  .aligncenter {
+    display: block;
+    margin: 0 auto;
   }
-  p.wp-caption-text {
-    font-size: 11px;
-    line-height: 17px;
-    padding: 0 4px 5px;
-    margin: 0;
+  .alignleft {
+    float: left;
+    margin: 0 $margin $margin 0;
   }
-}
+  .alignright {
+    float: right;
+    margin: 0 0 $margin $margin;
+  }
+  .wp-caption {
+    padding-top: 4px;
+    margin: 10px;
+    text-align: center;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    // optional rounded corners for browsers that support it
+    border-radius: 3px;
+    img {
+      padding: 0;
+      margin: 0;
+      border: 0 none;
+    }
+    p.wp-caption-text {
+      padding: 0 4px 5px;
+      margin: 0;
+      font-size: 11px;
+      line-height: 17px;
+    }
+  }
 }

@@ -52,10 +52,10 @@ $fh-display: block;
 ================================================== */
 
 /* field size */
-$field-size-s       : 50px !default;
-$field-size-m       : 200px !default;
-$field-size-l       : 400px !default;
-$field-size-full    : $fh-input-width !default;
+$field-size-s: 50px !default;
+$field-size-m: 200px !default;
+$field-size-l: 400px !default;
+$field-size-full: $fh-input-width !default;
 
 // Center/Left-Aligned Layout
 @mixin center-layout {
@@ -83,8 +83,6 @@ fieldset {
   font-size: $fh-font-size + px;
   color: $fh-font-color;
   vertical-align: top;
-
-  display: $fh-display;
   @include center-layout;
 }
 
@@ -129,11 +127,25 @@ textarea {
 /* Fields with standard height */
 
 input {
-  &[type="text"], &[type="email"], &[type="password"], &[type="search"], &[type="color"], &[type="date"], &[type="datetime-local"], &[type="month"], &[type="number"], &[type="tel"], &[type="time"], &[type="url"], &[type="week"], &[list] {
+  &[type='text'],
+  &[type='email'],
+  &[type='password'],
+  &[type='search'],
+  &[type='color'],
+  &[type='date'],
+  &[type='datetime-local'],
+  &[type='month'],
+  &[type='number'],
+  &[type='tel'],
+  &[type='time'],
+  &[type='url'],
+  &[type='week'],
+  &[list] {
     height: $fh-input-height;
     -webkit-appearance: none;
     @if $fh-allow-input-vendor-styling == false {
-      &::-ms-clear, &::-ms-reveal {
+      &::-ms-clear,
+      &::-ms-reveal {
         display: none;
       }
     }
@@ -148,10 +160,10 @@ textarea {
 }
 
 input {
-  &[type="range"] {
-    height: $fh-input-height;
+  &[type='range'] {
     width: $fh-input-width;
     max-width: $fh-input-max-width;
+    height: $fh-input-height;
   }
   &[type='file'] {
     min-height: $fh-input-height;
@@ -177,7 +189,6 @@ input {
 // 	text-align: center;
 // }
 
-
 /* Select ------------------ */
 
 select {
@@ -191,7 +202,7 @@ select {
     // text-indent: .01px;		//	For Firefox (remove right side arrow)
     // text-overflow: "";			//	For Firefox (remove right side arrow)
     &::-ms-expand {
-      display: none;					//	For IE10 (remove right side arrow)
+      display: none; //	For IE10 (remove right side arrow)
     }
   }
 }
@@ -201,8 +212,8 @@ select[multiple] {
   min-height: $fh-input-height;
   padding: 0;
   option {
-    margin: 0;
     padding: $fh-input-height / 5;
+    margin: 0;
   }
 }
 
@@ -238,11 +249,7 @@ input[type='reset'],
 input[type='image'] {
   width: $fh-button-width;
   max-width: $fh-button-max-width;
-  background-color: $fh-button-bg-color;
   padding: $fh-input-height / 3;
-  cursor: pointer;
-
-  color: $fh-button-font-color;
   font-weight: 700;
   color: $fh-button-font-color;
   cursor: pointer;
@@ -253,10 +260,10 @@ input[type='image'] {
   -moz-appearance: none;
 }
 
-input[type="image"] {
-  text-align: center;
+input[type='image'] {
   // padding: $fh-input-height / 5;
   padding: 0;
+  text-align: center;
   // border: none;
   // border-radius: 0;
 }
@@ -280,8 +287,8 @@ button:focus {
   border-color: $fh-focus-border-color;
 }
 
-input[type="checkbox"]:focus,
-input[type="radio"]:focus {
+input[type='checkbox']:focus,
+input[type='radio']:focus {
   // outline: $fh-focus-border-color solid 2px;
 }
 
@@ -297,7 +304,7 @@ input[type='reset']:focus {
   background-color: $fh-button-hover-bg-color;
 }
 
-/*==================================================
+/* ==================================================
 Add code by SECT
 ================================================== */
 input[type='text'],
@@ -387,27 +394,27 @@ button[disabled] {
 }
 
 /* input[type=file]	@ http://qiita.com/yasumodev/items/c9f8e8f588ded6b179c9 */
-$file-field-id : your-file !default;
+$file-field-id: your-file !default;
 
-label[for=#{$file-field-id}] {
+label[for='#{$file-field-id}'] {
   b {
-    height: $fh-button-height;
+    display: block;
     width: $fh-button-width;
     max-width: $fh-button-max-width;
-    background-color: $fh-button-bg-color;
+    height: $fh-button-height;
     padding: $fh-input-height / 3;
-    cursor: pointer;
-    color: $fh-button-font-color;
+    font-size: $fh-font-size + px;
     font-weight: 700;
+    color: $fh-button-font-color;
+    text-align: center;
+    cursor: pointer;
+    background-color: $fh-button-bg-color;
+    border: $fh-border-width $fh-border-style $fh-border-color;
+    border-radius: $fh-border-radius;
     -webkit-appearance: none;
     -moz-appearance: none;
-    border-radius: $fh-border-radius;
-    border: $fh-border-width $fh-border-style $fh-border-color;
-    font-size: $fh-font-size + px;
-    text-align: center;
-    display: block;
   }
-  input[type=file] {
+  input[type='file'] {
     display: none;
   }
   #thumb {
@@ -424,9 +431,8 @@ label[for=#{$file-field-id}] {
   }
 }
 
-
 /* input[type=range] @ range.css: https://github.com/danielstern/range.css/ */
-input[type=range] {
+input[type='range'] {
   -webkit-appearance: none;
   &.size_s {
     max-width: initial;

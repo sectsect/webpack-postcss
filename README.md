@@ -8,6 +8,7 @@
 - [PostCSS](https://github.com/postcss/postcss)
 - [Babel](https://babeljs.io/) + [@babel/preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
 - [ESLint](https://eslint.org/) w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
+- [stylelint](https://stylelint.io/)
 - [Prettier](https://prettier.io/)
 - CircleCI 2.0
 

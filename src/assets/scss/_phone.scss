@@ -1,26 +1,31 @@
-/*==================================================
+/* ==================================================
 Reset
 ================================================== */
+
 /* Remove margin, padding of all elements and set background-no-repeat as default */
 * {
   padding: 0;
   margin: 0;
 }
-picture, source {
+picture,
+source {
   display: block;
 }
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
-/*==================================================
+
+/* ==================================================
 structure
 ================================================== */
 body {
-  background: none;
   font-family: $fontfamily;
   font-size: $fontsize + px;
   color: $fontcolor;
   line-height: $lineheight;
+  color: $fontcolor;
+  background: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // -webkit-overflow-scrolling: touch;
@@ -36,25 +41,30 @@ body {
 //   overflow: auto;
 // }
 .inner {
+  box-sizing: border-box;
   width: 100%;
   padding: 0 3.1%;
-  box-sizing: border-box;
 }
-.pc {display: none;}
-/*==================================================
+.pc {
+  display: none;
+}
+
+/* ==================================================
 common
 ================================================== */
 a,
 button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="image"] {
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='image'] {
   color: $linkcolor;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   transition: $transition;
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     color: $linkcolor;
   }
   &:hover {
@@ -71,11 +81,14 @@ h1, h2, h3, h4, h5 {
   50% {transform: rotate(180deg);	}
   100% {transform: rotate(360deg);}
 }
-/*==================================================
+
+/* ==================================================
 Normalization for Third party
 ================================================== */
+
 /* text truncation (dotdotdot) */
 .truncation {
+  visibility: hidden;
   transition: all 0.6s linear;
   // transform: translate3d(0, -10px, 0);
   @include opacity(0);
@@ -92,7 +105,8 @@ Normalization for Third party
   transition: all .4s linear;
   @include opacity(0);
 }
-.wf-active, .wf-inactive {
+.wf-active,
+.wf-inactive {
   .wf {
     @include opacity(1);
   }
@@ -108,7 +122,7 @@ Normalization for Third party
     @include opacity(1);
   }
 }
-[data-sizes="auto"] {
+[data-sizes='auto'] {
   display: block;
   width: 100%;
 }
@@ -118,12 +132,11 @@ Normalization for Third party
   position: relative;
   @include spinner(absolute, 16px, 2px, #aaa, ready, visible);
   .slider {
-    transition: all .3s linear .1s;
     visibility: hidden;
     @include opacity(0);
   }
   &.ready {
-    &:before {
+    &::before {
       visibility: hidden;
       @include opacity(0);
     }
@@ -147,21 +160,22 @@ Normalization for Third party
 }
 .slick-dots {
   li {
-    vertical-align: top;
     width: 21px;
     height: 21px;
     margin: 0 2px;
+    vertical-align: top;
     button {
       width: 21px;
       height: 21px;
       padding: 0;
-      &:before {
-        content: "";
+      &::before {
+        top: 4px;
+        left: 4px;
+        box-sizing: border-box;
         width: 13px;
         height: 13px;
         line-height: 13px;
-        top: 4px;
-        left: 4px;
+        content: '';
         border: 1px solid #000;
         border-radius: 50%;
         box-sizing: border-box;
@@ -170,7 +184,7 @@ Normalization for Third party
     }
     &.slick-active {
       button {
-        &:before {
+        &::before {
           background: #000;
         }
       }
@@ -178,40 +192,32 @@ Normalization for Third party
   }
 }
 
-/*==================================================
+/* ==================================================
 modules
 ================================================== */
+
 /* Paginate */
 .paginate {
   margin-top: 28px;
   line-height: 1.5;
   .page-numbers {
-    text-align: center;
     display: inline-block;
     min-width: 15px;
     margin: 0 2px;
+    text-align: center;
   }
   .current {
     text-decoration: underline;
-  }
-  .prev, .next {
-
-  }
-  .prev {
-
-  }
-  .next {
-
   }
 }
 
 /* Grid */
 .parent {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 0;
+  grid-column-gap: 0;
   .div1 {
     grid-area: 1 / 1 / 2 / 7;
   }
@@ -223,10 +229,11 @@ modules
   }
 }
 
-/*==================================================
+/* ==================================================
 header
 ================================================== */
 #header {
+  position: relative;
   width: 100%;
   height: $mobileheaderH;
   // position: fixed;
@@ -258,10 +265,10 @@ header
         bottom: 0;
         left: 0;
         width: 100%;
-        text-align: center;
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-style: normal;
         font-size: 9px;
+        font-style: normal;
+        text-align: center;
       }
     }
     nav {
@@ -279,20 +286,22 @@ header
     }
   }
 }
-/*==================================================
+
+/* ==================================================
 aside
 ================================================== */
 aside {
   display: none;
 }
-/*==================================================
+
+/* ==================================================
 footer
 ================================================== */
 #footer {
   margin-top: 30px;
 }
 
-/*==================================================
+/* ==================================================
 main
 ================================================== */
 main {
@@ -300,7 +309,8 @@ main {
   // height: 5000px;
   // padding: $mobileheaderH 0 0;
 }
-/*==================================================
+
+/* ==================================================
 home
 ================================================== */
 .home {
@@ -415,21 +425,25 @@ page-form (page-id-3)
         }
         .btn {
           width: 100%;
-          overflow: hidden;
           margin-top: 20px;
-          button, span, input[type=submit], a {
+          overflow: hidden;
+          button,
+          span,
+          input[type='submit'],
+          a {
             display: block;
             width: 100%;
             padding: 10px 0;
-            text-align: center;
             font-size: 14px;
+            text-align: center;
           }
-          span {
+
+          /* span {
 
           }
           input[type=submit] {
 
-          }
+          } */
           .ajax-loader {
             display: none;
           }
@@ -445,23 +459,25 @@ page-form (page-id-3)
                 top: 50%;
                 right: 6px;
                 z-index: 1;
+                display: block;
                 width: 0;
                 height: 0;
+                content: '';
                 border-style: solid;
               }
-              &:before {
-                border-width: 0 3px 5px 3px;
-                border-color: transparent transparent #8c8c8c transparent;
+              &::before {
                 margin-top: -6px;
+                border-color: transparent transparent #8c8c8c transparent;
+                border-width: 0 3px 5px 3px;
               }
-              &:after {
-                border-width: 5px 3px 0 3px;
-                border-color: #8c8c8c transparent transparent transparent;
+              &::after {
                 margin-top: 1px;
+                border-color: #8c8c8c transparent transparent transparent;
+                border-width: 5px 3px 0 3px;
               }
             }
           }
-          label[for=your-file] {
+          label[for='your-file'] {
             b {
               font-size: 14px;
             }
@@ -481,7 +497,8 @@ page-form (page-id-3)
             display: block;
           }
         }
-        #input, #confirm {
+        #input,
+        #confirm {
           .items {
             margin-top: 14px;
             dl {
@@ -508,16 +525,17 @@ page-form (page-id-3)
           }
         }
         #confirm {
-          .items {
+          /* .items {
             dl {
               dt {
 
               }
             }
-          }
+          } */
           .btn {
             margin-top: 40px;
-            button, span {
+            button,
+            span {
               float: left;
               width: 48.3%;
               margin-left: 3.4%;
@@ -527,7 +545,8 @@ page-form (page-id-3)
             }
           }
         }
-        #confirm, #result {
+        #confirm,
+        #result {
           position: absolute;
           top: 0;
           left: 0;
@@ -535,10 +554,10 @@ page-form (page-id-3)
           width: 100%;
           height: auto;
           min-height: 100%;
-          background: #fff;
-          transition: all 0.2s ease-in-out;
           visibility: hidden;
+          background: #fff;
           opacity: 0;
+          transition: all 0.2s ease-in-out;
           &.show {
             visibility: visible;
             opacity: 1;
@@ -555,7 +574,8 @@ page-form (page-id-3)
   }
 }
 span.wpcf7-list-item {
-  input, span {
+  input,
+  span {
     display: inline-block;
     vertical-align: middle;
   }

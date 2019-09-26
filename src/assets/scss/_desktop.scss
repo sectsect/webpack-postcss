@@ -12,74 +12,76 @@ body {
 .pc {display: block;}
 .sp {display: none;}
 
-/*==================================================
+/* ==================================================
 modules
 ================================================== */
-/* Paginate */
-.paginate {
-  text-align: center;
-  margin-top: 15px;
-  .page-numbers {
-    display: inline-block;
-    min-width: 24px;
-    margin: 0 2px;
-  }
-}
-
-/*==================================================
-header
-================================================== */
-#header {
-  height: auto;
-  #g_nav {
-    position: relative;
-    nav {
-      ul {
-        clear: fix;
-        li {
-          float: left;
-          width: 200px;
-          border: none;
-          a {
-            background: none;
-          }
-        }
-      }
+  /* Paginate */
+  .paginate {
+    margin-top: 15px;
+    text-align: center;
+    .page-numbers {
+      display: inline-block;
+      min-width: 24px;
+      margin: 0 2px;
     }
   }
-}
-/*==================================================
-aside
-================================================== */
-aside {
-  display: block;
-  section {
 
-  }
-}
-/*==================================================
-footer
-================================================== */
-#footer {
-
-}
-
-/*==================================================
-home
-================================================== */
-.home {
-  main {
-    .sec_02 {
-      .inner {
+  /* ==================================================
+  header
+  ================================================== */
+  #header {
+    height: auto;
+    #g_nav {
+      position: relative;
+      nav {
         ul {
+          clear: fix;
           li {
-            flex: 0 1 190px;
-            margin-top: 0;
+            float: left;
+            width: 200px;
+            border: none;
+            a {
+              background: none;
+            }
           }
         }
       }
     }
   }
+
+  /* ==================================================
+  aside
+  ================================================== */
+  aside {
+    display: block;
+  }
+
+  /* ==================================================
+  footer
+  ================================================== */
+
+  /* #footer {
+
+  } */
+
+  /* ==================================================
+  home
+  ================================================== */
+  .home {
+    main {
+      .sec_02 {
+        .inner {
+          ul {
+            li {
+              flex: 0 1 190px;
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+<<<<<<< HEAD:src/assets/scss/_desktop.scss
 }
 
 
@@ -94,41 +96,40 @@ page-3 (contact)
           header {
 
           }
-        }
-        .btn {
-          button, span, input[type=submit], a {
-            padding: 0;
-          }
-          span {
-
-          }
-          input[type=submit] {
-
-          }
-        }
-        #input {
-          span {
-            &.caption {
-              display: inline-block;
+          .btn {
+            button,
+            span,
+            input[type='submit'],
+            a {
+              padding: 0;
             }
           }
-        }
-        #input, #confirm {
-          .items {
-            dl {
-              width: 100%;
-              display: table;
-              dt, dd {
-                display: table-cell;
-                vertical-align: top;
+          #input {
+            span {
+              &.caption {
+                display: inline-block;
               }
-              dt {
-                width: 200px;
-                font-weight: bold;
-                padding-top: 4px;
-              }
-              dd {
-                margin: 0;
+            }
+          }
+          #input,
+          #confirm {
+            .items {
+              dl {
+                display: table;
+                width: 100%;
+                dt,
+                dd {
+                  display: table-cell;
+                  vertical-align: top;
+                }
+                dt {
+                  width: 200px;
+                  padding-top: 4px;
+                  font-weight: bold;
+                }
+                dd {
+                  margin: 0;
+                }
               }
             }
           }
@@ -136,18 +137,22 @@ page-3 (contact)
       }
     }
   }
-}
 
-.lt-ie10 {
-  .page-form {
-    article {
-      #sec_01 {
-        form {
-          #input {
-            span.wpcf7-form-control-wrap {
-              &.your-time, &.your-ceremony-year, &.your-ceremony-month, &.your-ceremony-capacity {
-                &:before, &:after {
-                  display: none;
+  .lt-ie10 {
+    .page-form {
+      article {
+        #sec_01 {
+          form {
+            #input {
+              span.wpcf7-form-control-wrap {
+                &.your-time,
+                &.your-ceremony-year,
+                &.your-ceremony-month,
+                &.your-ceremony-capacity {
+                  &::before,
+                  &::after {
+                    display: none;
+                  }
                 }
               }
             }

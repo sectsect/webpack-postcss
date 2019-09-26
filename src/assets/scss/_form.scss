@@ -1,53 +1,56 @@
+/* stylelint-disable function-calc-no-invalid */
+
 /* FormHack v1.2.0 (formhack.io) */
 
-// Config -----------------------------
+/* Config ----------------------------- */
 
-// Font
-$fh-font-family                : $fontfamily !default;
-$fh-font-size                  : $fontsize !default;
-$fh-font-color                 : $fontcolor !default;
-$fh-font-color-disabled        : #aaa !default;  // Add code by SECT
+/* Font */
+$fh-font-family: $fontfamily;
+$fh-font-size: $fontsize;
+$fh-font-color: $fontcolor;
+$fh-font-color-disabled: #aaa; /* Add code by SECT */
 
-// Borders
-$fh-border-radius              : 5px !default;
-$fh-border-width               : 1px !default;
-$fh-border-style               : solid !default;
-$fh-border-color               : $bordercolor !default;
+/* Borders */
+$fh-border-radius: 5px;
+$fh-border-width: 1px;
+$fh-border-style: solid;
+$fh-border-color: $bordercolor;
 
-// Inputs, Textareas, Select, Option
-$fh-input-height               : 30px !default;
-$fh-input-width                : 100% !default;
-$fh-input-max-width            : 400px !default;
-$fh-input-bg-color             : #fff !default;
-$fh-focus-bg-color             : #fff !default;
-$fh-focus-border-color         : $fh-border-color !default;
-$fh-focus-font-color           : $fh-font-color !default;
+/* Inputs, Textareas, Select, Option */
+$fh-input-height: 30px;
+$fh-input-width: 100%;
+$fh-input-max-width: 400px;
+$fh-input-bg-color: #fff;
+$fh-focus-bg-color: #fff;
+$fh-focus-border-color: $fh-border-color;
+$fh-focus-font-color: $fh-font-color;
 
-// Inputs Vendor Styling
-$fh-allow-input-vendor-styling: false !default;
+/* Inputs Vendor Styling */
+$fh-allow-input-vendor-styling: false;
 
-// Select Vendor Styling
-$fh-allow-select-vendor-styling: false !default;
+/* Select Vendor Styling */
+$fh-allow-select-vendor-styling: false;
 
-// Fieldset & Legend Styling
-$fh-fieldset-bare              : false !default;
+/* Fieldset & Legend Styling */
+$fh-fieldset-bare: false;
 
-// Buttons & Input Submits
-$fh-button-height              : 40px !default;
-$fh-button-width               : 100% !default;
-$fh-button-max-width           : 200px !default;
-$fh-button-font-color          : $fh-font-color !default;
-$fh-button-bg-color            : $fh-focus-bg-color !default;
-$fh-button-hover-bg-color      : $fh-focus-bg-color !default;
-$fh-button-hover-font-color    : $fh-font-color !default;
+/* Buttons & Input Submits */
+$fh-button-height: 40px;
+$fh-button-width: 100%;
+$fh-button-max-width: 200px;
+$fh-button-font-color: $fh-font-color;
+$fh-button-bg-color: $fh-focus-bg-color;
+$fh-button-hover-bg-color: $fh-focus-bg-color;
+$fh-button-hover-font-color: $fh-font-color;
 
-// Layout
-$fh-centered                   : false !default;
-$fh-display                    : block !default;
+/* Layout */
+$fh-centered: false;
+$fh-display: block;
 
-/*==================================================
-Add code by SECT
+/* ==================================================
+  Add code by SECT
 ================================================== */
+
 /* field size */
 $field-size-s       : 50px !default;
 $field-size-m       : 200px !default;
@@ -59,8 +62,7 @@ $field-size-full    : $fh-input-width !default;
   @if $fh-centered == true {
     margin: 0 auto;
     text-align: center;
-  }
-  @else {
+  } @else {
     margin: 0;
   }
 }
@@ -76,8 +78,7 @@ button,
 legend,
 fieldset {
   box-sizing: border-box;
-  outline: none;
-
+  display: $fh-display;
   font-family: $fh-font-family;
   font-size: $fh-font-size + px;
   color: $fh-font-color;
@@ -100,30 +101,29 @@ label {
 /* Input & Textarea ------------------ */
 
 /* Fields with standard width */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
-input[type="color"],
-input[type="date"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="number"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-input[type="week"],
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='search'],
+input[type='color'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='number'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
 input[list],
-input[type="file"],
+input[type='file'],
 select,
 textarea {
   width: $fh-input-width;
   max-width: $fh-input-max-width;
   padding: $fh-input-height / 5;
   background-color: $fh-input-bg-color;
-
-  border-radius: $fh-border-radius;
   border: $fh-border-width $fh-border-style $fh-border-color;
+  border-radius: $fh-border-radius;
 }
 
 /* Fields with standard height */
@@ -153,17 +153,19 @@ input {
     width: $fh-input-width;
     max-width: $fh-input-max-width;
   }
-  &[type="file"] {
+  &[type='file'] {
     min-height: $fh-input-height;
   }
-  &[type="search"] {
+  &[type='search'] {
     height: $fh-input-height;
     -webkit-appearance: none;
-    &::-webkit-search-cancel-button, &::-webkit-search-decoration {
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
       -webkit-appearance: none;
     }
   }
-  &[type="checkbox"], &[type="radio"] {
+  &[type='checkbox'],
+  &[type='radio'] {
     display: inline-block;
     vertical-align: middle;
   }
@@ -210,11 +212,10 @@ fieldset {
   @if $fh-fieldset-bare == true {
     padding: 0;
     border: 0;
-  }
-  @else {
+  } @else {
     padding: 10px 25px;
-    border-radius: $fh-border-radius;
     border: $fh-border-width $fh-border-style $fh-border-color;
+    border-radius: $fh-border-radius;
   }
 }
 
@@ -222,8 +223,7 @@ legend {
   @if $fh-fieldset-bare == true {
     padding: 0;
     font-weight: inherit;
-  }
-  @else {
+  } @else {
     padding: 0 5px;
     font-weight: 700;
   }
@@ -232,11 +232,10 @@ legend {
 /* Buttons, Input Type Submit/Reset ------------------ */
 
 button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="image"] {
-  height: $fh-button-height;
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='image'] {
   width: $fh-button-width;
   max-width: $fh-button-max-width;
   background-color: $fh-button-bg-color;
@@ -245,12 +244,13 @@ input[type="image"] {
 
   color: $fh-button-font-color;
   font-weight: 700;
-
+  color: $fh-button-font-color;
+  cursor: pointer;
+  background-color: $fh-button-bg-color;
+  border: $fh-border-width $fh-border-style $fh-border-color;
+  border-radius: $fh-border-radius;
   -webkit-appearance: none;
   -moz-appearance: none;
-
-  border-radius: $fh-border-radius;
-  border: $fh-border-width $fh-border-style $fh-border-color;
 }
 
 input[type="image"] {
@@ -286,35 +286,35 @@ input[type="radio"]:focus {
 }
 
 button:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
+input[type='button']:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
 button:focus,
-input[type="button"]:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus {
-  background-color: $fh-button-hover-bg-color;
+input[type='button']:focus,
+input[type='submit']:focus,
+input[type='reset']:focus {
   color: $fh-button-hover-font-color;
+  background-color: $fh-button-hover-bg-color;
 }
 
 /*==================================================
 Add code by SECT
 ================================================== */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
-input[type="color"],
-input[type="date"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="number"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-input[type="week"],
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='search'],
+input[type='color'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='number'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
 input[list],
-input[type="file"],
+input[type='file'],
 select,
 textarea {
   &.size_s {
@@ -356,7 +356,7 @@ textarea {
 
 /* Disable autofill(yellow background) on Chrome */
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-box-shadow: 0 0 0 1000px white inset;
 }
 
 /* placeholder */
@@ -370,7 +370,6 @@ textarea[readonly],
 select[readonly],
 option[readonly],
 button[readonly] {
-  border: none;
   padding: 0;
   // background: none !important;
 }
@@ -381,13 +380,11 @@ textarea[disabled],
 select[disabled],
 option[disabled],
 button[disabled] {
-  cursor: not-allowed;
   color: $fh-font-color-disabled !important;
   &:hover {
     color: $fh-font-color-disabled;
   }
 }
-
 
 /* input[type=file]	@ http://qiita.com/yasumodev/items/c9f8e8f588ded6b179c9 */
 $file-field-id : your-file !default;
@@ -477,18 +474,18 @@ input[type=range] {
     height: 2px;
     cursor: pointer;
     background: rgba(200, 200, 200, 0.78);
-    border-radius: 0px;
-    border: 0px solid #010101;
+    border: 0 solid #010101;
+    border-radius: 0;
   }
   &::-webkit-slider-thumb {
-    border: 1.8px solid #444444;
-    height: 12px;
     width: 12px;
-    border-radius: 50%;
-    background: #444444;
-    cursor: pointer;
-    -webkit-appearance: none;
+    height: 12px;
     margin-top: -5px;
+    cursor: pointer;
+    background: #444;
+    border: 1.8px solid #444;
+    border-radius: 50%;
+    -webkit-appearance: none;
   }
   &:focus::-webkit-slider-runnable-track {
     background: rgba(213, 213, 213, 0.78);
@@ -498,43 +495,44 @@ input[type=range] {
     height: 2px;
     cursor: pointer;
     background: rgba(200, 200, 200, 0.78);
-    border-radius: 0px;
-    border: 0px solid #010101;
+    border: 0 solid #010101;
+    border-radius: 0;
   }
   &::-moz-range-thumb {
-    border: 1.8px solid #444444;
-    height: 12px;
     width: 12px;
-    border-radius: 50%;
-    background: #444444;
+    height: 12px;
     cursor: pointer;
+    background: #444;
+    border: 1.8px solid #444;
+    border-radius: 50%;
   }
   &::-ms-track {
     width: 100%;
     height: 2px;
+    color: transparent;
     cursor: pointer;
     background: transparent;
     border-color: transparent;
-    color: transparent;
   }
   &::-ms-fill-lower {
     background: rgba(187, 187, 187, 0.78);
-    border: 0px solid #010101;
-    border-radius: 0px;
+    border: 0 solid #010101;
+    border-radius: 0;
   }
   &::-ms-fill-upper {
     background: rgba(200, 200, 200, 0.78);
-    border: 0px solid #010101;
-    border-radius: 0px;
+    border: 0 solid #010101;
+    border-radius: 0;
   }
   &::-ms-thumb {
-    border: 1.8px solid #444444;
-    height: 12px;
     width: 12px;
-    border-radius: 50%;
-    background: #444444;
+    height: 12px;
     cursor: pointer;
-    height: 2px;
+    background: #444;
+    border: 1.8px solid #444;
+    border-radius: 50%;
+
+    /* height: 2px; */
   }
   &:focus {
     &::-ms-fill-lower {
@@ -550,10 +548,11 @@ input[type=range] {
 
 /* select2.js - Reset default css */
 .select2-container--default {
-  .select2-selection--single, .select2-selection--multiple {
+  .select2-selection--single,
+  .select2-selection--multiple {
+    height: $fh-input-height !important;
     border: $fh-border-width $fh-border-style $bordercolor !important;
     border-radius: $fh-border-radius !important;
-    height: $fh-input-height !important;
     outline: none;
     .select2-selection__rendered {
       height: $fh-input-height !important;
@@ -564,23 +563,24 @@ input[type=range] {
     }
   }
   &.select2-container--open.select2-container--below {
-    .select2-selection--single, .select2-selection--multiple {
-      border-bottom-left-radius: 0 !important;
+    .select2-selection--single,
+    .select2-selection--multiple {
       border-bottom-right-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
     }
   }
   .select2-search--dropdown .select2-search__field {
-    border-color: $bordercolor !important;
     max-width: initial;
     max-width: auto;
+    border-color: $bordercolor !important;
   }
 }
 .select2-dropdown {
   border-color: $bordercolor !important;
 }
 .select2-selection__clear {
-  color: $fontcolor;
   font-size: 13px;
+  color: $fontcolor;
 }
 .select2-container {
   width: 100% !important;
@@ -644,14 +644,13 @@ input[type=range] {
   }
 }
 
-
 /* contact form 7 */
 .wpcf7-form-control-wrap {
   display: block;
 }
 
-
 /* For responsive */
-@media only screen and (min-width: $breakPoint) {
 
-}
+/* @media only screen and (min-width: $breakPoint) {
+
+} */

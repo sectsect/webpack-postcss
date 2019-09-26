@@ -8,6 +8,7 @@
 - [PostCSS](https://github.com/postcss/postcss)
 - [Babel](https://babeljs.io/) + [@babel/preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
 - [ESLint](https://eslint.org/) w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
+- [stylelint](https://stylelint.io/)
 - [Prettier](https://prettier.io/)
 - CircleCI 2.0
 
@@ -16,6 +17,7 @@
 | Branch | Description |
 | ------ | ----------- |
 | [master](https://github.com/sectsect/webpack-postcss) | ----- |
+| [TypeScript](https://github.com/sectsect/webpack-postcss/tree/feature/typescript) | \+ TypeScript<br>\- JavaScript |
 | [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | \+ Vue.js<br>(Default: jQuery only) |
 | [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ sass<br>\- PostCSS |
 | [webpack-dev-server](https://github.com/sectsect/webpack-postcss/tree/webpack-dev-server) | \+ webpack-dev-server |

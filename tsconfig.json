@@ -1,16 +1,7 @@
 {
+  "extends": "@spotify/tsconfig/tsconfig.app.json",
   "compilerOptions": {
-    "allowJs": true,
-    "target": "esnext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "strict": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "noImplicitThis": false,
-    "types": [
-      "node"
-    ]
+    "noImplicitThis": false
   },
   "include": [
     "src/**/*"

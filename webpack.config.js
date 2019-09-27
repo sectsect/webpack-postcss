@@ -157,8 +157,8 @@ module.exports = env => [
     module: {
       rules: [
         {
-          // test: /\.ts$/,
-          test: /\.(ts|js)$/,
+          // test: /\.(ts|js)$/,
+          test: /\.(t|j)sx?$/,
           exclude: /node_modules/,
           // test: /\.(mjs|js)$/,
           // exclude: /node_modules\/(?!(rambda|quicklink)\/).*/,
@@ -191,7 +191,7 @@ module.exports = env => [
     },
     // Modernizr
     resolve: {
-      extensions: [ '.tsx', '.ts', '.js' ],
+      extensions: ['.tsx', '.ts', '.jsx', '.js'],
       modules: ['node_modules'],
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),

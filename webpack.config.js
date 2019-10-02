@@ -99,7 +99,7 @@ const getCSSPlugins = env => {
   );
   plugins.push(
     new StyleLintPlugin({
-      files: 'src/**/*.css',
+      files: 'src/assets/css/*.css',
       fix: true,
     }),
   );

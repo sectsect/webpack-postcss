@@ -4,7 +4,9 @@
 $fontsize: 11px;
 $fontcolor: #000;
 $linkcolor: $fontcolor;
-$fontfamily: 'NotoSansCJKjp', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ',
+/* $fontfamily: 'NotoSansCJKjp', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ',
+  Meiryo, 'ＭＳ Ｐゴシック', sans-serif; */
+$fontfamily: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ',
   Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
 $fontmincho: 'EB Garamond', 'Times New Roman', 'ＭＳ 明朝', 'MS Mincho', 'ヒラギノ明朝 ProN W3',
   'Hiragino Mincho ProN', 'メイリオ', Meiryo, serif;

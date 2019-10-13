@@ -11,6 +11,7 @@ const SizePlugin = require('size-plugin');
 const NotifierPlugin = require('friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
@@ -68,6 +69,15 @@ const getJSPlugins = env => {
   if (isProd(env)) {
     plugins.push(new SizePlugin());
   }
+  if (isDev(env)) {
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        // analyzerMode: 'static',
+        // reportFilename: path.join(__dirname, 'report.html'),
+        openAnalyzer: false,
+      }),
+    );
+  }
   plugins.push(
     new NotifierPlugin({
       onErrors: (severity, errors) => {
@@ -98,7 +108,8 @@ const getCSSPlugins = env => {
   );
   plugins.push(
     new StyleLintPlugin({
-      files: 'src/**/*.css',
+      files: 'src/assets/css/**/*.css',
+      lintDirtyModulesOnly: true,
       fix: true,
     }),
   );

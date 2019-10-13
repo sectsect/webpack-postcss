@@ -19,6 +19,15 @@ export default () => {
       cssEase: 'ease-in-out',
       autoplay: true,
       autoplaySpeed: 3000,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+      ],
     });
 
     // Restart autoplay (Slick Slider autoplay stops when touched on mobile/tablet)

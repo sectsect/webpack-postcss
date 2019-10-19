@@ -9,19 +9,19 @@ export default (): any => {
   const bv = parseInt(browser.version, 10);
   const detect = {
     device: {
-      desktop: !isMobile.any,
-      mobile: isMobile.any,
-      phone: isMobile.phone,
-      tablet: isMobile.tablet,
+      desktop: !isMobile().any,
+      mobile: isMobile().any,
+      phone: isMobile().phone,
+      tablet: isMobile().tablet,
       chrome: bn === 'chrome' ? bv : false,
       firefox: bn === 'firefox' ? bv : false,
       safari: bn === 'safari' ? bv : false,
       msie: bn === 'ie' ? bv : false,
       msedge: bn === 'edge' ? bv : false,
-      iPhone: isMobile.apple.phone,
-      androidphone: isMobile.android.phone,
-      iOS: isMobile.apple.device,
-      androidOS: isMobile.android.device,
+      iPhone: isMobile().apple.phone,
+      androidphone: isMobile().android.phone,
+      iOS: isMobile().apple.device,
+      androidOS: isMobile().android.device,
     },
     htmlcss: {
       cssgrid: Modernizr.cssgrid,

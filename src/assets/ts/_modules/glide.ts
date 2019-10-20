@@ -1,5 +1,5 @@
 import Glide from '@glidejs/glide';
-// import { unveil } from './unveil-lazysizes';
+import { unveil } from './unveil-lazysizes';
 
 declare let jQuery: any;
 
@@ -26,7 +26,7 @@ export const glide = (): void => {
       });
       glide.on('mount.after', (): void => {
         jQuery(this).addClass('ready');
-        // unveil(jQuery(this).find('.glide__slide img'));
+        unveil(jQuery(this).find('.glide__slide img'));
       });
       glide.mount();
     } else {

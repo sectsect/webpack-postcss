@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const dotenv = require('dotenv').config();
@@ -11,8 +11,9 @@ const WebpackSweetEntry = require('webpack-sweet-entry');
 const SizePlugin = require('size-plugin');
 const NotifierPlugin = require('friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
-const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');
@@ -21,19 +22,21 @@ const buildPath = path.join(__dirname, 'dist');
 // console.log(process.env.AWS_ACCESS_KEY_ID);
 
 // For Detection Environment  @ https://webpack.js.org/api/cli/#environment-options
-const isProd = env => (env && env.production);
-const isDev = env => (env && env.development);
+const isProd = env => env && env.production;
+const isDev = env => env && env.development;
 
 // http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
-const getJSPlugins = (env) => {
+const getJSPlugins = env => {
   const plugins = [];
 
-  plugins.push(new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery',
-    'window.jQuery': 'jquery',
-    R: 'rambda',
-  }));
+  plugins.push(
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      R: 'rambda',
+    }),
+  );
   // plugins.push(new SvgStore.Options({
   //   svg: {
   //     style: '',
@@ -47,56 +50,76 @@ const getJSPlugins = (env) => {
   //     ],
   //   },
   // }));
-  plugins.push(new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
-    output: {
-      filename: '../../../dist/assets/images/svg/symbol.svg',
-      svgo: {
-        plugins: [
-          { removeTitle: false },
-          { removeAttrs: { attrs: 'fill' } },
-          { removeStyleElement: true },
-        ],
+  plugins.push(
+    new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
+      output: {
+        filename: '../../../dist/assets/images/svg/symbol.svg',
+        svgo: {
+          plugins: [
+            { removeTitle: false },
+            { removeAttrs: { attrs: 'fill' } },
+            { removeStyleElement: true },
+          ],
+        },
       },
-    },
-    sprite: {
-      prefix: 'icon-',
-    },
-  }));
+      sprite: {
+        prefix: 'icon-',
+      },
+    }),
+  );
   if (isProd(env)) {
     plugins.push(new SizePlugin());
   }
-  plugins.push(new NotifierPlugin({
-    onErrors: (severity, errors) => {
-      if (severity !== 'error') {
-        return;
-      }
-      const error = errors[0];
-      notifier.notify({
-        title: 'Webpack error',
-        message: `${severity}: ${error.name}`,
-        sound: 'Bottle',
-        subtitle: error.file || '',
-      });
-    },
-  }));
+  if (isDev(env)) {
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        // analyzerMode: 'static',
+        // reportFilename: path.join(__dirname, 'report.html'),
+        openAnalyzer: false,
+      }),
+    );
+  }
+  plugins.push(
+    new NotifierPlugin({
+      onErrors: (severity, errors) => {
+        if (severity !== 'error') {
+          return;
+        }
+        const error = errors[0];
+        notifier.notify({
+          title: 'Webpack error',
+          message: `${severity}: ${error.name}`,
+          sound: 'Bottle',
+          subtitle: error.file || '',
+        });
+      },
+    }),
+  );
 
   return plugins;
 };
 
-const getCSSPlugins = (env) => {
+const getCSSPlugins = env => {
   const plugins = [];
 
-  plugins.push(new FixStyleOnlyEntriesPlugin({
-    silent: true,
-  }));
-  plugins.push(new StyleLintPlugin({
-    files: 'src/**/*.css',
-    fix: true
-  }));
-  plugins.push(new MiniCssExtractPlugin({
-    filename: '[name].css',
-    allChunks: true,
-  }));
+  plugins.push(
+    new FixStyleOnlyEntriesPlugin({
+      silent: true,
+    }),
+  );
+  plugins.push(
+    new StyleLintPlugin({
+      files: 'src/assets/css/**/*.css',
+      lintDirtyModulesOnly: true,
+      fix: true,
+    }),
+  );
+  plugins.push(
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      allChunks: true,
+    }),
+  );
   // plugins.push(new SpritesmithPlugin({
   //   src: {
   //     cwd: path.resolve(sourcePath, 'assets/images/sprites/icon'),
@@ -123,27 +146,31 @@ const getCSSPlugins = (env) => {
   //   },
   // }));
   if (isProd(env)) {
-    plugins.push(new OptimizeCssAssetsPlugin({
-      cssProcessorPluginOptions: {
-        preset: ['default', { discardComments: { removeAll: true } }],
-      },
-    }));
+    plugins.push(
+      new OptimizeCssAssetsPlugin({
+        cssProcessorPluginOptions: {
+          preset: ['default', { discardComments: { removeAll: true } }],
+        },
+      }),
+    );
     plugins.push(new SizePlugin());
   }
-  plugins.push(new NotifierPlugin({
-    onErrors: (severity, errors) => {
-      if (severity !== 'error') {
-        return;
-      }
-      const error = errors[0];
-      notifier.notify({
-        title: 'Webpack error',
-        message: `${severity}: ${error.name}`,
-        sound: 'Bottle',
-        subtitle: error.file || '',
-      });
-    },
-  }));
+  plugins.push(
+    new NotifierPlugin({
+      onErrors: (severity, errors) => {
+        if (severity !== 'error') {
+          return;
+        }
+        const error = errors[0];
+        notifier.notify({
+          title: 'Webpack error',
+          message: `${severity}: ${error.name}`,
+          sound: 'Bottle',
+          subtitle: error.file || '',
+        });
+      },
+    }),
+  );
 
   return plugins;
 };
@@ -217,7 +244,7 @@ module.exports = env => [
             },
             output: {
               comments: false,
-            }
+            },
           },
           extractComments: false,
         }),

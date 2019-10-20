@@ -1,6 +1,6 @@
 import dedent from 'dedent';
 
-export default () => {
+export const tests = () => {
   /*= =================================================
     Detect Testing
   ================================================== */

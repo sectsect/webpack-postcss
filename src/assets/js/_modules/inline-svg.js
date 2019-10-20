@@ -1,4 +1,4 @@
-export default () => {
+export const inlineSVG = () => {
   jQuery
     .ajax({
       url: '/assets/images/svg/symbol.svg',

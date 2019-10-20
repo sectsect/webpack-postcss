@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueScrollTo from 'vue-scrollto';
 import VueMatchHeights from 'vue-match-heights';
 
-export default () => {
+export const vueExample = () => {
   Vue.use(VueScrollTo, {
     container: 'body',
     duration: 500,

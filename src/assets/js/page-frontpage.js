@@ -1,6 +1,6 @@
-import commons from './_modules/commons';
-import slider from './_modules/slider';
-import MyClass from './_class/myclass';
+import './_modules/commons';
+import { slider } from './_modules/slider';
+import { MyClass } from './_class/myclass';
 
 // const ary = R.append('111', ['222', '333']);
 // console.log(ary);

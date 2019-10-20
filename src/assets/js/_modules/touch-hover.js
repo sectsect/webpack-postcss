@@ -1,4 +1,4 @@
-export default elem => {
+export const touchHover = elem => {
   elem.push('.touch_hover');
   const el = elem.join(',');
   if (el) {

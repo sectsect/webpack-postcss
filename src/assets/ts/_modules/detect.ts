@@ -4,36 +4,37 @@ import Modernizr from 'modernizr';
 
 const browser: any = detect();
 
-export default (): any => {
-  interface Options {
-    device: {
-      desktop: boolean;
-      mobile: boolean;
-      phone: boolean;
-      tablet: boolean;
-      chrome: number | boolean;
-      firefox: number | boolean;
-      safari: number | boolean;
-      msie: number | boolean;
-      msedge: number | boolean;
-      iPhone: boolean;
-      androidphone: boolean;
-      iOS: boolean;
-      androidOS: boolean;
-    };
-    htmlcss: {
-      cssgrid: boolean;
-      flexbox: boolean;
-      flexboxtweener: boolean;
-      objectfit: boolean;
-    };
-    breakpoints: {
-      sm: number;
-      md: number;
-      lg: number;
-      xl: number;
-    };
-  }
+interface Options {
+  device: {
+    desktop: boolean;
+    mobile: boolean;
+    phone: boolean;
+    tablet: boolean;
+    chrome: number | boolean;
+    firefox: number | boolean;
+    safari: number | boolean;
+    msie: number | boolean;
+    msedge: number | boolean;
+    iPhone: boolean;
+    androidphone: boolean;
+    iOS: boolean;
+    androidOS: boolean;
+  };
+  htmlcss: {
+    cssgrid: boolean;
+    flexbox: boolean;
+    flexboxtweener: boolean;
+    objectfit: boolean;
+  };
+  breakpoints: {
+    sm: number;
+    md: number;
+    lg: number;
+    xl: number;
+  };
+}
+
+export default (): Options => {
   const bn: string = browser.name;
   const bv: number = parseInt(browser.version, 10);
   const detect: Options = {

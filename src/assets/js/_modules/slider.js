@@ -1,7 +1,7 @@
-import slick from 'slick-carousel';
-import unveil from './unveil-lazysizes';
+import 'slick-carousel';
+import { unveil } from './unveil-lazysizes';
 
-export default () => {
+export const slider = () => {
   jQuery('.slider_wrap').each(function() {
     const parentid = `#${jQuery(this).attr('id')}`;
     jQuery(`${parentid} .slider`).on('init', function(event, slick) {
@@ -19,6 +19,15 @@ export default () => {
       cssEase: 'ease-in-out',
       autoplay: true,
       autoplaySpeed: 3000,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+      ],
     });
 
     // Restart autoplay (Slick Slider autoplay stops when touched on mobile/tablet)

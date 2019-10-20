@@ -1,4 +1,4 @@
-import slick from 'slick-carousel';
+import 'slick-carousel';
 import { unveil } from './unveil-lazysizes';
 
 export const slider = () => {

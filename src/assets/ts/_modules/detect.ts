@@ -34,7 +34,7 @@ interface Options {
   };
 }
 
-export default (): Options => {
+export const detection = (): Options => {
   const bn: string = browser.name;
   const bv: number = parseInt(browser.version, 10);
   const detect: Options = {

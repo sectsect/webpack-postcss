@@ -1,9 +1,9 @@
 import Glide from '@glidejs/glide';
-// import unveil from './unveil-lazysizes';
+// import { unveil } from './unveil-lazysizes';
 
 declare let jQuery: any;
 
-export default (): void => {
+export const glide = (): void => {
   jQuery('.glide_wrap').each(function(): void {
     const c = jQuery(this).attr('data-glide-count');
     if (c !== '1') {

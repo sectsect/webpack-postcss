@@ -33,6 +33,8 @@ module.exports = {
       "devDependencies": true,
       "optionalDependencies": false
     }],
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "error",
     "max-len": [2, {
       "code": 200,
       "tabWidth": 2,

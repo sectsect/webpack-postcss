@@ -1,6 +1,6 @@
 import './_modules/commons';
-import glide from './_modules/glide';
-import MyClass from './_class/myclass';
+import { glide } from './_modules/glide';
+import { MyClass } from './_class/myclass';
 
 glide();
 

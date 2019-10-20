@@ -5,7 +5,7 @@
  *
  * @return string
  */
-export default class {
+export class MyClass {
   name: string;
 
   age: number;

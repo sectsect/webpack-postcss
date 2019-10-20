@@ -2,7 +2,7 @@ import 'jquery-smooth-scroll';
 
 declare let jQuery: any;
 
-export default (): void => {
+export const smoothScroll = (): void => {
   jQuery("a[href^='#']").on('click', (e: any): boolean => {
     const h = parseInt(`-${jQuery('#header').outerHeight(true)}`, 10);
     const ofs = jQuery(e.currentTarget)

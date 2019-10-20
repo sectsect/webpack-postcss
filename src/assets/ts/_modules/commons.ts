@@ -10,17 +10,17 @@ import 'lazysizes';
 import 'jquery.easing';
 import viewportUnitsBuggyfill from 'viewport-units-buggyfill';
 // import window from './window';
-// import detect from './detect';
-import WebFontLoader from './webfont-loader';
-import inlineSVG from './inline-svg';
-import viewPort from './viewport';
-import smoothScroll from './jquery-smooth-scroll';
-import matchHeight from './jquery-match-height';
-import dotdotdot from './jquery-dotdotdot';
-// import touchHover from './touch-hover';
-import menu from './menu';
-import modal from './modal';
-import tests from './tests';
+// import { detection as detect } from './detect';
+import { WebFontLoader } from './webfont-loader';
+import { inlineSVG } from './inline-svg';
+import { viewPort } from './viewport';
+import { smoothScroll } from './jquery-smooth-scroll';
+import { matchHeight } from './jquery-match-height';
+import { dotdotdot } from './jquery-dotdotdot';
+// import { touchHover } from './touch-hover';
+import { menu } from './menu';
+import { modal } from './modal';
+import { tests } from './tests';
 
 declare let jQuery: any;
 

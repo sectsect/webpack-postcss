@@ -2,7 +2,7 @@ import 'dotdotdot-js';
 
 declare let jQuery: any;
 
-export default (): void => {
+export const dotdotdot = (): void => {
   if (jQuery('.truncation').length) {
     jQuery('.truncation').dotdotdot({
       watch: 'window',

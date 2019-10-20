@@ -1,10 +1,10 @@
 import dedent from 'dedent';
-import detect from './detect';
+import { detection as detect } from './detect';
 
 declare let jQuery: any;
 declare let R: any;
 
-export default (): void => {
+export const tests = (): void => {
   /*= =================================================
     Detect Testing
   ================================================== */

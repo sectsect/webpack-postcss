@@ -2,7 +2,7 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 declare let jQuery: any;
 
-export default (): void => {
+export const menu = (): void => {
   const togglePanel = (c: string, t: any): any => {
     if (jQuery('body').hasClass(c)) {
       enableBodyScroll(t);

@@ -1,6 +1,6 @@
 declare let jQuery: any;
 
-export default (): void => {
+export const inlineSVG = (): void => {
   jQuery
     .ajax({
       url: '/assets/images/svg/symbol.svg',

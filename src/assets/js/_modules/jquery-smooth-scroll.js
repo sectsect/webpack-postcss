@@ -1,6 +1,6 @@
 import 'jquery-smooth-scroll';
 
-export default () => {
+export const smoothScroll = () => {
   jQuery("a[href^='#']").on('click', e => {
     const h = parseInt(`-${jQuery('#header').outerHeight(true)}`, 10);
     const ofs = jQuery(e.currentTarget)

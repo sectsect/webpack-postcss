@@ -3,7 +3,7 @@ import 'core-js/modules/es.array.from';
 import MicroModal from 'micromodal';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-export default () => {
+export const modal = () => {
   MicroModal.init({
     // onShow: modal => console.info(`${modal.id} is shown`), // [1]
     // onClose: modal => console.info(`${modal.id} is hidden`), // [2]

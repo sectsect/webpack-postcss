@@ -4,7 +4,7 @@ import Modernizr from 'modernizr';
 
 const browser = detect();
 
-export default () => {
+export const detection = () => {
   const bn = browser.name;
   const bv = parseInt(browser.version, 10);
   const detect = {

@@ -1,7 +1,7 @@
 import slick from 'slick-carousel';
-import unveil from './unveil-lazysizes';
+import { unveil } from './unveil-lazysizes';
 
-export default () => {
+export const slider = () => {
   jQuery('.slider_wrap').each(function() {
     const parentid = `#${jQuery(this).attr('id')}`;
     jQuery(`${parentid} .slider`).on('init', function(event, slick) {

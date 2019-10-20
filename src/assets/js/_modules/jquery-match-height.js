@@ -1,6 +1,6 @@
 import 'jquery-match-height-browserify';
 
-export default () => {
+export const matchHeight = () => {
   jQuery('.mh-byrow').matchHeight();
   jQuery('.mh').matchHeight({ byRow: false });
 };

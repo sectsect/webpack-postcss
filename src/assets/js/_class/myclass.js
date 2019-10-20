@@ -5,7 +5,7 @@
  *
  * @return string
  */
-export default class {
+export class MyClass {
   constructor(name, age, city, country, email = false) {
     this.name = name;
     this.age = age;

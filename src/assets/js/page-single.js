@@ -1,4 +1,4 @@
-import commons from './_modules/commons';
+import './_modules/commons';
 
 const single = 'Single!!';
 console.log(single);

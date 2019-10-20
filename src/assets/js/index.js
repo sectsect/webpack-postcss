@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import commons from './_modules/commons';
-import App from './_App';
+import { App } from './_App';
 
 ReactDOM.render(<App />, document.getElementById('app'));
 

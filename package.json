@@ -16,7 +16,7 @@
     "@babel/helpers": "^7.6.2",
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.6.3",
-    "@sect/webpack-sweet-entry": "^2.0.1",
+    "@sect/webpack-sweet-entry": "^2.0.2",
     "@spotify/prettier-config": "^3.0.0",
     "autoprefixer": "^9.7.0",
     "babel-eslint": "^10.0.3",

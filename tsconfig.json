@@ -1,7 +1,8 @@
 {
   "extends": "@spotify/tsconfig/tsconfig.app.json",
   "compilerOptions": {
-    "noImplicitThis": false
+    // "noImplicitThis": false,
+    "target": "esnext"
   },
   "include": [
     "src/**/*"

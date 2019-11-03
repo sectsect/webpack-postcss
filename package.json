@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm run check-types:watch",
-    "check-types": "tsc",
-    "check-types:watch": "tsc --watch",
+    "start": "",
+    "type-check": "tsc",
+    "type-check:watch": "npm run type-check -- --watch",
     "lint": "eslint --ext .ts src/assets/ts",
     "lint:fix": "eslint --fix --ext .ts src/assets/ts",
     "lint:css": "stylelint src/**/*.css --fix",

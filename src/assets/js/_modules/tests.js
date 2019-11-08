@@ -167,6 +167,12 @@ export const tests = () => {
     console.log('World!');
   };
   example();
+
+  const object = { a: 1, b: 2, c: 3 };
+  console.log('object');
+  Object.entries(object).forEach(([key, value]) => {
+    console.log({ key, value });
+  });
   /*= =================================================
     ES8 Example
   ================================================== */

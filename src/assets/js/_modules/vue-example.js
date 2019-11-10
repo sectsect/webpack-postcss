@@ -17,7 +17,7 @@ export const vueExample = () => {
 
   Vue.use(VueMatchHeights);
 
-  new Vue({
+  const app = new Vue({
     el: '#wrap',
     methods: {},
   });

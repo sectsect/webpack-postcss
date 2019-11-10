@@ -5,43 +5,45 @@ import { MyClass } from './_class/myclass';
 // const ary = R.append('111', ['222', '333']);
 // console.log(ary);
 
-jQuery(() => {
-  jQuery('.slider_wrap').each(function() {
-    const parentid = `#${jQuery(this).attr('id')}`;
-    jQuery('.slider').on('init', function(event, slick) {
-      jQuery(this)
-        .closest('.slider_wrap')
-        .addClass('ready');
-    });
-    jQuery(`${parentid} .slider-for`).slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      speed: 200,
-      arrows: true,
-      fade: false,
-      asNavFor: `${parentid} .slider-nav`,
-    });
-    jQuery(`${parentid} .slider-nav`).slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      speed: 200,
-      asNavFor: `${parentid} .slider-for`,
-      arrows: false,
-      dots: false,
-      //	centerMode		  : true,
-      focusOnSelect: true,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1,
-          },
-        },
-      ],
-    });
-  });
-});
+slider();
+
+// jQuery(() => {
+//   jQuery('.slider_wrap').each(function() {
+//     const parentid = `#${jQuery(this).attr('id')}`;
+//     jQuery('.slider').on('init', function(event, slick) {
+//       jQuery(this)
+//         .closest('.slider_wrap')
+//         .addClass('ready');
+//     });
+//     jQuery(`${parentid} .slider-for`).slick({
+//       slidesToShow: 1,
+//       slidesToScroll: 1,
+//       speed: 200,
+//       arrows: true,
+//       fade: false,
+//       asNavFor: `${parentid} .slider-nav`,
+//     });
+//     jQuery(`${parentid} .slider-nav`).slick({
+//       slidesToShow: 4,
+//       slidesToScroll: 1,
+//       speed: 200,
+//       asNavFor: `${parentid} .slider-for`,
+//       arrows: false,
+//       dots: false,
+//       //	centerMode		  : true,
+//       focusOnSelect: true,
+//       responsive: [
+//         {
+//           breakpoint: 768,
+//           settings: {
+//             slidesToShow: 4,
+//             slidesToScroll: 1,
+//           },
+//         },
+//       ],
+//     });
+//   });
+// });
 
 /**
  * ES6 Class

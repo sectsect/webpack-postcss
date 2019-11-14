@@ -1,5 +1,5 @@
 module.exports = {
-  "extends": ["plugin:vue/recommended"],
+  "extends": ["airbnb-base", "plugin:vue/recommended"],
   // "env": {
   //   "es6": true,
   //   "browser": true,

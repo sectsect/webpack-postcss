@@ -19,7 +19,7 @@ import { vueExample } from './vue-example';
 import { dotdotdot } from './jquery-dotdotdot';
 import { touchHover } from './touch-hover';
 import { menu } from './menu';
-import { modal } from './modal';
+// import { modal } from './modal';
 import { tests } from './tests';
 
 // window.Vue = Vue;
@@ -36,7 +36,7 @@ inlineSVG();
 viewPort(detect());
 touchHover(['.slider img']);
 menu();
-modal();
+// modal();
 tests();
 
 // For dynamic height on iOS safari

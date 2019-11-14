@@ -12,7 +12,7 @@ slider();
 const app = new Vue({
   el: '#app',
   components: { MyComponent },
-  // template: '<my-component>',
+  // template: '<my-component></my-component>',
 });
 
 // jQuery(() => {

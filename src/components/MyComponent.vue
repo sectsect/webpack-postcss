@@ -1,24 +1,27 @@
 <template>
-  <div><p v-if="isVisible">{{ message }}</p></div>
+  <div>
+    <p v-if="isVisible">
+      {{ message }}
+    </p>
+  </div>
 </template>
 
 <script>
 export default {
-  data: function() {
+  data() {
     return {
-      message: 'Hello'
-    }
+      message: 'Hello',
+    };
   },
   computed: {
-    isVisible: function() {
+    isVisible() {
       if (this.message) {
         return true;
-      } else {
-        return false;
       }
-    }
-  }
-}
+      return false;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

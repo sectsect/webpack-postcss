@@ -205,7 +205,17 @@ module.exports = env => [
         },
         {
           test: /\.vue$/,
-          loader: 'vue-loader',
+          use: [
+            { loader: 'vue-loader' },
+            {
+              loader: 'eslint-loader',
+              options: {
+                fix: true,
+                failOnError: true,
+                cache: true,
+              },
+            },
+          ],
         },
         {
           test: /\.css$/,

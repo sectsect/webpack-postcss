@@ -1,11 +1,19 @@
+import Vue from 'vue';
 import './_modules/commons';
 import { slider } from './_modules/slider';
 import { MyClass } from './_class/myclass';
+import MyComponent from '../../components/MyComponent.vue';
 
 // const ary = R.append('111', ['222', '333']);
 // console.log(ary);
 
 slider();
+
+const app = new Vue({
+  el: '#app',
+  components: { MyComponent },
+  // template: '<my-component>',
+});
 
 // jQuery(() => {
 //   jQuery('.slider_wrap').each(function() {

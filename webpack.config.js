@@ -207,6 +207,33 @@ module.exports = env => [
           test: /\.vue$/,
           loader: 'vue-loader',
         },
+        {
+          test: /\.css$/,
+          use: [
+            isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                url: false,
+              },
+            },
+            { loader: 'postcss-loader' },
+          ],
+        },
+        {
+          test: /\.(sc|sa)ss$/,
+          use: [
+            isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                url: false,
+              },
+            },
+            { loader: 'postcss-loader' },
+            { loader: 'sass-loader' },
+          ],
+        },
         // Modernizr
         {
           test: /\.modernizrrc.js$/,

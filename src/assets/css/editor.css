@@ -1,10 +1,4 @@
 @charset "UTF-8";
 
-/* @import '_modules/settings.css';
-@import '_modules/mixin.css'; */
-
-/* ==================================================
-.wp-editor
-================================================== */
-
-/* @mixin wp-editor 20px; */
+@import '_modules/settings.css';
+@import '_modules/wp-core.css';

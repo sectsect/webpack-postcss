@@ -1,24 +1,31 @@
 @charset "UTF-8";
 
-/*font settings*/
-$fontsize     : 11;
-$fontcolor    : #000;
-$linkcolor    : $fontcolor;
-$fontfamily   : 'ヒラギノ角ゴ ProN W3','Hiragino Kaku Gothic ProN','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
-$fontmincho   : "EB Garamond", "Times New Roman", "ＭＳ 明朝","MS Mincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+/* font settings */
+$fontsize: 11px;
+$fontcolor: #000;
+$linkcolor: $fontcolor;
 
-/*General Settings*/
-$lineheight   : 1.6;
-$transition   : all .3s linear;
-$borderradius : 5px;
-$bordercolor  : #c8c8c8;
+/* $fontfamily: 'NotoSansCJKjp', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ',
+  Meiryo, 'ＭＳ Ｐゴシック', sans-serif; */
+$fontfamily: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo,
+  'ＭＳ Ｐゴシック', sans-serif;
+$fontmincho: 'EB Garamond', 'Times New Roman', 'ＭＳ 明朝', 'MS Mincho', 'ヒラギノ明朝 ProN W3',
+  'Hiragino Mincho ProN', 'メイリオ', Meiryo, serif;
 
-$breakPoint   : 768px;
-$baseWidth    : 1000px;
-$postWidth    : $baseWidth;
+/* General Settings */
+$lineheight: 1.6;
+$transition: all 0.3s linear;
+$borderradius: 5px;
+$bordercolor: #c8c8c8;
+
+$breakPoint: 768px;
+$baseWidth: 1000px;
+$postWidth: $baseWidth;
 $mobileheaderH: 50px;
-/*$baseColor      : #645d5d;*/
-/*$baseThemeColor : #e8e6e6; */
+
+/* $baseColor      : #645d5d; */
+
+/* $baseThemeColor : #e8e6e6; */
 
 :root {
   --main-color: #999;

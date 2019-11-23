@@ -1,9 +1,13 @@
 import 'jquery-smooth-scroll';
 
-export default () => {
-  jQuery("a[href^='#']").on('click', (e) => {
+export const smoothScroll = () => {
+  jQuery("a[href^='#']").on('click', e => {
     const h = parseInt(`-${jQuery('#header').outerHeight(true)}`, 10);
-    const ofs = (jQuery(e.currentTarget).parent().hasClass('pageTop')) ? 0 : h;
+    const ofs = jQuery(e.currentTarget)
+      .parent()
+      .hasClass('pageTop')
+      ? 0
+      : h;
     const tgt = jQuery(e.currentTarget).attr('href');
     jQuery.smoothScroll({
       easing: 'easeOutQuint',
@@ -22,9 +26,13 @@ export default () => {
     const t = jQuery(hash);
     setTimeout(() => {
       const p = t.offset().top - jQuery('#header').outerHeight(true); // Subtract the height of Header with variable "headerH"
-      jQuery('html, body').animate({
-        scrollTop: p,
-      }, 1000, 'easeOutQuint');
+      jQuery('html, body').animate(
+        {
+          scrollTop: p,
+        },
+        1000,
+        'easeOutQuint',
+      );
     }, 300);
   }
 };

@@ -1,4 +1,4 @@
-export default (elem) => {
+export const touchHover = elem => {
   elem.push('.touch_hover');
   const el = elem.join(',');
   if (el) {
@@ -14,10 +14,10 @@ export default (elem) => {
       leaveEvent = 'mouseleave';
       leaveBigEvent = 'mouseleave';
     }
-    jQuery(el).on(enterEvent, (e) => {
+    jQuery(el).on(enterEvent, e => {
       jQuery(e.currentTarget).addClass('on');
     });
-    jQuery(el).on(leaveEvent, (e) => {
+    jQuery(el).on(leaveEvent, e => {
       jQuery(e.currentTarget).removeClass('on');
     });
   }

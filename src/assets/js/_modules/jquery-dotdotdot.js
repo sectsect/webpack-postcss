@@ -1,6 +1,6 @@
-import 'jquery.dotdotdot';
+import 'dotdotdot-js';
 
-export default () => {
+export const dotdotdot = () => {
   if (jQuery('.truncation').length) {
     jQuery('.truncation').dotdotdot({
       watch: 'window',

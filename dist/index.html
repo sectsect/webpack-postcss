@@ -2,11 +2,16 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<!-- <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-	<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700">
-	<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/NotoSansCJKjp-Regular.woff2">
-	<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/NotoSansCJKjp-Bold.woff2">
-	<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/josefinsans/v12/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2"> -->
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700">
+	<!-- <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/NotoSansCJKjp-Regular.woff2">
+	<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/NotoSansCJKjp-Bold.woff2"> -->
+	<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/notosansjp/v24/-F6pfjtqLzI2JPCgQBnw7HFQei0q131nj-pXANNwpfqCt9pay6XIBdsAJNIhVEwQ.118.woff2">
+	<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/notosansjp/v24/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.118.woff2">
+	<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/notosansjp/v24/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.119.woff2">
+	<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/notosansjp/v24/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.117.woff2">
+	<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/notosansjp/v24/-F6pfjtqLzI2JPCgQBnw7HFQei0q131nj-pXANNwpfqCt9pay6XIBdsAJNIhVEwQ.119.woff2">
+	<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/notosansjp/v24/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.113.woff2">
 	<link rel="preload" href="/assets/js/commons.js" as="script">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" id="viewport">
@@ -43,6 +48,9 @@
 					<li id="gnav5" class="mh-byrow"><a href="#">05</a></li>
 				</ul>
 			</nav>
+			<button id="nav-toggle">
+				<i><span></span></i>
+			</button>
 		</header>
 		<main>
 			<aside>
@@ -64,10 +72,199 @@
 				<section>
 					<h3>A smaller heading</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.</p>
+					<button class="f6 grow no-underline br2 ph4 pv3 dib white bg-dark-green bn" data-micromodal-trigger="modal-1"
+						role="button">
+						Demo Modal
+					</button>
 				</section>
 				<section>
 					<h3>A smaller heading</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.</p>
+				</section>
+
+				<section class="sec_04">
+					<div class="inner">
+						<form>
+							<section id="form-input">
+								<h2>Input</h2>
+								<label for="">Input Type Text</label>
+								<input type="text" name="input-type-text">
+
+								<label for="">Input Type Text (readonly)</label>
+								<input type="text" name="input-type-text" value="text" readonly="readonly">
+
+								<label for="">Input Type Text (disabled)</label>
+								<input type="text" name="input-type-text" value="text" disabled="disabled">
+
+								<label for="">Input Type Email</label>
+								<input type="email" name="input-type-email">
+
+								<label for="">Input Type Password</label>
+								<input type="password" name="input-type-password">
+
+								<label for="">Input Type URL</label>
+								<input type="url" name="input-type-url">
+
+								<label for="">Input Type Tel</label>
+								<input type="tel" name="input-type-tel">
+
+								<label for="">Input Type Number</label>
+								<input type="number" name="input-type-number">
+
+								<label for="">Input Type Search</label>
+								<input type="search" name="input-type-search">
+
+								<label for="">Input Type Checkbox</label>
+								<input type="checkbox" name="input-type-checkbox1"> Value 1<br>
+								<input type="checkbox" name="input-type-checkbox1"> Value 2<br>
+								<input type="checkbox" name="input-type-checkbox1"> Value 3<br>
+
+								<label for="">Input Type Radio</label>
+								<input type="radio" name="input-type-radio1"> Value 1<br>
+								<input type="radio" name="input-type-radio1"> Value 2<br>
+								<input type="radio" name="input-type-radio1"> Value 3<br>
+
+								<label for="">Input Type Range</label>
+								<input type="range" name="input-type-range" min="0" max="10">
+
+								<label for="">Input Type File</label>
+								<input type="file" name="input-type-file">
+								<input type="file" name="input-type-file">
+
+								<label for="">Input Type Color</label>
+								<input type="color" name="input-type-color">
+
+								<label for="">Input Type Date</label>
+								<input type="date" name="input-type-date">
+
+								<label for="">Input Type Datetime Local</label>
+								<input type="datetime-local" name="input-type-datetime-local">
+
+								<label for="">Input Type Month</label>
+								<input type="month" name="input-type-month">
+
+								<label for="">Input Type Time</label>
+								<input type="time" name="input-type-time">
+
+								<label for="">Input Type Week</label>
+								<input type="week" name="input-type-week">
+							</section>
+							<section id="form-select-button">
+								<h2>Datalist</h2>
+								<label for="">Input with Datalist</label>
+								<input list="browsers">
+								<datalist id="browsers">
+									<option value="Internet Explorer"></option>
+									<option value="Firefox"></option>
+									<option value="Chrome"></option>
+									<option value="Opera"></option>
+									<option value="Safari"></option>
+								</datalist>
+							</section>
+
+							<section id="form-textarea">
+								<h2>Textarea</h2>
+								<label for="textarea">Textarea</label>
+								<textarea name="textarea" cols="30" rows="10"></textarea>
+							</section>
+
+							<section id="form-select-option">
+								<h2>Select and Option</h2>
+								<label for="select-normal">Select Default</label>
+								<select name="select-normal">
+									<option value="">Option 1</option>
+									<option value="">Option 2</option>
+									<option value="">Option 3</option>
+								</select>
+
+								<label for="select-normal">Select Default (readonly)</label>
+								<select name="select-normal" readonly="readonly">
+									<option value="">Option 1</option>
+									<option value="">Option 2</option>
+									<option value="">Option 3</option>
+								</select>
+
+								<label for="select-normal">Select Default (disabled)</label>
+								<select name="select-normal" disabled="disabled">
+									<option value="">Option 1</option>
+									<option value="">Option 2</option>
+									<option value="">Option 3</option>
+								</select>
+							</section>
+
+							<section id="form-select-option">
+								<h2>Select and Option</h2>
+
+								<label for="select-optgroup">Select with Optgroup</label>
+								<select name="select-optgroup">
+									<optgroup label="Optgroup 1">
+										<option value="">Option 1</option>
+										<option value="">Option 2</option>
+										<option value="">Option 3</option>
+									</optgroup>
+									<optgroup label="Optgroup 2">
+										<option value="">Option 1</option>
+										<option value="">Option 2</option>
+										<option value="">Option 3</option>
+									</optgroup>
+								</select>
+
+								<label for="select-multiple">Select Multiple</label>
+								<select name="select-multiple" multiple="">
+									<option value="">Option 1</option>
+									<option value="">Option 2</option>
+									<option value="">Option 3</option>
+								</select>
+							</select>
+
+							<section id="form-select-button">
+								<h2>Buttons and Input Type Submit/Reset</h2>
+
+								<label for="button-type-button">Button Type Button</label>
+								<button type="button">Button</button>
+
+								<label for="button-type-reset">Button Type Reset</label>
+								<button type="reset">Reset</button>
+
+								<label for="button-type-submit">Button Type Submit</label>
+								<button type="submit">Submit</button>
+
+								<label for="">Input Type Button</label>
+								<input type="button" name="input-type-button" value="Button">
+
+								<label for="">Input Type Reset</label>
+								<input type="reset" name="input-type-reset">
+
+								<label for="">Input Type Submit</label>
+								<input type="submit" name="input-type-submit">
+
+								<label for="">Input Type Submit Disabled</label>
+								<input type="submit" name="input-type-submit" disabled="">
+
+								<label for="">Input Type Image</label>
+								<input type="image" name="input-type-image" src="<?php bloginfo('template_url'); ?>/assets/images/01.png">
+							</section>
+							<section id="form-select-fieldset">
+								<h2>Fieldset</h2>
+								<fieldset>
+									<legend>Legend Title</legend>
+									<label for="input-text">Input</label>
+									<input type="text" id="input-text">
+									<label for="input-password">Another Input</label>
+									<input type="text" id="input-password">
+								</fieldset>
+							</section>
+						</form>
+					</div>
+				</section>
+				<section class="sec_05">
+					<div class="inner">
+						<div class="parent">
+							<div class="div1">1</div>
+							<div class="div2">2</div>
+							<div class="div3">3</div>
+						</div>
+					</div>
 				</section>
 				<footer>
 					<h3>About the author</h3>
@@ -124,6 +321,41 @@
 				<a href="#wrap">Page Top</a>
 			</div>
 		</footer>
+		<nav id="nav-panel">
+			<div class="inner">
+				<nav>
+					<ul>
+						<li><a href="#">01</a></li>
+						<li><a href="#">02</a></li>
+						<li><a href="#">03</a></li>
+						<li><a href="#">04</a></li>
+						<li><a href="#">05</a></li>
+					</ul>
+				</nav>
+			</div>
+		</nav>
+	</div>
+	<div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+				<header class="modal__header">
+					<h2 class="modal__title" id="modal-1-title">
+						Micromodal
+					</h2>
+					<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+				</header>
+				<main class="modal__content" id="modal-1-content">
+					<p>
+						Try hitting the <code>tab</code> key and notice how the focus stays within the modal itself. Also,
+						<code>esc</code> to close modal.
+					</p>
+				</main>
+				<footer class="modal__footer">
+					<button class="modal__btn modal__btn-primary">Continue</button>
+					<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+				</footer>
+			</div>
+		</div>
 	</div>
 	<script defer src="./assets/js/commons.js"></script>
 	<script defer src="./assets/js/page-frontpage.js"></script>

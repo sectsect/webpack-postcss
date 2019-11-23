@@ -1,7 +1,4 @@
 const postcssImport = require('postcss-import');
-const postcssStripInlineComments = require('postcss-strip-inline-comments');
-// const postcssNested = require('postcss-nested');
-// const postcssConditionals = require('postcss-conditionals');
 const cssMqpacker = require('css-mqpacker')({
   sort: true,
 });
@@ -28,9 +25,6 @@ const postcssReporter = require('postcss-reporter')({
 module.exports = {
   plugins: [
     postcssImport,
-    postcssStripInlineComments,
-    // postcssNested,
-    // postcssConditionals,
     cssMqpacker,
     postcssPresetEnv,
     pxtorem,

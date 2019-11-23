@@ -38,7 +38,7 @@
   /* Layout */
   --fh-layout-display: block;
   --fh-layout-margin: 10px 0; /* change to "10px auto" to center */
-  --fh-layout-text-align: left;
+  --fh-layout-text-align: center;
 
   /* Add code by SECT */
 
@@ -78,7 +78,7 @@ datalist {
 label {
   display: var(--fh-layout-display);
   margin: var(--fh-layout-margin);
-  text-align: var(--fh-layout-text-align);
+  /* text-align: var(--fh-layout-text-align); */
 }
 
 /* Input & Textarea ------------------ */

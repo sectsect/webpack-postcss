@@ -19,7 +19,8 @@
 | [master](https://github.com/sectsect/webpack-postcss) | ----- |
 | [TypeScript](https://github.com/sectsect/webpack-postcss/tree/feature/typescript) | \+ TypeScript<br>\- JavaScript |
 | [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | \+ Vue.js<br>(Default: jQuery only) |
-| [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ sass<br>\- PostCSS |
+| [postcss-similar-to-sass](https://github.com/sectsect/webpack-postcss/tree/postcss-similar-to-sass) | PostCSS, but have features similar to SASS (nesting, conditional, `extend`, `mixin`, `for`) |
+| [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ SASS<br>\- PostCSS |
 | [webpack-dev-server](https://github.com/sectsect/webpack-postcss/tree/webpack-dev-server) | \+ webpack-dev-server |
 | [ejs](https://github.com/sectsect/webpack-postcss/tree/ejs) | \+ [EJS](http://ejs.co/) |
 

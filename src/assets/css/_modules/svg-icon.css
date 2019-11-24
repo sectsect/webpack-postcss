@@ -11,7 +11,7 @@
 
 /* For fill attr on <path> tag */
 svg {
-  & path {
+  path {
     fill: currentColor;
   }
 }

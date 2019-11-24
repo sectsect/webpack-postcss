@@ -149,23 +149,23 @@
     display: block;
   }
   &[aria-hidden='false'] {
-    & .modal__overlay {
+    .modal__overlay {
       animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
     }
-    & .modal__container {
+    .modal__container {
       animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
     }
   }
   &[aria-hidden='true'] {
-    & .modal__overlay {
+    .modal__overlay {
       animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
     }
-    & .modal__container {
+    .modal__container {
       animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
     }
   }
-  & .modal__container,
-  & .modal__overlay {
+  .modal__container,
+  .modal__overlay {
     will-change: transform;
   }
 }

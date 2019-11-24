@@ -1,9 +1,9 @@
-@media (--viewport-medium) {
+@media only screen and (min-width: $breakPoint) {
   /* ==================================================
   structure
   ================================================== */
   .inner {
-    width: var(--baseWidth);
+    width: $baseWidth;
     padding: 0;
     margin: 0 auto;
   }
@@ -22,7 +22,7 @@
   .paginate {
     margin-top: 15px;
     text-align: center;
-    & .page-numbers {
+    .page-numbers {
       display: inline-block;
       min-width: 24px;
       margin: 0 2px;
@@ -34,16 +34,16 @@
   ================================================== */
   #header {
     height: auto;
-    & #g_nav {
+    #g_nav {
       position: relative;
-      & nav {
-        & ul {
+      nav {
+        ul {
           clear: fix;
-          & li {
+          li {
             float: left;
             width: 200px;
             border: none;
-            & a {
+            a {
               background: none;
             }
           }
@@ -71,11 +71,11 @@
   home
   ================================================== */
   .home {
-    & main {
-      & .sec_02 {
-        & .inner {
-          & ul {
-            & li {
+    main {
+      .sec_02 {
+        .inner {
+          ul {
+            li {
               flex: 0 1 190px;
               margin-top: 0;
             }
@@ -89,41 +89,41 @@
   page-3 (contact)
   ================================================== */
   .page-id-3 {
-    & article {
-      & #sec_01 {
-        & form {
-          & .btn {
-            & button,
-            & span,
-            & input[type='submit'],
-            & a {
+    article {
+      #sec_01 {
+        form {
+          .btn {
+            button,
+            span,
+            input[type='submit'],
+            a {
               padding: 0;
             }
           }
-          & #input {
-            & span {
+          #input {
+            span {
               &.caption {
                 display: inline-block;
               }
             }
           }
-          & #input,
-          & #confirm {
-            & .items {
-              & dl {
+          #input,
+          #confirm {
+            .items {
+              dl {
                 display: table;
                 width: 100%;
-                & dt,
-                & dd {
+                dt,
+                dd {
                   display: table-cell;
                   vertical-align: top;
                 }
-                & dt {
+                dt {
                   width: 200px;
                   padding-top: 4px;
                   font-weight: bold;
                 }
-                & dd {
+                dd {
                   margin: 0;
                 }
               }
@@ -135,12 +135,12 @@
   }
 
   .lt-ie10 {
-    & .page-form {
-      & article {
-        & #sec_01 {
-          & form {
-            & #input {
-              & span.wpcf7-form-control-wrap {
+    .page-form {
+      article {
+        #sec_01 {
+          form {
+            #input {
+              span.wpcf7-form-control-wrap {
                 &.your-time,
                 &.your-ceremony-year,
                 &.your-ceremony-month,

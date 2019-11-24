@@ -1,7 +1,4 @@
 const postcssImport = require('postcss-import');
-const cssMqpacker = require('css-mqpacker')({
-  sort: true,
-});
 const postcssPresetEnv = require('postcss-preset-env')({
   stage: 1,  // Default: stage: 2   @ https://cssdb.org/#staging-process
   autoprefixer: {
@@ -10,6 +7,9 @@ const postcssPresetEnv = require('postcss-preset-env')({
   features: {
     'nesting-rules': true
   }
+});
+const cssMqpacker = require('css-mqpacker')({
+  sort: true,
 });
 const pxtorem = require('postcss-pxtorem')({
   replace: false,
@@ -25,8 +25,8 @@ const postcssReporter = require('postcss-reporter')({
 module.exports = {
   plugins: [
     postcssImport,
-    cssMqpacker,
     postcssPresetEnv,
+    cssMqpacker,
     pxtorem,
     postcssCalc,
     postcssClearfix,

@@ -5,7 +5,7 @@
 
 - webpack 4
   - :icecream: [webpack sweet entry](https://github.com/sectsect/webpack-sweet-entry)
-- [PostCSS](https://github.com/postcss/postcss)
+- [PostCSS](https://github.com/postcss/postcss) w/ [postcss-preset-env](https://github.com/csstools/postcss-preset-env)
 - [Babel](https://babeljs.io/) + [@babel/preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
 - [ESLint](https://eslint.org/) w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 - [stylelint](https://stylelint.io/)

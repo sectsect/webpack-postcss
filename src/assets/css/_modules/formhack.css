@@ -65,7 +65,8 @@ fieldset {
   font-family: var(--fh-font-family);
   font-size: var(--fh-font-size);
   color: var(--fh-font-color);
-  text-align: var(--fh-layout-text-align);
+
+  /* text-align: var(--fh-layout-text-align); */
   vertical-align: top;
   outline: none;
 }
@@ -78,6 +79,7 @@ datalist {
 label {
   display: var(--fh-layout-display);
   margin: var(--fh-layout-margin);
+
   /* text-align: var(--fh-layout-text-align); */
 }
 
@@ -201,13 +203,18 @@ select[multiple] option {
 /* Fieldset ------------------ */
 
 fieldset {
-  padding: 0;
-  border: 0;
+  /* padding: 0;
+  border: 0; */
+  padding: 10px 25px;
+  border: var(--fh-border-width) var(--fh-border-style) var(--fh-border-color);
+  border-radius: var(--fh-border-radius);
 }
 
 legend {
-  padding: 0;
-  font-weight: inherit;
+  /* padding: 0;
+  font-weight: inherit; */
+  padding: 0 5px;
+  font-weight: 700;
 }
 
 /* Buttons, Input Type Submit/Reset ------------------ */
@@ -492,14 +499,14 @@ input[type='range'] {
   & .select2-selection--single,
   & .select2-selection--multiple {
     height: var(--fh-input-height) !important;
-    border: var(--fh-border-width) var(--fh-border-style) var(--bordercolor) !important;
+    border: var(--fh-border-width) var(--fh-border-style) var(--fh-border-color) !important;
     border-radius: var(--fh-border-radius) !important;
     outline: none;
     & .select2-selection__rendered {
       height: var(--fh-input-height) !important;
     }
     & .select2-selection__choice {
-      border: var(--fh-border-width) var(--fh-border-style) var(--bordercolor) !important;
+      border: var(--fh-border-width) var(--fh-border-style) var(--fh-border-color) !important;
 
       /* background-color: #999 !important; */
     }
@@ -514,11 +521,11 @@ input[type='range'] {
   .select2-search--dropdown .select2-search__field {
     max-width: initial;
     max-width: auto;
-    border-color: var(--bordercolor) !important;
+    border-color: var(--fh-border-color) !important;
   }
 }
 .select2-dropdown {
-  border-color: var(--bordercolor) !important;
+  border-color: var(--fh-border-color) !important;
 }
 .select2-selection__clear {
   font-size: 13px;

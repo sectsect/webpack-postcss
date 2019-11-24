@@ -20,15 +20,24 @@ ul {
 structure
 ================================================== */
 body {
-  font-family: $fontfamily;
-  font-size: $(fontsize);
-  line-height: $lineheight;
-  color: $fontcolor;
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize);
+  line-height: var(--lineHeight);
+  color: var(--fontColor);
   background: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   /* -webkit-overflow-scrolling: touch; */
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & li {
+    flex: 0 1 calc(100% - 20px);
+  }
 }
 
 /* body, html {
@@ -58,17 +67,17 @@ input[type='button'],
 input[type='submit'],
 input[type='reset'],
 input[type='image'] {
-  color: $linkcolor;
+  color: var(--fontColor);
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  transition: $transition;
+  transition: var(--transition);
   &:hover,
   &:active,
   &:focus {
-    color: $linkcolor;
+    color: var(--linkColor);
   }
   &:hover {
-    @mixin opacity 0.8;
+    opacity: 0.8;
   }
 }
 h1,
@@ -100,27 +109,27 @@ Normalization for Third party
 /* text truncation (dotdotdot) */
 .truncation {
   visibility: hidden;
-  transition: all 0.6s linear;
 
   /* transform: translate3d(0, -10px, 0); */
-  @mixin opacity 0;
+  opacity: 0;
+  transition: all 0.6s linear;
   &.ready {
-    /* transform: translate3d(0, 0, 0); */
-    @mixin opacity 1;
-
     visibility: visible;
+
+    /* transform: translate3d(0, 0, 0); */
+    opacity: 1;
   }
 }
 
 /* Web font		@ https://github.com/typekit/webfontloader#events */
 .wf {
+  opacity: 0;
   transition: all 0.4s linear;
-  @mixin opacity 0;
 }
 .wf-active,
 .wf-inactive {
-  .wf {
-    @mixin opacity 1;
+  & .wf {
+    opacity: 1;
   }
 }
 
@@ -128,14 +137,13 @@ Normalization for Third party
 [data-src],
 [data-srcset],
 [data-bgset] {
-  transition: opacity 0.5s ease-in-out 0.1s;
-
   /* visibility: hidden; */
-  @mixin opacity 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out 0.1s;
   &.lazyloaded,
   &.loaded {
     /* visibility: visible; */
-    @mixin opacity 1;
+    opacity: 1;
   }
 }
 [data-sizes='auto'] {
@@ -146,43 +154,46 @@ Normalization for Third party
 /* slider (slick) */
 .slider_wrap {
   position: relative;
-  @mixin spinner absolute, 16px, 2px, #aaa, ready, visible;
-  .slider {
+
+  /* @mixin spinner absolute, 16px, 2px, #aaa, ready, visible; */
+  & .slider {
     visibility: hidden;
+    opacity: 0;
     transition: all 0.3s linear 0.1s;
-    @mixin opacity 0;
   }
   &.ready {
     &::before {
       visibility: hidden;
-      @mixin opacity 0;
+      opacity: 0;
     }
-    .slider {
+    & .slider {
       visibility: visible;
-      @mixin opacity 1;
+      opacity: 1;
     }
   }
 
-  /* [data-src], [data-srcset], [data-bgset] {
-    transition: opacity .8s ease-in-out .3s;
+  /* & [data-src],
+  & [data-srcset],
+  & [data-bgset] {
+    transition: opacity 0.8s ease-in-out 0.3s;
   } */
-  .slick-slide {
-    > div {
+  & .slick-slide {
+    & > div {
       line-height: 0.8;
     }
-    img {
+    & img {
       width: 100%;
       height: auto;
     }
   }
 }
 .slick-dots {
-  li {
+  & li {
     width: 21px;
     height: 21px;
     margin: 0 2px;
     vertical-align: top;
-    button {
+    & button {
       width: 21px;
       height: 21px;
       padding: 0;
@@ -196,11 +207,11 @@ Normalization for Third party
         content: '';
         border: 1px solid #000;
         border-radius: 50%;
-        @mixin opacity 1;
+        opacity: 1;
       }
     }
     &.slick-active {
-      button {
+      & button {
         &::before {
           background: #000;
         }
@@ -310,7 +321,7 @@ modules
     margin: 0 2px;
     text-align: center;
   }
-  .current {
+  & .current {
     text-decoration: underline;
   }
 }
@@ -322,13 +333,13 @@ modules
   grid-template-columns: 1fr 1fr 1fr;
   grid-row-gap: 0;
   grid-column-gap: 0;
-  .div1 {
+  & .div1 {
     grid-area: 1 / 1 / 2 / 7;
   }
-  .div2 {
+  & .div2 {
     grid-area: 2 / 1 / 6 / 2;
   }
-  .div3 {
+  & .div3 {
     grid-area: 2 / 2 / 3 / 7;
   }
 }
@@ -339,34 +350,34 @@ header
 #header {
   position: relative;
   width: 100%;
-  height: $mobileheaderH;
+  height: var(--mobileHeaderH);
 
   /* position: fixed;
   top: 0;
   left: 0;
   z-index: 200;
   background: #fff; */
-  #logo {
+  & #logo {
     a {
       position: relative;
       z-index: 100;
     }
   }
-  #g_nav {
+  & #g_nav {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 50;
     width: 100%;
-    padding-top: $mobileheaderH;
-    .nav-toggle {
+    padding-top: var(--mobileHeaderH);
+    & .nav-toggle {
       position: absolute;
       top: 0;
       right: 0;
       z-index: 20;
 
       /* padding-top: 15px; */
-      i {
+      & i {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -377,12 +388,12 @@ header
         text-align: center;
       }
     }
-    nav {
+    & nav {
       display: none;
-      ul {
-        li {
+      & ul {
+        & li {
           border-bottom: 1px solid #aaa;
-          a {
+          & a {
             display: block;
             padding: 10px;
             font-size: 1rem;
@@ -416,7 +427,7 @@ main {
 
   /* height: 5000px; */
 
-  /* padding: $mobileheaderH 0 0; */
+  /* padding: var(--mobileHeaderH) 0 0; */
 }
 
 /* ==================================================
@@ -427,12 +438,13 @@ home
 page-form (page-id-3)
 ================================================== */
 .page-id-3 {
-  article {
-    #sec_01 {
-      form {
+  & article {
+    & #sec_01 {
+      & form {
         position: relative;
-        @mixin spinner fixed, 16px, 2px, #aaa, loading, hidden;
-        section {
+
+        /* @mixin spinner fixed, 16px, 2px, #aaa, loading, hidden; */
+        & section {
           background: #fff; /* Required */
           header {
             padding: 0 0 20px;
@@ -444,14 +456,14 @@ page-form (page-id-3)
             }
           }
         }
-        .btn {
+        & .btn {
           width: 100%;
           margin-top: 20px;
           overflow: hidden;
-          button,
-          span,
-          input[type='submit'],
-          a {
+          & button,
+          & span,
+          & input[type='submit'],
+          & a {
             display: block;
             width: 100%;
             padding: 10px 0;
@@ -459,18 +471,18 @@ page-form (page-id-3)
             text-align: center;
           }
 
-          /* span {
+          /* & span {
 
           }
-          input[type=submit] {
+          & input[type=submit] {
 
           } */
-          .ajax-loader {
+          & .ajax-loader {
             display: none;
           }
         }
-        #input {
-          span.wpcf7-form-control-wrap {
+        & #input {
+          & span.wpcf7-form-control-wrap {
             /* For <select> */
             &.your-time,
             &.your-ceremony-year,
@@ -500,12 +512,12 @@ page-form (page-id-3)
               }
             }
           }
-          label[for='your-file'] {
+          & label[for='your-file'] {
             b {
               font-size: 14px;
             }
           }
-          span {
+          & span {
             &.caption {
               display: none;
               margin-left: 10px;
@@ -516,30 +528,30 @@ page-form (page-id-3)
               margin: 0 10px 0 5px;
             }
           }
-          button {
+          & button {
             display: block;
           }
         }
-        #input,
-        #confirm {
-          .items {
+        & #input,
+        & #confirm {
+          & .items {
             margin-top: 14px;
-            dl {
+            & dl {
               display: block;
               margin-top: 16px;
-              dt {
-                .required {
-                  /* color: $baseLightColor; */
+              & dt {
+                & .required {
+                  color: var(--fontColor);
                 }
               }
-              dd {
+              & dd {
                 margin-top: 3px;
               }
             }
           }
-          .notes {
+          & .notes {
             margin-top: 25px;
-            a {
+            & a {
               text-decoration: underline;
               &:hover {
                 text-decoration: none;
@@ -547,29 +559,29 @@ page-form (page-id-3)
             }
           }
         }
-        #confirm {
-          /* .items {
-            dl {
-              dt {
+        & #confirm {
+          /* & .items {
+            & dl {
+              & dt {
 
               }
             }
           } */
-          .btn {
+          & .btn {
             margin-top: 40px;
-            button,
-            span {
+            & button,
+            & span {
               float: left;
               width: 48.3%;
               margin-left: 3.4%;
             }
-            button {
+            & button {
               margin-left: 0;
             }
           }
         }
-        #confirm,
-        #result {
+        & #confirm,
+        & #result {
           position: absolute;
           top: 0;
           left: 0;
@@ -586,7 +598,7 @@ page-form (page-id-3)
             opacity: 1;
           }
         }
-        #result {
+        & #result {
           z-index: 2;
           .btn {
             margin-top: 40px;
@@ -597,8 +609,8 @@ page-form (page-id-3)
   }
 }
 span.wpcf7-list-item {
-  input,
-  span {
+  & input,
+  & span {
     display: inline-block;
     vertical-align: middle;
   }

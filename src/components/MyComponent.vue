@@ -24,12 +24,20 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 div {
   font-weight: bold;
-  font-size: 20px;
-  p {
+  font-size: calc(var(--fontSize) + 15px);
+  & p {
     color: #888;
+  }
+}
+@media (--viewport-medium) {
+  div {
+    font-size: 40px;
+    & p {
+      color: #555;
+    }
   }
 }
 </style>

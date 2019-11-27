@@ -1,7 +1,7 @@
 # <img src="https://github-sect.s3-ap-northeast-1.amazonaws.com/logo.svg" width="28" height="auto"> webpack-postcss
 [![CircleCI](https://circleci.com/gh/sectsect/webpack-postcss.svg?style=svg)](https://circleci.com/gh/sectsect/webpack-postcss)
 
-## ⚒️ This Repo still works-in-progress ⚒️
+## My personal Boilerplate
 
 - webpack 4
   - :icecream: [webpack sweet entry](https://github.com/sectsect/webpack-sweet-entry)
@@ -16,18 +16,18 @@
 
 | Branch | Description |
 | ------ | ----------- |
-| [master](https://github.com/sectsect/webpack-postcss) | ----- |
+| [master](https://github.com/sectsect/webpack-postcss) | PostCSS that compliant [cssnext](https://cssnext.github.io/)(tomorrow’s CSS syntax) as much as possible |
+| [postcss-similar-to-sass](https://github.com/sectsect/webpack-postcss/tree/postcss-similar-to-sass) | PostCSS, but have features similar to SASS (nesting, conditional, `extend`, `mixin`, `for`) |
+| [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ SASS<br>\- PostCSS |
 | [TypeScript](https://github.com/sectsect/webpack-postcss/tree/feature/typescript) | \+ TypeScript<br>\- JavaScript |
 | [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | \+ Vue.js<br>(Default: jQuery only) |
-| [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ sass<br>\- PostCSS |
 | [webpack-dev-server](https://github.com/sectsect/webpack-postcss/tree/webpack-dev-server) | \+ webpack-dev-server |
-| [ejs](https://github.com/sectsect/webpack-postcss/tree/ejs) | \+ [EJS](http://ejs.co/) |
 
 ## :beer: Setup
 
 - **Setting for Support Browser (For [Autoprefixer](https://github.com/postcss/autoprefixer) / [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env))**  
   Edit the following Line  
-  [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L12)  
+  [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L13)  
 
   :memo: See [Browserslist](https://github.com/ai/browserslist) Doc
 

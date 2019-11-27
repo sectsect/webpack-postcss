@@ -80,11 +80,7 @@ input[type='image'] {
     opacity: 0.8;
   }
 }
-h1,
-h2,
-h3,
-h4,
-h5 {
+:--heading {
   margin: 0;
   font-size: 100%;
 }
@@ -274,7 +270,7 @@ header
   z-index: 200;
   background: #fff; */
   & #logo {
-    a {
+    & a {
       position: relative;
       z-index: 100;
     }

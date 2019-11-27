@@ -17,7 +17,7 @@
 | Branch | Description |
 | ------ | ----------- |
 | [master](https://github.com/sectsect/webpack-postcss) | PostCSS that compliant [cssnext](https://cssnext.github.io/)(tomorrow’s CSS syntax) as much as possible |
-| [postcss-similar-to-sass](https://github.com/sectsect/webpack-postcss/tree/postcss-similar-to-sass) | PostCSS, but have features similar to SASS (nesting, conditional, `extend`, `mixin`, `for`) |
+| [postcss-similar-to-sass](https://github.com/sectsect/webpack-postcss/tree/postcss-similar-to-sass) | PostCSS, but have features similar to SASS (Nesting, Conditional Statement, `extend`, `mixin`, `for`) |
 | [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ SASS<br>\- PostCSS |
 | [TypeScript](https://github.com/sectsect/webpack-postcss/tree/feature/typescript) | \+ TypeScript<br>\- JavaScript |
 | [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | \+ Vue.js<br>(Default: jQuery only) |
@@ -25,7 +25,7 @@
 
 ## :beer: Setup
 
-- **Setting for Support Browser (For [Autoprefixer](https://github.com/postcss/autoprefixer) / [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env))**  
+- **Setting for Support Browser (For [Autoprefixer](https://github.com/postcss/autoprefixer) / [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env) / [postcss-preset-env](https://github.com/csstools/postcss-preset-env))**  
   Edit the following Line  
   [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L13)  
 

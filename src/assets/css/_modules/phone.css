@@ -31,14 +31,14 @@ body {
   /* -webkit-overflow-scrolling: touch; */
 }
 
-ul {
+/* ul {
   display: flex;
   align-items: center;
   justify-content: center;
   & li {
     flex: 0 1 calc(100% - 20px);
   }
-}
+} */
 
 /* body, html {
 width: 100%;
@@ -222,8 +222,7 @@ Normalization for Third party
 /* slider (glide) */
 .glide_wrap {
   position: relative;
-  @mixin spinner absolute, 16px, 2px, #aaa, ready, visible;
-  .glide {
+  & .glide {
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s linear 0.1s;
@@ -233,19 +232,19 @@ Normalization for Third party
       visibility: hidden;
       opacity: 0;
     }
-    .glide {
+    & .glide {
       visibility: visible;
       opacity: 1;
     }
   }
-  .glide__track {
-    img {
+  & .glide__track {
+    & img {
       width: 100%;
       height: auto;
     }
   }
-  .glide__arrows {
-    .glide__arrow {
+  & .glide__arrows {
+    & .glide__arrow {
       width: 60px;
       height: 60px;
       padding: 0;
@@ -286,9 +285,9 @@ Normalization for Third party
       }
     }
   }
-  .glide__bullets {
+  & .glide__bullets {
     bottom: -27px;
-    .glide__bullet {
+    & .glide__bullet {
       width: 12px;
       height: 12px;
       margin: 0 8px;

@@ -227,7 +227,7 @@ modules
 .paginate {
   margin-top: 28px;
   line-height: 1.5;
-  .page-numbers {
+  & .page-numbers {
     display: inline-block;
     min-width: 15px;
     margin: 0 2px;
@@ -358,11 +358,11 @@ page-form (page-id-3)
         /* @mixin spinner fixed, 16px, 2px, #aaa, loading, hidden; */
         & section {
           background: #fff; /* Required */
-          header {
+          & header {
             padding: 0 0 20px;
             margin-bottom: 13px;
-            p {
-              span {
+            & p {
+              & span {
                 font-weight: bold;
               }
             }
@@ -425,7 +425,7 @@ page-form (page-id-3)
             }
           }
           & label[for='your-file'] {
-            b {
+            & b {
               font-size: 14px;
             }
           }
@@ -512,7 +512,7 @@ page-form (page-id-3)
         }
         & #result {
           z-index: 2;
-          .btn {
+          & .btn {
             margin-top: 40px;
           }
         }

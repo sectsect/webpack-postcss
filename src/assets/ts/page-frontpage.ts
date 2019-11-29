@@ -2,6 +2,8 @@ import './_modules/commons';
 import { glide } from './_modules/glide';
 import { MyClass } from './_class/myclass';
 
+console.log(window.wp_data);
+
 glide();
 
 // console.log(add(10, 5));

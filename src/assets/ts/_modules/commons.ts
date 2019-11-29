@@ -22,9 +22,16 @@ import { menu } from './menu';
 import { modal } from './modal';
 import { tests } from './tests';
 
+declare global {
+  interface Window {
+    wp_data: object;
+  }
+}
 declare let jQuery: any;
 
 // window.detect = detect();
+
+console.log(window.wp_data);
 
 /*= =================================================
   Run
@@ -36,6 +43,8 @@ viewPort();
 menu();
 modal();
 tests();
+
+// console.log(window.detect);
 
 // For dynamic height on iOS safari
 // @ https://github.com/rodneyrehm/viewport-units-buggyfill/issues/70

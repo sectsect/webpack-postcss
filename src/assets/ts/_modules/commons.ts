@@ -24,7 +24,7 @@ import { tests } from './tests';
 
 declare global {
   interface Window {
-    wp_data: object;
+    wp_data: {};
   }
 }
 declare let jQuery: any;

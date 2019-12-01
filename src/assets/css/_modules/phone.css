@@ -343,7 +343,7 @@ modules
 header
 ================================================== */
 #header {
-  position: relative;
+  position: fixed;
   width: 100%;
   height: var(--mobileHeaderH);
 

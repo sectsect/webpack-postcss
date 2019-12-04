@@ -39,8 +39,8 @@ See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/packa
 | ------ | ----------- |
 | `npm run dev` | Watching for Dev |
 | `npm run build` | Building for Deploy |
-| `npm run check-types` | Types check for TypeScript |
-| `npm run check-types:watch` | Types check for TypeScript (watch) |
+| `npm run type-check` | Types check for TypeScript |
+| `npm run type-check:watch` | Types check for TypeScript (watch) |
 
 ## :bookmark: NOTES
 - Rename `.env.example` to `.env` for [dotenv](https://github.com/motdotla/dotenv)

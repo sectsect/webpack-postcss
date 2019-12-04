@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const { WebpackSweetEntry } = require('@sect/webpack-sweet-entry');
@@ -70,6 +72,17 @@ const getJSPlugins = env => {
     plugins.push(new SizePlugin());
   }
   if (isDev(env)) {
+    plugins.push(
+      new ForkTsCheckerWebpackPlugin({
+        eslint: true,
+      }),
+    );
+    plugins.push(
+      new ForkTsCheckerNotifierWebpackPlugin({
+        skipSuccessful: true,
+        title: 'TypeScript',
+      }),
+    );
     plugins.push(
       new BundleAnalyzerPlugin({
         // analyzerMode: 'static',

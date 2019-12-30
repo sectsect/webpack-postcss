@@ -1,6 +1,7 @@
 const postcssImport = require('postcss-import');
 const postcssPresetEnv = require('postcss-preset-env')({
   stage: 1,  // Default: stage: 2   @ https://cssdb.org/#staging-process
+  importFrom: 'src/assets/css/_modules/settings.css',
   autoprefixer: {
     grid: 'autoplace'
   },

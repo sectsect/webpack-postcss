@@ -3,6 +3,8 @@
 @custom-media --viewport-large (width >= 992px);
 @custom-media --viewport-extraLarge (width >= 1200px);
 
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
 :root {
   --fontSize: 11px;
   --fontColor: #000;

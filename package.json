@@ -73,7 +73,6 @@
     "dotenv": "^8.2.0",
     "ismobilejs": "^1.0.3",
     "jquery": "^3.4.1",
-    "jquery-match-height-browserify": "^0.7.0",
     "jquery.easing": "^1.4.1",
     "lazysizes": "^5.2.0",
     "micromodal": "^0.4.2",

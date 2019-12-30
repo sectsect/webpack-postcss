@@ -33,6 +33,7 @@
   header
   ================================================== */
   #header {
+    position: relative;
     height: auto;
     #g_nav {
       position: relative;

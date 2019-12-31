@@ -1,4 +1,5 @@
 import React from 'react';
+import { Header } from './components/Header';
 
 export class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>App component</h1>
+        <Header />
         <p>
           Hello,
           {this.state.who}!

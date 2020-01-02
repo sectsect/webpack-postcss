@@ -9,7 +9,6 @@ import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import 'lazysizes';
 import 'jquery.easing';
 import viewportUnitsBuggyfill from 'viewport-units-buggyfill';
-// import window from './window';
 // import { detection as detect } from './detect';
 import { WebFontLoader } from './webfont-loader';
 import { inlineSVG } from './inline-svg';

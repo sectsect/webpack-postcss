@@ -14,7 +14,6 @@ import { WebFontLoader } from './webfont-loader';
 import { inlineSVG } from './inline-svg';
 import { viewPort } from './viewport';
 import { smoothScroll } from './smooth-scroll';
-import { matchHeight } from './jquery-match-height';
 import { dotdotdot } from './jquery-dotdotdot';
 // import { touchHover } from './touch-hover';
 import { menu } from './menu';
@@ -57,9 +56,9 @@ jQuery(window).on('load', (): void => {
   dotdotdot();
 });
 
-jQuery(window).on('load orientationchange resize', (): void => {
-  matchHeight();
-});
+// jQuery(window).on('load orientationchange resize', () => {
+
+// });
 
 // jQuery(() => {
 //   /*= =================================================

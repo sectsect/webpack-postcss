@@ -22,10 +22,54 @@ import { tests } from './tests';
 
 declare global {
   interface Window {
-    wp_data: {};
+    wp_data: WpData;
   }
 }
 declare let jQuery: any;
+
+export interface WpData {
+  site: string;
+  post_id: string;
+  post_type: string;
+  slug: string;
+  title: string;
+  permalink: string;
+  paged: string;
+  taxonomy: string;
+  term_name: string;
+  term_slug: string;
+  term_id: string;
+  taxonomy_hierarchy: string;
+  homeurl: string;
+  template_dir_uri: string;
+  stylesheet_dir_uri: string;
+  stylesheet_dir: string;
+  contenturl: string;
+  current_page_url: string;
+  current_page_path: string;
+  is_home: string;
+  is_front_page: string;
+  is_page: string;
+  is_page_root: string;
+  is_static_page: string;
+  is_single: string;
+  is_singular: string;
+  is_archive: string;
+  is_post_type_archive: string;
+  is_tax: string;
+  is_date: string;
+  is_search: string;
+  is_tag: string;
+  is_feed: string;
+  break_points: BreakPoints;
+}
+
+export interface BreakPoints {
+  small: number;
+  medium: number;
+  large: number;
+  xlarge: number;
+}
 
 // window.detect = detect();
 

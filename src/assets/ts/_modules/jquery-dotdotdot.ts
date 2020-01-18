@@ -8,9 +8,8 @@ export const dotdotdot = (): void => {
       watch: 'window',
       height: 'watch',
       truncate: 'letter',
-      callback(isTruncated: any): void {
+      callback(this: HTMLElement, isTruncated: any): void {
         console.log(isTruncated);
-
         jQuery(this).addClass('ready');
       },
     });

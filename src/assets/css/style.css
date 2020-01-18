@@ -6,6 +6,9 @@
 @import '../../../node_modules/sanitize.css/sanitize.css';
 @import '../../../node_modules/sanitize.css/typography.css';
 
+@import '_modules/slick.css';
+@import '_modules/slick-theme.css';
+
 /* @import "../../../node_modules/sanitize.css/forms.css"; */
 @import '../../../node_modules/@glidejs/glide/dist/css/glide.core';
 @import '../../../node_modules/@glidejs/glide/dist/css/glide.theme';

@@ -1,10 +1,12 @@
 import './_modules/commons';
 import { glide } from './_modules/glide';
+import { slider } from './_modules/slider';
 import { MyClass } from './_class/myclass';
 
 console.log(window.wp_data);
 
 glide();
+slider();
 
 // console.log(add(10, 5));
 

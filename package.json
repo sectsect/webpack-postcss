@@ -96,6 +96,7 @@
     "detect-browser": "^4.8.0",
     "dotdotdot-js": "^4.0.11",
     "dotenv": "^8.2.0",
+    "es6-promise": "^4.2.8",
     "ismobilejs": "^1.0.3",
     "jquery": "^3.4.1",
     "jquery.easing": "^1.4.1",

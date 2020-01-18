@@ -150,8 +150,24 @@ Normalization for Third party
 /* slider (slick) */
 .slider_wrap {
   position: relative;
-
-  /* @mixin spinner absolute, 16px, 2px, #aaa, ready, visible; */
+  min-height: 871px;
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    visibility: visible;
+    content: '';
+    border: 2px solid #aaa;
+    border-right-color: transparent;
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 0.3s linear 0.3s;
+    animation: spin 1s linear infinite;
+  }
   & .slider {
     visibility: hidden;
     opacity: 0;
@@ -173,13 +189,18 @@ Normalization for Third party
   & [data-bgset] {
     transition: opacity 0.8s ease-in-out 0.3s;
   } */
-  & .slick-slide {
-    & > div {
-      line-height: 0.8;
-    }
-    & img {
-      width: 100%;
-      height: auto;
+  & .slick-track {
+    display: flex;
+    align-items: center;
+    & .slick-slide {
+      float: none;
+      & > div {
+        line-height: 0.8;
+      }
+      & img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }
@@ -212,9 +233,6 @@ Normalization for Third party
           background: #000;
         }
       }
-    }
-    &:first-child {
-      background: #ddd;
     }
   }
 }

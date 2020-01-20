@@ -1,14 +1,15 @@
 import 'es6-promise/auto';
-import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
-import lazySizes from 'lazysizes';
+// import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
+// import lazySizes from 'lazysizes';
 
 declare let jQuery: any;
+declare let lazySizes: any;
 
-export const unveil = (el: JQuery<HTMLElement>): any => {
+export const unveil = (el: JQuery<HTMLElement>): Promise<string> => {
   const promises: any[] = [];
-  jQuery(el).each((_i: number, e: Element): void => {
+  jQuery(el).each((_i: number, e: JQuery): void => {
     promises.push(
-      new Promise<string>((resolve: any): void => {
+      new Promise<string>((resolve): void => {
         lazySizes.loader.unveil(e);
         resolve('resolved');
       }),

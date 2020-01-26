@@ -19,6 +19,7 @@ import { dotdotdot } from './jquery-dotdotdot';
 import { menu } from './menu';
 import { modal } from './modal';
 import { tests } from './tests';
+import { typescript } from './typescript';
 
 declare global {
   interface Window {
@@ -85,6 +86,7 @@ viewPort();
 menu();
 modal();
 tests();
+typescript();
 
 // console.log(window.detect);
 

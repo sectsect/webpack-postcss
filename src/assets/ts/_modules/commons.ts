@@ -28,7 +28,7 @@ declare global {
 }
 declare let jQuery: any;
 
-export interface WpData {
+interface WpData {
   site: string;
   post_id: string;
   post_type: string;
@@ -65,7 +65,7 @@ export interface WpData {
   break_points: BreakPoints;
 }
 
-export interface BreakPoints {
+interface BreakPoints {
   small: number;
   medium: number;
   large: number;

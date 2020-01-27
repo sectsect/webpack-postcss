@@ -4,20 +4,20 @@ import Modernizr from 'modernizr';
 
 const browser = detect();
 
-export interface Detection {
+interface Detection {
   device: Device;
   htmlcss: Htmlcss;
   breakpoints: Breakpoints;
 }
 
-export interface Breakpoints {
+interface Breakpoints {
   sm: number;
   md: number;
   lg: number;
   xl: number;
 }
 
-export interface Device {
+interface Device {
   desktop: boolean;
   mobile: boolean;
   phone: boolean;
@@ -33,7 +33,7 @@ export interface Device {
   androidOS: boolean;
 }
 
-export interface Htmlcss {
+interface Htmlcss {
   cssgrid: boolean;
   flexbox: boolean;
   flexboxtweener: boolean;

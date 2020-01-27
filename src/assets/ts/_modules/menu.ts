@@ -2,8 +2,8 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 declare let jQuery: any;
 
-export const menu = (): void => {
-  const togglePanel = (c: string, t: any): void => {
+export const menu = () => {
+  const togglePanel = (c: string, t: any) => {
     if (jQuery('body').hasClass(c)) {
       enableBodyScroll(t);
     } else {
@@ -12,7 +12,7 @@ export const menu = (): void => {
     jQuery('body').toggleClass(c);
   };
 
-  jQuery('#nav-toggle').on('click', (): void => {
+  jQuery('#nav-toggle').on('click', () => {
     // Lock the scroll for body
     const t = document.querySelector<HTMLElement>('#nav-panel');
     const c = 'menu-opened';

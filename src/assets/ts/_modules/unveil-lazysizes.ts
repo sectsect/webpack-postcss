@@ -7,9 +7,9 @@ declare let lazySizes: any;
 
 export const unveil = (el: JQuery<HTMLElement>): Promise<string> => {
   const promises: Promise<string>[] = [];
-  jQuery(el).each((_i: number, e: JQuery): void => {
+  jQuery(el).each((_i: number, e: JQuery) => {
     promises.push(
-      new Promise<string>((resolve): void => {
+      new Promise<string>(resolve => {
         lazySizes.loader.unveil(e);
         resolve('resolved');
       }),

@@ -93,11 +93,11 @@ typescript();
 // For dynamic height on iOS safari
 // @ https://github.com/rodneyrehm/viewport-units-buggyfill/issues/70
 viewportUnitsBuggyfill.init();
-jQuery(window).on('resize', (): void => {
+jQuery(window).on('resize', () => {
   viewportUnitsBuggyfill.refresh();
 });
 
-jQuery(window).on('load', (): void => {
+jQuery(window).on('load', () => {
   smoothScroll();
   dotdotdot();
 });

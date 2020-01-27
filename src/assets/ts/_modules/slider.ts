@@ -3,8 +3,8 @@ import { unveil } from './unveil-lazysizes';
 
 declare let jQuery: any;
 
-export const slider = (): void => {
-  const runSlider = (parentid: any) => {
+export const slider = () => {
+  const runSlider = (parentid: string) => {
     const $slickElement = jQuery(`${parentid} .slider-for`);
     $slickElement.on('init', function(
       this: HTMLElement,

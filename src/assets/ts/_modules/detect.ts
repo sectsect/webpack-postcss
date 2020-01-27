@@ -40,7 +40,7 @@ interface Htmlcss {
   objectfit: boolean;
 }
 
-export const detection = (): Record<string, any> => {
+export const detection = (): { [key: string]: any } => {
   if (browser && browser.version) {
     const bn: string = browser.name;
     const bv: number = parseInt(browser.version, 10);

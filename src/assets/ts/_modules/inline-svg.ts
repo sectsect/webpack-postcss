@@ -1,11 +1,11 @@
 declare let jQuery: any;
 
-export const inlineSVG = (): void => {
+export const inlineSVG = () => {
   jQuery
     .ajax({
       url: '/assets/images/svg/symbol.svg',
     })
-    .done((r: any) => {
+    .done((r: HTMLElement) => {
       const svg = jQuery(r)
         .find('svg')
         .addClass('svg-icon-lib');

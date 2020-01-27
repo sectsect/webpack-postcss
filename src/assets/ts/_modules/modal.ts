@@ -1,6 +1,6 @@
 import MicroModal from 'micromodal';
 
-export const modal = (): void => {
+export const modal = () => {
   MicroModal.init({
     // onShow: modal => console.info(`${modal.id} is shown`), // [1]
     // onClose: modal => console.info(`${modal.id} is hidden`), // [2]

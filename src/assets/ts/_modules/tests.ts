@@ -4,7 +4,7 @@ import { detection as detect } from './detect';
 declare let jQuery: any;
 declare let R: any;
 
-export const tests = (): void => {
+export const tests = () => {
   /*= =================================================
     Detect Testing
   ================================================== */
@@ -57,7 +57,7 @@ export const tests = (): void => {
   console.log(array.includes(3));
 
   // Default Parameters
-  const foo = (a = 5, b = 10): void => {
+  const foo = (a = 5, b = 10) => {
     console.log(a + b);
   };
   foo(); // 15
@@ -111,7 +111,7 @@ export const tests = (): void => {
       }, 2000);
     });
   // new Promise<string>(resolve => {
-  //   setTimeout((): void => {
+  //   setTimeout(() => {
   //     resolve('resolved');
   //   }, 2000);
   // });
@@ -168,10 +168,10 @@ export const tests = (): void => {
       return error;
     }
   };
-  sample().then((v: string): void => {
+  sample().then((v: string) => {
     console.log(v); // => 70
   });
-  sample2().then((v: string): void => {
+  sample2().then((v: string) => {
     console.log(v); // => 71
   });
 

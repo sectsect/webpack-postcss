@@ -3,7 +3,7 @@ import { unveil } from './unveil-lazysizes';
 
 declare let jQuery: any;
 
-export const glide = (): void => {
+export const glide = () => {
   const runSlider = (el: HTMLElement) => {
     const glide = new Glide(el, {
       type: 'carousel',
@@ -22,7 +22,7 @@ export const glide = (): void => {
       //   // },
       // },
     });
-    glide.on('mount.after', (): void => {
+    glide.on('mount.after', () => {
       jQuery(el).addClass('ready');
     });
     glide.mount();
@@ -39,7 +39,7 @@ export const glide = (): void => {
     }
   };
 
-  jQuery('.glide_wrap').each((_i: number, el: HTMLElement): void => {
+  jQuery('.glide_wrap').each((_i: number, el: HTMLElement) => {
     asyncSlider(el);
   });
 };

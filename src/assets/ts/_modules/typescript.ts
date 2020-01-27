@@ -1,6 +1,6 @@
 // declare let jQuery: any;
 
-export const typescript = (): void => {
+export const typescript = () => {
   // 列挙型 (Enums)
   // @ https://typescript-jp.gitbook.io/deep-dive/type-system/enums
   enum Role {

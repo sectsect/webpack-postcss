@@ -163,6 +163,9 @@ Normalization for Third party
     transition: opacity .8s ease-in-out .3s;
   } */
   .slick-slide {
+    /* display: flex;
+    align-items: center;
+    float: none; */
     > div {
       line-height: 0.8;
     }
@@ -201,9 +204,6 @@ Normalization for Third party
           background: #000;
         }
       }
-    }
-    &:first-child {
-      background: #ddd;
     }
   }
 }

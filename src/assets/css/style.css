@@ -5,6 +5,9 @@
 @import '../../../node_modules/sanitize.css/sanitize.css';
 @import '../../../node_modules/sanitize.css/typography.css';
 
+@import '_modules/slick.css';
+@import '_modules/slick-theme.css';
+
 /* @import "../../../node_modules/sanitize.css/forms.css"; */
 @import '_modules/form.css';
 @import '_modules/sprite.css';

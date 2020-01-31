@@ -23,7 +23,7 @@ export const smoothScroll = () => {
       .hasClass('page-top')
       ? 0
       : h;
-    const id = jQuery(e.currentTarget)
+    const id: string = jQuery(e.currentTarget)
       .attr('href')
       .replace('#', '');
     runSmoothScroll(id, ofs);
@@ -34,7 +34,7 @@ export const smoothScroll = () => {
   // Run scroll on page load, if the URL has the query parameter of 'id'.
   const url = jQuery(window.location).attr('href');
   if (url.includes('?id=')) {
-    const spl = url.split('?id=');
+    const spl: string[] = url.split('?id=');
     const id = spl[spl.length - 1];
     setTimeout(() => {
       const h = pos === 'fixed' && oh !== undefined ? oh : 0;

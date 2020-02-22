@@ -208,4 +208,12 @@ export const tests = () => {
   };
   const converted = Object.entries(obj).map(([key, value]): any => ({ key, value }));
   console.log(converted);
+
+  /*= =================================================
+    ES11 Example a.k.a. ES2020
+  ================================================== */
+  // Nullish coalescing
+  const sss = 0;
+  const sect = sss ?? 100;
+  console.log(sect);
 };

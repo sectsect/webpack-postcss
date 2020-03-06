@@ -4,6 +4,8 @@ import Modernizr from 'modernizr';
 
 const browser = detect();
 
+type Versionable = number | boolean;
+
 interface Detection {
   device: Device;
   htmlcss: Htmlcss;
@@ -22,11 +24,11 @@ interface Device {
   mobile: boolean;
   phone: boolean;
   tablet: boolean;
-  chrome: number | boolean;
-  firefox: number | boolean;
-  safari: number | boolean;
-  msie: number | boolean;
-  msedge: number | boolean;
+  chrome: Versionable;
+  firefox: Versionable;
+  safari: Versionable;
+  msie: Versionable;
+  msedge: Versionable;
   iPhone: boolean;
   androidphone: boolean;
   iOS: boolean;

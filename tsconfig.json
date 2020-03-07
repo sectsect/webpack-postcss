@@ -1,11 +1,12 @@
 {
   "extends": "@spotify/tsconfig",
   "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
+    // "allowJs": true,
+    // "allowSyntheticDefaultImports": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     // "noImplicitThis": false,
-    "target": "esnext"
+    "target": "esnext",
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*"

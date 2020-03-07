@@ -42,8 +42,8 @@ interface Htmlcss {
   objectfit: boolean;
 }
 
-export const detection = (): { [key: string]: any } => {
-  if (browser && browser.version) {
+export const detection = (): Detection | undefined => {
+  if (browser?.name && browser?.version) {
     const bn: string = browser.name;
     const bv: number = parseInt(browser.version, 10);
     const detect: Detection = {
@@ -77,5 +77,5 @@ export const detection = (): { [key: string]: any } => {
     };
     return detect;
   }
-  return {};
+  return undefined;
 };

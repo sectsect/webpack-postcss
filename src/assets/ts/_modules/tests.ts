@@ -104,9 +104,9 @@ export const tests = () => {
     ES7 Example
   ================================================== */
   // async / await
-  const resolveAfter2Seconds = (): any =>
-    new Promise<string>((resolve: any | null): any => {
-      setTimeout((): any => {
+  const resolveAfter2Seconds = (): Promise<string> =>
+    new Promise<string>(resolve => {
+      setTimeout(() => {
         resolve('resolved');
       }, 2000);
     });
@@ -145,20 +145,20 @@ export const tests = () => {
   getUser('sectsect');
 
   // async / await
-  const sampleResolve = (value: number): any =>
-    new Promise<string>((resolve: any | null): any => {
-      setTimeout((): any => {
+  const sampleResolve = (value: number): Promise<number> =>
+    new Promise<number>(resolve => {
+      setTimeout(() => {
         resolve(value);
       }, 1000);
     });
-  const sample = async (): Promise<string> => {
+  const sample = async (): Promise<number> => {
     try {
       return (await sampleResolve(5)) * (await sampleResolve(10)) + (await sampleResolve(20));
     } catch (error) {
       return error;
     }
   };
-  const sample2 = async (): Promise<string> => {
+  const sample2 = async (): Promise<number> => {
     try {
       const a = await sampleResolve(5);
       const b = await sampleResolve(10);
@@ -168,10 +168,10 @@ export const tests = () => {
       return error;
     }
   };
-  sample().then((v: string) => {
+  sample().then((v: number) => {
     console.log(v); // => 70
   });
-  sample2().then((v: string) => {
+  sample2().then((v: number) => {
     console.log(v); // => 71
   });
 

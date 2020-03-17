@@ -219,6 +219,7 @@ module.exports = env => [
     // Modernizr
     resolve: {
       modules: ['node_modules'],
+      mainFields: ['main', 'module'],  // Support for 'body-scroll-lock' on IE11 @ https://github.com/willmcpo/body-scroll-lock/issues/50
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),
       },

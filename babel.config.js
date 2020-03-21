@@ -52,7 +52,18 @@ module.exports = {
       plugins: [...plugins, ['@babel/plugin-transform-runtime', { corejs: 3 }]],
     },
     modern: {
-      presets: [['@babel/preset-modules']],
+      // presets: [['@babel/preset-modules']],
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            targets: {
+              esmodules: true,
+            },
+            bugfixes: true,
+          },
+        ],
+      ],
       plugins,
     },
   },

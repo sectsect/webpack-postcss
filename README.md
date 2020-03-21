@@ -17,6 +17,7 @@
 | Branch | Description |
 | ------ | ----------- |
 | [master](https://github.com/sectsect/webpack-postcss) | PostCSS that compliant [cssnext](https://cssnext.github.io/)(tomorrow’s CSS syntax) as much as possible |
+| [module](https://github.com/sectsect/webpack-postcss/tree/module) | ES Modules `<script type="module">`<br>* Support to split serving Modern and Legacy Bundle<br>* In the next version this branch will be merged into the `master` branch. |
 | [postcss-similar-to-sass](https://github.com/sectsect/webpack-postcss/tree/postcss-similar-to-sass) | PostCSS, but have features similar to SASS (Nesting, Conditional Statement, `extend`, `mixin`, `for`) |
 | [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ SASS<br>\- PostCSS |
 | [TypeScript](https://github.com/sectsect/webpack-postcss/tree/feature/typescript) | \+ TypeScript<br>\- JavaScript |

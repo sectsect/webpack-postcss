@@ -12,7 +12,8 @@
 	<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/notosansjp/v24/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.117.woff2">
 	<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/notosansjp/v24/-F6pfjtqLzI2JPCgQBnw7HFQei0q131nj-pXANNwpfqCt9pay6XIBdsAJNIhVEwQ.119.woff2">
 	<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/notosansjp/v24/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.113.woff2">
-	<link rel="preload" href="/assets/js/commons.js" as="script">
+	<link rel="modulepreload" href="/assets/js/commons.js">
+	<link rel="modulepreload" href="/assets/js/page-frontpage.js">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" id="viewport">
 	<title>HELLO</title>
@@ -450,7 +451,9 @@
 			</div>
 		</div>
 	</div>
-	<script defer src="./assets/js/commons.js"></script>
-	<script defer src="./assets/js/page-frontpage.js"></script>
+	<script type="module" src="./assets/js/commons.js"></script>
+	<script nomodule src="./assets/js/commons.es5.js"></script>
+	<script type="module" src="./assets/js/page-frontpage.js"></script>
+	<script nomodule defer src="./assets/js/page-frontpage.es5.js"></script>
 </body>
 </html>

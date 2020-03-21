@@ -26,7 +26,7 @@ const isProd = env => env && env.production;
 const isDev = env => env && env.development;
 
 // http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
-const getJSPlugins = env => {
+const getJSPlugins = (env, mode) => {
   const plugins = [];
 
   plugins.push(
@@ -76,6 +76,7 @@ const getJSPlugins = env => {
         // analyzerMode: 'static',
         // reportFilename: path.join(__dirname, 'report.html'),
         openAnalyzer: false,
+        analyzerPort: mode === 'modern' ? 8888 : 9999 // Prevents build errors when running --modern @ https://github.com/coryhouse/react-slingshot/issues/301#issuecomment-475220011
       }),
     );
   }
@@ -175,12 +176,12 @@ const getCSSPlugins = env => {
   return plugins;
 };
 
-module.exports = env => [
-  {
+const jsConfig = (mode, env) => {
+  return {
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
     output: {
       path: path.resolve(buildPath, 'assets/js'),
-      filename: '[name].js',
+      filename: `[name]${mode === 'modern' ? '.js' : '.es5.js'}`,
     },
     module: {
       rules: [
@@ -190,7 +191,14 @@ module.exports = env => [
           // test: /\.(mjs|js)$/,
           // exclude: /node_modules\/(?!(rambda|quicklink)\/).*/,
           use: [
-            { loader: 'babel-loader' },
+            {
+              loader: 'babel-loader',
+              options: {
+                // ...env[mode],
+                // env: (mode === 'modern') ? babelEnv.modern : babelEnv.legacy,
+                envName: mode,
+              }
+            },
             {
               loader: 'eslint-loader',
               options: {
@@ -251,14 +259,17 @@ module.exports = env => [
         }),
       ],
     },
-    plugins: getJSPlugins(env),
+    plugins: getJSPlugins(env, mode),
     devtool: isProd(env) ? false : '#inline-source-map',
     performance: {
       hints: isProd(env) ? 'warning' : false,
       maxEntrypointSize: 300000, // The default value is 250000 (bytes)
     },
-  },
-  {
+  };
+}
+
+const cssConfig = (env) => {
+  return {
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css'), 'css', 'css'),
     output: {
       path: path.resolve(buildPath, 'assets/css'),
@@ -291,5 +302,11 @@ module.exports = env => [
       hints: isProd(env) ? 'warning' : false,
       maxEntrypointSize: 300000, // The default value is 250000 (bytes)
     },
-  },
+  };
+}
+
+module.exports = env => [
+  jsConfig('modern', env),
+  jsConfig('legacy', env),
+  cssConfig(env),
 ];

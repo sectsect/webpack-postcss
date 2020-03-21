@@ -9,9 +9,7 @@ const postcssPresetEnv = require('postcss-preset-env')({
     'nesting-rules': true
   }
 });
-const cssMqpacker = require('css-mqpacker')({
-  sort: true,
-});
+const postcssSortMediaQueries = require('postcss-sort-media-queries');
 const pxtorem = require('postcss-pxtorem')({
   replace: false,
 });
@@ -27,7 +25,7 @@ module.exports = {
   plugins: [
     postcssImport,
     postcssPresetEnv,
-    cssMqpacker,
+    postcssSortMediaQueries,
     pxtorem,
     postcssCalc,
     postcssClearfix,

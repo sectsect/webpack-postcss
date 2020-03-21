@@ -41,11 +41,6 @@ module.exports = {
             modules: false,
             useBuiltIns: 'usage',
             corejs: 3,
-            targets: {
-              browsers: [
-                '> 1%, last 2 versions, Firefox ESR, IE >= 11, not Android 4.4.3-4.4.4, not dead',
-              ],
-            },
           },
         ],
       ],

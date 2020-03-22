@@ -203,7 +203,12 @@ module.exports = env => [
           // test: /\.(mjs|js)$/,
           // exclude: /node_modules\/(?!(rambda|quicklink)\/).*/,
           use: [
-            { loader: 'babel-loader' },
+            {
+              loader: 'babel-loader',
+              options: {
+                cacheDirectory: true,
+              }
+            },
             {
               loader: 'eslint-loader',
               options: {

@@ -193,7 +193,7 @@ const jsConfig = (mode, env) => {
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/ts/**/*.ts*'), 'ts', 'ts'),
     output: {
       path: path.resolve(buildPath, 'assets/js'),
-      filename: `[name]${mode === 'modern' ? '.js' : '.es5.js'}`,
+      filename: `[name]${mode === 'modern' ? '.esm.js' : '.umd.js'}`,
     },
     module: {
       rules: [

@@ -210,6 +210,7 @@ const jsConfig = (mode, env) => {
                 // ...env[mode],
                 // env: (mode === 'modern') ? babelEnv.modern : babelEnv.legacy,
                 envName: mode,
+                cacheDirectory: true,
               }
             },
             {

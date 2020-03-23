@@ -93,7 +93,7 @@ export const tests = () => {
   ================================================== */
   // async / await
   const resolveAfter2Seconds = () =>
-    new Promise(resolve => {
+    new Promise((resolve) => {
       setTimeout(() => {
         resolve('resolved');
       }, 2000);
@@ -115,7 +115,7 @@ export const tests = () => {
   asyncCall();
 
   // async / await & fetch JSON   @ http://blog.fixter.org/learn-es6-promise-and-es7-async-await/
-  const doFetch = async user => {
+  const doFetch = async (user) => {
     try {
       const url = `https://api.github.com/users/${user}`;
       const response = await fetch(url);
@@ -132,8 +132,8 @@ export const tests = () => {
   getUser('sectsect');
 
   // async / await
-  const sampleResolve = value =>
-    new Promise(resolve => {
+  const sampleResolve = (value) =>
+    new Promise((resolve) => {
       setTimeout(() => {
         resolve(value);
       }, 1000);
@@ -155,16 +155,16 @@ export const tests = () => {
       return error;
     }
   };
-  sample().then(v => {
+  sample().then((v) => {
     console.log(v); // => 70
   });
-  sample2().then(v => {
+  sample2().then((v) => {
     console.log(v); // => 71
   });
 
   // The await syntax can be used to wait for the completion of any thenable (an object containing a then function that takes a callback)!
   // @ https://dev.to/spaciecat/thenables-await-objects-and-cancel-or-defer-your-promises-1f12
-  const wait = time => ({ then: done => setTimeout(done, time) });
+  const wait = (time) => ({ then: (done) => setTimeout(done, time) });
   const example = async () => {
     console.log('Hello...');
     await wait(2000);
@@ -188,4 +188,10 @@ export const tests = () => {
   };
   const converted = Object.entries(obj).map(([key, value]) => ({ key, value }));
   console.log(converted);
+
+  const mode = 'modern';
+  const mf = {
+    mainFields: [...(mode === 'modern' ? ['module', 'main'] : ['main', 'module'])],
+  };
+  console.log(mf);
 };

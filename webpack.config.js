@@ -22,8 +22,8 @@ const buildPath = path.join(__dirname, 'dist');
 // console.log(process.env.AWS_ACCESS_KEY_ID);
 
 // For Detection Environment  @ https://webpack.js.org/api/cli/#environment-options
-const isProd = env => env && env.production;
-const isDev = env => env && env.development;
+const isProd = (env) => env && env.production;
+const isDev = (env) => env && env.development;
 
 // http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
 const getJSPlugins = (env, mode) => {
@@ -76,7 +76,7 @@ const getJSPlugins = (env, mode) => {
         // analyzerMode: 'static',
         // reportFilename: path.join(__dirname, 'report.html'),
         openAnalyzer: false,
-        analyzerPort: mode === 'modern' ? 8888 : 9999 // Prevents build errors when running --modern @ https://github.com/coryhouse/react-slingshot/issues/301#issuecomment-475220011
+        analyzerPort: mode === 'modern' ? 8888 : 9999, // Prevents build errors when running --modern @ https://github.com/coryhouse/react-slingshot/issues/301#issuecomment-475220011
       }),
     );
   }
@@ -100,7 +100,7 @@ const getJSPlugins = (env, mode) => {
   return plugins;
 };
 
-const getCSSPlugins = env => {
+const getCSSPlugins = (env) => {
   const plugins = [];
 
   plugins.push(
@@ -198,7 +198,7 @@ const jsConfig = (mode, env) => {
                 // env: (mode === 'modern') ? babelEnv.modern : babelEnv.legacy,
                 envName: mode,
                 cacheDirectory: true,
-              }
+              },
             },
             {
               loader: 'eslint-loader',
@@ -228,7 +228,10 @@ const jsConfig = (mode, env) => {
     // Modernizr
     resolve: {
       modules: ['node_modules'],
-      mainFields: ['main', 'module'],  // Support for 'body-scroll-lock' on IE11 @ https://github.com/willmcpo/body-scroll-lock/issues/50
+      mainFields: [
+        // Support for 'body-scroll-lock' on IE11 @ https://github.com/willmcpo/body-scroll-lock/issues/50
+        ...(mode === 'modern' ? ['module', 'main'] : ['main', 'module']),
+      ],
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),
       },
@@ -267,7 +270,7 @@ const jsConfig = (mode, env) => {
       maxEntrypointSize: 300000, // The default value is 250000 (bytes)
     },
   };
-}
+};
 
 const cssConfig = (env) => {
   return {
@@ -304,10 +307,6 @@ const cssConfig = (env) => {
       maxEntrypointSize: 300000, // The default value is 250000 (bytes)
     },
   };
-}
+};
 
-module.exports = env => [
-  jsConfig('modern', env),
-  jsConfig('legacy', env),
-  cssConfig(env),
-];
+module.exports = (env) => [jsConfig('modern', env), jsConfig('legacy', env), cssConfig(env)];

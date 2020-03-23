@@ -6,9 +6,7 @@ export const inlineSVG = () => {
       url: '/assets/images/svg/symbol.svg',
     })
     .done((r: HTMLElement) => {
-      const svg: JQuery = jQuery(r)
-        .find('svg')
-        .addClass('svg-icon-lib');
+      const svg: JQuery = jQuery(r).find('svg').addClass('svg-icon-lib');
       jQuery('body').prepend(svg);
     });
 };

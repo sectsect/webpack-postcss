@@ -80,7 +80,7 @@ export const typescript = () => {
 
   // let someValue: undefined;
 
-  addAndHandle(10, 20, result => {
+  addAndHandle(10, 20, (result) => {
     console.log(result);
   });
 };

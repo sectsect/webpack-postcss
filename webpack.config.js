@@ -230,7 +230,7 @@ const jsConfig = (mode, env) => {
       modules: ['node_modules'],
       mainFields: [
         // Support for 'body-scroll-lock' on IE11 @ https://github.com/willmcpo/body-scroll-lock/issues/50
-        ...(mode === 'modern' ? ['module', 'main'] : ['main', 'module']),
+        ...(mode === 'modern' ? ['browser', 'module', 'main'] : ['browser', 'main', 'module']),
       ],
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),

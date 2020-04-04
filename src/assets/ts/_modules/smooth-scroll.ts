@@ -18,14 +18,8 @@ export const smoothScroll = () => {
 
   jQuery("a[href^='#']").on('click', (e: { currentTarget: HTMLElement }): boolean => {
     const h = pos === 'fixed' && oh !== undefined ? oh * -1 : 0;
-    const ofs = jQuery(e.currentTarget)
-      .parent()
-      .hasClass('page-top')
-      ? 0
-      : h;
-    const id: string = jQuery(e.currentTarget)
-      .attr('href')
-      .replace('#', '');
+    const ofs = jQuery(e.currentTarget).parent().hasClass('page-top') ? 0 : h;
+    const id: string = jQuery(e.currentTarget).attr('href').replace('#', '');
     runSmoothScroll(id, ofs);
 
     return false;

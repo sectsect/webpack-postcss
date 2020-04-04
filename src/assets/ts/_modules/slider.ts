@@ -6,16 +6,14 @@ declare let jQuery: any;
 export const slider = () => {
   const runSlider = (parentid: string) => {
     const $slickElement = jQuery(`${parentid} .slider-for`);
-    $slickElement.on('init', function(
+    $slickElement.on('init', function (
       this: HTMLElement,
       // _event: any,
       // _slick: { slideCount: number },
       // _currentSlide: any,
       // _nextSlide: any,
     ) {
-      jQuery(this)
-        .closest('.slider_wrap')
-        .addClass('ready');
+      jQuery(this).closest('.slider_wrap').addClass('ready');
     });
 
     jQuery(`${parentid} .slider-for`).slick({
@@ -63,7 +61,7 @@ export const slider = () => {
         jQuery(`${parentid} .slider .slick-dots li`).removeClass('slick-active');
         jQuery(`${parentid} .slider .slick-dots li button`)
           .attr('aria-pressed', 'false')
-          .focus(function(this: HTMLElement) {
+          .focus(function (this: HTMLElement) {
             this.blur();
           });
       },

@@ -2,11 +2,9 @@ import 'slick-carousel';
 import { unveil } from './unveil-lazysizes';
 
 export const slider = () => {
-  const runSlider = parentid => {
-    jQuery(`${parentid} .slider-for`).on('init', function(event, slick) {
-      jQuery(this)
-        .closest('.slider_wrap')
-        .addClass('ready');
+  const runSlider = (parentid) => {
+    jQuery(`${parentid} .slider-for`).on('init', function (event, slick) {
+      jQuery(this).closest('.slider_wrap').addClass('ready');
       // unveil(jQuery(this).find('.slick-slide img'));
     });
     // jQuery(`${parentid} .slider`).slick({
@@ -65,7 +63,7 @@ export const slider = () => {
 
     // Restart autoplay (Slick Slider autoplay stops when touched on mobile/tablet)
     // @ https://stackoverflow.com/questions/48402481/slick-slider-autoplay-stops-when-touched-on-mobile-tablet
-    jQuery(`${parentid} .slider`).on('touchstart', e => {
+    jQuery(`${parentid} .slider`).on('touchstart', (e) => {
       jQuery(e.currentTarget).slick('slickPlay');
     });
 
@@ -75,7 +73,7 @@ export const slider = () => {
       jQuery(`${parentid} .slider .slick-dots li`).removeClass('slick-active');
       jQuery(`${parentid} .slider .slick-dots li button`)
         .attr('aria-pressed', 'false')
-        .focus(function() {
+        .focus(function () {
           this.blur();
         });
     });

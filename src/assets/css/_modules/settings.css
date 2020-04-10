@@ -10,9 +10,9 @@
   --fontColor: #000;
   --linkColor: var(--fontColor);
   --fontFamily: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ',
-    Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+    meiryo, 'ＭＳ Ｐゴシック', sans-serif;
   --fontMincho: 'EB Garamond', 'Times New Roman', 'ＭＳ 明朝', 'MS Mincho', 'ヒラギノ明朝 ProN W3',
-    'Hiragino Mincho ProN', 'メイリオ', Meiryo, serif;
+    'Hiragino Mincho ProN', 'メイリオ', meiryo, serif;
   --lineHeight: 1.6;
   --transition: all 0.3s linear;
   --borderRadius: 5px;

@@ -29,7 +29,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-vue": "^6.1.2",
+    "eslint-plugin-vue": "^6.2.2",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^0.9.0",
@@ -58,7 +58,7 @@
     "stylelint-webpack-plugin": "^1.2.3",
     "svg-spritemap-webpack-plugin": "^3.5.5",
     "terser-webpack-plugin": "^2.3.5",
-    "vue-loader": "^15.8.3",
+    "vue-loader": "^15.9.1",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.11",
     "webpack": "^4.42.1",
@@ -93,7 +93,7 @@
     "viewport-units-buggyfill": "^0.6.2",
     "vue": "^2.6.11",
     "vue-match-heights": "^0.1.1",
-    "vue-router": "^3.1.5",
+    "vue-router": "^3.1.6",
     "vue-scrollto": "^2.17.1",
     "webfontloader": "^1.6.28"
   }

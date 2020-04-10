@@ -187,7 +187,12 @@ module.exports = env => [
           // test: /\.(mjs|js)$/,
           // exclude: /node_modules\/(?!(rambda|quicklink)\/).*/,
           use: [
-            { loader: 'babel-loader' },
+            {
+              loader: 'babel-loader',
+              options: {
+                cacheDirectory: true,
+              }
+            },
             {
               loader: 'eslint-loader',
               options: {
@@ -216,6 +221,7 @@ module.exports = env => [
     // Modernizr
     resolve: {
       modules: ['node_modules'],
+      mainFields: ['browser', 'main', 'module'],  // Support for 'body-scroll-lock' on IE11 @ https://github.com/willmcpo/body-scroll-lock/issues/50
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),
       },

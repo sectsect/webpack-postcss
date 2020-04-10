@@ -3,10 +3,8 @@ export const inlineSVG = () => {
     .ajax({
       url: '/assets/images/svg/symbol.svg',
     })
-    .done(r => {
-      const svg = jQuery(r)
-        .find('svg')
-        .addClass('svg-icon-lib');
+    .done((r) => {
+      const svg = jQuery(r).find('svg').addClass('svg-icon-lib');
       jQuery('body').prepend(svg);
     });
 };

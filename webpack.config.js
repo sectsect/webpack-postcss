@@ -5,7 +5,7 @@ const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const dotenv = require('dotenv').config();
-const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+// const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const { WebpackSweetEntry } = require('@sect/webpack-sweet-entry');
 const SizePlugin = require('size-plugin');
@@ -50,23 +50,23 @@ const getJSPlugins = env => {
   //     ],
   //   },
   // }));
-  plugins.push(
-    new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
-      output: {
-        filename: '../../../dist/assets/images/svg/symbol.svg',
-        svgo: {
-          plugins: [
-            { removeTitle: false },
-            { removeAttrs: { attrs: 'fill' } },
-            { removeStyleElement: true },
-          ],
-        },
-      },
-      sprite: {
-        prefix: 'icon-',
-      },
-    }),
-  );
+  // plugins.push(
+  //   new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
+  //     output: {
+  //       filename: '../../../dist/assets/images/svg/symbol.svg',
+  //       svgo: {
+  //         plugins: [
+  //           { removeTitle: false },
+  //           { removeAttrs: { attrs: 'fill' } },
+  //           { removeStyleElement: true },
+  //         ],
+  //       },
+  //     },
+  //     sprite: {
+  //       prefix: 'icon-',
+  //     },
+  //   }),
+  // );
   if (isProd(env)) {
     plugins.push(new SizePlugin());
   }
@@ -206,16 +206,16 @@ module.exports = env => [
             },
           ],
         },
-        // Modernizr
-        {
-          test: /\.modernizrrc.js$/,
-          use: ['modernizr-loader'],
-        },
-        {
-          test: /\.modernizrrc(\.json)?$/,
-          use: ['modernizr-loader', 'json-loader'],
-        },
-        // Modernizr
+        // // Modernizr
+        // {
+        //   test: /\.modernizrrc.js$/,
+        //   use: ['modernizr-loader'],
+        // },
+        // {
+        //   test: /\.modernizrrc(\.json)?$/,
+        //   use: ['modernizr-loader', 'json-loader'],
+        // },
+        // // Modernizr
       ],
     },
     externals: {
@@ -225,9 +225,9 @@ module.exports = env => [
     resolve: {
       modules: ['node_modules'],
       mainFields: ['browser', 'main', 'module'],  // Support for 'body-scroll-lock' on IE11 @ https://github.com/willmcpo/body-scroll-lock/issues/50
-      alias: {
-        modernizr$: path.resolve(__dirname, '.modernizrrc'),
-      },
+      // alias: {
+      //   modernizr$: path.resolve(__dirname, '.modernizrrc'),
+      // },
     },
     // Modernizr
     optimization: {

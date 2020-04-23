@@ -85,6 +85,7 @@
     "sanitize.css": "^11.0.0",
     "slick-carousel": "^1.8.1",
     "viewport-units-buggyfill": "^0.6.2",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "webpack-s3-plugin": "^1.0.3"
   }
 }

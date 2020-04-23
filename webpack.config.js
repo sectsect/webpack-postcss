@@ -14,6 +14,7 @@ const notifier = require('node-notifier');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const spriteTemplate = require('./src/assets/js/_spriteTemplate');
+const S3Plugin = require('webpack-s3-plugin');
 
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');
@@ -95,6 +96,21 @@ const getJSPlugins = env => {
       },
     }),
   );
+  plugins.push(
+    new S3Plugin({
+      // include: /.*\.(css|js)/,
+      include: /.*\.(js)/,
+      s3Options: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      },
+      s3UploadOptions: {
+        Bucket: process.env.AWS_S3_BUCKET,
+      },
+      basePath: process.env.AWS_S3_BASEPATH,
+      directory: process.env.AWS_S3_DIRECTORY,
+    }),
+  );
 
   return plugins;
 };
@@ -155,6 +171,21 @@ const getCSSPlugins = env => {
     );
     plugins.push(new SizePlugin());
   }
+  plugins.push(
+    new S3Plugin({
+      // include: /.*\.(css|js)/,
+      include: /.*\.(css)/,
+      s3Options: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      },
+      s3UploadOptions: {
+        Bucket: process.env.AWS_S3_BUCKET,
+      },
+      basePath: process.env.AWS_S3_BASEPATH,
+      directory: process.env.AWS_S3_DIRECTORY,
+    }),
+  );
   plugins.push(
     new NotifierPlugin({
       onErrors: (severity, errors) => {

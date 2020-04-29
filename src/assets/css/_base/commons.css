@@ -94,7 +94,8 @@ Normalization for Third party
 /* lazy load (lazysizes) */
 [data-src],
 [data-srcset],
-[data-bgset] {
+[data-bgset],
+.imagecontainer-img {
   /* visibility: hidden; */
   opacity: 0;
   transition: opacity 0.5s ease-in-out 0.1s;
@@ -107,6 +108,35 @@ Normalization for Third party
 [data-sizes='auto'] {
   display: block;
   width: 100%;
+}
+
+.imagecontainer {
+  position: relative;
+  &::before {
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    content: '';
+  }
+}
+.imagecontainer-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.is-contain.imagecontainer .imagecontainer-img {
+  object-fit: contain;
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: 'object-fit: contain';
+}
+.is-cover.imagecontainer .imagecontainer-img {
+  object-fit: cover;
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: 'object-fit: cover';
 }
 
 /* slider (slick) */

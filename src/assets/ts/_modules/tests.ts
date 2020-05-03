@@ -1,7 +1,6 @@
 import dedent from 'dedent';
 import { detection as detect } from './detect';
 
-declare let jQuery: any;
 declare let R: any;
 
 export const tests = () => {
@@ -22,7 +21,7 @@ export const tests = () => {
   /*= =================================================
     jQuery Testing
   ================================================== */
-  jQuery('body').addClass('sektsekt');
+  $('body').addClass('sektsekt');
 
   /*= =================================================
     Example for Rambda.js

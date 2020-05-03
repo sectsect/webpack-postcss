@@ -1,16 +1,14 @@
 import 'dotdotdot-js';
 
-declare let jQuery: any;
-
 export const dotdotdot = () => {
-  if (jQuery('.truncation').length) {
-    jQuery('.truncation').dotdotdot({
+  if ($('.truncation').length) {
+    ($('.truncation') as any).dotdotdot({
       watch: 'window',
       height: 'watch',
       truncate: 'letter',
       callback(this: HTMLElement, isTruncated: boolean) {
         console.log(isTruncated);
-        jQuery(this).addClass('ready');
+        $(this).addClass('ready');
       },
     });
   }

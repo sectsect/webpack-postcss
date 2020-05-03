@@ -1,8 +1,6 @@
 import Glide from '@glidejs/glide';
 import { unveil } from './unveil-lazysizes';
 
-declare let jQuery: any;
-
 export const glide = () => {
   const runSlider = (el: HTMLElement) => {
     const glide = new Glide(el, {
@@ -23,14 +21,14 @@ export const glide = () => {
       // },
     });
     glide.on('mount.after', () => {
-      jQuery(el).addClass('ready');
+      $(el).addClass('ready');
     });
     glide.mount();
   };
 
   const asyncSlider = async (self: HTMLElement) => {
     try {
-      const result = await unveil(jQuery(self).find('figure img'));
+      const result = await unveil($(self).find('figure img'));
       if (result) {
         runSlider(self);
       }
@@ -39,7 +37,7 @@ export const glide = () => {
     }
   };
 
-  jQuery('.glide_wrap').each((_i: number, el: HTMLElement) => {
+  $('.glide_wrap').each((_i: number, el: HTMLElement) => {
     asyncSlider(el);
   });
 };

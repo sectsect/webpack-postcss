@@ -1,7 +1,5 @@
 import MoveTo from 'moveto';
 
-declare let jQuery: any;
-
 export const smoothScroll = () => {
   const runSmoothScroll = (id: string, ofs: number) => {
     const moveTo = new MoveTo({
@@ -12,22 +10,25 @@ export const smoothScroll = () => {
     moveTo.move(target);
   };
 
-  const hd: JQuery = jQuery('#header');
+  const hd: JQuery = $('#header');
   const oh = hd.outerHeight(true);
   const pos = hd.css('position');
 
-  jQuery("a[href^='#']").on('click', (e: { currentTarget: HTMLElement }): boolean => {
+  $("a[href^='#']").on('click', (e: { currentTarget: HTMLElement }): boolean => {
     const h = pos === 'fixed' && oh !== undefined ? oh * -1 : 0;
-    const ofs = jQuery(e.currentTarget).parent().hasClass('page-top') ? 0 : h;
-    const id: string = jQuery(e.currentTarget).attr('href').replace('#', '');
-    runSmoothScroll(id, ofs);
+    const ofs = $(e.currentTarget).parent().hasClass('page-top') ? 0 : h;
+    const href = $(e.currentTarget).attr('href');
+    if (href) {
+      const id: string = href.replace('#', '');
+      runSmoothScroll(id, ofs);
+    }
 
     return false;
   });
 
   // Run scroll on page load, if the URL has the query parameter of 'id'.
-  const url = jQuery(window.location).attr('href');
-  if (url.includes('?id=')) {
+  const url = $(window.location).attr('href');
+  if (url && url.includes('?id=')) {
     const spl: string[] = url.split('?id=');
     const id = spl[spl.length - 1];
     setTimeout(() => {

@@ -26,7 +26,6 @@ declare global {
     wp_data: WpData;
   }
 }
-declare let jQuery: any;
 
 interface WpData {
   site: string;
@@ -93,20 +92,20 @@ typescript();
 // For dynamic height on iOS safari
 // @ https://github.com/rodneyrehm/viewport-units-buggyfill/issues/70
 viewportUnitsBuggyfill.init();
-jQuery(window).on('resize', () => {
+$(window).on('resize', () => {
   viewportUnitsBuggyfill.refresh();
 });
 
-jQuery(window).on('load', () => {
+$(window).on('load', () => {
   smoothScroll();
   dotdotdot();
 });
 
-// jQuery(window).on('load orientationchange resize', () => {
+// $(window).on('load orientationchange resize', () => {
 
 // });
 
-// jQuery(() => {
+// $(() => {
 //   /*= =================================================
 //   Detect the devicePixelRatio
 //   ================================================== */
@@ -127,7 +126,7 @@ jQuery(window).on('load', () => {
 //     // navActiveClass: "js-nav-active",  // String: Class that is added to element when nav is active
 //     // jsClass: "js",                    // String: 'JS enabled' class which is added to element
 //     init() {
-//       jQuery('#nav').show();
+//       $('#nav').show();
 //     }, // Function: Init callback
 //     //  open  : function() {},              // Function: Open callback
 //     //  close  : function() {}                // Function: Close callback
@@ -136,9 +135,9 @@ jQuery(window).on('load', () => {
 //     fadein /fadeout button Pagetop
 //   ================================================== */
 //   if (!isMobile.phone) {
-//     const topBtn = jQuery('#pagetop');
-//     jQuery(window).scroll(function () {
-//       if (jQuery(this).scrollTop() > 100) {
+//     const topBtn = $('#pagetop');
+//     $(window).scroll(function () {
+//       if ($(this).scrollTop() > 100) {
 //         topBtn.addClass('show');
 //       } else {
 //         topBtn.removeClass('show');

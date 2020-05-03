@@ -1,12 +1,8 @@
-declare let jQuery: any;
-
 export const inlineSVG = () => {
-  jQuery
-    .ajax({
-      url: '/assets/images/svg/symbol.svg',
-    })
-    .done((r: HTMLElement) => {
-      const svg: JQuery = jQuery(r).find('svg').addClass('svg-icon-lib');
-      jQuery('body').prepend(svg);
-    });
+  $.ajax({
+    url: '/assets/images/svg/symbol.svg',
+  }).done((r: HTMLElement) => {
+    const svg: JQuery<SVGSVGElement> = $(r).find('svg').addClass('svg-icon-lib');
+    $('body').prepend(svg);
+  });
 };

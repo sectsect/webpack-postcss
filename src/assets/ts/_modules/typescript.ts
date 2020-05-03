@@ -1,5 +1,3 @@
-// declare let jQuery: any;
-
 export const typescript = () => {
   // Enums
   // @ https://typescript-jp.gitbook.io/deep-dive/type-system/enums

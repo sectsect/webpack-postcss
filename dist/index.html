@@ -511,6 +511,26 @@
 		</div>
 	</div>
 	<script type="module" src="./assets/js/commons.esm.js"></script>
+	<script>
+		(function () {
+			var check = document.createElement('script');
+			if (!('noModule' in check) && 'onbeforeload' in check) {
+				var support = false;
+				document.addEventListener('beforeload', function (e) {
+					if (e.target === check) {
+						support = true;
+					} else if (!e.target.hasAttribute('nomodule') || !support) {
+						return;
+					}
+					e.preventDefault();
+				}, true);
+				check.type = 'module';
+				check.src = '.';
+				document.head.appendChild(check);
+				check.remove();
+			}
+		}());
+	</script>
 	<script nomodule defer src="./assets/js/commons.umd.js"></script>
 	<script>
 	var wp_data = {"site":"1","post_id":"1","post_type":"post","slug":"","title":"","permalink":"https:\/\/example.com\/","paged":"1","taxonomy":"","term_name":"","term_slug":"","term_id":"","taxonomy_hierarchy":"","homeurl":"https:\/\/example.com\/","templateuri":"https:\/\/example.com\/wp-content\/themes\/example","stylesheet_dir_uri":"https:\/\/example.com\/wp-content\/themes\/example","stylesheet_dir":"\/wp-content\/themes\/example","contenturl":"https:\/\/example.com\/wp-content","ajax_url":"https:\/\/example.com\/wp-admin\/admin-ajax.php","is_home":"1","is_front_page":"1","is_page":"","is_page_root":"","is_static_page":"","is_single":"","is_singular":"","is_archive":"","is_post_type_archive":"","is_tax":"","is_date":"","is_search":"","is_tag":"","is_feed":"","theme_version":"1.0.0"};

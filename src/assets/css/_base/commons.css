@@ -165,6 +165,13 @@ Normalization for Third party
     opacity: 0;
     transition: all 0.3s linear 0.1s;
   }
+  & .slick-slide {
+    outline: none;
+  }
+  & img {
+    width: 100%;
+    height: auto;
+  }
   &.ready {
     &::before {
       visibility: hidden;
@@ -188,10 +195,6 @@ Normalization for Third party
       float: none;
       & > div {
         line-height: 0.8;
-      }
-      & img {
-        width: 100%;
-        height: auto;
       }
     }
   }

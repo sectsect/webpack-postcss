@@ -65,6 +65,7 @@
     "@babel/polyfill": "^7.8.7",
     "@babel/runtime": "^7.9.2",
     "@babel/runtime-corejs3": "^7.9.2",
+    "@sect/100vh": "^1.2.0",
     "body-scroll-lock": "^3.0.2",
     "core-js": "^3.6.5",
     "dedent": "^0.7.0",
@@ -84,7 +85,6 @@
     "regenerator-runtime": "^0.13.5",
     "sanitize.css": "^11.0.0",
     "slick-carousel": "^1.8.1",
-    "viewport-units-buggyfill": "^0.6.2",
     "webfontloader": "^1.6.28"
   }
 }

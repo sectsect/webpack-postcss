@@ -22,11 +22,11 @@ const buildPath = path.join(__dirname, 'dist');
 // console.log(process.env.AWS_ACCESS_KEY_ID);
 
 // For Detection Environment  @ https://webpack.js.org/api/cli/#environment-options
-const isProd = env => env && env.production;
-const isDev = env => env && env.development;
+const isProd = (env) => env && env.production;
+const isDev = (env) => env && env.development;
 
 // http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
-const getJSPlugins = env => {
+const getJSPlugins = (env) => {
   const plugins = [];
 
   plugins.push(
@@ -99,7 +99,7 @@ const getJSPlugins = env => {
   return plugins;
 };
 
-const getCSSPlugins = env => {
+const getCSSPlugins = (env) => {
   const plugins = [];
 
   plugins.push(
@@ -175,7 +175,7 @@ const getCSSPlugins = env => {
   return plugins;
 };
 
-module.exports = env => [
+module.exports = (env) => [
   {
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
     output: {
@@ -194,7 +194,7 @@ module.exports = env => [
               loader: 'babel-loader',
               options: {
                 cacheDirectory: true,
-              }
+              },
             },
             {
               loader: 'eslint-loader',
@@ -224,10 +224,9 @@ module.exports = env => [
     // Modernizr
     resolve: {
       modules: ['node_modules'],
-      mainFields: ['browser', 'main', 'module'],  // Support for 'body-scroll-lock' on IE11 @ https://github.com/willmcpo/body-scroll-lock/issues/50
-      // alias: {
-      //   modernizr$: path.resolve(__dirname, '.modernizrrc'),
-      // },
+      alias: {
+        modernizr$: path.resolve(__dirname, '.modernizrrc'),
+      },
     },
     // Modernizr
     optimization: {

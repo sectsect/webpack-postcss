@@ -2,7 +2,7 @@ import 'slick-carousel';
 import { unveil } from './unveil-lazysizes';
 
 export const slider = () => {
-  const runSlider = (parentid) => {
+  const runSlider = parentid => {
     jQuery(`${parentid} .slider-for`).on('init', function (event, slick) {
       jQuery(this).closest('.slider_wrap').addClass('ready');
       // unveil(jQuery(this).find('.slick-slide img'));
@@ -63,7 +63,7 @@ export const slider = () => {
 
     // Restart autoplay (Slick Slider autoplay stops when touched on mobile/tablet)
     // @ https://stackoverflow.com/questions/48402481/slick-slider-autoplay-stops-when-touched-on-mobile-tablet
-    jQuery(`${parentid} .slider`).on('touchstart', (e) => {
+    jQuery(`${parentid} .slider`).on('touchstart', e => {
       jQuery(e.currentTarget).slick('slickPlay');
     });
 

@@ -228,10 +228,10 @@ const jsConfig = (mode, env) => {
     // Modernizr
     resolve: {
       modules: ['node_modules'],
-      mainFields: [
-        // Support for 'body-scroll-lock' on IE11 @ https://github.com/willmcpo/body-scroll-lock/issues/50
-        ...(mode === 'modern' ? ['browser', 'module', 'main'] : ['browser', 'main', 'module']),
-      ],
+      // mainFields: [
+      //   // Support for 'body-scroll-lock' on IE11 @ https://github.com/willmcpo/body-scroll-lock/issues/50
+      //   ...(mode === 'modern' ? ['browser', 'module', 'main'] : ['browser', 'main', 'module']),
+      // ],
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),
       },

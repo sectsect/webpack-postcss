@@ -1,0 +1,14 @@
+.home {
+  & article {
+    margin-top: 10px;
+  }
+}
+
+@media (--viewport-medium) {
+  .home {
+    & article {
+      margin-top: 10px;
+    }
+  }
+}
+

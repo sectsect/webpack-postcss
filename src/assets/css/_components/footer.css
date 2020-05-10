@@ -1,0 +1,32 @@
+.global-footer {
+  padding: 25px 0;
+}
+.global-footer__logo {
+  width: 82px;
+  margin: 0 auto;
+  margin-top: 26px;
+  & img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+.global-footer__copy {
+  margin-top: 30px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 9px;
+  color: #4b4b4b;
+}
+
+@media (--viewport-medium) {
+  .global-footer {
+    padding: 55px 0 65px;
+  }
+  .global-footer__logo {
+    display: none;
+  }
+  .global-footer__copy {
+    margin-top: 0;
+    font-size: 10px;
+  }
+}

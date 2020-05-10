@@ -10,7 +10,6 @@
 - [ESLint](https://eslint.org/) w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 - [stylelint](https://stylelint.io/)
 - [Prettier](https://prettier.io/)
-- CircleCI 2.0
 
 ## Branches
 
@@ -21,7 +20,7 @@
 | [postcss-similar-to-sass](https://github.com/sectsect/webpack-postcss/tree/postcss-similar-to-sass) | PostCSS, but have features similar to SASS (Nesting, Conditional Statement, `extend`, `mixin`, `for`) |
 | [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ SASS<br>\- PostCSS |
 | [TypeScript](https://github.com/sectsect/webpack-postcss/tree/feature/typescript) | \+ TypeScript<br>\- JavaScript |
-| [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | \+ Vue.js<br>(Default: jQuery only) |
+| [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | Partially use Vue.js<br>\+ Vue.js<br>(Default: jQuery only) |
 | [webpack-dev-server](https://github.com/sectsect/webpack-postcss/tree/webpack-dev-server) | \+ webpack-dev-server |
 
 ## :beer: Setup

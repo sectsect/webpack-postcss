@@ -104,7 +104,7 @@ export const tests = () => {
   ================================================== */
   // async / await
   const resolveAfter2Seconds = (): Promise<string> =>
-    new Promise<string>((resolve) => {
+    new Promise<string>(resolve => {
       setTimeout(() => {
         resolve('resolved');
       }, 2000);
@@ -145,7 +145,7 @@ export const tests = () => {
 
   // async / await
   const sampleResolve = (value: number): Promise<number> =>
-    new Promise<number>((resolve) => {
+    new Promise<number>(resolve => {
       setTimeout(() => {
         resolve(value);
       }, 1000);

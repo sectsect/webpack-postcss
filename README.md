@@ -16,7 +16,7 @@
 | Branch | Description |
 | ------ | ----------- |
 | [master](https://github.com/sectsect/webpack-postcss) | PostCSS that compliant tomorrow’s CSS syntax as much as possible w/ [postcss-preset-env](http://preset-env.cssdb.org/) |
-| [module](https://github.com/sectsect/webpack-postcss/tree/module) | ES Modules `<script type="module">`<br>* Support to split serving Modern and Legacy Bundle<br>* In the next version this branch will be merged into the `master` branch. |
+| [module](https://github.com/sectsect/webpack-postcss/tree/module) | ES Modules `<script type="module">`<br>* Support for Differential Serving of Modern and Legacy bundle.<br>* In the next version this branch will be merged into the `master` branch. |
 | [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ SASS<br>\- PostCSS |
 | [typescript](https://github.com/sectsect/webpack-postcss/tree/typescript) | \+ TypeScript<br>\- JavaScript |
 | [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | Partially use Vue.js<br>\+ Vue.js<br>(Default: jQuery only) |

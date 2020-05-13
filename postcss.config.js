@@ -10,6 +10,14 @@ const postcssPresetEnv = require('postcss-preset-env')({
   }
 });
 const postcssSortMediaQueries = require('postcss-sort-media-queries');
+const pxtoviewport = require('postcss-px-to-viewport')({
+  viewportWidth: 414,
+  landscape: true,
+  landscapeWidth: 896,
+  propList: ['--fs-phone*', 'font-size'],
+  replace: true,
+  // selectorBlackList: ['/[i]/'],
+});
 const pxtorem = require('postcss-pxtorem')({
   replace: false,
 });
@@ -26,6 +34,7 @@ module.exports = {
     postcssImport,
     postcssPresetEnv,
     postcssSortMediaQueries,
+    pxtoviewport,
     pxtorem,
     postcssCalc,
     postcssClearfix,

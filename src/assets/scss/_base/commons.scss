@@ -1,0 +1,219 @@
+/* ==================================================
+Reset
+================================================== */
+
+/* Remove margin, padding of all elements and set background-no-repeat as default */
+* {
+  padding: 0;
+  margin: 0;
+}
+picture,
+source {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+
+/* ==================================================
+common
+================================================== */
+a,
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='image'] {
+  color: $linkcolor;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: $transition;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $linkcolor;
+  }
+  &:hover {
+    @include opacity(0.8);
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+}
+
+/* spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pc {
+  display: none;
+}
+
+/* ==================================================
+Normalization for Third party
+================================================== */
+
+/* text truncation (dotdotdot) */
+.truncation {
+  visibility: hidden;
+  transition: all 0.6s linear;
+  // transform: translate3d(0, -10px, 0);
+  @include opacity(0);
+  &.ready {
+    // transform: translate3d(0, 0, 0);
+    @include opacity(1);
+
+    visibility: visible;
+  }
+}
+
+/* Web font		@ https://github.com/typekit/webfontloader#events */
+.wf {
+  transition: all 0.4s linear;
+  @include opacity(0);
+}
+.wf-active,
+.wf-inactive {
+  .wf {
+    @include opacity(1);
+  }
+}
+
+/* lazy load (lazysizes) */
+[data-src],
+[data-srcset],
+[data-bgset] {
+  transition: opacity 0.5s ease-in-out 0.1s;
+  // visibility: hidden;
+  @include opacity(0);
+  &.lazyloaded,
+  &.loaded {
+    // visibility: visible;
+    @include opacity(1);
+  }
+}
+[data-sizes='auto'] {
+  display: block;
+  width: 100%;
+}
+
+.imagecontainer {
+  position: relative;
+  &::before {
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    content: '';
+  }
+}
+.imagecontainer-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.is-contain.imagecontainer .imagecontainer-img {
+  object-fit: contain;
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: 'object-fit: contain';
+}
+.is-cover.imagecontainer .imagecontainer-img {
+  object-fit: cover;
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: 'object-fit: cover';
+}
+
+/* slider (slick) */
+.slider_wrap {
+  position: relative;
+  @include spinner(absolute, 16px, 2px, #aaa, ready, visible);
+  .slider {
+    visibility: hidden;
+    @include opacity(0);
+  }
+  &.ready {
+    &::before {
+      visibility: hidden;
+      @include opacity(0);
+    }
+    .slider {
+      visibility: visible;
+      @include opacity(1);
+    }
+  }
+  // [data-src], [data-srcset], [data-bgset] {
+  //   transition: opacity .8s ease-in-out .3s;
+  // }
+  .slick-track {
+    display: flex;
+    align-items: center;
+    .slick-slide {
+      float: none;
+      > div {
+        line-height: 0.8;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+.slick-dots {
+  li {
+    width: 21px;
+    height: 21px;
+    margin: 0 2px;
+    vertical-align: top;
+    button {
+      width: 21px;
+      height: 21px;
+      padding: 0;
+      &::before {
+        top: 4px;
+        left: 4px;
+        box-sizing: border-box;
+        width: 13px;
+        height: 13px;
+        line-height: 13px;
+        content: '';
+        border: 1px solid #000;
+        border-radius: 50%;
+        @include opacity(1);
+      }
+    }
+    &.slick-active {
+      button {
+        &::before {
+          background: #000;
+        }
+      }
+    }
+  }
+}
+
+@media (--viewport-medium) {
+  .pc {
+    display: block;
+  }
+  .sp {
+    display: none;
+  }
+}

@@ -1,0 +1,14 @@
+.home {
+  article {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (min-width: $breakPoint) {
+  .home {
+    article {
+      margin-top: 10px;
+    }
+  }
+}
+

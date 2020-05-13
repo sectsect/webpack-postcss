@@ -1,13 +1,28 @@
 @charset "UTF-8";
 
-/* @import "settings","mixin","sanitize","form","sprite","icon-font","svg-icon","responsive-nav","wp-core","jquery.fancybox"; */
-@import 'settings', 'mixin', '../../../node_modules/sanitize.css/sanitize.css', 'slick', 'slick-theme', 'form', 'svg-icon',
-  'responsive-nav', 'wp-core', 'modal';
+@import '_base/settings';
+@import '_base/mixin';
+@import '../../../node_modules/sanitize.css/sanitize';
 
-@import 'phone';
-@media only screen and (min-width: $breakPoint) {
-  @import 'desktop';
-}
+/* @import '../../../node_modules/sanitize.css/typography'; */
+
+/* @import "../../../node_modules/sanitize.css/forms"; */
+
+@import '_base/formhack';
+@import '_base/sprite';
+@import '_base/modal';
+@import '_base/svg-icon';
+@import '_base/wp-core';
+@import '_libs/slick';
+@import '_libs/slick-theme';
+@import '_base/commons';
+@import '_base/structure';
+@import '_base/modules';
+@import '_components/header';
+@import '_components/footer';
+
+@import '_pages/home';
+@import '_pages/page-id-3';
 
 /*
 10px → font-size:77%;

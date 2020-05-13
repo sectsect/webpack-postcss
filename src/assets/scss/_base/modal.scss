@@ -23,7 +23,8 @@
 .modal__container {
   box-sizing: border-box;
   max-width: 500px;
-  max-height: 100vh;
+  /* max-height: 100vh; */
+  max-height: var(--vh);
   padding: 30px;
   overflow-y: auto;
   background-color: #fff;

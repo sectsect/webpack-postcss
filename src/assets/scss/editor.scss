@@ -1,7 +1,6 @@
 @charset "UTF-8";
-@import 'settings', 'mixin';
 
-/* ==================================================
-  .wp-editor
-================================================== */
+@import '_base/settings';
+@import '_base/mixin';
+
 @include wp-editor(20px);

@@ -8,7 +8,7 @@ import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 // import 'lazysizes/plugins/respimg/ls.respimg';
 import 'lazysizes';
 import 'jquery.easing';
-import viewportUnitsBuggyfill from 'viewport-units-buggyfill';
+import vh from '@sect/100vh';
 import { detection as detect } from './detect';
 import { WebFontLoader } from './webfont-loader';
 import { inlineSVG } from './inline-svg';
@@ -33,12 +33,7 @@ menu();
 modal();
 tests();
 
-// For dynamic height on iOS safari
-// @ https://github.com/rodneyrehm/viewport-units-buggyfill/issues/70
-viewportUnitsBuggyfill.init();
-jQuery(window).on('resize', () => {
-  viewportUnitsBuggyfill.refresh();
-});
+vh.init();
 
 jQuery(window).on('load', () => {
   smoothScroll();

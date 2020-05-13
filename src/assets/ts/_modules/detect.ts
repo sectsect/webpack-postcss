@@ -43,8 +43,8 @@ interface Htmlcss {
 }
 
 export const detection = (): Detection => {
-  const bn: string = browser?.name || '';
-  const bv: number = parseInt(browser?.version || '0', 10);
+  const bn: string = browser?.name ?? '';
+  const bv: number = parseInt(browser?.version ?? '0', 10);
   const detect: Detection = {
     device: {
       desktop: !isMobile().any,

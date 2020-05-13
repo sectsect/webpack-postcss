@@ -28,7 +28,7 @@ export const smoothScroll = () => {
 
   // Run scroll on page load, if the URL has the query parameter of 'id'.
   const url = $(window.location).attr('href');
-  if (url && url.includes('?id=')) {
+  if (url?.includes('?id=')) {
     const spl: string[] = url.split('?id=');
     const id = spl[spl.length - 1];
     setTimeout(() => {

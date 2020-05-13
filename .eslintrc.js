@@ -42,6 +42,8 @@ module.exports = {
     "no-unused-vars": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/prefer-nullish-coalescing": "error",
+    "@typescript-eslint/prefer-optional-chain": "error",
     "prettier/prettier": "error"
   },
   "settings": {

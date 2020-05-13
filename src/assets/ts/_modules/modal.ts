@@ -23,12 +23,12 @@ export const modal = () => {
     awaitCloseAnimation: true, // [7]
     // debugMode: true, // [8]
     onShow: modal => {
-      if (modal && modal.id) {
+      if (modal?.id) {
         toggleBodyScrol(modal.id, 'show');
       }
     },
     onClose: modal => {
-      if (modal && modal.id) {
+      if (modal?.id) {
         toggleBodyScrol(modal.id, 'close');
       }
     },

@@ -13,7 +13,7 @@ const postcssSortMediaQueries = require('postcss-sort-media-queries');
 const postcssCombineSelectors = require('postcss-combine-duplicated-selectors');
 const pxtoviewport = require('postcss-px-to-viewport')({
   viewportWidth: 414,
-  landscape: true,
+  landscape: false,
   landscapeWidth: 896,
   propList: ['--fs-phone*', 'font-size'],
   replace: true,

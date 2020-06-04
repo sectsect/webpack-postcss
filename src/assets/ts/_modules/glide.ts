@@ -1,7 +1,7 @@
 import Glide from '@glidejs/glide';
 import { unveil } from './unveil-lazysizes';
 
-export const glide = () => {
+export const glide = (): void => {
   const runSlider = (el: HTMLElement) => {
     const glide = new Glide(el, {
       type: 'carousel',

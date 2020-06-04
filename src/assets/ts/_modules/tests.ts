@@ -3,7 +3,7 @@ import { detection as detect } from './detect';
 
 declare let R: any;
 
-export const tests = () => {
+export const tests = (): void => {
   /*= =================================================
     Detect Testing
   ================================================== */

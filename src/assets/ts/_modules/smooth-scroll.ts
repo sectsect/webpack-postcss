@@ -1,6 +1,6 @@
 import MoveTo from 'moveto';
 
-export const smoothScroll = () => {
+export const smoothScroll = (): void => {
   const runSmoothScroll = (id: string, ofs: number) => {
     const moveTo = new MoveTo({
       duration: 600,

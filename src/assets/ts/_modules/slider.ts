@@ -1,7 +1,7 @@
 import 'slick-carousel';
 import { unveil } from './unveil-lazysizes';
 
-export const slider = () => {
+export const slider = (): void => {
   const runSlider = (parentid: string) => {
     const $slickElement = $(`${parentid} .slider-for`);
     $slickElement.on('init', function (

@@ -3,7 +3,7 @@ import 'core-js/modules/es.array.from';
 import MicroModal from 'micromodal';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-export const modal = () => {
+export const modal = (): void => {
   const toggleBodyScrol = (id: string, action: 'show' | 'close') => {
     const el = document.querySelector(`#${id}`) as HTMLElement;
     if (action === 'show') {
@@ -23,12 +23,12 @@ export const modal = () => {
     awaitCloseAnimation: true, // [7]
     // debugMode: true, // [8]
     onShow: modal => {
-      if (modal && modal.id) {
+      if (modal?.id) {
         toggleBodyScrol(modal.id, 'show');
       }
     },
     onClose: modal => {
-      if (modal && modal.id) {
+      if (modal?.id) {
         toggleBodyScrol(modal.id, 'close');
       }
     },

@@ -41,7 +41,34 @@ module.exports = {
     "no-undef": 0,
     "no-unused-vars": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/interface-name-prefix": 0,
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        selector: "parameter",
+        format: ["camelCase"],
+        leadingUnderscore: "allow"
+      },
+      {
+        selector: "class",
+        format: ["PascalCase"]
+      },
+      {
+        selector: "interface",
+        format: ["PascalCase"],
+        // custom: {
+        //   regex: "^I[A-Z]",
+        //   match: false
+        // }
+      },
+      {
+        selector: "enum",
+        format: ["PascalCase"]
+      }
+    ],
     "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/prefer-nullish-coalescing": "error",
+    "@typescript-eslint/prefer-optional-chain": "error",
     "prettier/prettier": "error"
   },
   "settings": {

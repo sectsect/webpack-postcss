@@ -1,4 +1,4 @@
-export const typescript = () => {
+export const typescript = (): void => {
   // Enums
   // @ https://typescript-jp.gitbook.io/deep-dive/type-system/enums
   enum Role {

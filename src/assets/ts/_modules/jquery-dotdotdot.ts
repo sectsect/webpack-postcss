@@ -1,6 +1,6 @@
 import 'dotdotdot-js';
 
-export const dotdotdot = () => {
+export const dotdotdot = (): void => {
   if ($('.truncation').length) {
     ($('.truncation') as any).dotdotdot({
       watch: 'window',

@@ -1,4 +1,4 @@
-export const inlineSVG = () => {
+export const inlineSVG = (): void => {
   $.ajax({
     url: '/assets/images/svg/symbol.svg',
   }).done((r: HTMLElement) => {

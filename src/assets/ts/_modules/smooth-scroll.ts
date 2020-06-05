@@ -15,7 +15,7 @@ export const smoothScroll = (): void => {
   const pos = hd.css('position');
 
   $("a[href^='#']").on('click', (e: { currentTarget: HTMLElement }): boolean => {
-    const h = pos === 'fixed' && oh !== undefined ? oh * -1 : 0;
+    const h = pos === 'fixed' && oh !== undefined ? oh : 0;
     const ofs = $(e.currentTarget).parent().hasClass('page-top') ? 0 : h;
     const href = $(e.currentTarget).attr('href');
     if (href) {

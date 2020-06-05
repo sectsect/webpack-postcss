@@ -4,7 +4,8 @@
 :root {
   /* Font */
   --fh-font-family: var(--fontFamily);
-  --fh-font-size: var(--fontSize);
+  --fh-font-size-phone: var(--fs-phone);
+  --fh-font-size-desktop: var(--fs-desktop);
   --fh-font-color: var(--fontColor);
   --fh-font-color-disabled: #aaa; /* Add code by SECT */
 
@@ -63,7 +64,7 @@ fieldset {
   display: var(--fh-layout-display);
   margin: var(--fh-layout-margin);
   font-family: var(--fh-font-family);
-  font-size: var(--fh-font-size);
+  font-size: var(--fh-font-size-phone);
   color: var(--fh-font-color);
 
   /* text-align: var(--fh-layout-text-align); */
@@ -73,7 +74,7 @@ fieldset {
 
 datalist {
   font-family: var(--fh-font-family);
-  font-size: var(--fh-font-size);
+  font-size: var(--fh-font-size-phone);
 }
 
 label {
@@ -596,4 +597,20 @@ input[type='range'] {
 /* contact form 7 */
 .wpcf7-form-control-wrap {
   display: block;
+}
+
+@media (--viewport-medium) {
+  input,
+  textarea,
+  select,
+  option,
+  optgroup,
+  button,
+  legend,
+  fieldset {
+    font-size: var(--fh-font-size-desktop);
+  }
+  datalist {
+    font-size: var(--fh-font-size-desktop);
+  }
 }

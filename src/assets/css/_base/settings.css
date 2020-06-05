@@ -6,7 +6,8 @@
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
 :root {
-  --fontSize: 11px;
+  --fs-phone: 12px;
+  --fs-desktop: 14px;
   --fontColor: #000;
   --linkColor: var(--fontColor);
   --fontFamily: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ',

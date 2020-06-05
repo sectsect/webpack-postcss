@@ -36,7 +36,9 @@
     margin: var(--wpEditorMargin) 0;
     font-weight: bold;
     border-left: 5px solid var(--borderColor);
-    @media (--viewport-medium) {
+  }
+  @media (--viewport-medium) {
+    & blockquote {
       padding-left: 35px;
     }
   }

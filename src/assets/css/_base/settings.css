@@ -6,6 +6,7 @@
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
 :root {
+  --innerHeight: calc(var(--innerVh, 1vh) * 100); /* Fallbacks to 100vh */
   --fs-phone: 12px;
   --fs-desktop: 14px;
   --fontColor: #000;

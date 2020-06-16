@@ -8,7 +8,7 @@ import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 // import 'lazysizes/plugins/respimg/ls.respimg';
 import 'lazysizes';
 import 'jquery.easing';
-import vh from '@sect/100vh';
+import { innerVh } from 'inner-vh';
 // import { detection as detect } from './detect';
 import { WebFontLoader } from './webfont-loader';
 import { inlineSVG } from './inline-svg';
@@ -81,6 +81,7 @@ console.log(window.wp_data);
 WebFontLoader();
 inlineSVG();
 viewPort();
+innerVh();
 // touchHover(['.slider img']);
 menu();
 // modal();
@@ -88,8 +89,6 @@ tests();
 typescript();
 
 // console.log(window.detect);
-
-vh.init();
 
 $(window).on('load', () => {
   smoothScroll();

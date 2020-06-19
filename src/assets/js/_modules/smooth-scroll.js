@@ -11,13 +11,17 @@ export const smoothScroll = () => {
   };
 
   const hd = jQuery('#header');
+  const oh = hd.outerHeight(true);
   const pos = hd.css('position');
 
   jQuery("a[href^='#']").on('click', e => {
-    const h = pos === 'fixed' ? parseInt(hd.outerHeight(true) * -1, 10) : 0;
+    const h = pos === 'fixed' && oh !== undefined ? oh : 0;
     const ofs = jQuery(e.currentTarget).parent().hasClass('page-top') ? 0 : h;
-    const id = jQuery(e.currentTarget).attr('href').replace('#', '');
-    runSmoothScroll(id, ofs);
+    const href = jQuery(e.currentTarget).attr('href');
+    if (href) {
+      const id = href.replace('#', '');
+      runSmoothScroll(id, ofs);
+    }
 
     return false;
   });

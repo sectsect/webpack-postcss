@@ -8,7 +8,7 @@ import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 // import 'lazysizes/plugins/respimg/ls.respimg';
 import 'lazysizes';
 import 'jquery.easing';
-import vh from '@sect/100vh';
+import { innerVh } from 'inner-vh';
 import { detection as detect } from './detect';
 import { WebFontLoader } from './webfont-loader';
 import { inlineSVG } from './inline-svg';
@@ -28,12 +28,11 @@ window.detect = detect();
 WebFontLoader();
 inlineSVG();
 viewPort(detect());
+innerVh();
 touchHover(['.slider img']);
 menu();
 modal();
 tests();
-
-vh.init();
 
 jQuery(window).on('load', () => {
   smoothScroll();

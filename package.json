@@ -16,7 +16,7 @@
     "@babel/helpers": "^7.10.1",
     "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
-    "@babel/preset-react": "^7.9.4",
+    "@babel/preset-react": "^7.10.1",
     "@babel/preset-stage-3": "^7.8.3",
     "@sect/webpack-sweet-entry": "^2.2.0",
     "@spotify/prettier-config": "^7.0.0",

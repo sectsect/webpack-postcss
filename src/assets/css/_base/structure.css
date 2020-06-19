@@ -1,6 +1,6 @@
 body {
   font-family: var(--fontFamily);
-  font-size: var(--fontSize);
+  font-size: var(--fs-phone);
   line-height: var(--lineHeight);
   color: var(--fontColor);
   background: none;
@@ -9,6 +9,7 @@ body {
 
   /* -webkit-overflow-scrolling: touch; */
 }
+
 /* body, html {
 width: 100%;
 height: 100%;
@@ -43,6 +44,9 @@ ul {
 }
 
 @media (--viewport-medium) {
+  body {
+    font-size: var(--fs-desktop);
+  }
   .inner {
     width: var(--baseWidth);
     padding: 0;

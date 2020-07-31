@@ -7,8 +7,7 @@
 
 :root {
   --innerHeight: calc(var(--innerVh, 1vh) * 100); /* Fallbacks to 100vh */
-  --fs-phone: 12px;
-  --fs-desktop: 14px;
+  --fontSize: 12px;
   --fontColor: #000;
   --linkColor: var(--fontColor);
   --fontFamily: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ',
@@ -22,4 +21,10 @@
   --baseWidth: 1000px;
   --mobileHeaderH: 50px;
   --wpEditorMargin: 20px;
+}
+
+@media (--viewport-medium) {
+  :root {
+    --fontSize: 14px;
+  }
 }

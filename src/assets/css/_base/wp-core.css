@@ -1,6 +1,6 @@
 .wp-editor {
   font-family: var(--fontFamily);
-  font-size: var(--fs-phone);
+  font-size: var(--fontSize);
   line-height: var(--lineHeight);
   & h3,
   & h4,
@@ -72,11 +72,5 @@
     margin: 0;
     font-size: 11px;
     line-height: 17px;
-  }
-}
-
-@media (--viewport-medium) {
-  .wp-editor {
-    font-size: var(--fs-desktop);
   }
 }

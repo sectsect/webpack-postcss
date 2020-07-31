@@ -7,6 +7,9 @@ const browser = detect();
 export const detection = () => {
   const bn = browser.name;
   const bv = parseInt(browser.version, 10);
+  const ww = window.innerWidth;
+  const dpr = window.devicePixelRatio;
+  const w = dpr * ww;
   const detect = {
     device: {
       desktop: !isMobile().any,
@@ -22,6 +25,10 @@ export const detection = () => {
       androidphone: isMobile().android.phone,
       iOS: isMobile().apple.device,
       androidOS: isMobile().android.device,
+      screen: {
+        dpr,
+        w, // 'w' unit on 'srcset'
+      },
     },
     htmlcss: {
       cssgrid: Modernizr.cssgrid,

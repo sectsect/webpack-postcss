@@ -15,7 +15,7 @@ const pxtoviewport = require('postcss-px-to-viewport')({
   viewportWidth: 414,
   landscape: false,
   landscapeWidth: 896,
-  propList: ['--fs-phone*', 'font-size'],
+  propList: ['--fontSize', 'font-size'],
   replace: true,
   // selectorBlackList: ['/[i]/'],
 });

@@ -33,6 +33,7 @@ interface Device {
   androidphone: boolean;
   iOS: boolean;
   androidOS: boolean;
+  screen: Screen;
 }
 
 interface Htmlcss {
@@ -42,9 +43,17 @@ interface Htmlcss {
   objectfit: boolean;
 }
 
+interface Screen {
+  dpr: number;
+  w: number;
+}
+
 export const detection = (): Detection => {
   const bn: string = browser?.name ?? '';
   const bv: number = parseInt(browser?.version ?? '0', 10);
+  const ww = window.innerWidth;
+  const dpr = window.devicePixelRatio;
+  const w = dpr * ww;
   const detect: Detection = {
     device: {
       desktop: !isMobile().any,
@@ -60,6 +69,10 @@ export const detection = (): Detection => {
       androidphone: isMobile().android.phone,
       iOS: isMobile().apple.device,
       androidOS: isMobile().android.device,
+      screen: {
+        dpr,
+        w, // 'w' unit on 'srcset'
+      },
     },
     htmlcss: {
       cssgrid: Modernizr.cssgrid,

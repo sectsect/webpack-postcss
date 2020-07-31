@@ -1,6 +1,6 @@
 body {
   font-family: var(--fontFamily);
-  font-size: var(--fs-phone);
+  font-size: var(--fontSize);
   line-height: var(--lineHeight);
   color: var(--fontColor);
   background: none;
@@ -44,9 +44,6 @@ ul {
 }
 
 @media (--viewport-medium) {
-  body {
-    font-size: var(--fs-desktop);
-  }
   .inner {
     width: var(--baseWidth);
     padding: 0;

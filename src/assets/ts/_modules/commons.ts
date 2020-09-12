@@ -21,6 +21,7 @@ import { modal } from './modal';
 import { tests } from './tests';
 import { typescript } from './typescript';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 declare global {
   interface Window {
     wp_data: WpData;

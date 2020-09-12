@@ -3,7 +3,7 @@ import { unveil } from './unveil-lazysizes';
 
 export const glide = (): void => {
   const runSlider = (el: HTMLElement) => {
-    const glide = new Glide(el, {
+    const obj = {
       type: 'carousel',
       autoplay: 4000,
       animationTimingFunc: 'ease-in-out',
@@ -19,11 +19,12 @@ export const glide = (): void => {
       //   //   perView: 1,
       //   // },
       // },
-    });
-    glide.on('mount.after', () => {
+    };
+    const gl = new Glide(el, obj);
+    gl.on('mount.after', () => {
       $(el).addClass('ready');
     });
-    glide.mount();
+    gl.mount();
   };
 
   const asyncSlider = async (self: HTMLElement) => {

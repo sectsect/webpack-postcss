@@ -54,7 +54,7 @@ export const detection = (): Detection => {
   const ww = window.innerWidth;
   const dpr = window.devicePixelRatio;
   const w = dpr * ww;
-  const detect: Detection = {
+  const dt: Detection = {
     device: {
       desktop: !isMobile().any,
       mobile: isMobile().any,
@@ -87,5 +87,5 @@ export const detection = (): Detection => {
       xl: 2048,
     },
   };
-  return detect;
+  return dt;
 };

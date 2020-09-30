@@ -10,11 +10,19 @@ const postcssPresetEnv = require('postcss-preset-env')({
   }
 });
 const postcssSortMediaQueries = require('postcss-sort-media-queries');
+const postcssCombineSelectors = require('postcss-combine-duplicated-selectors');
+const pxtoviewport = require('postcss-px-to-viewport')({
+  viewportWidth: 414,
+  landscape: false,
+  landscapeWidth: 896,
+  propList: ['--fontSize', 'font-size'],
+  replace: true,
+  // selectorBlackList: ['/[i]/'],
+});
 const pxtorem = require('postcss-pxtorem')({
   replace: false,
 });
 const postcssCalc = require('postcss-calc');
-const postcssClearfix = require('postcss-clearfix');
 const postcssHexrgba = require('postcss-hexrgba');
 const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 const postcssReporter = require('postcss-reporter')({
@@ -26,9 +34,10 @@ module.exports = {
     postcssImport,
     postcssPresetEnv,
     postcssSortMediaQueries,
+    postcssCombineSelectors,
+    pxtoviewport,
     pxtorem,
     postcssCalc,
-    postcssClearfix,
     postcssHexrgba,
     postcssFlexbugsFixes,
     postcssReporter,

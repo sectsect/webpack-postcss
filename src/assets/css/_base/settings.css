@@ -6,7 +6,8 @@
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
 :root {
-  --fontSize: 11px;
+  --innerHeight: calc(var(--innerVh, 1vh) * 100); /* Fallbacks to 100vh */
+  --fontSize: 12px;
   --fontColor: #000;
   --linkColor: var(--fontColor);
   --fontFamily: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ',
@@ -20,4 +21,10 @@
   --baseWidth: 1000px;
   --mobileHeaderH: 50px;
   --wpEditorMargin: 20px;
+}
+
+@media (--viewport-medium) {
+  :root {
+    --fontSize: 14px;
+  }
 }

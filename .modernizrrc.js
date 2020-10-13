@@ -1,0 +1,12 @@
+module.exports = {
+  "minify": true,
+  "options": [
+    "setClasses"
+  ],
+  "feature-detects": [
+    "css/cssgrid",
+    "css/objectfit",
+    "css/flexbox",
+    "css/flexboxtweener"
+  ]
+};

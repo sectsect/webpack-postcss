@@ -6,6 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+const modernizr = require('modernizr');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const { WebpackSweetEntry } = require('@sect/webpack-sweet-entry');
 const SizePlugin = require('size-plugin');
@@ -213,6 +214,16 @@ module.exports = env => [
             },
           ],
         },
+        {
+          test: /\.modernizrrc\.js$/,
+          // Uncomment this when you use `JSON` format for configuration
+          // type: 'javascript/auto'
+          use: [
+            {
+              loader: 'webpack-modernizr-loader',
+            }
+          ],
+        }
       ],
     },
     externals: {
@@ -221,7 +232,9 @@ module.exports = env => [
     // Modernizr
     resolve: {
       modules: ['node_modules'],
-      alias: {},
+      alias: {
+        modernizr$: path.resolve(__dirname, '.modernizrrc.js'),
+      },
     },
     // Modernizr
     optimization: {

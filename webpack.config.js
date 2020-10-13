@@ -22,8 +22,15 @@ const buildPath = path.join(__dirname, 'dist');
 // console.log(process.env.AWS_ACCESS_KEY_ID);
 
 // For Detection Environment  @ https://webpack.js.org/api/cli/#environment-options
-const isProd = env => env && env.production;
-const isDev = env => env && env.development;
+const envObj = env => {
+  const envs = Object.keys(env).map((key) => {
+    const newKey = key.replace('name=', '');
+    return { [newKey] : env[key] };
+  });
+  return envs[0];
+}
+const isProd = env => envObj(env) && envObj(env).production;
+const isDev = env => envObj(env) && envObj(env).development;
 
 // http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
 const getJSPlugins = env => {

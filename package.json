@@ -7,8 +7,8 @@
     "start": "",
     "lint": "eslint --ext .js,.vue src/assets/js",
     "lint:css": "stylelint src/**/*.css --fix",
-    "dev": "webpack --env.development --mode development --watch --progress",
-    "build": "webpack --env.production --mode production"
+    "dev": "webpack --env name='development' --mode development --watch --progress",
+    "build": "webpack --env name='production' --mode production"
   },
   "browserslist": "> 1%, last 2 versions, Firefox ESR, IE >= 11, not Android 4.4.3-4.4.4, not dead",
   "devDependencies": {
@@ -59,7 +59,7 @@
     "terser-webpack-plugin": "^4.2.3",
     "webpack": "^5.0.0",
     "webpack-bundle-analyzer": "^3.9.0",
-    "webpack-cli": "^3.3.12",
+    "webpack-cli": "^4.0.0",
     "webpack-fix-style-only-entries": "0.5.2",
     "webpack-spritesmith": "^1.1.0"
   },

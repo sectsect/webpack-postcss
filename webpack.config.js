@@ -256,7 +256,7 @@ module.exports = env => [
       ],
     },
     plugins: getJSPlugins(env),
-    devtool: isProd(env) ? false : '#inline-source-map',
+    devtool: isProd(env) ? false : 'inline-cheap-source-map',
     performance: {
       hints: isProd(env) ? 'warning' : false,
       maxEntrypointSize: 300000, // The default value is 250000 (bytes)
@@ -290,7 +290,7 @@ module.exports = env => [
       modules: ['node_modules'],
     },
     plugins: getCSSPlugins(env),
-    devtool: isProd(env) ? false : '#inline-source-map',
+    devtool: isProd(env) ? false : 'inline-cheap-source-map',
     performance: {
       hints: isProd(env) ? 'warning' : false,
       maxEntrypointSize: 300000, // The default value is 250000 (bytes)

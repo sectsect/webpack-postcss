@@ -55,7 +55,7 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-webpack-plugin": "^2.1.0",
-    "svg-spritemap-webpack-plugin": "^3.5.10",
+    "svg-spritemap-webpack-plugin": "git+https://github.com/cascornelissen/svg-spritemap-webpack-plugin.git#webpack5",
     "terser-webpack-plugin": "^4.2.3",
     "webpack": "^5.0.0",
     "webpack-bundle-analyzer": "^3.9.0",

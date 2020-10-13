@@ -213,16 +213,6 @@ module.exports = env => [
             },
           ],
         },
-        // // Modernizr
-        // {
-        //   test: /\.modernizrrc.js$/,
-        //   use: ['modernizr-loader'],
-        // },
-        // {
-        //   test: /\.modernizrrc(\.json)?$/,
-        //   use: ['modernizr-loader', 'json-loader'],
-        // },
-        // // Modernizr
       ],
     },
     externals: {
@@ -231,9 +221,7 @@ module.exports = env => [
     // Modernizr
     resolve: {
       modules: ['node_modules'],
-      alias: {
-        modernizr$: path.resolve(__dirname, '.modernizrrc'),
-      },
+      alias: {},
     },
     // Modernizr
     optimization: {

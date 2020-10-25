@@ -55,3 +55,13 @@ $ rm -rf node_modules/.cache/webpack
 # Remove all
 $ rm -rf node_modules/.cache
 ```
+
+## Current Known Issues
+
+@ https://github.com/fqborges/webpack-fix-style-only-entries/issues/31
+```
+(node:35675) [DEP_WEBPACK_CHUNK_HAS_ENTRY_MODULE] DeprecationWarning: Chunk.hasEntryModule: Use new ChunkGraph API
+(node:35675) [DEP_WEBPACK_CHUNK_ENTRY_MODULE] DeprecationWarning: Chunk.entryModule: Use new ChunkGraph API
+(node:35675) [DEP_WEBPACK_MODULE_INDEX] DeprecationWarning: Module.index: Use new ModuleGraph API
+(node:35675) [DEP_WEBPACK_DEPRECATION_ARRAY_TO_SET] DeprecationWarning: chunk.files was changed from Array to Set (using Array method 'filter' is deprecated)
+```

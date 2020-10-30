@@ -66,7 +66,6 @@
     "@babel/runtime-corejs3": "^7.12.1",
     "body-scroll-lock": "^3.1.5",
     "core-js": "^3.6.5",
-    "dedent": "^0.7.0",
     "detect-browser": "^5.2.0",
     "dotdotdot-js": "^4.1.0",
     "dotenv": "^8.2.0",

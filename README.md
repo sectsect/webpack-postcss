@@ -56,7 +56,7 @@ $ rm -rf node_modules/.cache/webpack
 $ rm -rf node_modules/.cache
 ```
 
-## Current Known Issues
+## Known Issues
 
 @ https://github.com/fqborges/webpack-fix-style-only-entries/issues/31
 ```

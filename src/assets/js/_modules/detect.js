@@ -1,6 +1,6 @@
 import isMobile from 'ismobilejs';
 import { detect } from 'detect-browser';
-// import Modernizr from 'modernizr';
+import Modernizr from 'modernizr';
 
 const browser = detect();
 
@@ -30,12 +30,12 @@ export const detection = () => {
         w, // 'w' unit on 'srcset'
       },
     },
-    // htmlcss: {
-    //   cssgrid: Modernizr.cssgrid,
-    //   flexbox: Modernizr.flexbox,
-    //   flexboxtweener: Modernizr.flexboxtweener,
-    //   objectfit: Modernizr.objectfit,
-    // },
+    htmlcss: {
+      cssgrid: Modernizr.cssgrid,
+      flexbox: Modernizr.flexbox,
+      flexboxtweener: Modernizr.flexboxtweener,
+      objectfit: Modernizr.objectfit,
+    },
     breakpoints: {
       sm: 768,
       md: 992,

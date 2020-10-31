@@ -214,16 +214,16 @@ module.exports = env => [
             },
           ],
         },
-        // // Modernizr
-        // {
-        //   test: /\.modernizrrc.js$/,
-        //   use: ['modernizr-loader'],
-        // },
-        // {
-        //   test: /\.modernizrrc(\.json)?$/,
-        //   use: ['modernizr-loader', 'json-loader'],
-        // },
-        // // Modernizr
+        // Modernizr
+        {
+          test: /\.modernizrrc.js$/,
+          use: ['@sect/modernizr-loader'],
+        },
+        {
+          test: /\.modernizrrc(\.json)?$/,
+          use: ['@sect/modernizr-loader', 'json-loader'],
+        },
+        // Modernizr
       ],
     },
     externals: {

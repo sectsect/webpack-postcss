@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
 const dotenv = require('dotenv').config();
@@ -36,6 +37,14 @@ const getJSPlugins = (env, mode) => {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       R: 'rambda',
+    }),
+  );
+  plugins.push(
+    new ESLintPlugin({
+      fix: true,
+      failOnError: true,
+      files: ['./src/**/*.ts'],
+      // lintDirtyModulesOnly: true,
     }),
   );
   // plugins.push(new SvgStore.Options({
@@ -197,6 +206,13 @@ const jsConfig = (mode, env) => {
       path: path.resolve(buildPath, 'assets/js'),
       filename: `[name]${mode === 'modern' ? '.esm.js' : '.umd.js'}`,
     },
+    // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
+    cache: {
+      type: 'filesystem',
+      buildDependencies: {
+        config: [__filename],
+      },
+    },
     module: {
       rules: [
         {
@@ -215,24 +231,16 @@ const jsConfig = (mode, env) => {
                 cacheDirectory: true,
               },
             },
-            {
-              loader: 'eslint-loader',
-              options: {
-                fix: true,
-                failOnError: true,
-                cache: false,
-              },
-            },
           ],
         },
         // Modernizr
         {
           test: /\.modernizrrc.js$/,
-          use: ['modernizr-loader'],
+          use: ['@sect/modernizr-loader'],
         },
         {
           test: /\.modernizrrc(\.json)?$/,
-          use: ['modernizr-loader', 'json-loader'],
+          use: ['@sect/modernizr-loader', 'json-loader'],
         },
         // Modernizr
       ],
@@ -265,7 +273,6 @@ const jsConfig = (mode, env) => {
       },
       minimizer: [
         new TerserPlugin({
-          cache: true,
           parallel: true,
           terserOptions: {
             compress: {
@@ -280,7 +287,7 @@ const jsConfig = (mode, env) => {
       ],
     },
     plugins: getJSPlugins(env, mode),
-    devtool: isProd(env) ? false : '#inline-source-map',
+    devtool: isProd(env) ? false : 'inline-cheap-source-map',
     performance: {
       hints: isProd(env) ? 'warning' : false,
       maxEntrypointSize: 300000, // The default value is 250000 (bytes)
@@ -294,6 +301,13 @@ const cssConfig = (env) => {
     output: {
       path: path.resolve(buildPath, 'assets/css'),
       // filename: '[name].css',
+    },
+    // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
+    cache: {
+      type: 'filesystem',
+      buildDependencies: {
+        config: [__filename],
+      },
     },
     module: {
       rules: [
@@ -317,7 +331,7 @@ const cssConfig = (env) => {
       modules: ['node_modules'],
     },
     plugins: getCSSPlugins(env),
-    devtool: isProd(env) ? false : '#inline-source-map',
+    devtool: isProd(env) ? false : 'inline-cheap-source-map',
     performance: {
       hints: isProd(env) ? 'warning' : false,
       maxEntrypointSize: 300000, // The default value is 250000 (bytes)

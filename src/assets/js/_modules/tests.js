@@ -1,19 +1,8 @@
-import dedent from 'dedent';
-
 export const tests = () => {
   /*= =================================================
     Detect Testing
   ================================================== */
   console.log(detect);
-
-  /*= =================================================
-    Dedent Example
-  ================================================== */
-  const sectsect = dedent`A string that gets so long you need to break it over
-                       multiple lines. Luckily dedent is here to keep it
-                       readable without lots of spaces ending up in the string
-                       itself.`;
-  console.log(sectsect);
 
   /*= =================================================
     jQuery Testing

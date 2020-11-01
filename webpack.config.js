@@ -206,14 +206,12 @@ module.exports = env => [
       filename: '[name].js',
     },
     // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
-    // cache: {
-    //   // Run 'rm -rf node_modules/.cache/webpack' to remove cache.
-    //   type: 'filesystem',
-    //   buildDependencies: {
-    //     config: [__filename],
-    //   },
-    //   name: `${Object.keys(env)[0]}`,
-    // },
+    cache: {
+      type: 'filesystem',
+      buildDependencies: {
+        config: [__filename],
+      },
+    },
     module: {
       rules: [
         {
@@ -294,14 +292,12 @@ module.exports = env => [
       // filename: '[name].css',
     },
     // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
-    // cache: {
-    //   // Run 'rm -rf node_modules/.cache/webpack' to remove cache.
-    //   type: 'filesystem',
-    //   buildDependencies: {
-    //     config: [__filename],
-    //   },
-    //   name: `${Object.keys(env)[0]}`,
-    // },
+    cache: {
+      type: 'filesystem',
+      buildDependencies: {
+        config: [__filename],
+      },
+    },
     module: {
       rules: [
         {

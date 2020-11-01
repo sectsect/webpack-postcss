@@ -193,12 +193,10 @@ module.exports = env => [
     },
     // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
     cache: {
-      // Run 'rm -rf node_modules/.cache/webpack' to remove cache.
       type: 'filesystem',
       buildDependencies: {
         config: [__filename],
       },
-      name: `${Object.keys(env)[0]}`,
     },
     module: {
       rules: [
@@ -280,12 +278,10 @@ module.exports = env => [
     },
     // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
     cache: {
-      // Run 'rm -rf node_modules/.cache/webpack' to remove cache.
       type: 'filesystem',
       buildDependencies: {
         config: [__filename],
       },
-      name: `${Object.keys(env)[0]}`,
     },
     module: {
       rules: [

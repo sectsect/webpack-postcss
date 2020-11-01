@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -35,6 +36,14 @@ const getJSPlugins = env => {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       R: 'rambda',
+    }),
+  );
+  plugins.push(
+    new ESLintPlugin({
+      fix: true,
+      failOnError: true,
+      files: ['./src/**/*.js'],
+      // lintDirtyModulesOnly: true,
     }),
   );
   // plugins.push(new SvgStore.Options({
@@ -180,10 +189,11 @@ module.exports = env => [
       filename: '[name].js',
     },
     // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
-    cache: { // Run 'rm -rf node_modules/.cache/webpack' to remove cache.
+    cache: {
+      // Run 'rm -rf node_modules/.cache/webpack' to remove cache.
       type: 'filesystem',
       buildDependencies: {
-        config: [ __filename ]
+        config: [__filename],
       },
       name: `${Object.keys(env)[0]}`,
     },
@@ -199,14 +209,6 @@ module.exports = env => [
               loader: 'babel-loader',
               options: {
                 cacheDirectory: true,
-              },
-            },
-            {
-              loader: 'eslint-loader',
-              options: {
-                fix: true,
-                failOnError: true,
-                cache: true,
               },
             },
           ],
@@ -273,10 +275,11 @@ module.exports = env => [
       // filename: '[name].css',
     },
     // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
-    cache: { // Run 'rm -rf node_modules/.cache/webpack' to remove cache.
+    cache: {
+      // Run 'rm -rf node_modules/.cache/webpack' to remove cache.
       type: 'filesystem',
       buildDependencies: {
-        config: [ __filename ]
+        config: [__filename],
       },
       name: `${Object.keys(env)[0]}`,
     },

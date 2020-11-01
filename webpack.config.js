@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -36,6 +37,14 @@ const getJSPlugins = env => {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       R: 'rambda',
+    }),
+  );
+  plugins.push(
+    new ESLintPlugin({
+      fix: true,
+      failOnError: true,
+      files: ['./src/**/*.js'],
+      // lintDirtyModulesOnly: true,
     }),
   );
   // plugins.push(new SvgStore.Options({
@@ -184,6 +193,15 @@ module.exports = env => [
       path: path.resolve(buildPath, 'assets/js'),
       filename: '[name].js',
     },
+    // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
+    cache: {
+      // Run 'rm -rf node_modules/.cache/webpack' to remove cache.
+      type: 'filesystem',
+      buildDependencies: {
+        config: [__filename],
+      },
+      name: `${Object.keys(env)[0]}`,
+    },
     module: {
       rules: [
         {
@@ -198,28 +216,12 @@ module.exports = env => [
                 cacheDirectory: true,
               },
             },
-            {
-              loader: 'eslint-loader',
-              options: {
-                fix: true,
-                failOnError: true,
-                cache: true,
-              },
-            },
           ],
         },
         {
           test: /\.vue$/,
           use: [
             { loader: 'vue-loader' },
-            {
-              loader: 'eslint-loader',
-              options: {
-                fix: true,
-                failOnError: true,
-                cache: true,
-              },
-            },
           ],
         },
         {
@@ -252,11 +254,11 @@ module.exports = env => [
         // Modernizr
         {
           test: /\.modernizrrc.js$/,
-          use: ['modernizr-loader'],
+          use: ['@sect/modernizr-loader'],
         },
         {
           test: /\.modernizrrc(\.json)?$/,
-          use: ['modernizr-loader', 'json-loader'],
+          use: ['@sect/modernizr-loader', 'json-loader'],
         },
         // Modernizr
       ],
@@ -285,7 +287,6 @@ module.exports = env => [
       },
       minimizer: [
         new TerserPlugin({
-          cache: true,
           parallel: true,
           terserOptions: {
             compress: {
@@ -300,7 +301,7 @@ module.exports = env => [
       ],
     },
     plugins: getJSPlugins(env),
-    devtool: isProd(env) ? false : '#inline-source-map',
+    devtool: isProd(env) ? false : 'inline-cheap-source-map',
     performance: {
       hints: isProd(env) ? 'warning' : false,
       maxEntrypointSize: 300000, // The default value is 250000 (bytes)
@@ -311,6 +312,15 @@ module.exports = env => [
     output: {
       path: path.resolve(buildPath, 'assets/css'),
       // filename: '[name].css',
+    },
+    // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
+    cache: {
+      // Run 'rm -rf node_modules/.cache/webpack' to remove cache.
+      type: 'filesystem',
+      buildDependencies: {
+        config: [__filename],
+      },
+      name: `${Object.keys(env)[0]}`,
     },
     module: {
       rules: [
@@ -334,7 +344,7 @@ module.exports = env => [
       modules: ['node_modules'],
     },
     plugins: getCSSPlugins(env),
-    devtool: isProd(env) ? false : '#inline-source-map',
+    devtool: isProd(env) ? false : 'inline-cheap-source-map',
     performance: {
       hints: isProd(env) ? 'warning' : false,
       maxEntrypointSize: 300000, // The default value is 250000 (bytes)

@@ -1,5 +1,5 @@
 <template>
   <div class="home">
-    これはHomeのページです
-  </div>
+これはHomeのページです
+</div>
 </template>

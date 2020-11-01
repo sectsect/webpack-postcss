@@ -4,13 +4,13 @@
       <ul>
         <li>
           <router-link :to="{ path: '/' }">
-            Home
-          </router-link>
+Home
+</router-link>
         </li>
         <li>
           <router-link :to="{ path: '/about' }">
-            About
-          </router-link>
+About
+</router-link>
         </li>
       </ul>
     </header>

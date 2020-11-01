@@ -3,8 +3,8 @@
 
 ## My personal Boilerplate
 
-- webpack 4
-  - :icecream: [webpack sweet entry](https://github.com/sectsect/webpack-sweet-entry)
+- webpack 5
+  - Dynamic entry points: w/ [@sect/webpack-sweet-entry](https://github.com/sectsect/webpack-sweet-entry)
 - [PostCSS](https://github.com/postcss/postcss) w/ [postcss-preset-env](https://github.com/csstools/postcss-preset-env)
 - [Babel](https://babeljs.io/) w/ [@babel/preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
 - [ESLint](https://eslint.org/) w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
@@ -45,3 +45,23 @@ See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/packa
   $ mv .env.example .env
   ```
   :memo: `.env` file is already set to "ignore" within the `.giignore` file.
+
+## Troubleshooting
+### Remove Cache (Babel / ESLint / webpack)
+```bash
+$ rm -rf node_modules/.cache/babel-loader
+$ rm -rf node_modules/.cache/eslint-loader
+$ rm -rf node_modules/.cache/webpack
+# Remove all
+$ rm -rf node_modules/.cache
+```
+
+## Known Issues
+
+@ https://github.com/fqborges/webpack-fix-style-only-entries/issues/31
+```
+(node:35675) [DEP_WEBPACK_CHUNK_HAS_ENTRY_MODULE] DeprecationWarning: Chunk.hasEntryModule: Use new ChunkGraph API
+(node:35675) [DEP_WEBPACK_CHUNK_ENTRY_MODULE] DeprecationWarning: Chunk.entryModule: Use new ChunkGraph API
+(node:35675) [DEP_WEBPACK_MODULE_INDEX] DeprecationWarning: Module.index: Use new ModuleGraph API
+(node:35675) [DEP_WEBPACK_DEPRECATION_ARRAY_TO_SET] DeprecationWarning: chunk.files was changed from Array to Set (using Array method 'filter' is deprecated)
+```

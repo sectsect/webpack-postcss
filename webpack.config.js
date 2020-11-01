@@ -182,6 +182,14 @@ module.exports = env => [
       path: path.resolve(buildPath, 'assets/js'),
       filename: '[name].js',
     },
+    // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
+    cache: { // Run 'rm -rf node_modules/.cache/webpack' to remove cache.
+      type: 'filesystem',
+      buildDependencies: {
+        config: [ __filename ]
+      },
+      name: `${Object.keys(env)[0]}`,
+    },
     module: {
       rules: [
         {
@@ -209,11 +217,11 @@ module.exports = env => [
         // Modernizr
         {
           test: /\.modernizrrc.js$/,
-          use: ['modernizr-loader'],
+          use: ['@sect/modernizr-loader'],
         },
         {
           test: /\.modernizrrc(\.json)?$/,
-          use: ['modernizr-loader', 'json-loader'],
+          use: ['@sect/modernizr-loader', 'json-loader'],
         },
         // Modernizr
       ],
@@ -242,7 +250,6 @@ module.exports = env => [
       },
       minimizer: [
         new TerserPlugin({
-          cache: true,
           parallel: true,
           terserOptions: {
             compress: {
@@ -257,7 +264,7 @@ module.exports = env => [
       ],
     },
     plugins: getJSPlugins(env),
-    devtool: isProd(env) ? false : '#inline-source-map',
+    devtool: isProd(env) ? false : 'inline-cheap-source-map',
     performance: {
       hints: isProd(env) ? 'warning' : false,
       maxEntrypointSize: 350000, // The default value is 250000 (bytes)
@@ -268,6 +275,14 @@ module.exports = env => [
     output: {
       path: path.resolve(buildPath, 'assets/css'),
       // filename: '[name].css',
+    },
+    // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
+    cache: { // Run 'rm -rf node_modules/.cache/webpack' to remove cache.
+      type: 'filesystem',
+      buildDependencies: {
+        config: [ __filename ]
+      },
+      name: `${Object.keys(env)[0]}`,
     },
     module: {
       rules: [
@@ -291,7 +306,7 @@ module.exports = env => [
       modules: ['node_modules'],
     },
     plugins: getCSSPlugins(env),
-    devtool: isProd(env) ? false : '#inline-source-map',
+    devtool: isProd(env) ? false : 'inline-cheap-source-map',
     performance: {
       hints: isProd(env) ? 'warning' : false,
       maxEntrypointSize: 300000, // The default value is 250000 (bytes)

@@ -126,7 +126,6 @@ const getCSSPlugins = env => {
   plugins.push(
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      allChunks: true,
     }),
   );
   // plugins.push(new SpritesmithPlugin({

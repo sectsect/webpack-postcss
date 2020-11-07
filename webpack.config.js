@@ -46,19 +46,6 @@ const getJSPlugins = env => {
       // lintDirtyModulesOnly: true,
     }),
   );
-  // plugins.push(new SvgStore.Options({
-  //   svg: {
-  //     style: '',
-  //     class: 'svg-icon-lib',
-  //   },
-  //   svgoOptions: {
-  //     plugins: [
-  //       { removeTitle: false },
-  //       { removeAttrs: { attrs: 'fill' } },
-  //       { removeStyleElement: true },
-  //     ],
-  //   },
-  // }));
   plugins.push(
     new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
       output: {

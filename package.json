@@ -48,7 +48,7 @@
     "postcss-reporter": "^7.0.1",
     "postcss-sort-media-queries": "^2.1.10",
     "prettier": "^2.1.2",
-    "size-plugin": "^1.2.0",
+    "size-plugin": "^2.0.1",
     "stylelint": "^13.7.2",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recess-order": "^2.3.0",

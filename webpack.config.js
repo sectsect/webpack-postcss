@@ -64,7 +64,11 @@ const getJSPlugins = env => {
     }),
   );
   if (isProd(env)) {
-    plugins.push(new SizePlugin());
+    plugins.push(
+      new SizePlugin({
+        writeFile: false,
+      }),
+    );
   }
   if (isDev(env)) {
     plugins.push(
@@ -148,7 +152,11 @@ const getCSSPlugins = env => {
         },
       }),
     );
-    plugins.push(new SizePlugin());
+    plugins.push(
+      new SizePlugin({
+        writeFile: false,
+      }),
+    );
   }
   plugins.push(
     new NotifierPlugin({

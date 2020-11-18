@@ -39,11 +39,21 @@ const getJSPlugins = env => {
     }),
   );
   plugins.push(
+    // new ESLintPlugin({
+    //   fix: true,
+    //   failOnError: true,
+    //   files: ['./src/**/*.js'],
+    //   // lintDirtyModulesOnly: true,
+    // }),
     new ESLintPlugin({
-      fix: true,
-      failOnError: true,
-      files: ['./src/**/*.js'],
-      // lintDirtyModulesOnly: true,
+      // fix: true,
+      // failOnError: true,
+      // files: ['./src/**/*.js'],
+      context: 'src/assets',
+      extensions: ['ts', 'tsx', 'js', 'jsx'],
+      // emitError: true,
+      emitWarning: true,
+      lintDirtyModulesOnly: true,
     }),
   );
   plugins.push(

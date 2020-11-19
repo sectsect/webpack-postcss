@@ -39,12 +39,6 @@ const getJSPlugins = env => {
     }),
   );
   plugins.push(
-    // new ESLintPlugin({
-    //   fix: true,
-    //   failOnError: true,
-    //   files: ['./src/**/*.js'],
-    //   // lintDirtyModulesOnly: true,
-    // }),
     new ESLintPlugin({
       // fix: true,
       // failOnError: true,

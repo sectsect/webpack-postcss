@@ -28,7 +28,10 @@ window.detect = detect();
 WebFontLoader();
 inlineSVG();
 viewPort(detect());
-innerVh();
+innerVh({
+  ignoreCollapsibleUi: false,
+  maximumCollapsibleUiHeight: 1,
+});
 touchHover(['.slider img']);
 menu();
 modal();

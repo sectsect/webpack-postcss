@@ -1,7 +1,7 @@
 import 'core-js/modules/es.object.assign';
 import 'core-js/modules/es.array.from';
-import MicroModal from 'micromodal';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import MicroModal from 'micromodal';
 
 export const modal = () => {
   const toggleBodyScrol = (id, action) => {

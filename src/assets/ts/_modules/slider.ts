@@ -4,15 +4,18 @@ import { unveil } from './unveil-lazysizes';
 export const slider = (): void => {
   const runSlider = (parentid: string) => {
     const $slickElement = $(`${parentid} .slider-for`);
-    $slickElement.on('init', function (
-      this: HTMLElement,
-      // _event: any,
-      // _slick: { slideCount: number },
-      // _currentSlide: any,
-      // _nextSlide: any,
-    ) {
-      $(this).closest('.slider_wrap').addClass('ready');
-    });
+    $slickElement.on(
+      'init',
+      (
+        e,
+        // _event: any,
+        // _slick: { slideCount: number },
+        // _currentSlide: any,
+        // _nextSlide: any,
+      ) => {
+        $(e.currentTarget).closest('.slider_wrap').addClass('ready');
+      },
+    );
 
     $(`${parentid} .slider-for`).slick({
       slidesToShow: 1,
@@ -59,8 +62,8 @@ export const slider = (): void => {
         $(`${parentid} .slider .slick-dots li`).removeClass('slick-active');
         $(`${parentid} .slider .slick-dots li button`)
           .attr('aria-pressed', 'false')
-          .focus(function (this: HTMLElement) {
-            this.blur();
+          .focus(e => {
+            e.currentTarget.blur();
           });
       },
     );

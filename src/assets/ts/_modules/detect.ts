@@ -1,5 +1,5 @@
-import isMobile from 'ismobilejs';
 import { detect } from 'detect-browser';
+import isMobile from 'ismobilejs';
 import Modernizr from 'modernizr';
 
 const browser = detect();

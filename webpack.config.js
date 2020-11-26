@@ -41,25 +41,16 @@ const getJSPlugins = env => {
   );
   plugins.push(
     new ESLintPlugin({
-      fix: true,
-      failOnError: true,
-      files: ['./src/**/*.ts'],
-      // lintDirtyModulesOnly: true,
+      // fix: true,
+      // failOnError: true,
+      // files: ['./src/**/*.ts'],
+      context: 'src/assets',
+      extensions: ['ts', 'tsx', 'js', 'jsx'],
+      // emitError: true,
+      emitWarning: true,
+      lintDirtyModulesOnly: true,
     }),
   );
-  // plugins.push(new SvgStore.Options({
-  //   svg: {
-  //     style: '',
-  //     class: 'svg-icon-lib',
-  //   },
-  //   svgoOptions: {
-  //     plugins: [
-  //       { removeTitle: false },
-  //       { removeAttrs: { attrs: 'fill' } },
-  //       { removeStyleElement: true },
-  //     ],
-  //   },
-  // }));
   plugins.push(
     new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
       output: {
@@ -78,7 +69,11 @@ const getJSPlugins = env => {
     }),
   );
   if (isProd(env)) {
-    plugins.push(new SizePlugin());
+    plugins.push(
+      new SizePlugin({
+        writeFile: false,
+      }),
+    );
   }
   if (isDev(env)) {
     plugins.push(
@@ -140,7 +135,6 @@ const getCSSPlugins = env => {
   plugins.push(
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      allChunks: true,
     }),
   );
   // plugins.push(new SpritesmithPlugin({
@@ -176,7 +170,11 @@ const getCSSPlugins = env => {
         },
       }),
     );
-    plugins.push(new SizePlugin());
+    plugins.push(
+      new SizePlugin({
+        writeFile: false,
+      }),
+    );
   }
   plugins.push(
     new NotifierPlugin({

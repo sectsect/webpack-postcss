@@ -1,7 +1,7 @@
 import 'core-js/modules/es.object.assign';
 import 'core-js/modules/es.array.from';
-import MicroModal from 'micromodal';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import MicroModal from 'micromodal';
 
 export const modal = (): void => {
   const toggleBodyScrol = (id: string, action: 'show' | 'close') => {
@@ -14,8 +14,8 @@ export const modal = (): void => {
   };
 
   MicroModal.init({
-    // onShow: modal => console.info(`${modal.id} is shown`), // [1]
-    // onClose: modal => console.info(`${modal.id} is hidden`), // [2]
+    // onShow: mdl => console.info(`${mdl.id} is shown`), // [1]
+    // onClose: mdl => console.info(`${mdl.id} is hidden`), // [2]
     // openTrigger: 'data-custom-open', // [3]
     // closeTrigger: 'data-custom-close', // [4]
     // disableScroll: true,

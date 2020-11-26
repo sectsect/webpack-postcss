@@ -6,7 +6,8 @@ export const dotdotdot = () => {
       watch: 'window',
       height: 'watch',
       truncate: 'letter',
-      callback(isTruncated) {
+      callback() {
+        // callback(isTruncated) {
         jQuery(this).addClass('ready');
       },
     });

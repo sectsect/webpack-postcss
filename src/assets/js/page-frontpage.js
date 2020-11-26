@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import './_modules/commons';
-import { slider } from './_modules/slider';
 import { MyClass } from './_class/myclass';
 import MyComponent from '../../components/MyComponent.vue';
+import { slider } from './_modules/slider';
 
 // const ary = R.append('111', ['222', '333']);
 // console.log(ary);

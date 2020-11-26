@@ -11,16 +11,16 @@ import 'lazysizes';
 import 'jquery.easing';
 import { innerVh } from 'inner-vh';
 import { detection as detect } from './detect';
-import { WebFontLoader } from './webfont-loader';
 import { inlineSVG } from './inline-svg';
 import { viewPort } from './viewport';
 import { vueExample } from './vue-example';
 // import { matchHeight } from './jquery-match-height';
 import { dotdotdot } from './jquery-dotdotdot';
-import { touchHover } from './touch-hover';
 import { menu } from './menu';
 // import { modal } from './modal';
 import { tests } from './tests';
+import { touchHover } from './touch-hover';
+import { WebFontLoader } from './webfont-loader';
 
 // window.Vue = Vue;
 window.detect = detect();
@@ -34,7 +34,10 @@ vueExample();
 WebFontLoader();
 inlineSVG();
 viewPort(detect());
-innerVh();
+innerVh({
+  ignoreCollapsibleUi: false,
+  maximumCollapsibleUiHeight: 1,
+});
 touchHover(['.slider img']);
 menu();
 // modal();

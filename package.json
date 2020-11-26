@@ -51,7 +51,7 @@
     "postcss-reporter": "^7.0.1",
     "postcss-sort-media-queries": "^2.1.11",
     "prettier": "^2.2.0",
-    "sass-loader": "^10.0.4",
+    "sass-loader": "^10.1.0",
     "size-plugin": "^2.0.1",
     "stylelint": "^13.8.0",
     "stylelint-config-prettier": "^8.0.2",
@@ -61,7 +61,7 @@
     "stylelint-webpack-plugin": "^2.1.1",
     "svg-spritemap-webpack-plugin": "^3.7.1",
     "terser-webpack-plugin": "^5.0.3",
-    "vue-loader": "^15.9.4",
+    "vue-loader": "^15.9.5",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.12",
     "webpack": "^5.6.0",
@@ -96,7 +96,7 @@
     "viewport-units-buggyfill": "^0.6.2",
     "vue": "^2.6.12",
     "vue-match-heights": "^0.1.1",
-    "vue-router": "^3.4.8",
+    "vue-router": "^3.4.9",
     "vue-scrollto": "^2.20.0",
     "webfontloader": "^1.6.28"
   }

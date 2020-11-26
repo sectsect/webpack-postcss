@@ -12,8 +12,11 @@ module.exports = {
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
+  "globals": {
+    "window": true,
+    "lazySizes": true,
+  },
   "rules": {
-    "func-names": 0,
     "import/no-extraneous-dependencies": [
       "error",
         {
@@ -40,9 +43,6 @@ module.exports = {
     "import/no-default-export": "error",
     "no-alert": 0,
     "no-console": 0,
-    "no-shadow": 0,
-    "no-undef": 0,
-    "no-unused-vars": 0,
     "prettier/prettier": "error",
   }
 };

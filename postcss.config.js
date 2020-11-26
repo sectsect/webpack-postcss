@@ -16,9 +16,9 @@ const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 const autoprefixer = require('autoprefixer')({
   grid: 'autoplace',
 });
-const postcssSorting = require('postcss-sorting')({
-  'properties-order': 'alphabetical',
-});
+// const postcssSorting = require('postcss-sorting')({
+//   'properties-order': 'alphabetical',
+// });
 const validator = require('postcss-validator');
 const postcssReporter = require('postcss-reporter')({
   positionless: 'last',
@@ -33,7 +33,7 @@ module.exports = {
     postcssHexrgba,
     postcssFlexbugsFixes,
     autoprefixer,
-    postcssSorting,
+    // postcssSorting,
     validator,
     postcssReporter,
   ],

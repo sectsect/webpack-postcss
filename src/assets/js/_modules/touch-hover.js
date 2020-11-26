@@ -6,13 +6,13 @@ export const touchHover = elem => {
     let enterEvent = 'touchstart';
     let leaveEvent = 'touchend';
     // we use mousedown and mouseup events on big items
-    let enterBigEvent = 'mousedown';
-    let leaveBigEvent = 'mouseup';
+    // let enterBigEvent = 'mousedown';
+    // let leaveBigEvent = 'mouseup';
     if (!('ontouchstart' in window)) {
       enterEvent = 'mouseenter';
-      enterBigEvent = 'mouseenter';
+      // enterBigEvent = 'mouseenter';
       leaveEvent = 'mouseleave';
-      leaveBigEvent = 'mouseleave';
+      // leaveBigEvent = 'mouseleave';
     }
     jQuery(el).on(enterEvent, e => {
       jQuery(e.currentTarget).addClass('on');

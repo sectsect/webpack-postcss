@@ -1,8 +1,10 @@
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+// import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 export const menu = () => {
   const togglePanel = (c, t) => {
     // Toggle Body Scroll
+    // eslint-disable-next-line no-unused-vars
     const r = jQuery('body').hasClass(c) ? enableBodyScroll(t) : disableBodyScroll(t);
     // Add class to body
     jQuery('body').toggleClass(c);

@@ -1,7 +1,7 @@
 import './_modules/commons';
+import { MyClass } from './_class/myclass';
 import { glide } from './_modules/glide';
 import { slider } from './_modules/slider';
-import { MyClass } from './_class/myclass';
 
 console.log(window.wp_data);
 

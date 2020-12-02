@@ -85,6 +85,12 @@ module.exports = {
       }
     ],
     "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        varsIgnorePattern: "^Window$"
+      }
+    ],
     "@typescript-eslint/prefer-nullish-coalescing": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
     "prettier/prettier": "error"

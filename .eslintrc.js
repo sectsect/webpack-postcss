@@ -6,6 +6,7 @@ module.exports = {
     "jquery": true
   },
   "parser": "@typescript-eslint/parser",
+  // "parser": "@babel/eslint-parser",
   "parserOptions": {
     // "ecmaVersion": 2020,
     "sourceType": "module",
@@ -18,6 +19,7 @@ module.exports = {
     "prettier/@typescript-eslint"
   ],
   "plugins": [
+    // "@babel",
     "@typescript-eslint"
   ],
   "globals": {

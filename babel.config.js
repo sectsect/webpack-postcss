@@ -18,7 +18,8 @@
 //         corejs: 3,
 //       },
 //     ],
-//     '@babel/proposal-class-properties',
+//    ['@babel/plugin-proposal-class-properties', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-class-properties
+//    ['@babel/plugin-proposal-private-methods', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-private-methods
 //     '@babel/proposal-object-rest-spread',
 //   ];
 
@@ -36,7 +37,10 @@ const plugins = [
   // "@babel/plugin-syntax-dynamic-import",
   // "@babel/plugin-proposal-export-default-from",
   // '@babel/plugin-transform-react-jsx',
-  '@babel/proposal-class-properties',
+  // '@babel/proposal-class-properties',
+  // '@babel/proposal-object-rest-spread',
+  ['@babel/plugin-proposal-class-properties', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-class-properties
+  ['@babel/plugin-proposal-private-methods', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-private-methods
   '@babel/proposal-object-rest-spread',
 ];
 

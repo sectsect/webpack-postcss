@@ -6,6 +6,7 @@ module.exports = {
     "jquery": true
   },
   "parser": "@typescript-eslint/parser",
+  // "parser": "@babel/eslint-parser",
   "parserOptions": {
     // "ecmaVersion": 2020,
     "sourceType": "module",
@@ -18,6 +19,7 @@ module.exports = {
     "prettier/@typescript-eslint"
   ],
   "plugins": [
+    // "@babel",
     "@typescript-eslint"
   ],
   "globals": {
@@ -85,6 +87,12 @@ module.exports = {
       }
     ],
     "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        varsIgnorePattern: "^Window$"
+      }
+    ],
     "@typescript-eslint/prefer-nullish-coalescing": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
     "prettier/prettier": "error"

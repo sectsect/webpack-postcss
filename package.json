@@ -14,6 +14,8 @@
   "browserslist": "> 1%, last 2 versions, Firefox ESR, IE >= 11, not Android 4.4.3-4.4.4, not dead",
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/eslint-plugin": "^7.12.1",
     "@babel/helpers": "^7.12.5",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-proposal-private-methods": "^7.12.1",
@@ -22,7 +24,6 @@
     "@sect/modernizr-loader": "^1.0.1",
     "@sect/webpack-sweet-entry": "^2.5.2",
     "@spotify/prettier-config": "^9.0.0",
-    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
     "eslint": "^7.14.0",

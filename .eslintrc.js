@@ -1,13 +1,13 @@
 module.exports = {
   "extends": ["airbnb", "prettier", "prettier/react"],
-  "plugins": ["react", "prettier"],
+  "plugins": ["@babel", "react", "prettier"],
   "env": {
     "es6": true,
     "browser": true,
     "node": true,
     "jquery": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"

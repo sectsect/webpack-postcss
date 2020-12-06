@@ -2,7 +2,7 @@ import Glide from '@glidejs/glide';
 import { unveil } from './unveil-lazysizes';
 
 export const glide = (): void => {
-  const runSlider = (el: string) => {
+  const runSlider = (el: Element) => {
     const gl = new Glide(el, {
       type: 'carousel',
       autoplay: 4000,
@@ -26,7 +26,7 @@ export const glide = (): void => {
     gl.mount();
   };
 
-  const asyncSlider = async (self: string) => {
+  const asyncSlider = async (self: Element) => {
     try {
       const result = await unveil($(self).find('figure img'));
       if (result) {
@@ -37,20 +37,9 @@ export const glide = (): void => {
     }
   };
 
-  // $('.glide_wrap').each((_i: number, el: HTMLElement) => {
-  //   console.log($(el).attr('id'));
-  //   const attrclass = $(el).attr('class');
-  //   const cl = `.${attrclass}`;
-  //   asyncSlider(cl);
-  // });
-
-  const carousels = document.querySelectorAll('.glide_wrap');
-  Object.values(carousels).map(carousel => {
-    console.log($(carousel).attr('id'));
-    const attrclass = $(carousel).attr('class');
-    const cl = `.${attrclass}`;
-    asyncSlider(cl);
-
-    return null;
+  // @ https://github.com/glidejs/glide/issues/202
+  const sliders = document.querySelectorAll('.glide_wrap');
+  sliders.forEach(slider => {
+    asyncSlider(slider);
   });
 };

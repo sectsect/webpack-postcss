@@ -42,8 +42,8 @@ declare module '@glidejs/glide/dist/glide.modular.esm' {
     hoverpause?: boolean;
     keyboard?: boolean;
     bound?: boolean;
-    swipeThreshold?: number;
-    dragThreshold?: number;
+    swipeThreshold?: number | boolean;
+    dragThreshold?: number | boolean;
     perTouch?: boolean;
     touchRatio?: number;
     touchAngle?: number;
@@ -133,7 +133,7 @@ declare module '@glidejs/glide/dist/glide.modular.esm' {
 
     public disabled: boolean;
 
-    constructor(selector: string, options?: GlideOptions);
+    constructor(selector: string | Element, options?: GlideOptions);
     public mount(extensions?: object): Glide;
     public mutate(
       transformers: ((glide: Glide, components: object, events: EventsBus) => void)[],

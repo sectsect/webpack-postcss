@@ -68,5 +68,6 @@ console.log(rex.dinner); // Rex eats tofu for dinner.
 const m = new CustomClass();
 console.log(m.a);
 // console.log(m.#b); // error - private variable cannot be modified outside class
-m.incB(); // runs OK
+const ib = m.incB(); // runs OK
+console.log(ib);
 // m.#b = 0; // error - private property cannot be modified outside class

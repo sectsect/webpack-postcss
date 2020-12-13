@@ -1,4 +1,4 @@
-import { detection as detect } from './detect';
+import { detect } from './detect';
 
 export const viewPort = () => {
   if (detect().device.tablet) {

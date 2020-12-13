@@ -55,5 +55,6 @@ export class CustomClass {
 
   incB() {
     this.#b += 1;
+    return this.#b;
   }
 }

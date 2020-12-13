@@ -9,7 +9,7 @@ import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import 'lazysizes';
 import 'jquery.easing';
 import { innerVh } from 'inner-vh';
-// import { detection as detect } from './detect';
+import { detect } from './detect';
 import { inlineSVG } from './inline-svg';
 import { dotdotdot } from './jquery-dotdotdot';
 // import { touchHover } from './touch-hover';
@@ -75,6 +75,8 @@ interface BreakPoints {
 // window.detect = detect();
 
 console.log(window.wp_data);
+
+console.log(detect());
 
 /*= =================================================
   Run

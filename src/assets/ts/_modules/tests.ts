@@ -1,4 +1,4 @@
-import { detection as detect } from './detect';
+import { detect } from './detect';
 
 declare let R: any;
 

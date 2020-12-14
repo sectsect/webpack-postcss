@@ -1,8 +1,8 @@
-import { detect } from 'detect-browser';
+import { detect as detectBrowser } from 'detect-browser';
 import isMobile from 'ismobilejs';
 import Modernizr from 'modernizr';
 
-const browser = detect();
+const browser = detectBrowser();
 
 type Versionable = number | boolean;
 
@@ -48,7 +48,7 @@ interface Screen {
   w: number;
 }
 
-export const detection = (): Detection => {
+export const detect = (): Detection => {
   const bn: string = browser?.name ?? '';
   const bv: number = parseInt(browser?.version ?? '0', 10);
   const ww = window.innerWidth;

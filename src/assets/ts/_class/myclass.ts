@@ -77,7 +77,8 @@ export class CustomClass {
   // @ts-ignore
   static #c = 3; // .#c is private and static
 
-  incB(): void {
+  incB(): number {
     this.#b += 1;
+    return this.#b;
   }
 }

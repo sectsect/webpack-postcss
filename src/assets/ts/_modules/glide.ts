@@ -2,8 +2,8 @@ import Glide from '@glidejs/glide';
 import { unveil } from './unveil-lazysizes';
 
 export const glide = (): void => {
-  const runSlider = (el: HTMLElement) => {
-    const obj = {
+  const runSlider = (el: Element) => {
+    const gl = new Glide(el, {
       type: 'carousel',
       autoplay: 4000,
       animationTimingFunc: 'ease-in-out',
@@ -19,15 +19,14 @@ export const glide = (): void => {
       //   //   perView: 1,
       //   // },
       // },
-    };
-    const gl = new Glide(el, obj);
+    });
     gl.on('mount.after', () => {
       $(el).addClass('ready');
     });
     gl.mount();
   };
 
-  const asyncSlider = async (self: HTMLElement) => {
+  const asyncSlider = async (self: Element) => {
     try {
       const result = await unveil($(self).find('figure img'));
       if (result) {
@@ -38,7 +37,9 @@ export const glide = (): void => {
     }
   };
 
-  $('.glide_wrap').each((_i: number, el: HTMLElement) => {
-    asyncSlider(el);
+  // @ https://github.com/glidejs/glide/issues/202
+  const sliders = document.querySelectorAll('.glide_wrap');
+  sliders.forEach(slider => {
+    asyncSlider(slider);
   });
 };

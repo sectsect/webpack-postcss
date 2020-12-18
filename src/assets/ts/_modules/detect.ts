@@ -49,8 +49,8 @@ interface Screen {
 }
 
 export const detect = (): Detection => {
-  const bn: string = browser?.name ?? '';
-  const bv: number = parseInt(browser?.version ?? '0', 10);
+  const bn = browser?.name;
+  const bv = parseInt(browser?.version ?? '0', 10);
   const ww = window.innerWidth;
   const dpr = window.devicePixelRatio;
   const w = dpr * ww;

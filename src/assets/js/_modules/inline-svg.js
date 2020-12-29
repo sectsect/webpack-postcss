@@ -4,7 +4,7 @@ export const inlineSVG = () => {
       url: '/assets/images/svg/symbol.svg',
     })
     .done(r => {
-      const svg = jQuery(r).find('svg').addClass('svg-icon-lib');
+      const svg = jQuery(r).find('svg');
       jQuery('body').prepend(svg);
     });
 };

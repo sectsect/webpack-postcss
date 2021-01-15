@@ -54,6 +54,11 @@ const getJSPlugins = env => {
         filename: '../../../dist/assets/images/svg/symbol.svg',
         svgo: {
           plugins: [
+            {
+              addClassesToSVGElement: {
+                classNames: ['svg-icon-lib'],
+              }
+            },
             { removeTitle: false },
             { removeAttrs: { attrs: 'fill' } },
             { removeStyleElement: true },

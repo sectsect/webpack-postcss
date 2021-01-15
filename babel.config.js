@@ -18,6 +18,8 @@
 //       },
 //     ],
 //   ];
+//   ['@babel/plugin-proposal-class-properties', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-class-properties
+//   ['@babel/plugin-proposal-private-methods', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-private-methods
 
 //   return {
 //     presets,
@@ -29,6 +31,8 @@ const plugins = [
   // "@babel/plugin-syntax-dynamic-import",
   // "@babel/plugin-proposal-export-default-from",
   // '@babel/plugin-transform-react-jsx',
+  ['@babel/plugin-proposal-class-properties', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-class-properties
+  ['@babel/plugin-proposal-private-methods', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-private-methods
 ];
 
 module.exports = {

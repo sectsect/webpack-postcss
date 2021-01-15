@@ -9,7 +9,7 @@ import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import 'lazysizes';
 import 'jquery.easing';
 import { innerVh } from 'inner-vh';
-import { detection as detect } from './detect';
+import { detect } from './detect';
 import { inlineSVG } from './inline-svg';
 import { dotdotdot } from './jquery-dotdotdot';
 import { menu } from './menu';
@@ -21,6 +21,8 @@ import { viewPort } from './viewport';
 import { WebFontLoader } from './webfont-loader';
 
 window.detect = detect();
+
+console.log(detect());
 
 /*= =================================================
   Run

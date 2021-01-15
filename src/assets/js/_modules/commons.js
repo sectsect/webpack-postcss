@@ -9,18 +9,20 @@ import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import 'lazysizes';
 import 'jquery.easing';
 import { innerVh } from 'inner-vh';
-import { detection as detect } from './detect';
-import { WebFontLoader } from './webfont-loader';
+import { detect } from './detect';
 import { inlineSVG } from './inline-svg';
-import { viewPort } from './viewport';
-import { smoothScroll } from './smooth-scroll';
 import { dotdotdot } from './jquery-dotdotdot';
-import { touchHover } from './touch-hover';
 import { menu } from './menu';
 import { modal } from './modal';
+import { smoothScroll } from './smooth-scroll';
 import { tests } from './tests';
+import { touchHover } from './touch-hover';
+import { viewPort } from './viewport';
+import { WebFontLoader } from './webfont-loader';
 
 window.detect = detect();
+
+console.log(detect());
 
 /*= =================================================
   Run
@@ -28,7 +30,10 @@ window.detect = detect();
 WebFontLoader();
 inlineSVG();
 viewPort(detect());
-innerVh();
+innerVh({
+  ignoreCollapsibleUi: false,
+  maximumCollapsibleUiHeight: 1,
+});
 touchHover(['.slider img']);
 menu();
 modal();

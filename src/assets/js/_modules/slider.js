@@ -3,8 +3,9 @@ import { unveil } from './unveil-lazysizes';
 
 export const slider = () => {
   const runSlider = parentid => {
-    jQuery(`${parentid} .slider-for`).on('init', function (event, slick) {
-      jQuery(this).closest('.slider_wrap').addClass('ready');
+    jQuery(`${parentid} .slider-for`).on('init', e => {
+      // jQuery(`${parentid} .slider-for`).on('init', function (event, slick) {
+      jQuery(e.currentTarget).closest('.slider_wrap').addClass('ready');
       // unveil(jQuery(this).find('.slick-slide img'));
     });
     // jQuery(`${parentid} .slider`).slick({
@@ -69,12 +70,14 @@ export const slider = () => {
 
     // Restart autoplay (Autoplay is stopped after clicking the slick-dot)
     // @ https://github.com/kenwheeler/slick/issues/2655#issuecomment-313923749
-    jQuery(`${parentid} .slider`).on('beforeChange', (event, slick, currentSlide, nextSlide) => {
+    jQuery(`${parentid} .slider`).on('beforeChange', () => {
+      // jQuery(`${parentid} .slider`).on('beforeChange', (event, slick, currentSlide, nextSlide) => {
       jQuery(`${parentid} .slider .slick-dots li`).removeClass('slick-active');
       jQuery(`${parentid} .slider .slick-dots li button`)
         .attr('aria-pressed', 'false')
-        .focus(function () {
-          this.blur();
+        .focus(e => {
+          const self = e.currentTarget;
+          self.blur();
         });
     });
   };

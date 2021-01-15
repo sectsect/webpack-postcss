@@ -3,9 +3,9 @@
 
 ## My personal Boilerplate
 
-- webpack 4
-  - :icecream: [webpack sweet entry](https://github.com/sectsect/webpack-sweet-entry)
-- [PostCSS](https://github.com/postcss/postcss) w/ [postcss-preset-env](https://github.com/csstools/postcss-preset-env)
+- webpack 5
+  - Dynamic entry points: w/ [@sect/webpack-sweet-entry](https://github.com/sectsect/webpack-sweet-entry)
+- [PostCSS](https://postcss.org/) w/ [postcss-preset-env](https://github.com/csstools/postcss-preset-env)
 - [Babel](https://babeljs.io/) w/ [@babel/preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
 - [ESLint](https://eslint.org/) w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 - [stylelint](https://stylelint.io/)
@@ -15,8 +15,8 @@
 
 | Branch | Description |
 | ------ | ----------- |
-| [master](https://github.com/sectsect/webpack-postcss) | PostCSS that compliant tomorrow’s CSS syntax as much as possible w/ [postcss-preset-env](http://preset-env.cssdb.org/) |
-| [module](https://github.com/sectsect/webpack-postcss/tree/module) | ES Modules `<script type="module">`<br>* Support for Differential Serving of Modern and Legacy bundle.<br>* In the next version this branch will be merged into the `master` branch. |
+| [master](https://github.com/sectsect/webpack-postcss) | [PostCSS](https://postcss.org/) that compliant tomorrow’s CSS syntax as much as possible w/ [postcss-preset-env](http://preset-env.cssdb.org/) |
+| [module](https://github.com/sectsect/webpack-postcss/tree/module) | ES Modules `<script type="module">`<br><ul><li>Support for Differential Serving of Modern and Legacy bundle.</li><li>In the next version this branch will be merged into the `master` branch.</li></ul> |
 | [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ SASS<br>\- PostCSS |
 | [typescript](https://github.com/sectsect/webpack-postcss/tree/typescript) | \+ TypeScript<br>\- JavaScript |
 | [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | Partially use Vue.js<br>\+ Vue.js<br>(Default: jQuery only) |
@@ -46,3 +46,23 @@ See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/packa
   $ mv .env.example .env
   ```
   :memo: `.env` file is already set to "ignore" within the `.giignore` file.
+
+## Troubleshooting
+### Remove Cache (Babel / ESLint / webpack)
+```bash
+$ rm -rf node_modules/.cache/babel-loader
+$ rm -rf node_modules/.cache/eslint-loader
+$ rm -rf node_modules/.cache/webpack
+# Remove all
+$ rm -rf node_modules/.cache
+```
+
+## Known Issues
+
+@ https://github.com/fqborges/webpack-fix-style-only-entries/issues/31
+```
+(node:35675) [DEP_WEBPACK_CHUNK_HAS_ENTRY_MODULE] DeprecationWarning: Chunk.hasEntryModule: Use new ChunkGraph API
+(node:35675) [DEP_WEBPACK_CHUNK_ENTRY_MODULE] DeprecationWarning: Chunk.entryModule: Use new ChunkGraph API
+(node:35675) [DEP_WEBPACK_MODULE_INDEX] DeprecationWarning: Module.index: Use new ModuleGraph API
+(node:35675) [DEP_WEBPACK_DEPRECATION_ARRAY_TO_SET] DeprecationWarning: chunk.files was changed from Array to Set (using Array method 'filter' is deprecated)
+```

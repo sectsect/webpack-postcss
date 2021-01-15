@@ -12,7 +12,7 @@ export const unveil = el => {
     );
   });
 
-  return Promise.all(promises).then(responses => {
-    return responses[0]; // @ https://stackoverflow.com/a/46650142/4542456
-  });
+  return Promise.all(promises).then(
+    responses => responses[0], // @ https://stackoverflow.com/a/46650142/4542456
+  );
 };

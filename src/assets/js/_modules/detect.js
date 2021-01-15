@@ -1,16 +1,16 @@
+import { detect as detectBrowser } from 'detect-browser';
 import isMobile from 'ismobilejs';
-import { detect } from 'detect-browser';
 import Modernizr from 'modernizr';
 
-const browser = detect();
+const browser = detectBrowser();
 
-export const detection = () => {
+export const detect = () => {
   const bn = browser.name;
   const bv = parseInt(browser.version, 10);
   const ww = window.innerWidth;
   const dpr = window.devicePixelRatio;
   const w = dpr * ww;
-  const detect = {
+  const dt = {
     device: {
       desktop: !isMobile().any,
       mobile: isMobile().any,
@@ -43,5 +43,5 @@ export const detection = () => {
       xl: 2048,
     },
   };
-  return detect;
+  return dt;
 };

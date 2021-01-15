@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
+    "start:dev": "webpack serve --mode development",
     "lint": "eslint --ext .js,.vue src/assets/js",
     "lint:fix": "eslint --fix --ext .js,.vue src/assets/js",
     "lint:css": "stylelint src/**/*.css --fix",
@@ -64,7 +64,7 @@
     "webpack": "^5.14.0",
     "webpack-bundle-analyzer": "^4.3.0",
     "webpack-cli": "^4.3.1",
-    "webpack-dev-server": "^3.11.0",
+    "webpack-dev-server": "^3.11.2",
     "webpack-fix-style-only-entries": "0.6.0",
     "webpack-spritesmith": "^1.1.0"
   },

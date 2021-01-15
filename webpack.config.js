@@ -274,6 +274,7 @@ module.exports = env => [
       contentBase: path.join(__dirname, 'dist'), // Document root
       publicPath: '/assets/', // Virtual Path
       hot: false, // Enable HMR
+      open: true,
     },
     performance: {
       hints: isProd(env) ? 'warning' : false,

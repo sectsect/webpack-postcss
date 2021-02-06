@@ -6,6 +6,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     // "noImplicitThis": false,
     "target": "esnext",
+    "incremental": true,
     "tsBuildInfoFile": "./.tsbuildinfo",
     "skipLibCheck": true,
     // "baseUrl": "src/@types",

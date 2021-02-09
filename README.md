@@ -1,7 +1,7 @@
 # <img src="https://github-sect.s3-ap-northeast-1.amazonaws.com/logo.svg" width="28" height="auto"> webpack-postcss
 [![CircleCI](https://circleci.com/gh/sectsect/webpack-postcss.svg?style=svg)](https://circleci.com/gh/sectsect/webpack-postcss)
 
-## My personal Boilerplate
+## My Personal Boilerplate
 
 - webpack 5
   - Dynamic entry points: w/ [@sect/webpack-sweet-entry](https://github.com/sectsect/webpack-sweet-entry)
@@ -10,6 +10,7 @@
 - [ESLint](https://eslint.org/) w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 - [stylelint](https://stylelint.io/)
 - [Prettier](https://prettier.io/)
+- [husky](https://github.com/typicode/husky) / [lint-staged](https://github.com/okonet/lint-staged)
 
 ## Branches
 

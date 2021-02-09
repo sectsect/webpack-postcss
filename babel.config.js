@@ -17,6 +17,8 @@ module.exports = api => {
         corejs: 3,
       },
     ],
+    ['@babel/plugin-proposal-class-properties', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-class-properties
+    ['@babel/plugin-proposal-private-methods', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-private-methods
   ];
 
   return {

@@ -10,7 +10,7 @@ import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import 'lazysizes';
 import 'jquery.easing';
 import { innerVh } from 'inner-vh';
-import { detection as detect } from './detect';
+import { detect } from './detect';
 import { inlineSVG } from './inline-svg';
 import { viewPort } from './viewport';
 import { vueExample } from './vue-example';
@@ -24,6 +24,8 @@ import { WebFontLoader } from './webfont-loader';
 
 // window.Vue = Vue;
 window.detect = detect();
+
+console.log(detect());
 
 /*= =================================================
   Run

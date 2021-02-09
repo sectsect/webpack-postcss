@@ -1,10 +1,10 @@
-import { detect } from 'detect-browser';
+import { detect as detectBrowser } from 'detect-browser';
 import isMobile from 'ismobilejs';
 import Modernizr from 'modernizr';
 
-const browser = detect();
+const browser = detectBrowser();
 
-export const detection = () => {
+export const detect = () => {
   const bn = browser.name;
   const bv = parseInt(browser.version, 10);
   const ww = window.innerWidth;

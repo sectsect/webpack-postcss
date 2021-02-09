@@ -86,3 +86,19 @@ const myClass = new MyClass('SECT', 37, 'Tokyo', 'Japan', 'info@xxxxxxxxx.com');
 const meta = myClass.run(); // 'SECT | 37 | Tokyo | info@xxxxxxxxx.com'
 console.log(meta);
 // console.log(myClass.email); // 'info@xxxxxxxxx.com'
+
+// Getters and Setters
+// https://www.sitepoint.com/javascript-private-class-fields/#gettersandsetters
+const rex = new Animal('Rex', 4, 'woof');
+rex.eats = 'anything'; // standard setter
+rex.food = 'tofu'; // bypass the eats setter altogether
+console.log(rex.dinner); // Rex eats tofu for dinner.
+
+// Private Class Fields
+// https://www.sitepoint.com/javascript-private-class-fields/#privateclassfields
+const m = new CustomClass();
+console.log(m.a);
+// console.log(m.#b); // error - private variable cannot be modified outside class
+const ib = m.incB(); // runs OK
+console.log(ib);
+// m.#b = 0; // error - private property cannot be modified outside class

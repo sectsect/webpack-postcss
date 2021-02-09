@@ -40,13 +40,11 @@ const getJSPlugins = env => {
   );
   plugins.push(
     new ESLintPlugin({
-      // fix: true,
-      // failOnError: true,
       // files: ['./src/**/*.js'],
       context: 'src/assets',
       extensions: ['ts', 'tsx', 'js', 'jsx'],
-      // emitError: true,
-      emitWarning: true,
+      fix: true,
+      emitError: true,
       lintDirtyModulesOnly: true,
     }),
   );
@@ -56,6 +54,11 @@ const getJSPlugins = env => {
         filename: '../../../dist/assets/images/svg/symbol.svg',
         svgo: {
           plugins: [
+            {
+              addClassesToSVGElement: {
+                classNames: ['svg-icon-lib'],
+              }
+            },
             { removeTitle: false },
             { removeAttrs: { attrs: 'fill' } },
             { removeStyleElement: true },

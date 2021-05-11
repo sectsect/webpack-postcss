@@ -1,24 +1,19 @@
-import React from 'react';
-import { Header } from './components/Header';
+import React, { useState } from 'react';
+import Header from './components/Header';
 
-export class App extends React.Component {
-  constructor(props) {
-    super(props);
+const App = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [who, setWho] = useState('World');
 
-    this.state = {
-      who: 'World',
-    };
-  }
+  return (
+    <div>
+      <Header />
+      <p>
+        Hello,
+        {who}!
+      </p>
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div>
-        <Header />
-        <p>
-          Hello,
-          {this.state.who}!
-        </p>
-      </div>
-    );
-  }
-}
+export default App;

@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import commons from './_modules/commons';
-import { App } from './_App';
+import App from './_App';
+import './_modules/commons';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root'),
+);
 
 // const title = 'My Minimal React Webpack Babel Setup';
 //

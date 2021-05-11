@@ -40,7 +40,7 @@ module.exports = {
       },
     ],
     "import/prefer-default-export": "off",
-    "import/no-default-export": "error",
+    // "import/no-default-export": "error",
     "no-alert": 0,
     "no-console": 0,
     "react/destructuring-assignment": 0,

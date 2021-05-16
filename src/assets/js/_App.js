@@ -5,6 +5,8 @@ const App = () => {
   // eslint-disable-next-line no-unused-vars
   const [who, setWho] = useState('World');
 
+  const { message } = window.my_data;
+
   return (
     <div>
       <Header />
@@ -12,6 +14,7 @@ const App = () => {
         Hello,
         {who}!
       </p>
+      <p>{message}</p>
     </div>
   );
 };

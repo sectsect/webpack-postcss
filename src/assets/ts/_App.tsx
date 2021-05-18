@@ -5,6 +5,13 @@ interface MyData {
   message: string;
 }
 
+interface Users {
+  id: number;
+  name: string;
+  email: string;
+  verified: boolean;
+}
+
 declare global {
   interface Window {
     my_data: MyData;
@@ -12,19 +19,41 @@ declare global {
 }
 
 const App: React.VFC = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [who] = useState('World');
+  const [users] = useState<Users[]>([
+    {
+      id: 1,
+      name: 'John',
+      email: 'john@google.com',
+      verified: false,
+    },
+    {
+      id: 2,
+      name: 'Jack',
+      email: 'jack@google.com',
+      verified: true,
+    },
+    {
+      id: 3,
+      name: 'James',
+      email: 'james@google.com',
+      verified: false,
+    },
+  ]);
 
   const { message } = window.my_data;
 
   return (
     <div>
       <Header />
-      <p>
-        Hello,
-        {who}!
-      </p>
       <p>{message}</p>
+      <ul className="user-list">
+        {users &&
+          users.map((user) => (
+            <li key={user.id} className={user.verified ? 'verified' : ''}>
+              {user.name}
+            </li>
+          ))}
+      </ul>
     </div>
   );
 };

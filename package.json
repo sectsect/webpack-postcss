@@ -41,7 +41,7 @@
     "@babel/preset-stage-3": "^7.8.3",
     "@babel/preset-typescript": "^7.13.0",
     "@sect/modernizr-loader": "^1.0.1",
-    "@sect/webpack-sweet-entry": "^3.0.0",
+    "@sect/webpack-sweet-entry": "^4.1.0",
     "@spotify/prettier-config": "^9.0.0",
     "@spotify/tsconfig": "^9.0.0",
     "@tsconfig/create-react-app": "^1.0.2",

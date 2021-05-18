@@ -1,20 +1,20 @@
 const webpack = require('webpack');
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
-const TerserPlugin = require('terser-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
 const dotenv = require('dotenv').config();
-const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const { WebpackSweetEntry } = require('@sect/webpack-sweet-entry');
-const SizePlugin = require('size-plugin');
 const NotifierPlugin = require('friendly-errors-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const notifier = require('node-notifier');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const SizePlugin = require('size-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 // const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
@@ -24,11 +24,11 @@ const buildPath = path.join(__dirname, 'dist');
 // console.log(process.env.AWS_ACCESS_KEY_ID);
 
 // For Detection Environment  @ https://webpack.js.org/api/cli/#environment-options
-const isProd = env => env && env.production;
-const isDev = env => env && env.development;
+const isProd = (env) => env && env.production;
+const isDev = (env) => env && env.development;
 
 // http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
-const getJSPlugins = env => {
+const getJSPlugins = (env) => {
   const plugins = [];
 
   plugins.push(
@@ -37,7 +37,7 @@ const getJSPlugins = env => {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       R: 'rambda',
-    }),
+    })
   );
   plugins.push(
     new ESLintPlugin({
@@ -47,35 +47,38 @@ const getJSPlugins = env => {
       fix: true,
       emitError: true,
       lintDirtyModulesOnly: true,
-    }),
+    })
   );
   plugins.push(
-    new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
-      output: {
-        filename: '../../../dist/assets/images/svg/symbol.svg',
-        svgo: {
-          plugins: [
-            {
-              addClassesToSVGElement: {
-                classNames: ['svg-icon-lib'],
-              }
-            },
-            { removeTitle: false },
-            { removeAttrs: { attrs: 'fill' } },
-            { removeStyleElement: true },
-          ],
+    new SVGSpritemapPlugin(
+      path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'),
+      {
+        output: {
+          filename: '../../../dist/assets/images/svg/symbol.svg',
+          svgo: {
+            plugins: [
+              {
+                addClassesToSVGElement: {
+                  classNames: ['svg-icon-lib'],
+                },
+              },
+              { removeTitle: false },
+              { removeAttrs: { attrs: 'fill' } },
+              { removeStyleElement: true },
+            ],
+          },
         },
-      },
-      sprite: {
-        prefix: 'icon-',
-      },
-    }),
+        sprite: {
+          prefix: 'icon-',
+        },
+      }
+    )
   );
   if (isProd(env)) {
     plugins.push(
       new SizePlugin({
         writeFile: false,
-      }),
+      })
     );
   }
   if (isDev(env)) {
@@ -83,21 +86,21 @@ const getJSPlugins = env => {
       new ForkTsCheckerWebpackPlugin({
         eslint: {
           files: './src/assets/ts/**/*',
-        }
-      }),
+        },
+      })
     );
     plugins.push(
       new ForkTsCheckerNotifierWebpackPlugin({
         skipSuccessful: true,
         title: 'TypeScript',
-      }),
+      })
     );
     plugins.push(
       new BundleAnalyzerPlugin({
         // analyzerMode: 'static',
         // reportFilename: path.join(__dirname, 'report.html'),
         openAnalyzer: false,
-      }),
+      })
     );
   }
   plugins.push(
@@ -114,31 +117,31 @@ const getJSPlugins = env => {
           subtitle: error.file || '',
         });
       },
-    }),
+    })
   );
 
   return plugins;
 };
 
-const getCSSPlugins = env => {
+const getCSSPlugins = (env) => {
   const plugins = [];
 
   plugins.push(
     new FixStyleOnlyEntriesPlugin({
       silent: true,
-    }),
+    })
   );
   plugins.push(
     new StyleLintPlugin({
       files: 'src/assets/css/**/*.css',
       lintDirtyModulesOnly: true,
       fix: true,
-    }),
+    })
   );
   plugins.push(
     new MiniCssExtractPlugin({
       filename: '[name].css',
-    }),
+    })
   );
   // plugins.push(new SpritesmithPlugin({
   //   src: {
@@ -171,12 +174,12 @@ const getCSSPlugins = env => {
         cssProcessorPluginOptions: {
           preset: ['default', { discardComments: { removeAll: true } }],
         },
-      }),
+      })
     );
     plugins.push(
       new SizePlugin({
         writeFile: false,
-      }),
+      })
     );
   }
   plugins.push(
@@ -193,15 +196,19 @@ const getCSSPlugins = env => {
           subtitle: error.file || '',
         });
       },
-    }),
+    })
   );
 
   return plugins;
 };
 
-module.exports = env => [
+module.exports = (env) => [
   {
-    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/ts/**/*.ts*'), ['ts', 'tsx'], 'ts'),
+    entry: WebpackSweetEntry(
+      path.resolve(sourcePath, 'assets/ts/**/*.ts*'),
+      ['ts', 'tsx'],
+      'ts'
+    ),
     output: {
       path: path.resolve(buildPath, 'assets/js'),
       filename: '[name].js',
@@ -287,7 +294,11 @@ module.exports = env => [
     },
   },
   {
-    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css'), 'css', 'css'),
+    entry: WebpackSweetEntry(
+      path.resolve(sourcePath, 'assets/css/**/*.css'),
+      'css',
+      'css'
+    ),
     output: {
       path: path.resolve(buildPath, 'assets/css'),
       // filename: '[name].css',

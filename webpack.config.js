@@ -205,7 +205,7 @@ const getCSSPlugins = (env) => {
 module.exports = (env) => [
   {
     entry: WebpackSweetEntry(
-      path.resolve(sourcePath, 'assets/ts/**/*.ts*'),
+      [path.resolve(sourcePath, 'assets/ts/**/*.ts*'), '!**/components'],
       ['ts', 'tsx'],
       'ts'
     ),

@@ -2,19 +2,41 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 
 const App = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [who, setWho] = useState('World');
+  const [users] = useState([
+    {
+      id: 1,
+      name: 'John',
+      email: 'john@google.com',
+      verified: false,
+    },
+    {
+      id: 2,
+      name: 'Jack',
+      email: 'jack@google.com',
+      verified: true,
+    },
+    {
+      id: 3,
+      name: 'James',
+      email: 'james@google.com',
+      verified: false,
+    },
+  ]);
 
   const { message } = window.my_data;
 
   return (
     <div>
       <Header />
-      <p>
-        Hello,
-        {who}!
-      </p>
       <p>{message}</p>
+      <ul className="user-list">
+        {users &&
+          users.map((user) => (
+            <li key={user.id} className={user.verified ? 'verified' : ''}>
+              {user.name}
+            </li>
+          ))}
+      </ul>
     </div>
   );
 };

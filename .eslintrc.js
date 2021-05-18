@@ -6,9 +6,13 @@ module.exports = {
     browser: true,
     node: true,
     jquery: true,
+    jest: true,
   },
   parser: '@babel/eslint-parser',
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: 2020,
     sourceType: 'module',
   },
@@ -39,9 +43,7 @@ module.exports = {
     // "import/no-default-export": "error",
     "no-alert": 0,
     "no-console": 0,
-    "react/destructuring-assignment": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/prefer-stateless-function": 0,
     "prettier/prettier": "error",
   }
 };

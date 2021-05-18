@@ -8,7 +8,17 @@
  * @return string
  */
 export class MyClass {
-  constructor(name, age, city, country, email = false) {
+  name: string;
+
+  age: number;
+
+  city: string;
+
+  country: string;
+
+  email: string;
+
+  constructor(name = '', age = 20, city = '', country = '', email = '') {
     this.name = name;
     this.age = age;
     this.city = city;
@@ -16,20 +26,30 @@ export class MyClass {
     this.email = email;
   }
 
-  toString() {
+  toString(): string {
     return `${this.name} | ${this.age} | ${this.city} | ${this.email}`;
   }
 
-  addCountry() {
+  addCountry(): string {
     return `${this.toString()} | ${this.country}`;
   }
 
-  run() {
+  run(): string {
     return this.addCountry();
   }
 }
 
 export class Animal {
+  type: string;
+
+  name: string;
+
+  legs: number;
+
+  noise: string;
+
+  food: any;
+
   constructor(name = 'anonymous', legs = 4, noise = 'nothing') {
     this.type = 'animal';
     this.name = name;
@@ -37,11 +57,11 @@ export class Animal {
     this.noise = noise;
   }
 
-  set eats(food) {
+  set eats(food: string) {
     this.food = food;
   }
 
-  get dinner() {
+  get dinner(): string {
     return `${this.name} eats ${this.food || 'nothing'} for dinner.`;
   }
 }
@@ -49,11 +69,15 @@ export class Animal {
 export class CustomClass {
   a = 1; // .a is public
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   #b = 2; // .#b is private
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   static #c = 3; // .#c is private and static
 
-  incB() {
+  incB(): number {
     this.#b += 1;
     return this.#b;
   }

@@ -6,6 +6,8 @@
 /* @import '../../../node_modules/sanitize.css/typography.css'; */
 
 /* @import "../../../node_modules/sanitize.css/forms.css"; */
+@import '../../../node_modules/@glidejs/glide/dist/css/glide.core';
+@import '../../../node_modules/@glidejs/glide/dist/css/glide.theme';
 
 @import '_base/formhack.css';
 @import '_base/sprite.css';

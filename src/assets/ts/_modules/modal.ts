@@ -3,9 +3,9 @@ import 'core-js/modules/es.array.from';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import MicroModal from 'micromodal';
 
-export const modal = () => {
-  const toggleBodyScrol = (id, action) => {
-    const el = document.querySelector(`#${id}`);
+export const modal = (): void => {
+  const toggleBodyScrol = (id: string, action: 'show' | 'close') => {
+    const el = document.querySelector(`#${id}`) as HTMLElement;
     if (action === 'show') {
       disableBodyScroll(el);
     } else {
@@ -22,14 +22,14 @@ export const modal = () => {
     disableFocus: false, // [6]
     awaitCloseAnimation: true, // [7]
     // debugMode: true, // [8]
-    onShow: mdl => {
-      if (mdl && mdl.id) {
-        toggleBodyScrol(mdl.id, 'show');
+    onShow: (md) => {
+      if (md?.id) {
+        toggleBodyScrol(md.id, 'show');
       }
     },
-    onClose: mdl => {
-      if (mdl && mdl.id) {
-        toggleBodyScrol(mdl.id, 'close');
+    onClose: (md) => {
+      if (md?.id) {
+        toggleBodyScrol(md.id, 'close');
       }
     },
   });

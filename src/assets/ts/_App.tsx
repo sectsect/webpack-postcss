@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 
-const App = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [who, setWho] = useState('World');
+interface MyData {
+  message: string;
+}
+
+declare global {
+  interface Window {
+    my_data: MyData;
+  }
+}
+
+const App: React.VFC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [who] = useState('World');
 
   const { message } = window.my_data;
 

@@ -1,51 +1,59 @@
 module.exports = {
-  "extends": ["airbnb", "prettier", "prettier/react"],
-  "plugins": ["@babel", "react", "prettier"],
-  "env": {
-    "es6": true,
-    "browser": true,
-    "node": true,
-    "jquery": true
+  extends: [
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jest/recommended',
+    'prettier',
+    'plugin:prettier/recommended',
+  ],
+  settings: {
+    jest: { version: 26 }
   },
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "ecmaVersion": 2020,
-    "sourceType": "module"
+  plugins: ['react', '@typescript-eslint', 'jest'],
+  env: {
+    browser: true,
+    es6: true,
+    jest: true,
   },
-  "globals": {
-    "window": true,
-    "lazySizes": true,
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
   },
-  "rules": {
-    "import/no-extraneous-dependencies": [
-      "error",
-        {
-        "devDependencies": true,
-        "optionalDependencies": false
-      }
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    project: './tsconfig.json',
+  },
+  rules: {
+    'import/prefer-default-export': 'off',
+    // 'import/no-default-export': 'error',
+    'jsx-a11y/label-has-associated-control': 'off',
+    'no-alert': 0,
+    'no-console': 0,
+    'no-param-reassign': [
+      'error',
+      { props: true, ignorePropertyModificationsFor: ['state'] },
     ],
-    "sort-imports": 0,
-    "import/order": [
-      "error",
+    'react/jsx-uses-react': 'off',
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'sort-imports': 0,
+    'import/order': [
+      'error',
       {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-        ],
-        "alphabetize": {
-          "order": "asc"
+        groups: ['builtin', 'external', 'internal'],
+        alphabetize: {
+          order: 'asc',
         },
-        "newlines-between": "never",
+        'newlines-between': 'never',
       },
     ],
-    "import/prefer-default-export": "off",
-    // "import/no-default-export": "error",
-    "no-alert": 0,
-    "no-console": 0,
-    "react/destructuring-assignment": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/prefer-stateless-function": 0,
-    "prettier/prettier": "error",
-  }
-};
+    '@typescript-eslint/no-explicit-any': 0,
+    'prettier/prettier': 'error',
+  },
+}

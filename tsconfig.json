@@ -1,0 +1,52 @@
+// {
+//   "extends": "@tsconfig/create-react-app/tsconfig.json",
+//   "compilerOptions": {
+//     "target": "esnext",
+//     "baseUrl": ".",
+//     "typeRoots": [
+//       "./node_modules/@types",
+//       "./types"
+//     ],
+//   },
+//   "include": [
+//     "src/**/*",
+//     "webpack.config.js",
+//     ".eslintrc.js"
+//   ],
+//   "exclude": [
+//     "dist",
+//     "node_modules",
+//     "**/*.spec.ts"
+//   ]
+// }
+
+{
+  "extends": "@spotify/tsconfig",
+  "compilerOptions": {
+    // "allowJs": true,
+    // "allowSyntheticDefaultImports": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    // "noImplicitThis": false,
+    "target": "esnext",
+    "incremental": true,
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    // "baseUrl": "src/@types",
+    "baseUrl": ".",
+    "paths": {
+      // "*": ["*"],
+      "*": ["node_modules/*", "src/@types/*"]
+    }
+
+  },
+  "include": [
+    "src/**/*",
+    ".eslintrc.js"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

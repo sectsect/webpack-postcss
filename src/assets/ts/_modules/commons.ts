@@ -12,15 +12,69 @@ import { innerVh } from 'inner-vh';
 import { detect } from './detect';
 import { inlineSVG } from './inline-svg';
 import { dotdotdot } from './jquery-dotdotdot';
+// import { touchHover } from './touch-hover';
 import { menu } from './menu';
 import { modal } from './modal';
 import { smoothScroll } from './smooth-scroll';
-import { tests } from './tests';
-import { touchHover } from './touch-hover';
+// import { tests } from './tests';
+import { typescript } from './typescript';
 import { viewPort } from './viewport';
 import { WebFontLoader } from './webfont-loader';
 
-window.detect = detect();
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+declare global {
+  interface Window {
+    wp_data: WpData;
+  }
+}
+
+interface WpData {
+  site: string;
+  post_id: string;
+  post_type: string;
+  slug: string;
+  title: string;
+  permalink: string;
+  paged: string;
+  taxonomy: string;
+  term_name: string;
+  term_slug: string;
+  term_id: string;
+  taxonomy_hierarchy: string;
+  homeurl: string;
+  template_dir_uri: string;
+  stylesheet_dir_uri: string;
+  stylesheet_dir: string;
+  contenturl: string;
+  current_page_url: string;
+  current_page_path: string;
+  is_home: string;
+  is_front_page: string;
+  is_page: string;
+  is_page_root: string;
+  is_static_page: string;
+  is_single: string;
+  is_singular: string;
+  is_archive: string;
+  is_post_type_archive: string;
+  is_tax: string;
+  is_date: string;
+  is_search: string;
+  is_tag: string;
+  is_feed: string;
+  break_points: BreakPoints;
+}
+
+interface BreakPoints {
+  small: number;
+  medium: number;
+  large: number;
+  xlarge: number;
+}
+
+// window.detect = detect();
+
+console.log(window.wp_data);
 
 console.log(detect());
 
@@ -29,26 +83,29 @@ console.log(detect());
 ================================================== */
 WebFontLoader();
 inlineSVG();
-viewPort(detect());
+viewPort();
 innerVh({
   ignoreCollapsibleUi: false,
   maximumCollapsibleUiHeight: 1,
 });
-touchHover(['.slider img']);
+// touchHover(['.slider img']);
 menu();
 modal();
-tests();
+// tests();
+typescript();
 
-jQuery(window).on('load', () => {
+// console.log(window.detect);
+
+$(window).on('load', () => {
   smoothScroll();
   dotdotdot();
 });
 
-// jQuery(window).on('load orientationchange resize', () => {
+// $(window).on('load orientationchange resize', () => {
 
 // });
 
-// jQuery(() => {
+// $(() => {
 //   /*= =================================================
 //   Detect the devicePixelRatio
 //   ================================================== */
@@ -69,7 +126,7 @@ jQuery(window).on('load', () => {
 //     // navActiveClass: "js-nav-active",  // String: Class that is added to element when nav is active
 //     // jsClass: "js",                    // String: 'JS enabled' class which is added to element
 //     init() {
-//       jQuery('#nav').show();
+//       $('#nav').show();
 //     }, // Function: Init callback
 //     //  open  : function() {},              // Function: Open callback
 //     //  close  : function() {}                // Function: Close callback
@@ -78,9 +135,9 @@ jQuery(window).on('load', () => {
 //     fadein /fadeout button Pagetop
 //   ================================================== */
 //   if (!isMobile.phone) {
-//     const topBtn = jQuery('#pagetop');
-//     jQuery(window).scroll(function () {
-//       if (jQuery(this).scrollTop() > 100) {
+//     const topBtn = $('#pagetop');
+//     $(window).scroll(function () {
+//       if ($(this).scrollTop() > 100) {
 //         topBtn.addClass('show');
 //       } else {
 //         topBtn.removeClass('show');

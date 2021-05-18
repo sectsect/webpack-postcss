@@ -1,6 +1,6 @@
 import { detect } from './detect';
 
-export const viewPort = () => {
+export const viewPort = (): void => {
   if (detect().device.tablet) {
     const target = '#viewport';
     const el = document.querySelector(target);

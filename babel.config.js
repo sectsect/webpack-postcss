@@ -9,7 +9,8 @@ module.exports = api => {
         corejs: 3,
       },
     ],
-    ["@babel/preset-react"]
+    ['@babel/preset-react'],
+    ['@babel/typescript']
   ];
   const plugins = [
     [
@@ -20,6 +21,7 @@ module.exports = api => {
     ],
     ['@babel/plugin-proposal-class-properties', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-class-properties
     ['@babel/plugin-proposal-private-methods', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-private-methods
+    '@babel/proposal-object-rest-spread',
   ];
 
   return {

@@ -5,16 +5,17 @@ const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
-const SpritesmithPlugin = require('webpack-spritesmith');
 const { WebpackSweetEntry } = require('@sect/webpack-sweet-entry');
 const SizePlugin = require('size-plugin');
 const NotifierPlugin = require('friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const spriteTemplate = require('./src/assets/js/_spriteTemplate');
+// const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');
@@ -40,7 +41,7 @@ const getJSPlugins = env => {
   );
   plugins.push(
     new ESLintPlugin({
-      // files: ['./src/**/*.js'],
+      // files: ['./src/**/*.ts'],
       context: 'src/assets',
       extensions: ['ts', 'tsx', 'js', 'jsx'],
       fix: true,
@@ -78,6 +79,19 @@ const getJSPlugins = env => {
     );
   }
   if (isDev(env)) {
+    plugins.push(
+      new ForkTsCheckerWebpackPlugin({
+        eslint: {
+          files: './src/assets/ts/**/*',
+        }
+      }),
+    );
+    plugins.push(
+      new ForkTsCheckerNotifierWebpackPlugin({
+        skipSuccessful: true,
+        title: 'TypeScript',
+      }),
+    );
     plugins.push(
       new BundleAnalyzerPlugin({
         // analyzerMode: 'static',
@@ -187,7 +201,7 @@ const getCSSPlugins = env => {
 
 module.exports = env => [
   {
-    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/js/**/*.js*'), 'js', 'js'),
+    entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/ts/**/*.ts*'), ['ts', 'tsx'], 'ts'),
     output: {
       path: path.resolve(buildPath, 'assets/js'),
       filename: '[name].js',
@@ -202,7 +216,8 @@ module.exports = env => [
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          // test: /\.(ts|tsx|js|jsx)$/,
+          test: /\.(t|j)sx?$/,
           exclude: /node_modules/,
           // test: /\.(mjs|js)$/,
           // exclude: /node_modules\/(?!(rambda|quicklink)\/).*/,
@@ -232,7 +247,7 @@ module.exports = env => [
     },
     // Modernizr
     resolve: {
-      extensions: ['*', '.js', '.jsx'],
+      extensions: ['.tsx', '.ts', '.jsx', '.js'],
       modules: ['node_modules'],
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),

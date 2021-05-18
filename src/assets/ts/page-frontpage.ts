@@ -1,49 +1,27 @@
 import './_modules/commons';
 import { MyClass, Animal, CustomClass } from './_class/myclass';
+import { glide } from './_modules/glide';
 import { slider } from './_modules/slider';
 
-// const ary = R.append('111', ['222', '333']);
-// console.log(ary);
+console.log(window.wp_data);
 
+glide();
 slider();
 
-// jQuery(() => {
-//   jQuery('.slider_wrap').each(function() {
-//     const parentid = `#${jQuery(this).attr('id')}`;
-//     jQuery('.slider').on('init', function(event, slick) {
-//       jQuery(this)
-//         .closest('.slider_wrap')
-//         .addClass('ready');
-//     });
-//     jQuery(`${parentid} .slider-for`).slick({
-//       slidesToShow: 1,
-//       slidesToScroll: 1,
-//       speed: 200,
-//       arrows: true,
-//       fade: false,
-//       asNavFor: `${parentid} .slider-nav`,
-//     });
-//     jQuery(`${parentid} .slider-nav`).slick({
-//       slidesToShow: 4,
-//       slidesToScroll: 1,
-//       speed: 200,
-//       asNavFor: `${parentid} .slider-for`,
-//       arrows: false,
-//       dots: false,
-//       //	centerMode		  : true,
-//       focusOnSelect: true,
-//       responsive: [
-//         {
-//           breakpoint: 768,
-//           settings: {
-//             slidesToShow: 4,
-//             slidesToScroll: 1,
-//           },
-//         },
-//       ],
-//     });
-//   });
-// });
+// console.log(add(10, 5));
+
+// const sect = 'sect';
+// console.log(sect);
+
+// let message: String = '';
+// message = 'TypeScript World';
+// console.log(`Hello!${message}`);
+
+// menu();
+
+// let message: String = '';
+// message = 2;
+// console.log(`Hello!${message}`);
 
 /**
  * ES6 Class

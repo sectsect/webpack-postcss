@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "",
-    "lint": "eslint --ext .js,.vue src/assets/js",
-    "lint:fix": "eslint --fix --ext .js,.vue src/assets/js",
+    "lint": "eslint --ext .js,.jsx,.vue src/assets/js",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.vue src/assets/js",
     "lint:css": "stylelint src/**/*.css --fix",
     "dev": "webpack --env development --mode development --watch --progress",
     "build": "webpack --env production --mode production"

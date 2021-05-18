@@ -7,14 +7,14 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
-const SpritesmithPlugin = require('webpack-spritesmith');
+// const SpritesmithPlugin = require('webpack-spritesmith');
 const { WebpackSweetEntry } = require('@sect/webpack-sweet-entry');
 const SizePlugin = require('size-plugin');
 const NotifierPlugin = require('friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const spriteTemplate = require('./src/assets/js/_spriteTemplate');
+// const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');

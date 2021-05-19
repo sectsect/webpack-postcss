@@ -10,6 +10,7 @@
 - [ESLint](https://eslint.org/) w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 - [stylelint](https://stylelint.io/)
 - [Prettier](https://prettier.io/)
+- [Jest](https://jestjs.io/) / [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [husky](https://github.com/typicode/husky) / [lint-staged](https://github.com/okonet/lint-staged)
 
 ## Branches
@@ -21,6 +22,7 @@
 | [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ SASS<br>\- PostCSS |
 | [typescript](https://github.com/sectsect/webpack-postcss/tree/typescript) | \+ TypeScript<br>\- JavaScript |
 | [react](https://github.com/sectsect/webpack-postcss/tree/react) | Partially use React<br>\+ React<br>(Default: jQuery only) |
+| [react-typescript](https://github.com/sectsect/webpack-postcss/tree/react-typescript) | Partially use React<br>\+ React<br>(Default: jQuery only)<br>\+ TypeScript<br>\- JavaScript |
 | [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | Partially use Vue.js<br>\+ Vue.js<br>(Default: jQuery only) |
 | [webpack-dev-server](https://github.com/sectsect/webpack-postcss/tree/webpack-dev-server) | \+ webpack-dev-server |
 
@@ -40,6 +42,7 @@ See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/packa
 | ------ | ----------- |
 | `npm run dev` | Watching for Dev |
 | `npm run build` | Building for Deploy |
+| `npm test` | Run your tests |
 
 ## :bookmark: NOTES
 - Rename `.env.example` to `.env` for [dotenv](https://github.com/motdotla/dotenv)

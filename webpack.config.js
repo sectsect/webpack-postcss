@@ -12,7 +12,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
@@ -121,9 +121,7 @@ const getCSSPlugins = env => {
   const plugins = [];
 
   plugins.push(
-    new FixStyleOnlyEntriesPlugin({
-      silent: true,
-    }),
+    new RemoveEmptyScriptsPlugin(),
   );
   plugins.push(
     new StyleLintPlugin({

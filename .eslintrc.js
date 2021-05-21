@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ['airbnb', 'prettier'],
-  plugins: ['@babel', 'react', 'prettier'],
+  extends: ['airbnb', 'plugin:jest/recommended', 'prettier'],
+  plugins: ['@babel', 'react', 'prettier', 'jest'],
   env: {
     es6: true,
     browser: true,
@@ -39,11 +39,11 @@ module.exports = {
         'newlines-between': 'never',
       },
     ],
-    "import/prefer-default-export": "off",
+    'import/prefer-default-export': 'off',
     // "import/no-default-export": "error",
-    "no-alert": 0,
-    "no-console": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "prettier/prettier": "error",
-  }
+    'no-alert': 0,
+    'no-console': 0,
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'prettier/prettier': 'error',
+  },
 };

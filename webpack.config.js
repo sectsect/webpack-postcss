@@ -3,7 +3,7 @@ const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const dotenv = require('dotenv').config();
 const { WebpackSweetEntry } = require('@sect/webpack-sweet-entry');
-const NotifierPlugin = require('friendly-errors-webpack-plugin');
+const NotifierPlugin = require('@soda/friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const notifier = require('node-notifier');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -13,8 +13,8 @@ const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
-const SpritesmithPlugin = require('webpack-spritesmith');
-const spriteTemplate = require('./src/assets/js/_spriteTemplate');
+// const SpritesmithPlugin = require('webpack-spritesmith');
+// const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');
@@ -120,9 +120,7 @@ const getJSPlugins = env => {
 const getCSSPlugins = env => {
   const plugins = [];
 
-  plugins.push(
-    new RemoveEmptyScriptsPlugin(),
-  );
+  plugins.push(new RemoveEmptyScriptsPlugin());
   plugins.push(
     new StyleLintPlugin({
       files: 'src/assets/css/**/*.css',

@@ -20,6 +20,8 @@
 | [module](https://github.com/sectsect/webpack-postcss/tree/module) | ES Modules `<script type="module">`<br><ul><li>Support for Differential Serving of Modern and Legacy bundle.</li><li>In the next version this branch will be merged into the `master` branch.</li></ul> |
 | [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ SASS<br>\- PostCSS |
 | [typescript](https://github.com/sectsect/webpack-postcss/tree/typescript) | \+ TypeScript<br>\- JavaScript |
+| [react](https://github.com/sectsect/webpack-postcss/tree/react) | Partially use React<br>\+ React<br>(Default: jQuery only) |
+| [react-typescript](https://github.com/sectsect/webpack-postcss/tree/react-typescript) | [react](https://github.com/sectsect/webpack-postcss/tree/react) + [typescript](https://github.com/sectsect/webpack-postcss/tree/typescript) |
 | [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | Partially use Vue.js<br>\+ Vue.js<br>(Default: jQuery only) |
 | [webpack-dev-server](https://github.com/sectsect/webpack-postcss/tree/webpack-dev-server) | \+ webpack-dev-server |
 
@@ -55,14 +57,4 @@ $ rm -rf node_modules/.cache/eslint-loader
 $ rm -rf node_modules/.cache/webpack
 # Remove all
 $ rm -rf node_modules/.cache
-```
-
-## Known Issues
-
-@ https://github.com/fqborges/webpack-fix-style-only-entries/issues/31
-```
-(node:35675) [DEP_WEBPACK_CHUNK_HAS_ENTRY_MODULE] DeprecationWarning: Chunk.hasEntryModule: Use new ChunkGraph API
-(node:35675) [DEP_WEBPACK_CHUNK_ENTRY_MODULE] DeprecationWarning: Chunk.entryModule: Use new ChunkGraph API
-(node:35675) [DEP_WEBPACK_MODULE_INDEX] DeprecationWarning: Module.index: Use new ModuleGraph API
-(node:35675) [DEP_WEBPACK_DEPRECATION_ARRAY_TO_SET] DeprecationWarning: chunk.files was changed from Array to Set (using Array method 'filter' is deprecated)
 ```

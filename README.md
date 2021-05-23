@@ -58,3 +58,7 @@ $ rm -rf node_modules/.cache/webpack
 # Remove all
 $ rm -rf node_modules/.cache
 ```
+
+## Known Issues on webpack 5
+
+@ https://github.com/GoogleChromeLabs/size-plugin/issues/40

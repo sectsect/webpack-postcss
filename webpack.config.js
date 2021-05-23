@@ -14,7 +14,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 // const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
@@ -50,29 +50,37 @@ const getJSPlugins = (env) => {
     })
   );
   plugins.push(
-    new SVGSpritemapPlugin(
-      path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'),
-      {
-        output: {
-          filename: '../../../dist/assets/images/svg/symbol.svg',
-          svgo: {
-            plugins: [
-              {
-                addClassesToSVGElement: {
-                  classNames: ['svg-icon-lib'],
-                },
+    new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
+      output: {
+        filename: '../../../dist/assets/images/svg/symbol.svg',
+        svgo: {
+          plugins: [
+            {
+              name: 'addClassesToSVGElement',
+              params: {
+                classNames: ['svg-icon-lib'],
               },
-              { removeTitle: false },
-              { removeAttrs: { attrs: 'fill' } },
-              { removeStyleElement: true },
-            ],
-          },
+            },
+            {
+              name: 'removeTitle',
+              active: false,
+            },
+            {
+              name: 'removeAttrs',
+              params: {
+                attrs: 'fill',
+              },
+            },
+            {
+              name: 'removeStyleElement',
+            },
+          ],
         },
-        sprite: {
-          prefix: 'icon-',
-        },
-      }
-    )
+      },
+      sprite: {
+        prefix: 'icon-',
+      },
+    })
   );
   if (isProd(env)) {
     plugins.push(
@@ -127,9 +135,7 @@ const getCSSPlugins = (env) => {
   const plugins = [];
 
   plugins.push(
-    new FixStyleOnlyEntriesPlugin({
-      silent: true,
-    })
+    new RemoveEmptyScriptsPlugin(),
   );
   plugins.push(
     new StyleLintPlugin({

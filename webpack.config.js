@@ -1,19 +1,19 @@
 const webpack = require('webpack');
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
-const TerserPlugin = require('terser-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const dotenv = require('dotenv').config();
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 // const SpritesmithPlugin = require('webpack-spritesmith');
 const { WebpackSweetEntry } = require('@sect/webpack-sweet-entry');
-const SizePlugin = require('size-plugin');
 const NotifierPlugin = require('friendly-errors-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const notifier = require('node-notifier');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const SizePlugin = require('size-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 // const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
@@ -55,13 +55,24 @@ const getJSPlugins = env => {
         svgo: {
           plugins: [
             {
-              addClassesToSVGElement: {
+              name: 'addClassesToSVGElement',
+              params: {
                 classNames: ['svg-icon-lib'],
-              }
+              },
             },
-            { removeTitle: false },
-            { removeAttrs: { attrs: 'fill' } },
-            { removeStyleElement: true },
+            {
+              name: 'removeTitle',
+              active: false,
+            },
+            {
+              name: 'removeAttrs',
+              params: {
+                attrs: 'fill',
+              },
+            },
+            {
+              name: 'removeStyleElement',
+            },
           ],
         },
       },
@@ -110,9 +121,7 @@ const getCSSPlugins = env => {
   const plugins = [];
 
   plugins.push(
-    new FixStyleOnlyEntriesPlugin({
-      silent: true,
-    }),
+    new RemoveEmptyScriptsPlugin(),
   );
   plugins.push(
     new StyleLintPlugin({

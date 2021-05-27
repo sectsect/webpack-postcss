@@ -19,6 +19,7 @@
 | [master](https://github.com/sectsect/webpack-postcss) | [PostCSS](https://postcss.org/) that compliant tomorrow’s CSS syntax as much as possible w/ [postcss-preset-env](http://preset-env.cssdb.org/) |
 | [module](https://github.com/sectsect/webpack-postcss/tree/module) | ES Modules `<script type="module">`<br><ul><li>Support for Differential Serving of Modern and Legacy bundle.</li><li>In the next version this branch will be merged into the `master` branch.</li></ul> |
 | [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ SASS<br>\- PostCSS |
+| [tailwindcss](https://github.com/sectsect/webpack-postcss/tree/tailwindcss) | \+ Tailwind CSS |
 | [typescript](https://github.com/sectsect/webpack-postcss/tree/typescript) | \+ TypeScript<br>\- JavaScript |
 | [react](https://github.com/sectsect/webpack-postcss/tree/react) | Partially use React<br>\+ React<br>(Default: jQuery only) |
 | [react-typescript](https://github.com/sectsect/webpack-postcss/tree/react-typescript) | [react](https://github.com/sectsect/webpack-postcss/tree/react) + [typescript](https://github.com/sectsect/webpack-postcss/tree/typescript) |
@@ -58,3 +59,7 @@ $ rm -rf node_modules/.cache/webpack
 # Remove all
 $ rm -rf node_modules/.cache
 ```
+
+## Known Issues on webpack 5
+
+@ https://github.com/GoogleChromeLabs/size-plugin/issues/40

@@ -12,7 +12,7 @@
 
 /* @import "../../../node_modules/sanitize.css/forms.css"; */
 
-@import '_base/formhack.css';
+/* @import '_base/formhack.css'; */
 @import '_base/sprite.css';
 @import '_base/modal.css';
 @import '_base/svg-icon.css';

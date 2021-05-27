@@ -2,6 +2,17 @@
   & article {
     margin-top: 10px;
   }
+  & .btn {
+    @apply font-bold py-2 px-4 rounded;
+  }
+
+  & .btn-blue {
+    @apply bg-blue-500 text-white;
+  }
+
+  & .btn-blue:hover {
+    @apply bg-blue-400;
+  }
 }
 
 @media (--viewport-medium) {

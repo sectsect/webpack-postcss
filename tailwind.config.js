@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 module.exports = {
   purge: {
     // enabled: true,
@@ -28,5 +29,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

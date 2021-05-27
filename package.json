@@ -75,7 +75,7 @@
     "stylelint-webpack-plugin": "^2.1.1",
     "svg-spritemap-webpack-plugin": "^4.0.3",
     "terser-webpack-plugin": "^5.1.2",
-    "webpack": "^5.37.1",
+    "webpack": "^5.38.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.0",
     "webpack-remove-empty-scripts": "^0.7.1",

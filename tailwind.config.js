@@ -1,5 +1,6 @@
 /* eslint-disable global-require */
 module.exports = {
+  mode: 'jit',
   purge: {
     // enabled: true,
     content: [

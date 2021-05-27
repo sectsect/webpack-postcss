@@ -12,17 +12,14 @@ Reset
 ================================================== */
 
 /* Remove margin, padding of all elements and set background-no-repeat as default */
-* {
+
+/* * {
   padding: 0;
   margin: 0;
-}
+} */
 picture,
 source {
-  display: block;
-}
-ol,
-ul {
-  list-style: none;
+  @apply block;
 }
 
 /* ==================================================
@@ -150,9 +147,9 @@ Normalization for Third party
 
 /* slider (slick) */
 .slider_wrap {
-  position: relative;
-  min-height: 871px;
+  @apply relative min-h-full;
   &::before {
+    /* @apply absolute top-1/2 left-1/2 z-50; */
     position: absolute;
     top: 50%;
     left: 50%;

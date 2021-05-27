@@ -62,7 +62,6 @@
     "postcss-import": "^14.0.2",
     "postcss-loader": "^5.3.0",
     "postcss-preset-env": "^6.7.0",
-    "postcss-px-to-viewport": "^1.1.1",
     "postcss-pxtorem": "^6.0.0",
     "postcss-reporter": "^7.0.2",
     "postcss-sort-media-queries": "^3.10.11",

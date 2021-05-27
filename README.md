@@ -21,9 +21,9 @@
 | [sass](https://github.com/sectsect/webpack-postcss/tree/sass) | \+ SASS<br>\- PostCSS |
 | [tailwindcss](https://github.com/sectsect/webpack-postcss/tree/tailwindcss) | \+ Tailwind CSS |
 | [typescript](https://github.com/sectsect/webpack-postcss/tree/typescript) | \+ TypeScript<br>\- JavaScript |
-| [react](https://github.com/sectsect/webpack-postcss/tree/react) | Partially use React<br>\+ React<br>(Default: jQuery only) |
+| [react](https://github.com/sectsect/webpack-postcss/tree/react) | ☝️ You can also use React partially<br>\+ React |
 | [react-typescript](https://github.com/sectsect/webpack-postcss/tree/react-typescript) | [react](https://github.com/sectsect/webpack-postcss/tree/react) + [typescript](https://github.com/sectsect/webpack-postcss/tree/typescript) |
-| [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | Partially use Vue.js<br>\+ Vue.js<br>(Default: jQuery only) |
+| [vuejs](https://github.com/sectsect/webpack-postcss/tree/vuejs) | ☝️ You can also use Vue.js partially<br>\+ Vue.js |
 | [webpack-dev-server](https://github.com/sectsect/webpack-postcss/tree/webpack-dev-server) | \+ webpack-dev-server |
 
 ## :beer: Setup

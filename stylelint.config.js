@@ -10,7 +10,19 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: ['mixin', 'define-mixin', 'if', 'else'],
+        ignoreAtRules: [
+          'mixin',
+          'define-mixin',
+          'if',
+          'else',
+          // Tailwind CSS
+          'tailwind',
+          'apply',
+          'variants',
+          'responsive',
+          'screen',
+          'layer',
+        ],
       },
     ],
     // "declaration-block-no-duplicate-properties": [

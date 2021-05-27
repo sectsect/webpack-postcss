@@ -27,3 +27,12 @@
 
 @import '_pages/home.css';
 @import '_pages/page-id-3.css';
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}

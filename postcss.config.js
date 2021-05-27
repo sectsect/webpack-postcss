@@ -1,13 +1,16 @@
 const postcssImport = require('postcss-import');
+const tailwindcss = require('tailwindcss');
 const postcssPresetEnv = require('postcss-preset-env')({
-  stage: 1,  // Default: stage: 2   @ https://cssdb.org/#staging-process
+  stage: 1, // Default: stage: 2   @ https://cssdb.org/#staging-process
   importFrom: 'src/assets/css/_base/settings.css',
   autoprefixer: {
-    grid: 'autoplace'
+    // grid: 'autoplace',
+    grid: false, // For IE11 @ https://github.com/tailwindlabs/discuss/issues/454#issuecomment-586379008
   },
   features: {
-    'nesting-rules': true
-  }
+    'nesting-rules': true,
+    'focus-within-pseudo-class': false,
+  },
 });
 const postcssSortMediaQueries = require('postcss-sort-media-queries');
 const postcssCombineSelectors = require('postcss-combine-duplicated-selectors');
@@ -32,6 +35,7 @@ const postcssReporter = require('postcss-reporter')({
 module.exports = {
   plugins: [
     postcssImport,
+    tailwindcss,
     postcssPresetEnv,
     postcssSortMediaQueries,
     postcssCombineSelectors,

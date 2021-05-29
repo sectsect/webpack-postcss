@@ -1,21 +1,21 @@
 const webpack = require('webpack');
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
-const TerserPlugin = require('terser-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const dotenv = require('dotenv').config();
-const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
-const SpritesmithPlugin = require('webpack-spritesmith');
-const { VueLoaderPlugin } = require('vue-loader');
+// const dotenv = require('dotenv').config();
 const { WebpackSweetEntry } = require('@sect/webpack-sweet-entry');
-const SizePlugin = require('size-plugin');
-const NotifierPlugin = require('friendly-errors-webpack-plugin');
+const NotifierPlugin = require('@soda/friendly-errors-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const notifier = require('node-notifier');
+const SizePlugin = require('size-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const spriteTemplate = require('./src/assets/js/_spriteTemplate');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+// const SpritesmithPlugin = require('webpack-spritesmith');
+// const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');
@@ -56,13 +56,24 @@ const getJSPlugins = env => {
         svgo: {
           plugins: [
             {
-              addClassesToSVGElement: {
+              name: 'addClassesToSVGElement',
+              params: {
                 classNames: ['svg-icon-lib'],
-              }
+              },
             },
-            { removeTitle: false },
-            { removeAttrs: { attrs: 'fill' } },
-            { removeStyleElement: true },
+            {
+              name: 'removeTitle',
+              active: false,
+            },
+            {
+              name: 'removeAttrs',
+              params: {
+                attrs: 'fill',
+              },
+            },
+            {
+              name: 'removeStyleElement',
+            },
           ],
         },
       },
@@ -111,11 +122,7 @@ const getJSPlugins = env => {
 const getCSSPlugins = env => {
   const plugins = [];
 
-  plugins.push(
-    new FixStyleOnlyEntriesPlugin({
-      silent: true,
-    }),
-  );
+  plugins.push(new RemoveEmptyScriptsPlugin());
   plugins.push(
     new StyleLintPlugin({
       files: 'src/assets/css/**/*.css',
@@ -154,13 +161,6 @@ const getCSSPlugins = env => {
   //   },
   // }));
   if (isProd(env)) {
-    plugins.push(
-      new OptimizeCssAssetsPlugin({
-        cssProcessorPluginOptions: {
-          preset: ['default', { discardComments: { removeAll: true } }],
-        },
-      }),
-    );
     plugins.push(
       new SizePlugin({
         writeFile: false,
@@ -219,9 +219,7 @@ module.exports = env => [
         },
         {
           test: /\.vue$/,
-          use: [
-            { loader: 'vue-loader' },
-          ],
+          use: [{ loader: 'vue-loader' }],
         },
         {
           test: /\.css$/,
@@ -339,6 +337,22 @@ module.exports = env => [
     externals: {},
     resolve: {
       modules: ['node_modules'],
+    },
+    optimization: {
+      minimizer: [
+        new CssMinimizerPlugin({
+          minimizerOptions: {
+            preset: [
+              'default',
+              {
+                discardComments: {
+                  removeAll: true,
+                },
+              },
+            ],
+          },
+        }),
+      ],
     },
     plugins: getCSSPlugins(env),
     devtool: isProd(env) ? false : 'inline-cheap-source-map',

@@ -1,13 +1,5 @@
 const postcssSortMediaQueries = require('postcss-sort-media-queries');
 const postcssCombineSelectors = require('postcss-combine-duplicated-selectors');
-// const pxtoviewport = require('postcss-px-to-viewport')({
-//   viewportWidth: 414,
-//   landscape: false,
-//   landscapeWidth: 896,
-//   propList: ['--fontSize', 'font-size'],
-//   replace: true,
-//   // selectorBlackList: ['/[i]/'],
-// });
 const pxtorem = require('postcss-pxtorem')({
   replace: false,
 });
@@ -28,7 +20,6 @@ module.exports = {
   plugins: [
     postcssSortMediaQueries,
     postcssCombineSelectors,
-    // pxtoviewport,
     pxtorem,
     postcssHexrgba,
     postcssFlexbugsFixes,

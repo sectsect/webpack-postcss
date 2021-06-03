@@ -3,6 +3,7 @@ module.exports = {
     'airbnb-typescript',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
+    'plugin:jsx-a11y/recommended',
     'plugin:jest/recommended',
     'prettier',
     'plugin:prettier/recommended',
@@ -10,9 +11,17 @@ module.exports = {
     'plugin:jest-dom/recommended',
   ],
   settings: {
-    jest: { version: 26 }
+    jest: { version: 26 },
   },
-  plugins: ['react', '@typescript-eslint', 'jest', 'jest-dom', 'testing-library'],
+  plugins: [
+    'react',
+    'jsx-a11y',
+    '@typescript-eslint',
+    'prettier',
+    'jest',
+    'jest-dom',
+    'testing-library',
+  ],
   env: {
     browser: true,
     es6: true,
@@ -58,4 +67,4 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 0,
     'prettier/prettier': 'error',
   },
-}
+};

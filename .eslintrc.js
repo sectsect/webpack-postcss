@@ -6,11 +6,13 @@ module.exports = {
     'plugin:jest/recommended',
     'prettier',
     'plugin:prettier/recommended',
+    'plugin:testing-library/react',
+    'plugin:jest-dom/recommended',
   ],
   settings: {
     jest: { version: 26 }
   },
-  plugins: ['react', '@typescript-eslint', 'jest'],
+  plugins: ['react', '@typescript-eslint', 'jest', 'jest-dom', 'testing-library'],
   env: {
     browser: true,
     es6: true,

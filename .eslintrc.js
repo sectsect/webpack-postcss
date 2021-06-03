@@ -1,12 +1,13 @@
 module.exports = {
   extends: [
     'airbnb',
+    'plugin:jsx-a11y/recommended',
     'plugin:jest/recommended',
     'prettier',
     'plugin:testing-library/react',
     'plugin:jest-dom/recommended',
   ],
-  plugins: ['@babel', 'react', 'prettier', 'jest', 'jest-dom', 'testing-library'],
+  plugins: ['@babel', 'react', 'jsx-a11y', 'prettier', 'jest', 'jest-dom', 'testing-library'],
   env: {
     es6: true,
     browser: true,

@@ -31,7 +31,7 @@ const App = () => {
       <p>{message}</p>
       <ul className="user-list">
         {users &&
-          users.map((user) => (
+          users.map(user => (
             <li key={user.id} className={user.verified ? 'verified' : ''}>
               {user.name}
             </li>

@@ -11,7 +11,7 @@ module.exports = {
     'plugin:jest-dom/recommended',
   ],
   settings: {
-    jest: { version: 26 },
+    jest: { version: 27 },
   },
   plugins: [
     'react',

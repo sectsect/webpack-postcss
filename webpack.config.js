@@ -190,8 +190,8 @@ module.exports = env => [
     entry: WebpackSweetEntry(
       [path.resolve(sourcePath, 'assets/js/**/*.js*'), '!**/components'],
       'js',
-      'js'
-      ),
+      'js',
+    ),
     output: {
       path: path.resolve(buildPath, 'assets/js'),
       filename: '[name].js',
@@ -317,7 +317,7 @@ module.exports = env => [
               'default',
               {
                 discardComments: {
-                  removeAll: true
+                  removeAll: true,
                 },
               },
             ],

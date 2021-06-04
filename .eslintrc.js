@@ -54,6 +54,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'sort-imports': 0,
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }], // For Error on `src/setupTests.ts`
     'import/order': [
       'error',
       {

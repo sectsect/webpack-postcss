@@ -42,11 +42,14 @@
   },
   "include": [
     "src/**/*",
-    ".eslintrc.js"
+    ".eslintrc.js",
+    "babel.config.js"
   ],
   "exclude": [
     "dist",
     "node_modules",
+    "/test",
+    "**/*.test.ts",
     "**/*.spec.ts"
   ]
 }

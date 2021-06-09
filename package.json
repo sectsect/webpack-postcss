@@ -12,14 +12,16 @@
     "lint:css": "stylelint src/**/*.css --fix",
     "dev": "webpack --env development --mode development --watch --progress",
     "build": "webpack --env production --mode production",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
+  "eslintIgnore": [
+    "/.eslintrc.js",
+    "/babel.config.js",
+    "/jest.config.js",
+    "/test"
+  ],
   "browserslist": "> 1%, last 2 versions, Firefox ESR, IE >= 11, not Android 4.4.3-4.4.4, not dead",
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsc --noEmit && lint-staged"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,vue}": [
       "eslint --fix"
@@ -59,6 +61,7 @@
     "@typescript-eslint/parser": "^4.25.0",
     "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
+    "camelcase": "^5.3.1",
     "css-loader": "^5.2.6",
     "css-minimizer-webpack-plugin": "^3.0.0",
     "eslint": "^7.27.0",

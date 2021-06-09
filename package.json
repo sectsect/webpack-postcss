@@ -9,14 +9,10 @@
     "lint:fix": "eslint --fix --ext .js,.vue src/assets/js",
     "lint:css": "stylelint src/**/*.css --fix",
     "dev": "webpack --env development --mode development --watch --progress",
-    "build": "webpack --env production --mode production"
+    "build": "webpack --env production --mode production",
+    "prepare": "husky install"
   },
   "browserslist": "> 1%, last 2 versions, Firefox ESR, IE >= 11, not Android 4.4.3-4.4.4, not dead",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,vue}": [
       "eslint --fix"

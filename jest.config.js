@@ -12,7 +12,8 @@ module.exports = {
   transform: {
     '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
     '^.+\\.css$': '<rootDir>/test/config/cssTransform.ts',
-    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/test/config/fileTransform.ts',
+    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)':
+      '<rootDir>/test/config/fileTransform.ts',
   },
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$',

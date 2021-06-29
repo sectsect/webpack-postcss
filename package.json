@@ -14,6 +14,9 @@
   },
   "browserslist": "> 1%, last 2 versions, Firefox ESR, IE >= 11, not Android 4.4.3-4.4.4, not dead",
   "lint-staged": {
+    "*": [
+      "git secrets --scan"
+    ],
     "src/**/*.{js,jsx,ts,tsx,vue}": [
       "eslint --fix"
     ],

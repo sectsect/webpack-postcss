@@ -198,6 +198,7 @@ module.exports = env => [
       buildDependencies: {
         config: [__filename],
       },
+      name: 'js',
     },
     module: {
       rules: [
@@ -282,6 +283,7 @@ module.exports = env => [
       buildDependencies: {
         config: [__filename],
       },
+      name: 'css',
     },
     module: {
       rules: [

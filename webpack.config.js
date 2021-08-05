@@ -206,7 +206,7 @@ const jsConfig = (mode, env) => {
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/ts/**/*.ts*'), 'ts', 'ts'),
     output: {
       path: path.resolve(buildPath, 'assets/js'),
-      filename: `[name]${mode === 'modern' ? '.esm.js' : '.umd.js'}`,
+      filename: `[name]${mode === 'modern' ? '.esm.js' : '.es5.js'}`,
     },
     // Persistent Caching @ https://github.com/webpack/changelog-v5/blob/master/guides/persistent-caching.md
     cache: {

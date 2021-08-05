@@ -10,6 +10,7 @@
 - [ESLint](https://eslint.org/) w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 - [stylelint](https://stylelint.io/)
 - [Prettier](https://prettier.io/)
+- [Secretlint](https://github.com/secretlint/secretlint)
 - [husky](https://github.com/typicode/husky) / [lint-staged](https://github.com/okonet/lint-staged)
 
 ## Branches

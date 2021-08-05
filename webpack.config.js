@@ -11,7 +11,6 @@ const SizePlugin = require('size-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const threadLoader = require('thread-loader');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 // const SpritesmithPlugin = require('webpack-spritesmith');
@@ -22,27 +21,6 @@ const buildPath = path.join(__dirname, 'dist');
 
 // For dotenv
 // console.log(process.env.AWS_ACCESS_KEY_ID);
-
-// thread-loader
-const jsWorkerPoolOptions = {
-  // workers: 1,
-  workerParallelJobs: 50,
-  // workerNodeArgs: ['--max-old-space-size=1024'],
-  poolTimeout: 1000,
-  name: 'js-loader-pool',
-};
-const cssWorkerPoolOptions = {
-  // workers: 1,
-  workerParallelJobs: 50,
-  // workerNodeArgs: ['--max-old-space-size=1024'],
-  poolTimeout: 1000,
-  name: 'css-loader-pool',
-};
-
-// webpack build hangs with warmup and new cache API
-// @ https://github.com/webpack-contrib/thread-loader/issues/122
-// threadLoader.warmup(jsWorkerPoolOptions, ['babel-loader']);
-// threadLoader.warmup(cssWorkerPoolOptions, ['css-loader', 'postcss-loader']);
 
 // For Detection Environment  @ https://webpack.js.org/api/cli/#environment-options
 const isProd = env => env && env.production;
@@ -231,10 +209,6 @@ module.exports = env => [
           // exclude: /node_modules\/(?!(rambda|quicklink)\/).*/,
           use: [
             {
-              loader: 'thread-loader',
-              options: jsWorkerPoolOptions,
-            },
-            {
               loader: 'babel-loader',
               options: {
                 cacheDirectory: true,
@@ -317,10 +291,6 @@ module.exports = env => [
           test: /\.css$/,
           use: [
             MiniCssExtractPlugin.loader,
-            {
-              loader: 'thread-loader',
-              options: cssWorkerPoolOptions,
-            },
             {
               loader: 'css-loader',
               options: {

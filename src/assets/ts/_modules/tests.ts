@@ -110,8 +110,14 @@ export const tests = (): void => {
       const result = await resolveAfter2Seconds();
       console.log(result);
       // expected output: "resolved"
-    } catch (err) {
-      alert(err);
+    } catch (e: unknown) {
+      if (e instanceof ReferenceError) {
+        console.error(e.stack);
+      } else if (e instanceof Error) {
+        console.log(e.stack);
+      } else {
+        throw e; // unknown error, rethrow it
+      }
     }
   };
   asyncCall();

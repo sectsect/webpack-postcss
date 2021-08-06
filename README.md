@@ -11,6 +11,7 @@
 - [stylelint](https://stylelint.io/)
 - [Prettier](https://prettier.io/)
 - [Jest](https://jestjs.io/) / [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Secretlint](https://github.com/secretlint/secretlint)
 - [husky](https://github.com/typicode/husky) / [lint-staged](https://github.com/okonet/lint-staged)
 
 ## Branches

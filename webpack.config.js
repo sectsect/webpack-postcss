@@ -4,9 +4,9 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const dotenv = require('dotenv').config();
 const { WebpackSweetEntry } = require('@sect/webpack-sweet-entry');
 const NotifierPlugin = require('@soda/friendly-errors-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const notifier = require('node-notifier');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const SizePlugin = require('size-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
@@ -198,6 +198,7 @@ module.exports = env => [
       buildDependencies: {
         config: [__filename],
       },
+      name: 'js',
     },
     module: {
       rules: [
@@ -282,6 +283,7 @@ module.exports = env => [
       buildDependencies: {
         config: [__filename],
       },
+      name: 'css',
     },
     module: {
       rules: [
@@ -312,7 +314,7 @@ module.exports = env => [
               'default',
               {
                 discardComments: {
-                  removeAll: true
+                  removeAll: true,
                 },
               },
             ],

@@ -20,6 +20,7 @@
 //   ];
 //   ['@babel/plugin-proposal-class-properties', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-class-properties
 //   ['@babel/plugin-proposal-private-methods', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-private-methods
+//   ['@babel/plugin-proposal-private-property-in-object', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-private-property-in-object
 
 //   return {
 //     presets,
@@ -33,6 +34,7 @@ const plugins = [
   // '@babel/plugin-transform-react-jsx',
   ['@babel/plugin-proposal-class-properties', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-class-properties
   ['@babel/plugin-proposal-private-methods', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-private-methods
+  ['@babel/plugin-proposal-private-property-in-object', { loose: true }], // https://babeljs.io/docs/en/babel-plugin-proposal-private-property-in-object
 ];
 
 module.exports = {

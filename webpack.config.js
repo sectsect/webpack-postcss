@@ -269,13 +269,18 @@ module.exports = env => [
     // webpack-dev-server
     devServer: {
       port: 8080, // port
-      progress: true,
-      inline: true, // inline / iframe
-      clientLogLevel: 'info', // none / error / warning / info
-      contentBase: path.join(__dirname, 'dist'), // Document root
-      publicPath: '/assets/', // Virtual Path
       hot: false, // Enable HMR
       open: true,
+      static: {
+        directory: path.join(__dirname, 'dist'), // Document root
+      },
+      devMiddleware: {
+        publicPath: '/assets/', // Virtual Path
+      },
+      client: {
+        logging: "info", // none / error / warning / info
+        progress: true,
+      },
     },
     performance: {
       hints: isProd(env) ? 'warning' : false,

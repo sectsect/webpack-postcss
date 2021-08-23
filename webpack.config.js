@@ -199,7 +199,9 @@ const jsConfig = (mode, env) => {
       buildDependencies: {
         config: [__filename],
       },
-      name: 'js',
+      name: isProd(env)
+        ? `js-${mode}-production`
+        : `js-${mode}-development`
     },
     module: {
       rules: [
@@ -294,7 +296,9 @@ const cssConfig = (env) => {
       buildDependencies: {
         config: [__filename],
       },
-      name: 'css',
+      name: isProd(env)
+        ? `css-production`
+        : `css-development`
     },
     module: {
       rules: [

@@ -91,6 +91,9 @@
     "dotenv": "^10.0.0",
     "es6-promise": "^4.2.8",
     "inner-vh": "^2.1.1",
+    "is-email": "^1.0.1",
+    "is-url": "^1.2.4",
+    "is-uuid": "^1.0.2",
     "ismobilejs": "^1.1.1",
     "jquery": "^3.6.0",
     "jquery.easing": "^1.4.1",
@@ -103,6 +106,7 @@
     "regenerator-runtime": "^0.13.9",
     "sanitize.css": "^12.0.1",
     "slick-carousel": "^1.8.1",
+    "superstruct": "^0.15.2",
     "webfontloader": "^1.6.28"
   }
 }

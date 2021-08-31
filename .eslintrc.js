@@ -11,6 +11,7 @@ module.exports = {
     // "ecmaVersion": 2020,
     sourceType: 'module',
     project: './tsconfig.json',
+    extraFileExtensions: ['.vue'],
   },
   extends: [
     'airbnb',
@@ -94,6 +95,9 @@ module.exports = {
     'prettier/prettier': 'error',
   },
   settings: {
+    react: {
+      version: 'latest',
+    },
     'import/extensions': ['.js', '.jsx', '.json', '.ts', '.tsx'],
     'import/resolver': {
       webpack: {

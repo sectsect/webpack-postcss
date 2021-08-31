@@ -19,6 +19,8 @@
   },
   "include": [
     "src/**/*",
+    "webpack.config.js",
+    "babel.config.js",
     ".eslintrc.js"
   ],
   "exclude": [

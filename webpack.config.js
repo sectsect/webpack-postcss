@@ -15,6 +15,7 @@ const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const { VueLoaderPlugin } = require('vue-loader');
 // const SpritesmithPlugin = require('webpack-spritesmith');
 // const spriteTemplate = require('./src/assets/js/_spriteTemplate');
 
@@ -83,6 +84,7 @@ const getJSPlugins = env => {
       },
     }),
   );
+  plugins.push(new VueLoaderPlugin());
   if (isProd(env)) {
     plugins.push(
       new SizePlugin({
@@ -232,6 +234,37 @@ module.exports = env => [
             },
           ],
         },
+        {
+          test: /\.vue$/,
+          use: [{ loader: 'vue-loader' }],
+        },
+        {
+          test: /\.css$/,
+          use: [
+            isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                url: false,
+              },
+            },
+            { loader: 'postcss-loader' },
+          ],
+        },
+        {
+          test: /\.(sc|sa)ss$/,
+          use: [
+            isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                url: false,
+              },
+            },
+            { loader: 'postcss-loader' },
+            { loader: 'sass-loader' },
+          ],
+        },
         // Modernizr
         {
           test: /\.modernizrrc.js$/,
@@ -249,9 +282,10 @@ module.exports = env => [
     },
     // Modernizr
     resolve: {
-      extensions: ['.tsx', '.ts', '.jsx', '.js'],
+      extensions: ['.tsx', '.ts', '.jsx', '.js', 'vue'],
       modules: ['node_modules'],
       alias: {
+        vue$: 'vue/dist/vue.esm.js', // Use the full build
         modernizr$: path.resolve(__dirname, '.modernizrrc'),
       },
     },

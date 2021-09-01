@@ -123,14 +123,21 @@ export const tests = (): void => {
   asyncCall();
 
   // async / await & fetch JSON   @ http://blog.fixter.org/learn-es6-promise-and-es7-async-await/
-  const doFetch = async (user: string): Promise<void> => {
+  const doFetch = async (user: string): Promise<void | false> => {
     try {
       const url = `https://api.github.com/users/${user}`;
       const response = await fetch(url);
       if (!response.ok) throw new Error('The user does not exist.');
       return await response.json();
-    } catch (err) {
-      return err;
+    } catch (e: unknown) {
+      if (e instanceof ReferenceError) {
+        console.error(e.stack);
+      } else if (e instanceof Error) {
+        console.log(e.stack);
+      } else {
+        throw e; // unknown error, rethrow it
+      }
+      return false;
     }
   };
   async function getUser(user: string): Promise<void> {
@@ -146,27 +153,41 @@ export const tests = (): void => {
         resolve(value);
       }, 1000);
     });
-  const sample = async (): Promise<number> => {
+  const sample = async (): Promise<number | false> => {
     try {
       return (await sampleResolve(5)) * (await sampleResolve(10)) + (await sampleResolve(20));
-    } catch (error) {
-      return error;
+    } catch (e: unknown) {
+      if (e instanceof ReferenceError) {
+        console.error(e.stack);
+      } else if (e instanceof Error) {
+        console.log(e.stack);
+      } else {
+        throw e; // unknown error, rethrow it
+      }
+      return false;
     }
   };
-  const sample2 = async (): Promise<number> => {
+  const sample2 = async (): Promise<number | false> => {
     try {
       const a = await sampleResolve(5);
       const b = await sampleResolve(10);
       const c = await sampleResolve(21);
       return a * b + c;
-    } catch (error) {
-      return error;
+    } catch (e: unknown) {
+      if (e instanceof ReferenceError) {
+        console.error(e.stack);
+      } else if (e instanceof Error) {
+        console.log(e.stack);
+      } else {
+        throw e; // unknown error, rethrow it
+      }
+      return false;
     }
   };
-  sample().then((v: number) => {
+  sample().then((v: number | false) => {
     console.log(v); // => 70
   });
-  sample2().then((v: number) => {
+  sample2().then((v: number | false) => {
     console.log(v); // => 71
   });
 

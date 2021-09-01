@@ -11,10 +11,10 @@ import 'jquery.easing';
 import { innerVh } from 'inner-vh';
 import { detect } from './detect';
 import { inlineSVG } from './inline-svg';
-import { dotdotdot } from './jquery-dotdotdot';
+// import { dotdotdot } from './jquery-dotdotdot';
 // import { touchHover } from './touch-hover';
 import { menu } from './menu';
-import { modal } from './modal';
+// import { modal } from './modal';
 import { smoothScroll } from './smooth-scroll';
 import { tests } from './tests';
 import { typescript } from './typescript';
@@ -90,7 +90,7 @@ innerVh({
 });
 // touchHover(['.slider img']);
 menu();
-modal();
+// modal();
 tests();
 typescript();
 
@@ -98,7 +98,7 @@ typescript();
 
 $(window).on('load', () => {
   smoothScroll();
-  dotdotdot();
+  // dotdotdot();
 });
 
 // $(window).on('load orientationchange resize', () => {

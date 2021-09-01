@@ -3,7 +3,7 @@ const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
-const dotenv = require('dotenv').config();
+// const dotenv = require('dotenv').config();
 const { WebpackSweetEntry } = require('@sect/webpack-sweet-entry');
 const NotifierPlugin = require('@soda/friendly-errors-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
@@ -21,12 +21,10 @@ const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');
 
-// For dotenv
-// console.log(process.env.AWS_ACCESS_KEY_ID);
 
 // For Detection Environment  @ https://webpack.js.org/api/cli/#environment-options
-const isProd = env => env && env.production;
-const isDev = env => env && env.development;
+const isProd = env => env?.production;
+const isDev = env => env?.development;
 
 // http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
 const getJSPlugins = env => {
@@ -283,6 +281,22 @@ module.exports = env => [
     },
     plugins: getJSPlugins(env),
     devtool: isProd(env) ? false : 'inline-cheap-source-map',
+    // webpack-dev-server
+    devServer: {
+      port: 8080, // port
+      hot: false, // Enable HMR
+      open: true,
+      static: {
+        directory: path.join(__dirname, 'dist'), // Document root
+      },
+      devMiddleware: {
+        publicPath: '/assets/', // Virtual Path
+      },
+      client: {
+        logging: "info", // none / error / warning / info
+        progress: true,
+      },
+    },
     performance: {
       hints: isProd(env) ? 'warning' : false,
       maxEntrypointSize: 300000, // The default value is 250000 (bytes)

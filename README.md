@@ -41,6 +41,7 @@ See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/packa
 
 | npm script | Description |
 | ------ | ----------- |
+| `npm run start:dev` | Start up Dev server :icecream: `http://localhost:8080/` |
 | `npm run dev` | Watching for Dev |
 | `npm run build` | Building for Deploy |
 | `npm run type-check` | Types check for TypeScript |

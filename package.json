@@ -24,6 +24,9 @@
     ],
     "src/**/*.{css,scss}": [
       "stylelint --fix"
+    ],
+    "src/**/*.{ts,tsx}": [
+      "tsc --noEmit"
     ]
   },
   "devDependencies": {

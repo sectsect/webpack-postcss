@@ -25,8 +25,8 @@ const buildPath = path.join(__dirname, 'dist');
 // console.log(process.env.AWS_ACCESS_KEY_ID);
 
 // For Detection Environment  @ https://webpack.js.org/api/cli/#environment-options
-const isProd = env => env && env.production;
-const isDev = env => env && env.development;
+const isProd = env => env?.production;
+const isDev = env => env?.development;
 
 // http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
 const getJSPlugins = (env, mode) => {
@@ -66,14 +66,24 @@ const getJSPlugins = (env, mode) => {
               name: 'removeTitle',
               active: false,
             },
+            // {
+            //   name: 'removeAttrs',
+            //   params: {
+            //     attrs: 'fill',
+            //   },
+            // },
             {
-              name: 'removeAttrs',
-              params: {
-                attrs: 'fill',
-              },
+              name: 'convertStyleToAttrs',
+              active: true,
+            },
+            // {
+            //   name: 'removeStyleElement',
+            // },
+            {
+              name: 'inlineStyles',
             },
             {
-              name: 'removeStyleElement',
+              name: 'cleanupEnableBackground',
             },
           ],
         },
@@ -95,7 +105,7 @@ const getJSPlugins = (env, mode) => {
       new ForkTsCheckerWebpackPlugin({
         eslint: {
           files: './src/assets/ts/**/*',
-        }
+        },
       }),
     );
     plugins.push(
@@ -214,7 +224,7 @@ const jsConfig = (mode, env) => {
       buildDependencies: {
         config: [__filename],
       },
-      name: 'js',
+      name: isProd(env) ? `js-${mode}-production` : `js-${mode}-development`,
     },
     module: {
       rules: [
@@ -298,7 +308,7 @@ const jsConfig = (mode, env) => {
   };
 };
 
-const cssConfig = (env) => {
+const cssConfig = env => {
   return {
     entry: WebpackSweetEntry(path.resolve(sourcePath, 'assets/css/**/*.css'), 'css', 'css'),
     output: {
@@ -311,7 +321,7 @@ const cssConfig = (env) => {
       buildDependencies: {
         config: [__filename],
       },
-      name: 'css',
+      name: isProd(env) ? `css-production` : `css-development`,
     },
     module: {
       rules: [
@@ -359,4 +369,4 @@ const cssConfig = (env) => {
   };
 };
 
-module.exports = (env) => [jsConfig('modern', env), jsConfig('legacy', env), cssConfig(env)];
+module.exports = env => [jsConfig('modern', env), jsConfig('legacy', env), cssConfig(env)];

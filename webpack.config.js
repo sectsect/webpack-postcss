@@ -208,7 +208,7 @@ module.exports = env => [
       buildDependencies: {
         config: [__filename],
       },
-      name: 'js',
+      name: isProd(env) ? `js-production` : `js-development`,
     },
     module: {
       rules: [
@@ -293,7 +293,7 @@ module.exports = env => [
       buildDependencies: {
         config: [__filename],
       },
-      name: 'css',
+      name: isProd(env) ? `css-production` : `css-development`,
     },
     module: {
       rules: [

@@ -21,6 +21,7 @@ module.exports = {
   plugins: [
     // "@babel",
     '@typescript-eslint',
+    'eslint-plugin-tsdoc',
   ],
   globals: {
     window: true,
@@ -56,6 +57,7 @@ module.exports = {
     'import/no-default-export': 'error',
     'no-alert': 0,
     'no-console': 0,
+    'tsdoc/syntax': 'warn',
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/interface-name-prefix': 0,
     '@typescript-eslint/naming-convention': [

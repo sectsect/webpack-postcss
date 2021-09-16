@@ -64,14 +64,24 @@ const getJSPlugins = env => {
               name: 'removeTitle',
               active: false,
             },
+            // {
+            //   name: 'removeAttrs',
+            //   params: {
+            //     attrs: 'fill',
+            //   },
+            // },
             {
-              name: 'removeAttrs',
-              params: {
-                attrs: 'fill',
-              },
+              name: 'convertStyleToAttrs',
+              active: true,
+            },
+            // {
+            //   name: 'removeStyleElement',
+            // },
+            {
+              name: 'inlineStyles',
             },
             {
-              name: 'removeStyleElement',
+              name: 'cleanupEnableBackground',
             },
           ],
         },

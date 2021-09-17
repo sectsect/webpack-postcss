@@ -1,5 +1,10 @@
 import WebFont from 'webfontloader';
 
+/**
+ * Run the WebFont Loader
+ *
+ * @returns void
+ */
 export const WebFontLoader = (): void => {
   WebFont.load({
     // custom: {

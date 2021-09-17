@@ -4,6 +4,12 @@ import 'es6-promise/auto';
 
 declare let lazySizes: any;
 
+/**
+ * Unveil LazySizes
+ *
+ * @param  el - The element to unveil
+ * @returns Promise
+ */
 export const unveil = (el: JQuery<Element>): Promise<string> => {
   const promises: Promise<string>[] = [];
   $(el).each((_i: number, e: Element) => {

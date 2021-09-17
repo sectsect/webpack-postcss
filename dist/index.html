@@ -473,9 +473,14 @@
 				<a href="#wrap">Page Top</a>
 			</div>
 		</footer>
-		<nav id="nav-panel">
-			<div class="inner">
-				<nav>
+		<nav id="nav-panel" aria-hidden="true">
+			<div role="dialog" aria-labelledby="menu-panel-title">
+				<div class="inner">
+					<h2>
+						<a href="/" id="menu-panel-title">
+							Title
+						</a>
+					</h2>
 					<ul>
 						<li><a href="#">01</a></li>
 						<li><a href="#">02</a></li>
@@ -483,7 +488,7 @@
 						<li><a href="#">04</a></li>
 						<li><a href="#">05</a></li>
 					</ul>
-				</nav>
+				</div>
 			</div>
 		</nav>
 	</div>

@@ -1,7 +1,17 @@
 import 'slick-carousel';
 import { unveil } from './unveil-lazysizes';
 
+/**
+ * Slider
+ *
+ * @returns void
+ */
 export const slider = (): void => {
+  /**
+   * Run Slick Slider
+   *
+   * @param  parentid - The parent element ID
+   */
   const runSlider = (parentid: string) => {
     const $slickElement = $(`${parentid} .slider-for`);
     $slickElement.on(
@@ -78,6 +88,12 @@ export const slider = (): void => {
     // );
   };
 
+  /**
+   * Run slider asynchronously
+   *
+   * @param  parentid - The ID of the slider container
+   * @param  self - The object instance
+   */
   const asyncSlider = async (parentid: string, self: HTMLElement) => {
     try {
       const result = await unveil($(self).find('figure img'));

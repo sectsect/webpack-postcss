@@ -107,7 +107,6 @@
     "@glidejs/glide": "^3.4.1",
     "@types/body-scroll-lock": "^3.1.0",
     "@types/dedent": "^0.7.0",
-    "@types/ismobilejs": "^1.0.1",
     "@types/jquery": "^3.5.6",
     "@types/micromodal": "^0.3.3",
     "@types/modernizr": "^3.5.3",

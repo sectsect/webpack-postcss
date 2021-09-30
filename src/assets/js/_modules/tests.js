@@ -1,3 +1,8 @@
+import isEmail from 'is-email';
+import isUrl from 'is-url';
+import isUuid from 'is-uuid';
+import { object, string, optional, define, assert } from 'superstruct';
+
 export const tests = () => {
   /*= =================================================
     Detect Testing
@@ -161,9 +166,9 @@ export const tests = () => {
   };
   example();
 
-  const object = { a: 1, b: 2, c: 3 };
+  const myObject = { a: 1, b: 2, c: 3 };
   console.log('object');
-  Object.entries(object).forEach(([key, value]) => {
+  Object.entries(myObject).forEach(([key, value]) => {
     console.log({ key, value });
   });
   /*= =================================================
@@ -178,9 +183,62 @@ export const tests = () => {
   const converted = Object.entries(obj).map(([key, value]) => ({ key, value }));
   console.log(converted);
 
-  const mode = 'modern';
-  const mf = {
-    mainFields: [...(mode === 'modern' ? ['module', 'main'] : ['main', 'module'])],
+  /*= =================================================
+    Superstruct
+  ================================================== */
+  // @ https://github.com/ianstormtaylor/superstruct/blob/main/examples/custom-types.js
+
+  // Define custom structs with validation functions.
+  const Uuid = define('Uuid', isUuid.v4);
+
+  const Url = define('Url', value => isUrl(value) && value.length < 2048);
+
+  const Email = define('Email', value => {
+    if (!isEmail(value)) {
+      return { code: 'not_email' };
+    }
+    if (value.length >= 256) {
+      return { code: 'too_long' };
+    }
+    return true;
+  });
+
+  // Define a struct to validate with.
+  const User = object({
+    id: Uuid,
+    name: string(),
+    email: Email,
+    website: optional(Url),
+  });
+
+  // Define data to be validated.
+  const data = {
+    id: 'c8d63140-a1f7-45e0-bfc6-df72973fea86',
+    name: 'Jane Smith',
+    email: 'jane@example.com',
+    website: 'https://jane.example.com',
   };
-  console.log(mf);
+
+  try {
+    // Validate the data. In this case the data is valid, so it won't throw.
+    assert(data, User);
+    console.log('Valid!!!!');
+  } catch (e) {
+    const { key, value, type } = e;
+
+    if (value === undefined) {
+      const error = new Error(`user_${key}_required`);
+      error.attribute = key;
+      throw error;
+    } else if (type === 'never') {
+      const error = new Error(`user_attribute_unknown`);
+      error.attribute = key;
+      throw error;
+    } else {
+      const error = new Error(`user_${key}_invalid`);
+      error.attribute = key;
+      error.value = value;
+      throw error;
+    }
+  }
 };

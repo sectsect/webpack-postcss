@@ -41,4 +41,9 @@ module.exports = {
     'no-console': 0,
     'prettier/prettier': 'error',
   },
+  settings: {
+    react: {
+      version: 'latest',
+    },
+  },
 };

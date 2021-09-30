@@ -51,7 +51,7 @@ const getJSPlugins = env => {
   plugins.push(
     new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
       output: {
-        filename: '../../../dist/assets/images/svg/symbol.svg',
+        filename: '../images/svg/symbol.svg',
         svgo: {
           plugins: [
             {
@@ -64,14 +64,24 @@ const getJSPlugins = env => {
               name: 'removeTitle',
               active: false,
             },
+            // {
+            //   name: 'removeAttrs',
+            //   params: {
+            //     attrs: 'fill',
+            //   },
+            // },
             {
-              name: 'removeAttrs',
-              params: {
-                attrs: 'fill',
-              },
+              name: 'convertStyleToAttrs',
+              active: true,
+            },
+            // {
+            //   name: 'removeStyleElement',
+            // },
+            {
+              name: 'inlineStyles',
             },
             {
-              name: 'removeStyleElement',
+              name: 'cleanupEnableBackground',
             },
           ],
         },
@@ -198,7 +208,7 @@ module.exports = env => [
       buildDependencies: {
         config: [__filename],
       },
-      name: 'js',
+      name: isProd(env) ? `js-production` : `js-development`,
     },
     module: {
       rules: [
@@ -299,7 +309,7 @@ module.exports = env => [
       buildDependencies: {
         config: [__filename],
       },
-      name: 'css',
+      name: isProd(env) ? `css-production` : `css-development`,
     },
     module: {
       rules: [

@@ -3,9 +3,7 @@
 /**
  * ES6 Class
  *
- * @param string  msg   Where something interesting takes place
- *
- * @return string
+ * @param msg - Where something interesting takes place
  */
 export class MyClass {
   name: string;

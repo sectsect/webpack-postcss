@@ -127,7 +127,7 @@ export const tests = (): void => {
   asyncCall();
 
   // async / await & fetch JSON   @ http://blog.fixter.org/learn-es6-promise-and-es7-async-await/
-  const doFetch = async (user: string): Promise<void | false> => {
+  const doFetch = async (user: string): Promise<void> => {
     try {
       const url = `https://api.github.com/users/${user}`;
       const response = await fetch(url);
@@ -141,7 +141,7 @@ export const tests = (): void => {
       } else {
         throw e; // unknown error, rethrow it
       }
-      return false;
+      return undefined;
     }
   };
   async function getUser(user: string): Promise<void> {

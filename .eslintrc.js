@@ -21,6 +21,7 @@ module.exports = {
   plugins: [
     // "@babel",
     '@typescript-eslint',
+    'eslint-plugin-tsdoc',
   ],
   globals: {
     window: true,
@@ -56,10 +57,17 @@ module.exports = {
     'import/no-default-export': 'error',
     'no-alert': 0,
     'no-console': 0,
+    'tsdoc/syntax': 'warn',
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/interface-name-prefix': 0,
     '@typescript-eslint/naming-convention': [
       'error',
+      {
+        selector: 'variable',
+        types: ['boolean'],
+        format: ['PascalCase'],
+        prefix: ['is', 'should'],
+      },
       {
         selector: 'parameter',
         format: ['camelCase'],
@@ -94,6 +102,9 @@ module.exports = {
     'prettier/prettier': 'error',
   },
   settings: {
+    react: {
+      version: 'latest',
+    },
     'import/extensions': ['.js', '.jsx', '.json', '.ts', '.tsx'],
     'import/resolver': {
       webpack: {

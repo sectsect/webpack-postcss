@@ -53,7 +53,7 @@ const getJSPlugins = (env, mode) => {
   plugins.push(
     new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
       output: {
-        filename: '../../../dist/assets/images/svg/symbol.svg',
+        filename: '../images/svg/symbol.svg',
         svgo: {
           plugins: [
             {

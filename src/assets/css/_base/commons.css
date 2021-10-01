@@ -127,16 +127,16 @@ Normalization for Third party
   display: block;
   width: 100%;
   height: 100%;
-}
-.is-contain.imagecontainer .imagecontainer-img {
-  object-fit: contain;
-  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
-  font-family: 'object-fit: contain';
-}
-.is-cover.imagecontainer .imagecontainer-img {
-  object-fit: cover;
-  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
-  font-family: 'object-fit: cover';
+  @nest .is-contain.imagecontainer & {
+    object-fit: contain;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font-family: 'object-fit: contain';
+  }
+  @nest .is-cover.imagecontainer & {
+    object-fit: cover;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font-family: 'object-fit: cover';
+  }
 }
 
 /* slider (slick) */

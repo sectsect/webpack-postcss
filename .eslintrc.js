@@ -86,6 +86,11 @@ module.exports = {
         // }
       },
       {
+        selector: 'typeParameter',
+        format: ['PascalCase'],
+        prefix: ['T'],
+      },
+      {
         selector: 'enum',
         format: ['PascalCase'],
       },

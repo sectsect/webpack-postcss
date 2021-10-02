@@ -2,7 +2,7 @@ import 'es6-promise/auto';
 // import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 // import lazySizes from 'lazysizes';
 
-declare let lazySizes: any;
+declare let lazySizes: { loader: { unveil(DOMNode: Node): void } };
 
 /**
  * Unveil LazySizes
@@ -12,7 +12,7 @@ declare let lazySizes: any;
  */
 export const unveil = (el: JQuery<Element>): Promise<string> => {
   const promises: Promise<string>[] = [];
-  $(el).each((_i: number, e: Element) => {
+  $(el).each((_i: number, e: Node) => {
     promises.push(
       new Promise<string>(resolve => {
         lazySizes.loader.unveil(e);

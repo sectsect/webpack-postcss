@@ -63,15 +63,15 @@ module.exports = {
     '@typescript-eslint/naming-convention': [
       'error',
       {
+        selector: ['variable', 'function', 'parameter'],
+        format: ['camelCase'],
+        leadingUnderscore: 'allow',
+      },
+      {
         selector: 'variable',
         types: ['boolean'],
         format: ['PascalCase'],
         prefix: ['is', 'should'],
-      },
-      {
-        selector: 'parameter',
-        format: ['camelCase'],
-        leadingUnderscore: 'allow',
       },
       {
         selector: 'class',

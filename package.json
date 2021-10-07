@@ -90,6 +90,7 @@
     "dotdotdot-js": "^4.1.0",
     "dotenv": "^10.0.0",
     "es6-promise": "^4.2.8",
+    "image-promise": "^7.0.1",
     "inner-vh": "^2.1.1",
     "is-email": "^1.0.1",
     "is-url": "^1.2.4",

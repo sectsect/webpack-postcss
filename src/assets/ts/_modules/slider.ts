@@ -1,4 +1,5 @@
 import 'slick-carousel';
+import loadImage from 'image-promise';
 import { unveil } from './unveil-lazysizes';
 
 /**
@@ -24,6 +25,8 @@ export const slider = (): void => {
         // _nextSlide: any,
       ) => {
         $(e.currentTarget).closest('.slider_wrap').addClass('ready');
+        // Re-execute 'unveil' on lazyload  for missing image in last slide on infinite mode
+        unveil($(e.currentTarget).find('figure img'));
       },
     );
 
@@ -96,12 +99,37 @@ export const slider = (): void => {
    */
   const asyncSlider = async (parentid: string, self: HTMLElement) => {
     try {
-      const result = await unveil($(self).find('figure img'));
+      const result = (await unveil($(self).find('figure img'))) as HTMLImageElement[];
       if (result) {
+        const images = result.filter(img => img.dataset.srcset !== undefined);
+        // await loadImage(images);
+        await loadImage(images)
+          .then(allImgs => {
+            console.log(allImgs.length, 'images loaded!', allImgs);
+          })
+          .catch((e: unknown) => {
+            // console.error('One or more images have failed to load :(');
+            // console.error(e.errored);
+            // console.info('But these loaded fine:');
+            // console.info(e.loaded);
+            if (e instanceof ReferenceError) {
+              console.error(e.stack);
+            } else if (e instanceof Error) {
+              console.log(e.stack);
+            } else {
+              throw e;
+            }
+          });
         runSlider(parentid);
       }
-    } catch (err) {
-      alert(err);
+    } catch (e: unknown) {
+      if (e instanceof ReferenceError) {
+        console.error(e.stack);
+      } else if (e instanceof Error) {
+        console.log(e.stack);
+      } else {
+        throw e;
+      }
     }
   };
 

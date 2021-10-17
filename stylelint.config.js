@@ -19,6 +19,7 @@ module.exports = {
     //     ignore: ["consecutive-duplicates-with-different-values"]
     //   }
     // ],
+    'max-nesting-depth': 4,
     'no-descending-specificity': null,
     'no-duplicate-selectors': null,
     'prettier/prettier': true,

@@ -3,16 +3,16 @@
 /* Config ----------------------------- */
 :root {
   /* Font */
-  --fh-font-family: var(--fontFamily);
-  --fh-font-size: var(--fontSize);
-  --fh-font-color: var(--fontColor);
+  --fh-font-family: var(--font-family);
+  --fh-font-size: var(--font-size);
+  --fh-font-color: var(--font-color);
   --fh-font-color-disabled: #aaa; /* Add code by SECT */
 
   /* Borders */
   --fh-border-radius: 5px;
   --fh-border-width: 1px;
   --fh-border-style: solid;
-  --fh-border-color: var(--borderColor);
+  --fh-border-color: var(--border-color);
 
   /* Inputs, Textareas, Select, Option */
   --fh-input-height: 30px;
@@ -529,7 +529,7 @@ input[type='range'] {
 }
 .select2-selection__clear {
   font-size: 13px;
-  color: var(--fontColor);
+  color: var(--font-color);
 }
 .select2-container {
   width: 100% !important;

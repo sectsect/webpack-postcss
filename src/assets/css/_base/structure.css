@@ -1,8 +1,8 @@
 body {
-  font-family: var(--fontFamily);
-  font-size: var(--fontSize);
-  line-height: var(--lineHeight);
-  color: var(--fontColor);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--font-color);
   background: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,7 +25,7 @@ main {
 
   /* height: 5000px; */
 
-  /* padding: var(--mobileHeaderH) 0 0; */
+  /* padding: var(--mobile-header-height) 0 0; */
 }
 
 .inner {
@@ -45,7 +45,7 @@ ul {
 
 @media (--viewport-medium) {
   .inner {
-    width: var(--baseWidth);
+    width: var(--base-width);
     padding: 0;
     margin: 0 auto;
   }

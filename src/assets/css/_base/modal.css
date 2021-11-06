@@ -25,7 +25,7 @@
   max-width: 500px;
 
   /* max-height: 100vh; */
-  height: var(--innerHeight);
+  height: var(--inner-height);
   padding: 30px;
   overflow-y: auto;
   background-color: #fff;

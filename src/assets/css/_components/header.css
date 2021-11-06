@@ -5,7 +5,7 @@
   left: 0;
   z-index: 100;
   width: 100%;
-  height: var(--mobileHeaderH);
+  height: var(--mobile-header-height);
   overflow: hidden;
   @nest .admin-bar & {
     top: 46px;
@@ -32,7 +32,7 @@
 @media (--viewport-medium) {
   .global-header {
     position: relative;
-    width: var(--baseWidth);
+    width: var(--base-width);
     height: auto;
     margin: 0 auto;
     overflow: visible;

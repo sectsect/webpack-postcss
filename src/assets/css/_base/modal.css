@@ -3,8 +3,8 @@
 \  **************************/
 
 .modal {
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica,
-    ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica,
+    ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
 }
 
 .modal__overlay {
@@ -17,13 +17,12 @@
   align-items: center;
   justify-content: center;
   padding: 3.1%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgb(0 0 0 / 0.6);
 }
 
 .modal__container {
   box-sizing: border-box;
   max-width: 500px;
-
   /* max-height: 100vh; */
   height: var(--inner-height);
   padding: 30px;
@@ -61,19 +60,16 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgb(0 0 0 / 0.8);
 }
 
 .modal__btn {
-  padding-top: 0.5rem;
-  padding-right: 1rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
+  padding: 0.5rem 1rem;
   margin: 0;
   overflow: visible;
   font-size: 0.875rem;
   line-height: 1.15;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgb(0 0 0 / 0.8);
   text-transform: none;
   cursor: pointer;
   background-color: #e6e6e6;
@@ -83,16 +79,14 @@
   transition: -webkit-transform 0.25s ease-out;
   transition: transform 0.25s ease-out;
   transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
-  -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  -webkit-appearance: button;
+  appearance: button;
   will-change: transform;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+
   &:focus,
   &:hover {
-    -webkit-transform: scale(1.05);
     transform: scale(1.05);
   }
 }
@@ -101,11 +95,11 @@
   color: #fff;
   background-color: #00449e;
 }
-
 /**************************  \
   Demo Animation Style
 \  **************************/
-@keyframes mmfadeIn {
+
+@keyframes mm-fade-in {
   from {
     opacity: 0;
   }
@@ -115,7 +109,7 @@
   }
 }
 
-@keyframes mmfadeOut {
+@keyframes mm-fade-out {
   from {
     opacity: 1;
   }
@@ -125,7 +119,7 @@
   }
 }
 
-@keyframes mmslideIn {
+@keyframes mm-slide-in {
   from {
     transform: translateY(15%);
   }
@@ -135,7 +129,7 @@
   }
 }
 
-@keyframes mmslideOut {
+@keyframes mm-slide-out {
   from {
     transform: translateY(0);
   }
@@ -147,25 +141,31 @@
 
 .micromodal-slide {
   display: none;
+
   &.is-open {
     display: block;
   }
+
   &[aria-hidden='false'] {
     & .modal__overlay {
-      animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+      animation: mm-fade-in 0.3s cubic-bezier(0, 0, 0.2, 1);
     }
+
     & .modal__container {
-      animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+      animation: mm-slide-in 0.3s cubic-bezier(0, 0, 0.2, 1);
     }
   }
+
   &[aria-hidden='true'] {
     & .modal__overlay {
-      animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+      animation: mm-fade-out 0.3s cubic-bezier(0, 0, 0.2, 1);
     }
+
     & .modal__container {
-      animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+      animation: mm-slide-out 0.3s cubic-bezier(0, 0, 0.2, 1);
     }
   }
+
   & .modal__container,
   & .modal__overlay {
     will-change: transform;

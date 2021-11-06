@@ -7,21 +7,27 @@
   width: 100%;
   height: var(--mobile-header-height);
   overflow: hidden;
+
   @nest .admin-bar & {
     top: 46px;
   }
 }
+
 #wpadminbar {
   position: fixed;
 }
+
 .global-header__inner {
   padding: 10px 5.1% 0;
 }
+
 .global-header__nested-inner {
   position: relative;
 }
+
 .global-header__logo {
   width: 81px;
+
   & img {
     display: block;
     width: 100%;
@@ -36,15 +42,18 @@
     height: auto;
     margin: 0 auto;
     overflow: visible;
+
     @nest .admin-bar & {
       top: 0;
     }
   }
+
   .global-header__inner {
     position: fixed;
     width: 218px;
     padding: 0;
   }
+
   .global-header__section-main {
     display: none;
   }

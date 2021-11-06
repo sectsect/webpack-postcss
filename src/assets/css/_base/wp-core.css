@@ -1,11 +1,11 @@
 .wp-editor {
-  font-family: var(--fontFamily);
-  font-size: var(--fontSize);
-  line-height: var(--lineHeight);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
   & h3,
   & h4,
   & p {
-    margin: var(--wpEditorMargin) 0;
+    margin: var(--wp-element-margin) 0;
     overflow: hidden;
     &:first-child {
       margin-top: 0;
@@ -21,7 +21,7 @@
     font-size: 13px;
   }
   & a {
-    color: var(--linkColor);
+    color: var(--link-color);
     text-decoration: underline;
     &:hover {
       text-decoration: none;
@@ -33,9 +33,9 @@
   }
   & blockquote {
     padding-left: 15px;
-    margin: var(--wpEditorMargin) 0;
+    margin: var(--wp-element-margin) 0;
     font-weight: bold;
-    border-left: 5px solid var(--borderColor);
+    border-left: 5px solid var(--border-color);
   }
   @media (--viewport-medium) {
     & blockquote {
@@ -49,11 +49,11 @@
 }
 .alignleft {
   float: left;
-  margin: 0 var(--wpEditorMargin) var(--wpEditorMargin) 0;
+  margin: 0 var(--wp-element-margin) var(--wp-element-margin) 0;
 }
 .alignright {
   float: right;
-  margin: 0 0 var(--wpEditorMargin) var(--wpEditorMargin);
+  margin: 0 0 var(--wp-element-margin) var(--wp-element-margin);
 }
 .wp-caption {
   padding-top: 4px;

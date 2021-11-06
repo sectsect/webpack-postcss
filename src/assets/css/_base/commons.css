@@ -25,14 +25,14 @@ input[type='button'],
 input[type='submit'],
 input[type='reset'],
 input[type='image'] {
-  color: var(--fontColor);
+  color: var(--font-color);
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   transition: var(--transition);
   &:hover,
   &:active,
   &:focus {
-    color: var(--linkColor);
+    color: var(--link-color);
   }
   &:hover {
     opacity: 0.8;

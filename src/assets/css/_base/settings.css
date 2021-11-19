@@ -1,30 +1,33 @@
 /* custom media queries */
+
 @custom-media --viewport-medium (width >= 768px);
+
 @custom-media --viewport-large (width >= 992px);
-@custom-media --viewport-extraLarge (width >= 1200px);
+
+@custom-media --viewport-extra-large (width >= 1200px);
 
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
 :root {
-  --innerHeight: calc(var(--innerVh, 1vh) * 100); /* Fallbacks to 100vh */
-  --fontSize: 12px;
-  --fontColor: #000;
-  --linkColor: var(--fontColor);
-  --fontFamily: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ',
+  --inner-height: calc(var(--innerVh, 1vh) * 100); /* Fallbacks to 100vh */
+  --font-size: 12px;
+  --font-color: #000;
+  --link-color: var(--font-color);
+  --font-family: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ',
     meiryo, 'ＭＳ Ｐゴシック', sans-serif;
-  --fontMincho: 'EB Garamond', 'Times New Roman', 'ＭＳ 明朝', 'MS Mincho', 'ヒラギノ明朝 ProN W3',
+  --font-mincho: 'EB Garamond', 'Times New Roman', 'ＭＳ 明朝', 'MS Mincho', 'ヒラギノ明朝 ProN W3',
     'Hiragino Mincho ProN', 'メイリオ', meiryo, serif;
-  --lineHeight: 1.6;
+  --line-height: 1.6;
   --transition: all 0.3s linear;
-  --borderRadius: 5px;
-  --borderColor: #c8c8c8;
-  --baseWidth: 1000px;
-  --mobileHeaderH: 50px;
-  --wpEditorMargin: 20px;
+  --border-radius: 5px;
+  --border-color: #c8c8c8;
+  --base-width: 1000px;
+  --mobile-header-height: 50px;
+  --wp-element-margin: 20px;
 }
 
 @media (--viewport-medium) {
   :root {
-    --fontSize: 14px;
+    --font-size: 14px;
   }
 }

@@ -7,11 +7,11 @@ export const unveil = el => {
     promises.push(
       new Promise(resolve => {
         lazySizes.loader.unveil(e);
-        resolve('resolved');
+        resolve(e);
       }),
     );
   });
 
   // @ https://stackoverflow.com/a/46650142/4542456
-  return Promise.all(promises).then(responses => responses[0]);
+  return Promise.all(promises).then(responses => responses);
 };

@@ -1,27 +1,27 @@
 @layer base {
   h1 {
+
     @apply text-5xl;
   }
+
   h2 {
+
     @apply text-xl;
   }
 }
-
 /* ==================================================
 Reset
 ================================================== */
-
 /* Remove margin, padding of all elements and set background-no-repeat as default */
-
 /* * {
   padding: 0;
   margin: 0;
 } */
 picture,
 source {
+
   @apply block;
 }
-
 /* ==================================================
 common
 ================================================== */
@@ -31,32 +31,37 @@ input[type='button'],
 input[type='submit'],
 input[type='reset'],
 input[type='image'] {
-  color: var(--fontColor);
+  color: var(--font-color);
   text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgb(0 0 0 / 0);
   transition: var(--transition);
+
   &:hover,
   &:active,
   &:focus {
-    color: var(--linkColor);
+    color: var(--link-color);
   }
+
   &:hover {
     opacity: 0.8;
   }
 }
+
 :--heading {
   margin: 0;
   font-size: 100%;
 }
-
 /* spinner */
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(180deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -65,38 +70,34 @@ input[type='image'] {
 .pc {
   display: none;
 }
-
 /* ==================================================
 Normalization for Third party
 ================================================== */
-
 /* text truncation (dotdotdot) */
 .truncation {
   visibility: hidden;
-
   /* transform: translate3d(0, -10px, 0); */
   opacity: 0;
   transition: all 0.6s linear;
+
   &.ready {
     visibility: visible;
-
     /* transform: translate3d(0, 0, 0); */
     opacity: 1;
   }
 }
-
 /* Web font		@ https://github.com/typekit/webfontloader#events */
 .wf {
   opacity: 0;
   transition: all 0.4s linear;
 }
+
 .wf-active,
 .wf-inactive {
   & .wf {
     opacity: 1;
   }
 }
-
 /* lazy load (lazysizes) */
 [data-src],
 [data-srcset],
@@ -105,12 +106,14 @@ Normalization for Third party
   /* visibility: hidden; */
   opacity: 0;
   transition: opacity 0.5s ease-in-out 0.1s;
+
   &.lazyloaded,
   &.loaded {
     /* visibility: visible; */
     opacity: 1;
   }
 }
+
 [data-sizes='auto'] {
   display: block;
   width: 100%;
@@ -118,6 +121,7 @@ Normalization for Third party
 
 .imagecontainer {
   position: relative;
+
   &::before {
     display: block;
     width: 100%;
@@ -126,6 +130,7 @@ Normalization for Third party
     content: '';
   }
 }
+
 .imagecontainer-img {
   position: absolute;
   top: 0;
@@ -133,21 +138,24 @@ Normalization for Third party
   display: block;
   width: 100%;
   height: 100%;
-}
-.is-contain.imagecontainer .imagecontainer-img {
-  object-fit: contain;
-  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
-  font-family: 'object-fit: contain';
-}
-.is-cover.imagecontainer .imagecontainer-img {
-  object-fit: cover;
-  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
-  font-family: 'object-fit: cover';
-}
+  /* stylelint-disable font-family-no-missing-generic-family-keyword */
 
+  @nest .is-contain.imagecontainer & {
+    object-fit: contain;
+    font-family: 'object-fit: contain';
+  }
+
+  @nest .is-cover.imagecontainer & {
+    object-fit: cover;
+    font-family: 'object-fit: cover';
+  }
+  /* stylelint-enable font-family-no-missing-generic-family-keyword */
+}
 /* slider (slick) */
 .slider_wrap {
+
   @apply relative min-h-full;
+
   &::before {
     /* @apply absolute top-1/2 left-1/2 z-50; */
     position: absolute;
@@ -166,29 +174,33 @@ Normalization for Third party
     transition: all 0.3s linear 0.3s;
     animation: spin 1s linear infinite;
   }
+
   & .slider {
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s linear 0.1s;
   }
+
   & .slick-slide {
     outline: none;
   }
+
   & img {
     width: 100%;
     height: auto;
   }
+
   &.ready {
     &::before {
       visibility: hidden;
       opacity: 0;
     }
+
     & .slider {
       visibility: visible;
       opacity: 1;
     }
   }
-
   /* & [data-src],
   & [data-srcset],
   & [data-bgset] {
@@ -197,24 +209,29 @@ Normalization for Third party
   & .slick-track {
     display: flex;
     align-items: center;
+
     & .slick-slide {
       float: none;
+
       & > div {
         line-height: 0.8;
       }
     }
   }
 }
+
 .slick-dots {
   & li {
     width: 21px;
     height: 21px;
     margin: 0 2px;
     vertical-align: top;
+
     & button {
       width: 21px;
       height: 21px;
       padding: 0;
+
       &::before {
         top: 4px;
         left: 4px;
@@ -228,6 +245,7 @@ Normalization for Third party
         opacity: 1;
       }
     }
+
     &.slick-active {
       & button {
         &::before {
@@ -242,6 +260,7 @@ Normalization for Third party
   .pc {
     display: block;
   }
+
   .sp {
     display: none;
   }

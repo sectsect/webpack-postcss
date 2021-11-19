@@ -1,24 +1,33 @@
 @charset "UTF-8";
 
 @import '_base/settings.css';
+
 @import '../../../node_modules/sanitize.css/sanitize.css';
-
 /* @import '../../../node_modules/sanitize.css/typography.css'; */
-
 /* @import "../../../node_modules/sanitize.css/forms.css"; */
 
 @import '_base/formhack.css';
+
 @import '_base/sprite.css';
+
 @import '_base/modal.css';
+
 @import '_base/svg-icon.css';
+
 @import '_base/wp-core.css';
+
 @import '_libs/slick.css';
+
 @import '_libs/slick-theme.css';
+
 @import '_base/commons.css';
+
 @import '_base/structure.css';
+
 @import '_base/modules.css';
+
 @import '_components/header.css';
+
 @import '_components/footer.css';
 
 @import '_pages/home.css';
-@import '_pages/page-id-3.css';

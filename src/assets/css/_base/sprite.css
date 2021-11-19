@@ -4,17 +4,17 @@
 .icon-download,
 .icon-sample,
 .icon-top {
-  background-image: url(../images/sprites/icon.png);
+  background-image: url('../images/sprites/icon.png');
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (min-resolution: 2dppx) {
   .icon-author,
   .icon-book,
   .icon-contact,
   .icon-download,
   .icon-sample,
   .icon-top {
-    background-image: url(../images/sprites/icon@2x.png);
+    background-image: url('../images/sprites/icon@2x.png');
     background-size: 96px 64px;
   }
 }

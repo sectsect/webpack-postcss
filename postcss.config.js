@@ -1,13 +1,13 @@
 const postcssImport = require('postcss-import');
 const postcssPresetEnv = require('postcss-preset-env')({
-  stage: 1,  // Default: stage: 2   @ https://cssdb.org/#staging-process
+  stage: 1, // Default: stage: 2   @ https://cssdb.org/#staging-process
   importFrom: 'src/assets/css/_base/settings.css',
   autoprefixer: {
-    grid: 'autoplace'
+    grid: 'autoplace',
   },
   features: {
-    'nesting-rules': true
-  }
+    'nesting-rules': true,
+  },
 });
 const postcssSortMediaQueries = require('postcss-sort-media-queries');
 const postcssCombineSelectors = require('postcss-combine-duplicated-selectors');
@@ -15,6 +15,7 @@ const pxtorem = require('postcss-pxtorem')({
   replace: false,
 });
 const postcssCalc = require('postcss-calc');
+const postcssPseudoIs = require('postcss-pseudo-is');
 const postcssHexrgba = require('postcss-hexrgba');
 const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 const postcssReporter = require('postcss-reporter')({
@@ -30,6 +31,7 @@ module.exports = {
     pxtorem,
     postcssCalc,
     postcssHexrgba,
+    postcssPseudoIs,
     postcssFlexbugsFixes,
     postcssReporter,
   ],

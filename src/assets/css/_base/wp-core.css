@@ -1,60 +1,74 @@
 .wp-editor {
-  font-family: var(--fontFamily);
-  font-size: var(--fontSize);
-  line-height: var(--lineHeight);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+
   & h3,
   & h4,
   & p {
-    margin: var(--wpEditorMargin) 0;
+    margin: var(--wp-element-margin) 0;
     overflow: hidden;
+
     &:first-child {
       margin-top: 0;
     }
+
     &:last-child {
       margin-bottom: 0;
     }
   }
+
   & h3 {
     font-size: 14px;
   }
+
   & h4 {
     font-size: 13px;
   }
+
   & a {
-    color: var(--linkColor);
+    color: var(--link-color);
     text-decoration: underline;
+
     &:hover {
       text-decoration: none;
     }
   }
+
   & img {
     max-width: 100%;
     height: auto;
   }
+
   & blockquote {
     padding-left: 15px;
-    margin: var(--wpEditorMargin) 0;
+    margin: var(--wp-element-margin) 0;
     font-weight: bold;
-    border-left: 5px solid var(--borderColor);
+    border-left: 5px solid var(--border-color);
   }
+
   @media (--viewport-medium) {
     & blockquote {
       padding-left: 35px;
     }
   }
 }
+
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
+
 .alignleft {
   float: left;
-  margin: 0 var(--wpEditorMargin) var(--wpEditorMargin) 0;
+  margin: 0 var(--wp-element-margin) var(--wp-element-margin) 0;
 }
+
 .alignright {
   float: right;
-  margin: 0 0 var(--wpEditorMargin) var(--wpEditorMargin);
+  margin: 0 0 var(--wp-element-margin) var(--wp-element-margin);
 }
+
 .wp-caption {
   padding-top: 4px;
   margin: 10px;
@@ -62,11 +76,13 @@
   background-color: #f3f3f3;
   border: 1px solid #ddd;
   border-radius: 3px;
+
   & img {
     padding: 0;
     margin: 0;
     border: 0 none;
   }
+
   & p.wp-caption-text {
     padding: 0 4px 5px;
     margin: 0;

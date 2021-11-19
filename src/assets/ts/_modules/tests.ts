@@ -4,6 +4,7 @@
 // import { object, string, optional, define, assert } from 'superstruct';
 import { detect } from './detect';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 declare let R: any;
 
 export const tests = (): void => {

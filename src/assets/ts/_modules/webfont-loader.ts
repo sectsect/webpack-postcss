@@ -5,7 +5,7 @@ import WebFont from 'webfontloader';
  *
  * @returns void
  */
-export const WebFontLoader = (): void => {
+export const webFontLoader = (): void => {
   WebFont.load({
     // custom: {
     //   families: ['NotoSansCJKjp:n4,n7'],

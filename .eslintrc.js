@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ['airbnb', 'prettier'],
-  plugins: ['@babel', 'react', 'prettier'],
+  extends: ['airbnb', 'plugin:tailwindcss/recommended', 'prettier'],
+  plugins: ['@babel', 'react', 'tailwindcss', 'prettier'],
   env: {
     es6: true,
     browser: true,

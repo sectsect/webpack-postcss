@@ -12,7 +12,7 @@ const postcssPresetEnv = require('postcss-preset-env')({
     grid: false, // For IE11 @ https://github.com/tailwindlabs/discuss/issues/454#issuecomment-586379008
   },
   features: {
-    'nesting-rules': true,
+    'nesting-rules': false,
     'focus-within-pseudo-class': false,
   },
 });

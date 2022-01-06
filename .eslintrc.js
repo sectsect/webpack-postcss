@@ -1,5 +1,6 @@
 module.exports = {
   extends: [
+    'airbnb',
     'airbnb-typescript',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
@@ -17,6 +18,7 @@ module.exports = {
     'react',
     'jsx-a11y',
     '@typescript-eslint',
+    'import',
     'prettier',
     'jest',
     'jest-dom',
@@ -42,7 +44,26 @@ module.exports = {
   },
   rules: {
     'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': 'off',
     // 'import/no-default-export': 'error',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+        optionalDependencies: false,
+      },
+    ],
+    'sort-imports': 0,
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal'],
+        alphabetize: {
+          order: 'asc',
+        },
+        'newlines-between': 'never',
+      },
+    ],
     'jsx-a11y/label-has-associated-control': 'off',
     'no-alert': 0,
     'no-console': 0,
@@ -50,6 +71,7 @@ module.exports = {
       'error',
       { props: true, ignorePropertyModificationsFor: ['state'] },
     ],
+    'no-underscore-dangle': 0,
     'react/function-component-definition': [
       2,
       {
@@ -73,7 +95,57 @@ module.exports = {
         'newlines-between': 'never',
       },
     ],
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/interface-name-prefix': 0,
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: ['function', 'parameter'],
+        format: ['camelCase'],
+        leadingUnderscore: 'allow',
+      },
+      {
+        selector: ['variable'],
+        format: ['camelCase', 'PascalCase'],
+        leadingUnderscore: 'allow',
+      },
+      {
+        selector: 'variable',
+        types: ['boolean'],
+        format: ['PascalCase'],
+        prefix: ['is', 'should'],
+      },
+      {
+        selector: 'class',
+        format: ['PascalCase'],
+      },
+      {
+        selector: 'interface',
+        format: ['PascalCase'],
+        // custom: {
+        //   regex: "^I[A-Z]",
+        //   match: false
+        // }
+      },
+      {
+        selector: 'typeParameter',
+        format: ['PascalCase'],
+        prefix: ['T'],
+      },
+      {
+        selector: 'enum',
+        format: ['PascalCase'],
+      },
+    ],
     '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        varsIgnorePattern: '^Window$',
+      },
+    ],
+    '@typescript-eslint/prefer-nullish-coalescing': 'error',
+    '@typescript-eslint/prefer-optional-chain': 'error',
     'prettier/prettier': 'error',
   },
   settings: {

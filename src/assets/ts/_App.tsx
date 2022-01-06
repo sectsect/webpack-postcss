@@ -47,12 +47,11 @@ const App: React.VFC = () => {
       <Header />
       <p>{message}</p>
       <ul className="user-list">
-        {users &&
-          users.map((user) => (
-            <li key={user.id} className={user.verified ? 'verified' : ''}>
-              {user.name}
-            </li>
-          ))}
+        {users?.map((user) => (
+          <li key={user.id} className={user.verified ? 'verified' : ''}>
+            {user.name}
+          </li>
+        ))}
       </ul>
     </div>
   );

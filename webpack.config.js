@@ -23,8 +23,8 @@ const buildPath = path.join(__dirname, 'dist');
 // console.log(process.env.AWS_ACCESS_KEY_ID);
 
 // For Detection Environment  @ https://webpack.js.org/api/cli/#environment-options
-const isProd = env => env && env.production;
-const isDev = env => env && env.development;
+const isProd = env => env?.production;
+const isDev = env => env?.development;
 
 // http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
 const getJSPlugins = env => {
@@ -51,27 +51,42 @@ const getJSPlugins = env => {
   plugins.push(
     new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
       output: {
-        filename: '../../../dist/assets/images/svg/symbol.svg',
+        filename: '../images/svg/symbol.svg',
+        svg: {
+          attributes: {
+            class: 'svg-icon-lib',
+          },
+        },
         svgo: {
           plugins: [
-            {
-              name: 'addClassesToSVGElement',
-              params: {
-                classNames: ['svg-icon-lib'],
-              },
-            },
+            // {
+            //   name: 'addClassesToSVGElement',
+            //   params: {
+            //     classNames: ['svg-icon-lib'],
+            //   },
+            // },
             {
               name: 'removeTitle',
               active: false,
             },
+            // {
+            //   name: 'removeAttrs',
+            //   params: {
+            //     attrs: 'fill',
+            //   },
+            // },
             {
-              name: 'removeAttrs',
-              params: {
-                attrs: 'fill',
-              },
+              name: 'convertStyleToAttrs',
+              active: true,
+            },
+            // {
+            //   name: 'removeStyleElement',
+            // },
+            {
+              name: 'inlineStyles',
             },
             {
-              name: 'removeStyleElement',
+              name: 'cleanupEnableBackground',
             },
           ],
         },
@@ -202,7 +217,7 @@ module.exports = env => [
       buildDependencies: {
         config: [__filename],
       },
-      name: 'js',
+      name: isProd(env) ? `js-production` : `js-development`,
     },
     module: {
       rules: [
@@ -288,7 +303,7 @@ module.exports = env => [
       buildDependencies: {
         config: [__filename],
       },
-      name: 'css',
+      name: isProd(env) ? `css-production` : `css-development`,
     },
     module: {
       rules: [

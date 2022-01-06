@@ -53,4 +53,9 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'prettier/prettier': 'error',
   },
+  settings: {
+    react: {
+      version: 'latest',
+    },
+  },
 };

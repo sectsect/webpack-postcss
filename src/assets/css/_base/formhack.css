@@ -1,19 +1,16 @@
 /* FormHack v1.2.0 (formhack.io) */
-
 /* Config ----------------------------- */
 :root {
   /* Font */
-  --fh-font-family: var(--fontFamily);
-  --fh-font-size: var(--fontSize);
-  --fh-font-color: var(--fontColor);
+  --fh-font-family: var(--font-family);
+  --fh-font-size: var(--font-size);
+  --fh-font-color: var(--font-color);
   --fh-font-color-disabled: #aaa; /* Add code by SECT */
-
   /* Borders */
   --fh-border-radius: 5px;
   --fh-border-width: 1px;
   --fh-border-style: solid;
-  --fh-border-color: var(--borderColor);
-
+  --fh-border-color: var(--border-color);
   /* Inputs, Textareas, Select, Option */
   --fh-input-height: 30px;
   --fh-input-width: 100%;
@@ -22,10 +19,8 @@
   --fh-focus-bg-color: #fff;
   --fh-focus-border-color: var(--fh-border-color);
   --fh-focus-font-color: var(--fh-font-color);
-
   /* Select Vendor Styling */
   --fh-select-vendor-styling: none; /* comment this out to maintain vendor styling */
-
   /* Buttons & Input Submits */
   --fh-button-height: 40px;
   --fh-button-width: 100%;
@@ -34,21 +29,17 @@
   --fh-button-bg-color: var(--fh-focus-bg-color);
   --fh-button-hover-bg-color: var(--fh-border-color);
   --fh-button-hover-font-color: var(--fh-font-color);
-
   /* Layout */
   --fh-layout-display: block;
   --fh-layout-margin: 10px 0; /* change to "10px auto" to center */
   --fh-layout-text-align: center;
-
   /* Add code by SECT */
-
   /* field size */
   --field-size-s: 50px;
   --field-size-m: 200px;
   --field-size-l: 400px;
   --field-size-full: var(--fh-input-width);
 }
-
 /* Global Reset Styles ------------------ */
 
 input,
@@ -65,7 +56,6 @@ fieldset {
   font-family: var(--fh-font-family);
   font-size: var(--fh-font-size);
   color: var(--fh-font-color);
-
   /* text-align: var(--fh-layout-text-align); */
   vertical-align: top;
   outline: none;
@@ -79,12 +69,9 @@ datalist {
 label {
   display: var(--fh-layout-display);
   margin: var(--fh-layout-margin);
-
   /* text-align: var(--fh-layout-text-align); */
 }
-
 /* Input & Textarea ------------------ */
-
 /* Fields with standard width */
 input[type='text'],
 input[type='email'],
@@ -112,7 +99,6 @@ textarea {
   border-width: var(--fh-border-width);
   border-radius: var(--fh-border-radius);
 }
-
 /* Fields with standard height */
 input[type='text'],
 input[type='email'],
@@ -129,17 +115,17 @@ input[type='url'],
 input[type='week'],
 input[list] {
   height: var(--fh-input-height);
-  -webkit-appearance: none;
+  appearance: none;
+
   &::-ms-clear,
   &::-ms-reveal {
     display: none;
   }
 }
-
 /* Other */
 
 textarea {
-  -webkit-appearance: none;
+  appearance: none;
   overflow: auto;
 }
 
@@ -155,11 +141,12 @@ input[type='file'] {
 
 input[type='search'] {
   height: var(--fh-input-height);
-  -webkit-appearance: none;
+  appearance: none;
 }
+
 input[type='search']::-webkit-search-cancel-button,
 input[type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 input[type='checkbox'],
@@ -167,7 +154,6 @@ input[type='radio'] {
   display: inline-block;
   vertical-align: middle;
 }
-
 /* For checkbox and radio to be centered, need to wrap the input and label in a span -
 /* .checkbox-container {
 /*  display: block;
@@ -179,10 +165,7 @@ input[type='radio'] {
 
 select {
   height: var(--fh-input-height);
-  -webkit-appearance: var(--fh-select-vendor-styling, menulist);
-  -moz-appearance: var(--fh-select-vendor-styling, menulist);
-  -ms-appearance: var(--fh-select-vendor-styling, menulist);
-  -o-appearance: var(--fh-select-vendor-styling, menulist);
+  appearance: var(--fh-select-vendor-styling, menulist);
 }
 
 select::-ms-expand {
@@ -199,7 +182,6 @@ select[multiple] option {
   padding: calc(var(--fh-input-height) / 5);
   margin: 0;
 }
-
 /* Fieldset ------------------ */
 
 fieldset {
@@ -216,7 +198,6 @@ legend {
   padding: 0 5px;
   font-weight: 700;
 }
-
 /* Buttons, Input Type Submit/Reset ------------------ */
 
 button,
@@ -236,8 +217,7 @@ input[type='image'] {
   border-style: var(--fh-border-style);
   border-width: var(--fh-border-width);
   border-radius: var(--fh-border-radius);
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: none;
 }
 
 input[type='image'] {
@@ -245,7 +225,6 @@ input[type='image'] {
   padding: 0;
   text-align: center;
 }
-
 /* States ------------------ */
 
 input[disabled],
@@ -264,7 +243,6 @@ button:focus {
   background-color: var(--fh-focus-bg-color);
   border-color: var(--fh-focus-border-color);
 }
-
 /* input[type='checkbox']:focus,
 input[type='radio']:focus {
   outline: var(--fh-focus-border-color) solid 2px;
@@ -281,11 +259,9 @@ input[type='reset']:focus {
   color: var(--fh-button-hover-font-color);
   background-color: var(--fh-button-hover-bg-color);
 }
-
 /* ==================================================
   Add code by SECT
 ================================================== */
-
 /* input[type='text'],
 input[type='email'],
 input[type='password'],
@@ -339,17 +315,14 @@ textarea {
     }
   }
 } */
-
 /* Disable autofill(yellow background) on Chrome */
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px white inset;
+  box-shadow: 0 0 0 1000px white inset;
 }
-
 /* placeholder */
 ::placeholder {
   color: #999;
 }
-
 /* [readonly=readonly] */
 input[readonly],
 textarea[readonly],
@@ -358,10 +331,9 @@ option[readonly],
 button[readonly] {
   padding: 0;
   border: none;
-
   /* background: none !important; */
 }
-
+/* stylelint-disable no-duplicate-selectors */
 /* [readonly=disabled] */
 input[disabled],
 textarea[disabled],
@@ -370,15 +342,14 @@ option[disabled],
 button[disabled] {
   color: var(--fh-font-color-disabled) !important;
   cursor: not-allowed;
+
   &:hover {
     color: var(--fh-font-color-disabled);
   }
 }
-
 /* input[type=range]	@ range.css: https://github.com/danielstern/range.css/ */
 input[type='range'] {
-  -webkit-appearance: none;
-
+  appearance: none;
   /* &.size_s {
     max-width: initial;
     max-width: auto;
@@ -417,14 +388,16 @@ input[type='range'] {
   &:focus {
     outline: none;
   }
+
   &::-webkit-slider-runnable-track {
     width: 100%;
     height: 2px;
     cursor: pointer;
-    background: rgba(200, 200, 200, 0.78);
+    background: rgb(200 200 200 / 0.78);
     border: 0 solid #010101;
     border-radius: 0;
   }
+
   &::-webkit-slider-thumb {
     width: 12px;
     height: 12px;
@@ -433,19 +406,22 @@ input[type='range'] {
     background: #444;
     border: 1.8px solid #444;
     border-radius: 50%;
-    -webkit-appearance: none;
+    appearance: none;
   }
+
   &:focus::-webkit-slider-runnable-track {
-    background: rgba(213, 213, 213, 0.78);
+    background: rgb(213 213 213 / 0.78);
   }
+
   &::-moz-range-track {
     width: 100%;
     height: 2px;
     cursor: pointer;
-    background: rgba(200, 200, 200, 0.78);
+    background: rgb(200 200 200 / 0.78);
     border: 0 solid #010101;
     border-radius: 0;
   }
+
   &::-moz-range-thumb {
     width: 12px;
     height: 12px;
@@ -454,6 +430,7 @@ input[type='range'] {
     border: 1.8px solid #444;
     border-radius: 50%;
   }
+
   &::-ms-track {
     width: 100%;
     height: 2px;
@@ -462,16 +439,19 @@ input[type='range'] {
     background: transparent;
     border-color: transparent;
   }
+
   &::-ms-fill-lower {
-    background: rgba(187, 187, 187, 0.78);
+    background: rgb(187 187 187 / 0.78);
     border: 0 solid #010101;
     border-radius: 0;
   }
+
   &::-ms-fill-upper {
-    background: rgba(200, 200, 200, 0.78);
+    background: rgb(200 200 200 / 0.78);
     border: 0 solid #010101;
     border-radius: 0;
   }
+
   &::-ms-thumb {
     width: 12px;
     height: 12px;
@@ -479,21 +459,21 @@ input[type='range'] {
     background: #444;
     border: 1.8px solid #444;
     border-radius: 50%;
-
     /* height: 2px; */
   }
+
   &:focus {
     &::-ms-fill-lower {
-      background: rgba(200, 200, 200, 0.78);
+      background: rgb(200 200 200 / 0.78);
     }
+
     &::-ms-fill-upper {
-      background: rgba(213, 213, 213, 0.78);
+      background: rgb(213 213 213 / 0.78);
     }
   }
 }
-
+/* stylelint-enable no-duplicate-selectors */
 /* For third party */
-
 /* select2.js - Reset default css */
 .select2-container--default {
   & .select2-selection--single,
@@ -502,15 +482,18 @@ input[type='range'] {
     border: var(--fh-border-width) var(--fh-border-style) var(--fh-border-color) !important;
     border-radius: var(--fh-border-radius) !important;
     outline: none;
+
     & .select2-selection__rendered {
       height: var(--fh-input-height) !important;
     }
-    & .select2-selection__choice {
-      border: var(--fh-border-width) var(--fh-border-style) var(--fh-border-color) !important;
 
+    & .select2-selection__choice {
+      border: var(--fh-border-width) var(--fh-border-style)
+        var(--fh-border-color) !important;
       /* background-color: #999 !important; */
     }
   }
+
   &.select2-container--open.select2-container--below {
     & .select2-selection--single,
     & .select2-selection--multiple {
@@ -518,29 +501,33 @@ input[type='range'] {
       border-bottom-left-radius: 0 !important;
     }
   }
+
   .select2-search--dropdown .select2-search__field {
     max-width: initial;
     max-width: auto;
     border-color: var(--fh-border-color) !important;
   }
 }
+
 .select2-dropdown {
   border-color: var(--fh-border-color) !important;
 }
+
 .select2-selection__clear {
   font-size: 13px;
-  color: var(--fontColor);
+  color: var(--font-color);
 }
+
 .select2-container {
   width: 100% !important;
   max-width: 100%;
+
   & .select2-search--inline {
     & .select2-search__field {
       margin-top: 0 !important;
     }
   }
 }
-
 /* .size_s {
   & + .select2-container {
     max-width: initial;
@@ -592,7 +579,6 @@ input[type='range'] {
     }
   }
 } */
-
 /* contact form 7 */
 .wpcf7-form-control-wrap {
   display: block;

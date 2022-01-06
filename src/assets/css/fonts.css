@@ -1,5 +1,5 @@
 /* @font-face {
-  font-family: "NotoSansCJKjp";
+  font-family: NotoSansCJKjp;
   font-style: normal;
   font-weight: 100;
   src: url("../fonts/NotoSansCJKjp-Thin.eot");
@@ -8,9 +8,8 @@
     url("../fonts/NotoSansCJKjp-Thin.woff") format("woff"),
     url("../fonts/NotoSansCJKjp-Thin.ttf") format("truetype");
 } */
-
 /* @font-face {
-  font-family: "NotoSansCJKjp";
+  font-family: NotoSansCJKjp;
   font-style: normal;
   font-weight: 200;
   src: url("../fonts/NotoSansCJKjp-Light.eot");
@@ -20,9 +19,8 @@
     url("../fonts/NotoSansCJKjp-Light.woff") format("woff"),
     url("../fonts/NotoSansCJKjp-Light.ttf") format("truetype");
 } */
-
 /* @font-face {
-  font-family: "NotoSansCJKjp";
+  font-family: NotoSansCJKjp;
   font-style: normal;
   font-weight: 300;
   src: url("../fonts/NotoSansCJKjp-DemiLight.eot");
@@ -32,8 +30,9 @@
     url("../fonts/NotoSansCJKjp-DemiLight.woff") format("woff"),
     url("../fonts/NotoSansCJKjp-DemiLight.ttf") format("truetype");
 } */
+
 @font-face {
-  font-family: 'NotoSansCJKjp';
+  font-family: NotoSansCJKjp;
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/NotoSansCJKjp-Regular.eot');
@@ -43,9 +42,8 @@
     url('../fonts/NotoSansCJKjp-Regular.woff') format('woff'),
     url('../fonts/NotoSansCJKjp-Regular.ttf') format('truetype');
 }
-
 /* @font-face {
-  font-family: "NotoSansCJKjp";
+  font-family: NotoSansCJKjp;
   font-style: normal;
   font-weight: 500;
   src: url("../fonts/NotoSansCJKjp-Medium.eot");
@@ -55,8 +53,9 @@
     url("../fonts/NotoSansCJKjp-Medium.woff") format("woff"),
     url("../fonts/NotoSansCJKjp-Medium.ttf") format("truetype");
 } */
+
 @font-face {
-  font-family: 'NotoSansCJKjp';
+  font-family: NotoSansCJKjp;
   font-style: normal;
   font-weight: 700;
   src: url('../fonts/NotoSansCJKjp-Bold.eot');
@@ -66,9 +65,8 @@
     url('../fonts/NotoSansCJKjp-Bold.woff') format('woff'),
     url('../fonts/NotoSansCJKjp-Bold.ttf') format('truetype');
 }
-
 /* @font-face {
-  font-family: "NotoSansCJKjp";
+  font-family: NotoSansCJKjp;
   font-style: normal;
   font-weight: 900;
   src: url("../fonts/NotoSansCJKjp-Black.eot");

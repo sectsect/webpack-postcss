@@ -50,6 +50,14 @@ module.exports = {
       'error',
       { props: true, ignorePropertyModificationsFor: ['state'] },
     ],
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'react/jsx-uses-react': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
@@ -67,5 +75,10 @@ module.exports = {
     ],
     '@typescript-eslint/no-explicit-any': 0,
     'prettier/prettier': 'error',
+  },
+  settings: {
+    react: {
+      version: 'latest',
+    },
   },
 };

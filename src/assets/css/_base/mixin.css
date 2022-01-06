@@ -1,5 +1,5 @@
-@define-mixin arrow $direction: right, $size: 10px, $borderwidth: 2px, $color: #333,
-  $horizontal: right, $margin: 10px {
+@define-mixin arrow $direction: right, $size: 10px, $borderwidth: 2px,
+  $color: #333, $horizontal: right, $margin: 10px {
   &::after {
     position: absolute;
     top: 50%;
@@ -10,33 +10,41 @@
     content: '';
     border-top: $borderwidth solid $color;
     border-right: $borderwidth solid $color;
+
     @if $direction == top {
       transform: rotate(-45deg);
-    } @else if $direction == bottom {
+    }
+
+ @else if $direction == bottom {
       transform: rotate(135deg);
-    } @else if $direction == left {
+    }
+
+ @else if $direction == left {
       transform: rotate(225deg);
-    } @else {
+    }
+
+ @else {
       transform: rotate(45deg);
     }
+
     @if $horizontal == left {
       left: -(round($size / 2) - 1px);
-    } @else {
+    }
+
+ @else {
       right: $margin + round($size / 5);
     }
   }
 }
-
 /* Usage: */
-
 /* div {
     position: relative;
     @include arrow(right, 10px, 2px, #333, right, 10px);
     @mixin arrow right, 10px, 2px, #333, right, 10px;
 } */
 
-@define-mixin spinner $position: absolute, $size: 16px, $borderwidth: 2px, $color: #aaa,
-  $parentclass: ready, $defaultdisplay: visible {
+@define-mixin spinner $position: absolute, $size: 16px, $borderwidth: 2px,
+  $color: #aaa, $parentclass: ready, $defaultdisplay: visible {
   &::before {
     position: $position;
     top: 50%;
@@ -51,23 +59,25 @@
     border-radius: 50%;
     transition: all 0.3s linear 0.3s;
     animation: spin 1s linear infinite;
+
     @if $defaultdisplay == visible {
       visibility: visible;
+
       @mixin opacity 1;
-    } @else {
+    }
+
+ @else {
       visibility: hidden;
+
       @mixin opacity 0;
     }
   }
 }
-
 /* Usage: */
-
 /* div {
     @include spinner(absolute, 16px, 2px, #aaa, ready, visible/hidden);
     @mixin spinner absolute, 16px, 2px, #aaa, ready, visible/hidden;
 } */
-
 /*
 @mixin image-2x($image, $width, $height) {
   @media (min--moz-device-pixel-ratio: 1.3),
@@ -80,11 +90,9 @@
   }
 }
 */
-
 /* ==================================================
 For Retine mix-in Sprite
 ================================================== */
-
 /* @define-mixin sprite-2x-width $sprite {
   width: nth($sprite, 5) / 2;
 }
@@ -111,45 +119,52 @@ For Retine mix-in Sprite
   @mixin sprite-2x-width $sprite;
   @mixin sprite-2x-height $sprite;
 } */
-
 /* ==================================================
 .wp-editor
 ================================================== */
+
 @define-mixin wp-editor $margin {
   .wp-editor {
     font-family: $fontfamily;
     font-size: $(fontsize);
     line-height: $lineheight;
+
     h3,
     h4,
     p {
       margin: $margin 0;
       overflow: hidden;
+
       &:first-child {
         margin-top: 0;
       }
+
       &:last-child {
         margin-bottom: 0;
       }
     }
+
     h3 {
       font-size: 14px;
     }
+
     h4 {
       font-size: 13px;
     }
+
     a {
       color: $linkcolor;
       text-decoration: underline;
+
       &:hover {
         text-decoration: none;
       }
     }
+
     img {
       max-width: 100%;
       height: auto;
     }
-
     /*
     blockquote {
       margin: $margin 0;
@@ -203,24 +218,29 @@ For Retine mix-in Sprite
       font-weight: bold;
       border-left: 5px solid $bordercolor;
     }
+
     @media only screen and (min-width: $breakPoint) {
       blockquote {
         padding-left: 35px;
       }
     }
   }
+
   .aligncenter {
     display: block;
     margin: 0 auto;
   }
+
   .alignleft {
     float: left;
     margin: 0 $margin $margin 0;
   }
+
   .alignright {
     float: right;
     margin: 0 0 $margin $margin;
   }
+
   .wp-caption {
     padding-top: 4px;
     margin: 10px;
@@ -228,11 +248,13 @@ For Retine mix-in Sprite
     background-color: #f3f3f3;
     border: 1px solid #ddd;
     border-radius: 3px;
+
     img {
       padding: 0;
       margin: 0;
       border: 0 none;
     }
+
     p.wp-caption-text {
       padding: 0 4px 5px;
       margin: 0;

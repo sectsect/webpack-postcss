@@ -17,6 +17,7 @@ module.exports = {
     'react',
     'jsx-a11y',
     '@typescript-eslint',
+    'eslint-plugin-tsdoc',
     'import',
     'prettier',
     'jest',
@@ -90,6 +91,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'sort-imports': 0,
+    'tsdoc/syntax': 'warn',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }], // For Error on `src/setupTests.ts`
     'import/order': [
       'error',

@@ -6,7 +6,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:jest/recommended',
-    'prettier',
     'plugin:prettier/recommended',
     'plugin:testing-library/react',
     'plugin:jest-dom/recommended',
@@ -30,6 +29,8 @@ module.exports = {
     jest: true,
   },
   globals: {
+    window: true,
+    lazySizes: true,
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
@@ -64,6 +65,11 @@ module.exports = {
         'newlines-between': 'never',
       },
     ],
+    // 'import/resolver': {
+    //   webpack: {
+    //     config: 'webpack.config.js',
+    //   },
+    // },
     'jsx-a11y/label-has-associated-control': 'off',
     'no-alert': 0,
     'no-console': 0,

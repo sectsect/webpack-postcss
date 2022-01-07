@@ -19,7 +19,7 @@ import { smoothScroll } from './smooth-scroll';
 // import { tests } from './tests';
 import { typescript } from './typescript';
 import { viewPort } from './viewport';
-import { WebFontLoader } from './webfont-loader';
+import { webFontLoader } from './webfont-loader';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 declare global {
@@ -81,7 +81,7 @@ console.log(detect());
 /*= =================================================
   Run
 ================================================== */
-WebFontLoader();
+webFontLoader();
 inlineSVG();
 viewPort();
 innerVh({

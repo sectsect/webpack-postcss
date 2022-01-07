@@ -1,5 +1,9 @@
 import 'dotdotdot-js';
-
+/**
+ * Text truncation jQuery plugin
+ *
+ * @returns void
+ */
 export const dotdotdot = (): void => {
   if ($('.truncation').length) {
     ($('.truncation') as any).dotdotdot({

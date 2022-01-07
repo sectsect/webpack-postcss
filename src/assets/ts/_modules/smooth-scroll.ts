@@ -1,6 +1,17 @@
 import MoveTo from 'moveto';
 
+/**
+ * Smooth scroll to an element
+ *
+ * @returns void
+ */
 export const smoothScroll = (): void => {
+  /**
+   * Run the smooth scroll
+   *
+   * @param  id - The id of the element to scroll to
+   * @param  ofs - The offset to add to the scroll position
+   */
   const runSmoothScroll = (id: string, ofs: number) => {
     const moveTo = new MoveTo({
       duration: 600,

@@ -1,5 +1,10 @@
 import { detect } from './detect';
 
+/**
+ * Set the viewport if user agent is tablet.
+ *
+ * @returns void
+ */
 export const viewPort = (): void => {
   if (detect().device.tablet) {
     const target = '#viewport';

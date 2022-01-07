@@ -48,6 +48,11 @@ interface Screen {
   w: number;
 }
 
+/**
+ * Detects the browser and returns a detection object.
+ *
+ * @returns Detection
+ */
 export const detect = (): Detection => {
   const bn = browser?.name;
   const bv = parseInt(browser?.version ?? '0', 10);

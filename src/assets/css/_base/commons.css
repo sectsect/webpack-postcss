@@ -308,7 +308,6 @@ Normalization for Third party
           left: 50%;
           margin-left: -4px;
           transform: rotate(225deg);
-          transform: rotate(225deg);
         }
       }
 
@@ -318,7 +317,6 @@ Normalization for Third party
         &::after {
           right: 50%;
           margin-right: -4px;
-          transform: rotate(45deg);
           transform: rotate(45deg);
         }
       }

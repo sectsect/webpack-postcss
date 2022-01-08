@@ -11,6 +11,9 @@ module.exports = {
     'plugin:jest-dom/recommended',
   ],
   settings: {
+    react: {
+      version: 'latest',
+    },
     jest: { version: 27 },
   },
   plugins: [
@@ -46,7 +49,7 @@ module.exports = {
   },
   rules: {
     'import/prefer-default-export': 'off',
-    'import/no-extraneous-dependencies': 'off',
+    // 'import/no-extraneous-dependencies': 'off',
     // 'import/no-default-export': 'error',
     'import/no-extraneous-dependencies': [
       'error',
@@ -86,24 +89,15 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'react/jsx-filename-extension': [
+      1,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
     'react/jsx-fragments': 0,
     'react/jsx-uses-react': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    'sort-imports': 0,
     'tsdoc/syntax': 'warn',
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }], // For Error on `src/setupTests.ts`
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'internal'],
-        alphabetize: {
-          order: 'asc',
-        },
-        'newlines-between': 'never',
-      },
-    ],
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/interface-name-prefix': 0,
     '@typescript-eslint/naming-convention': [
@@ -156,10 +150,5 @@ module.exports = {
     '@typescript-eslint/prefer-nullish-coalescing': 'error',
     '@typescript-eslint/prefer-optional-chain': 'error',
     'prettier/prettier': 'error',
-  },
-  settings: {
-    react: {
-      version: 'latest',
-    },
   },
 };

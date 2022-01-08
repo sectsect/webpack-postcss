@@ -67,6 +67,9 @@ module.exports = {
     ],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/jsx-fragments': 0,
+    'react/jsx-uses-react': 'off',
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
     'prettier/prettier': 'error',
   },
   settings: {

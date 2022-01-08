@@ -7,7 +7,15 @@ module.exports = {
     'plugin:testing-library/react',
     'plugin:jest-dom/recommended',
   ],
-  plugins: ['@babel', 'react', 'jsx-a11y', 'prettier', 'jest', 'jest-dom', 'testing-library'],
+  plugins: [
+    '@babel',
+    'react',
+    'jsx-a11y',
+    'prettier',
+    'jest',
+    'jest-dom',
+    'testing-library',
+  ],
   env: {
     es6: true,
     browser: true,
@@ -58,6 +66,7 @@ module.exports = {
       },
     ],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-fragments': 0,
     'prettier/prettier': 'error',
   },
   settings: {

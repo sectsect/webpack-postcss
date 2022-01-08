@@ -235,6 +235,29 @@ module.exports = env => [
             },
           ],
         },
+        {
+          test: /\.svg$/,
+          use: [
+            {
+              loader: '@svgr/webpack',
+              options: {
+                svgoConfig: {
+                  plugins: [
+                    {
+                      name: 'addClassesToSVGElement',
+                      params: {
+                        classNames: ['svg-icon-lib'],
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+            {
+              loader: 'url-loader',
+            },
+          ],
+        },
         // Modernizr
         {
           test: /\.modernizrrc.js$/,

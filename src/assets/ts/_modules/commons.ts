@@ -10,7 +10,7 @@ import 'lazysizes';
 import 'jquery.easing';
 import { innerVh } from 'inner-vh';
 import { detect } from './detect';
-import { inlineSVG } from './inline-svg';
+// import { inlineSVG } from './inline-svg';
 import { dotdotdot } from './jquery-dotdotdot';
 // import { touchHover } from './touch-hover';
 import { menu } from './menu';
@@ -82,7 +82,7 @@ console.log(detect());
   Run
 ================================================== */
 webFontLoader();
-inlineSVG();
+// inlineSVG();
 viewPort();
 innerVh({
   ignoreCollapsibleUi: false,

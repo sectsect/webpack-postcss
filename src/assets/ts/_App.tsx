@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ReactComponent as SvgSymbol } from '../../../dist/assets/images/svg/symbol.svg';
 import Header from './components/Header';
 
 interface MyData {
@@ -43,7 +44,8 @@ const App: React.VFC = () => {
   const { message } = window.my_data;
 
   return (
-    <div>
+    <>
+      <SvgSymbol />
       <Header />
       <p>{message}</p>
       <ul className="user-list">
@@ -53,7 +55,30 @@ const App: React.VFC = () => {
           </li>
         ))}
       </ul>
-    </div>
+      <div className="icons">
+        <svg className="icon">
+          <use xlinkHref="#icon-facebook" />
+        </svg>
+        <svg className="icon">
+          <use xlinkHref="#icon-twitter" />
+        </svg>
+        <svg className="icon">
+          <use xlinkHref="#icon-youtube" />
+        </svg>
+        <svg className="icon">
+          <use xlinkHref="#icon-instagram" />
+        </svg>
+        <svg className="icon">
+          <use xlinkHref="#icon-line" />
+        </svg>
+        <svg className="icon">
+          <use xlinkHref="#icon-arrow-top" />
+        </svg>
+        <svg className="icon">
+          <use xlinkHref="#icon-search" />
+        </svg>
+      </div>
+    </>
   );
 };
 

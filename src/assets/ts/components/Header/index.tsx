@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Header: React.VFC = () => (
-  <div>
+  <header className="header">
     <h1>App Component</h1>
-  </div>
+  </header>
 );
 
 export default Header;

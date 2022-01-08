@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { ReactComponent as SvgSymbol } from '../../../dist/assets/images/svg/symbol.svg';
-import Header from './components/Header';
+import { useState } from 'react';
+import Layout from './components/Layout';
 
 interface MyData {
   message: string;
@@ -44,9 +43,7 @@ const App: React.VFC = () => {
   const { message } = window.my_data;
 
   return (
-    <>
-      <SvgSymbol />
-      <Header />
+    <Layout>
       <p>{message}</p>
       <ul className="user-list">
         {users?.map((user) => (
@@ -78,7 +75,7 @@ const App: React.VFC = () => {
           <use xlinkHref="#icon-search" />
         </svg>
       </div>
-    </>
+    </Layout>
   );
 };
 

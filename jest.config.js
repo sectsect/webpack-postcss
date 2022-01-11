@@ -10,10 +10,13 @@ module.exports = {
   ],
   testEnvironment: 'jsdom',
   transform: {
-    '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+    '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': '<rootDir>/node_modules/ts-jest',
     '^.+\\.css$': '<rootDir>/test/config/cssTransform.ts',
     '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)':
       '<rootDir>/test/config/fileTransform.ts',
+    // '^.+\\.svg$': 'jest-svg-transformer',
+    // '^.+\\.svg$': './test/config/svgTransFormer.ts',
+    '^.+\\.svg$': 'svg-jest',
   },
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$',
@@ -32,4 +35,5 @@ module.exports = {
     'node',
   ],
   resetMocks: true,
+  passWithNoTests: true,
 };

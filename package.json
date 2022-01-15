@@ -109,6 +109,7 @@
     "sanitize.css": "^13.0.0",
     "slick-carousel": "^1.8.1",
     "superstruct": "^0.15.3",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "whatwg-fetch": "^3.6.2"
   }
 }

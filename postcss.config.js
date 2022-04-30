@@ -7,6 +7,9 @@ const postcssPresetEnv = require('postcss-preset-env')({
   },
   features: {
     'nesting-rules': true,
+    'custom-properties': {
+      disableDeprecationNotice: true,
+    },
   },
 });
 const postcssSortMediaQueries = require('postcss-sort-media-queries');

@@ -54,14 +54,19 @@ const getJSPlugins = env => {
     new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
       output: {
         filename: '../images/svg/symbol.svg',
+        svg: {
+          attributes: {
+            class: 'svg-icon-lib',
+          },
+        },
         svgo: {
           plugins: [
-            {
-              name: 'addClassesToSVGElement',
-              params: {
-                classNames: ['svg-icon-lib'],
-              },
-            },
+            // {
+            //   name: 'addClassesToSVGElement',
+            //   params: {
+            //     classNames: ['svg-icon-lib'],
+            //   },
+            // },
             {
               name: 'removeTitle',
               active: false,

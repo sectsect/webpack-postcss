@@ -107,11 +107,7 @@ const getJSPlugins = env => {
   }
   if (isDev(env)) {
     plugins.push(
-      new ForkTsCheckerWebpackPlugin({
-        eslint: {
-          files: './src/assets/ts/**/*',
-        }
-      }),
+      new ForkTsCheckerWebpackPlugin(),
     );
     plugins.push(
       new ForkTsCheckerNotifierWebpackPlugin({

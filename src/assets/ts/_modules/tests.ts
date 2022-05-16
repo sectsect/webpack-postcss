@@ -145,10 +145,10 @@ export const tests = (): void => {
       return undefined;
     }
   };
-  async function getUser(user: string): Promise<void> {
+  const getUser = async (user: string): Promise<void> => {
     const userData = await doFetch(user);
     console.log(userData);
-  }
+  };
   getUser('sectsect');
 
   // async / await

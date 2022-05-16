@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['airbnb', 'prettier'],
-  plugins: ['@babel', 'react', 'prettier'],
+  plugins: ['prefer-arrow', '@babel', 'react', 'prettier'],
   env: {
     es6: true,
     browser: true,
@@ -37,6 +37,14 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     'import/no-default-export': 'error',
+    'prefer-arrow/prefer-arrow-functions': [
+      'warn',
+      {
+        disallowPrototype: true,
+        singleReturnOnly: false,
+        classPropertiesAllowed: false,
+      },
+    ],
     'no-alert': 0,
     'no-console': 0,
     'prettier/prettier': 'error',

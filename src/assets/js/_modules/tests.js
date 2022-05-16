@@ -119,10 +119,10 @@ export const tests = () => {
       return err;
     }
   };
-  async function getUser(user) {
+  const getUser = async user => {
     const userData = await doFetch(user);
     console.log(userData);
-  }
+  };
   getUser('sectsect');
 
   // async / await

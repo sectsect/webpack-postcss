@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['airbnb', 'prettier'],
-  plugins: ['prefer-arrow', '@babel', 'react', 'prettier'],
+  plugins: ['prefer-arrow', '@babel', 'react', 'unused-imports', 'prettier'],
   env: {
     es6: true,
     browser: true,
@@ -43,6 +43,17 @@ module.exports = {
         disallowPrototype: true,
         singleReturnOnly: false,
         classPropertiesAllowed: false,
+      },
+    ],
+    'no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
       },
     ],
     'no-alert': 0,

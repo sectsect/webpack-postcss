@@ -22,6 +22,7 @@ module.exports = {
     // "@babel",
     'prefer-arrow',
     '@typescript-eslint',
+    'unused-imports',
     'eslint-plugin-tsdoc',
   ],
   globals: {
@@ -62,6 +63,19 @@ module.exports = {
         disallowPrototype: true,
         singleReturnOnly: false,
         classPropertiesAllowed: false,
+      },
+    ],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        // varsIgnorePattern: '^_',
+        varsIgnorePattern: '^Window$',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
       },
     ],
     'no-alert': 0,
@@ -105,12 +119,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-explicit-any': 0,
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        varsIgnorePattern: '^Window$',
-      },
-    ],
     '@typescript-eslint/prefer-nullish-coalescing': 'error',
     '@typescript-eslint/prefer-optional-chain': 'error',
     'prettier/prettier': 'error',

@@ -1,5 +1,5 @@
 import './_modules/commons';
-import { MyClass, Animal, CustomClass } from './_class/myclass';
+import { MyClass, Animal } from './_class/myclass';
 import { slider } from './_modules/slider';
 
 // const ary = R.append('111', ['222', '333']);
@@ -85,11 +85,11 @@ rex.eats = 'anything'; // standard setter
 rex.food = 'tofu'; // bypass the eats setter altogether
 console.log(rex.dinner); // Rex eats tofu for dinner.
 
-// Private Class Fields
-// https://www.sitepoint.com/javascript-private-class-fields/#privateclassfields
-const m = new CustomClass();
-console.log(m.a);
-// console.log(m.#b); // error - private variable cannot be modified outside class
-const ib = m.incB(); // runs OK
-console.log(ib);
-// m.#b = 0; // error - private property cannot be modified outside class
+// // Private Class Fields
+// // https://www.sitepoint.com/javascript-private-class-fields/#privateclassfields
+// const m = new CustomClass();
+// console.log(m.a);
+// // console.log(m.#b); // error - private variable cannot be modified outside class
+// const ib = m.incB(); // runs OK
+// console.log(ib);
+// // m.#b = 0; // error - private property cannot be modified outside class

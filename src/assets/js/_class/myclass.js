@@ -46,15 +46,15 @@ export class Animal {
   }
 }
 
-export class CustomClass {
-  a = 1; // .a is public
+// export class CustomClass {
+//   a = 1; // .a is public
 
-  #b = 2; // .#b is private
+//   #b = 2; // .#b is private
 
-  static #c = 3; // .#c is private and static
+//   static #c = 3; // .#c is private and static
 
-  incB() {
-    this.#b += 1;
-    return this.#b;
-  }
-}
+//   incB() {
+//     this.#b += 1;
+//     return this.#b;
+//   }
+// }

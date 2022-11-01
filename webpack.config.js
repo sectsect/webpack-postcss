@@ -52,14 +52,19 @@ const getJSPlugins = env => {
     new SVGSpritemapPlugin(path.resolve(sourcePath, 'assets/images/svg/raw/**/*.svg'), {
       output: {
         filename: '../images/svg/symbol.svg',
+        svg: {
+          attributes: {
+            class: 'svg-icon-lib',
+          },
+        },
         svgo: {
           plugins: [
-            {
-              name: 'addClassesToSVGElement',
-              params: {
-                classNames: ['svg-icon-lib'],
-              },
-            },
+            // {
+            //   name: 'addClassesToSVGElement',
+            //   params: {
+            //     classNames: ['svg-icon-lib'],
+            //   },
+            // },
             {
               name: 'removeTitle',
               active: false,
@@ -100,11 +105,7 @@ const getJSPlugins = env => {
   }
   if (isDev(env)) {
     plugins.push(
-      new ForkTsCheckerWebpackPlugin({
-        eslint: {
-          files: './src/assets/ts/**/*',
-        }
-      }),
+      new ForkTsCheckerWebpackPlugin(),
     );
     plugins.push(
       new ForkTsCheckerNotifierWebpackPlugin({
@@ -233,7 +234,7 @@ module.exports = env => [
           // exclude: /node_modules\/(?!(rambda|quicklink)\/).*/,
           use: [
             {
-              loader: 'babel-loader',
+              loader: 'swc-loader',
               options: {
                 cacheDirectory: true,
               },

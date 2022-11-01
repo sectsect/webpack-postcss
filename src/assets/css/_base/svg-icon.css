@@ -1,4 +1,4 @@
-svg.svg-icon-lib {
+.svg-icon-lib {
   position: absolute !important;
   width: 1px !important;
   height: 1px !important;
@@ -11,7 +11,7 @@ svg.svg-icon-lib {
 /* For fill attr on <path> tag */
 svg {
   & path {
-    fill: currentColor;
+    fill: currentcolor;
   }
 }
 
@@ -19,8 +19,8 @@ svg.icon {
   display: inline-block;
   width: 1em;
   height: 1em;
-  fill: currentColor;
-  stroke: currentColor;
+  fill: currentcolor;
+  stroke: currentcolor;
   stroke-width: 0;
 }
 /* ==========================================

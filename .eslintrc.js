@@ -6,7 +6,6 @@ module.exports = {
     jquery: true,
   },
   parser: '@typescript-eslint/parser',
-  // "parser": "@babel/eslint-parser",
   parserOptions: {
     // "ecmaVersion": 2020,
     sourceType: 'module',
@@ -20,7 +19,9 @@ module.exports = {
   ],
   plugins: [
     // "@babel",
+    'prefer-arrow',
     '@typescript-eslint',
+    'unused-imports',
     'eslint-plugin-tsdoc',
   ],
   globals: {
@@ -55,6 +56,27 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     'import/no-default-export': 'error',
+    'prefer-arrow/prefer-arrow-functions': [
+      'warn',
+      {
+        disallowPrototype: true,
+        singleReturnOnly: false,
+        classPropertiesAllowed: false,
+      },
+    ],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        // varsIgnorePattern: '^_',
+        varsIgnorePattern: '^Window$',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
+    ],
     'no-alert': 0,
     'no-console': 0,
     'tsdoc/syntax': 'warn',
@@ -96,19 +118,13 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-explicit-any': 0,
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        varsIgnorePattern: '^Window$',
-      },
-    ],
     '@typescript-eslint/prefer-nullish-coalescing': 'error',
     '@typescript-eslint/prefer-optional-chain': 'error',
     'prettier/prettier': 'error',
   },
   settings: {
     react: {
-      version: 'latest',
+      version: 'detect',
     },
     'import/extensions': ['.js', '.jsx', '.json', '.ts', '.tsx'],
     'import/resolver': {

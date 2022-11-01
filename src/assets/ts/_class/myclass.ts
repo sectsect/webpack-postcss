@@ -64,19 +64,15 @@ export class Animal {
   }
 }
 
-export class CustomClass {
-  a = 1; // .a is public
+// export class CustomClass {
+//   a = 1; // .a is public
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  #b = 2; // .#b is private
+//   #b = 2; // .#b is private
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  static #c = 3; // .#c is private and static
+//   static #c = 3; // .#c is private and static
 
-  incB(): number {
-    this.#b += 1;
-    return this.#b;
-  }
-}
+//   incB() {
+//     this.#b += 1;
+//     return this.#b;
+//   }
+// }

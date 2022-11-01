@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header: React.VFC = () => (
+const Header: React.FC = () => (
   <header className="header">
     <h1>App Component</h1>
   </header>

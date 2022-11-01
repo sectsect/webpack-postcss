@@ -12,7 +12,7 @@ module.exports = {
   ],
   settings: {
     react: {
-      version: 'latest',
+      version: 'detect',
     },
     jest: { version: 27 },
   },
@@ -26,6 +26,8 @@ module.exports = {
     'jest',
     'jest-dom',
     'testing-library',
+    'prefer-arrow',
+    // 'unused-imports',
   ],
   env: {
     browser: true,

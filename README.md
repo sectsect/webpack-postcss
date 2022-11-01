@@ -6,7 +6,7 @@
 - webpack 5
   - Dynamic entry points: w/ [@sect/webpack-sweet-entry](https://github.com/sectsect/webpack-sweet-entry)
 - [PostCSS](https://postcss.org/) w/ [postcss-preset-env](https://github.com/csstools/postcss-preset-env)
-- [Babel](https://babeljs.io/) w/ [@babel/preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
+- [SWC](https://swc.rs/)
 - [ESLint](https://eslint.org/) w/ [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 - [stylelint](https://stylelint.io/)
 - [Prettier](https://prettier.io/)
@@ -30,7 +30,7 @@
 
 ## :beer: Setup
 
-- **Setting for Support Browser (For [Autoprefixer](https://github.com/postcss/autoprefixer) / [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env) / [postcss-preset-env](https://github.com/csstools/postcss-preset-env))**  
+- **Setting for Support Browser (For [Autoprefixer](https://github.com/postcss/autoprefixer) / [SWC](https://swc.rs/) / [postcss-preset-env](https://github.com/csstools/postcss-preset-env))**  
   Edit the following Line  
   [package.json](https://github.com/sectsect/webpack-postcss/blob/master/package.json#L13)  
 
@@ -68,9 +68,9 @@ See [package.json](https://github.com/sectsect/webpack-postcss/blob/master/packa
   ]
   ```
 ## Troubleshooting
-### Remove Cache (Babel / ESLint / webpack)
+### Remove Cache (SWC / ESLint / webpack)
 ```bash
-$ rm -rf node_modules/.cache/babel-loader
+$ rm -rf node_modules/.cache/swc-loader
 $ rm -rf node_modules/.cache/eslint-loader
 $ rm -rf node_modules/.cache/webpack
 # Remove all

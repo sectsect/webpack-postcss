@@ -5,7 +5,7 @@
       "syntax": "typescript",
       "tsx": false
     },
-    "target": "es5",
+    "target": "es2015",
     "loose": false,
     "minify": {
       "compress": false,

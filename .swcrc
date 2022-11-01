@@ -1,30 +1,24 @@
+// https://swc.rs/playground
 {
-  "$schema": "https://json.schemastore.org/swcrc",
   "jsc": {
     "parser": {
       "syntax": "ecmascript",
-      "jsx": false,
-      "dynamicImport": false,
-      "privateMethod": false,
-      "functionBind": false,
-      "exportDefaultFrom": false,
-      "exportNamespaceFrom": false,
-      "decorators": false,
-      "decoratorsBeforeExport": false,
-      "topLevelAwait": false,
-      "importMeta": false
+      "jsx": false
     },
-    "transform": null,
     "target": "es5",
     "loose": false,
-    "externalHelpers": false,
-    // Requires v1.2.50 or upper and requires target to be es2016 or upper.
-    "keepClassNames": false
+    "minify": {
+      "compress": false,
+      "mangle": false
+    }
   },
-  // https://swc.rs/docs/configuration/supported-browsers
+  "module": {
+    "type": "es6"
+  },
+  "minify": false,
+  "isModule": true,
   "env": {
     "mode": "usage",
     "coreJs": "3.25"
-  },
-  "minify": false
+  }
 }

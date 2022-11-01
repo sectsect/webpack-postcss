@@ -9,7 +9,26 @@ module.exports = {
   ],
   testEnvironment: 'jsdom',
   transform: {
-    '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+    '^.+\\.(t|j)sx?$': [
+      '@swc/jest',
+      {
+        // sourceMaps: true,
+        // module: {
+        //   type: "commonjs",
+        // },
+        jsc: {
+          // parser: {
+          //   syntax: "typescript", // ソースコードをtypescriptとしてパースする
+          //   tsx: true, // jsx記法を許可する
+          // },
+          transform: {
+            react: {
+              runtime: "automatic",
+            },
+          },
+        },
+      }
+    ],
     '^.+\\.css$': '<rootDir>/test/config/cssTransform.js',
     '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)':
       '<rootDir>/test/config/fileTransform.js',

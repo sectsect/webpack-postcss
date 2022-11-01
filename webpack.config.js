@@ -228,7 +228,7 @@ module.exports = env => [
           // exclude: /node_modules\/(?!(rambda|quicklink)\/).*/,
           use: [
             {
-              loader: 'babel-loader',
+              loader: 'swc-loader',
               options: {
                 cacheDirectory: true,
               },

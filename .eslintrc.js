@@ -8,13 +8,14 @@ module.exports = {
     'plugin:jest-dom/recommended',
   ],
   plugins: [
-    '@babel',
     'react',
     'jsx-a11y',
     'prettier',
     'jest',
     'jest-dom',
     'testing-library',
+    'prefer-arrow',
+    // 'unused-imports',
   ],
   env: {
     es6: true,
@@ -23,7 +24,6 @@ module.exports = {
     jquery: true,
     jest: true,
   },
-  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -55,7 +55,26 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 'off',
-    // "import/no-default-export": "error",
+    'import/no-default-export': 'off',
+    'prefer-arrow/prefer-arrow-functions': [
+      'warn',
+      {
+        disallowPrototype: true,
+        singleReturnOnly: false,
+        classPropertiesAllowed: false,
+      },
+    ],
+    'no-unused-vars': 'off',
+    // // 'unused-imports/no-unused-imports': 'error',
+    // 'unused-imports/no-unused-vars': [
+    //   'error',
+    //   {
+    //     vars: 'all',
+    //     varsIgnorePattern: '^_',
+    //     args: 'after-used',
+    //     argsIgnorePattern: '^_',
+    //   },
+    // ],
     'no-alert': 0,
     'no-console': 0,
     'react/function-component-definition': [
@@ -74,7 +93,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: 'latest',
+      version: 'detect',
     },
   },
 };

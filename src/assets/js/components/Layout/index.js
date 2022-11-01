@@ -1,3 +1,4 @@
+import React from 'react';
 import { ReactComponent as SvgSymbol } from '../../../../../dist/assets/images/svg/symbol.svg';
 import Header from '../Header/index';
 

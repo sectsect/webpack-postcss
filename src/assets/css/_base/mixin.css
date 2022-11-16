@@ -1,4 +1,4 @@
-@define-mixin arrow $direction: right, $size: 10px, $borderwidth: 2px, $color: #333,
+/* @define-mixin arrow $direction: right, $size: 10px, $borderwidth: 2px, $color: #333,
   $horizontal: right, $margin: 10px {
   &::after {
     position: absolute;
@@ -35,15 +35,14 @@
       right: $margin + round($size / 5);
     }
   }
-}
+} */
 /* Usage: */
 /* div {
     position: relative;
     @include arrow(right, 10px, 2px, #333, right, 10px);
     @mixin arrow right, 10px, 2px, #333, right, 10px;
 } */
-
-@define-mixin spinner $position: absolute, $size: 16px, $borderwidth: 2px, $color: #aaa,
+/* @define-mixin spinner $position: absolute, $size: 16px, $borderwidth: 2px, $color: #aaa,
   $parentclass: ready, $defaultdisplay: visible {
   &::before {
     position: $position;
@@ -72,7 +71,7 @@
       @mixin opacity 0;
     }
   }
-}
+} */
 /* Usage: */
 /* div {
     @include spinner(absolute, 16px, 2px, #aaa, ready, visible/hidden);
@@ -126,7 +125,7 @@ For Retine mix-in Sprite
 @define-mixin wp-editor $margin {
   .wp-editor {
     font-family: $fontfamily;
-    font-size: $(fontsize);
+    /* font-size: $(fontsize); */
     line-height: $lineheight;
 
     h3,
@@ -181,12 +180,12 @@ For Retine mix-in Sprite
       &:before {
         top: 20px;
         left: 20px;
-    	background: url(../img/quote-top.png) no-repeat 0 0;
+      background: url(../img/quote-top.png) no-repeat 0 0;
       }
       &:after {
         bottom: 20px;
         right: 20px;
-    	  background: url(../img/quote-bottom.png) no-repeat 0 0;
+        background: url(../img/quote-bottom.png) no-repeat 0 0;
       }
       p {
         &:last-child {

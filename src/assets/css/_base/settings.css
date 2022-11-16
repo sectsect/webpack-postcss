@@ -9,6 +9,7 @@
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
 :root {
+  /* stylelint-disable-next-line custom-property-pattern */
   --inner-height: calc(var(--innerVh, 1vh) * 100); /* Fallbacks to 100vh */
   --font-size: 12px;
   --font-color: #000;

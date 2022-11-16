@@ -27,8 +27,8 @@ module.exports = {
         ],
       },
     ],
-    'custom-media-pattern': null,
-    'custom-property-pattern': null,
+    'custom-media-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+    'custom-property-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
     'comment-empty-line-before': 'never',
     'declaration-block-no-duplicate-properties': [
       true,

@@ -14,6 +14,9 @@ const postcssPresetEnv = require('postcss-preset-env')({
   features: {
     'nesting-rules': false,
     'focus-within-pseudo-class': false,
+    'custom-properties': {
+      disableDeprecationNotice: true,
+    },
   },
 });
 const postcssSortMediaQueries = require('postcss-sort-media-queries');

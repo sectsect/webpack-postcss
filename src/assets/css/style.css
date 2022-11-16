@@ -1,37 +1,34 @@
 @charset "UTF-8";
 
-@import '_base/settings.css';
+@import url('_base/settings.css');
 /* @import '../../../node_modules/sanitize.css/sanitize.css'; */
 
-@import 'tailwindcss/base';
+@import url('tailwindcss/base');
 
-@import 'tailwindcss/components';
+@import url('tailwindcss/components');
 
-@import 'tailwindcss/utilities';
-/* @import '../../../node_modules/sanitize.css/typography.css'; */
-/* @import "../../../node_modules/sanitize.css/forms.css"; */
-/* @import '_base/formhack.css'; */
+@import url('tailwindcss/utilities');
 
-@import '_base/sprite.css';
+@import url('_base/sprite.css');
 
-@import '_base/modal.css';
+@import url('_base/modal.css');
 
-@import '_base/svg-icon.css';
+@import url('_base/svg-icon.css');
 
-@import '_base/wp-core.css';
+@import url('_base/wp-core.css');
 
-@import '_libs/slick.css';
+@import url('_libs/slick.css');
 
-@import '_libs/slick-theme.css';
+@import url('_libs/slick-theme.css');
 
-@import '_base/commons.css';
+@import url('_base/commons.css');
 
-@import '_base/structure.css';
+@import url('_base/structure.css');
 
-@import '_base/modules.css';
+@import url('_base/modules.css');
 
-@import '_components/header.css';
+@import url('_components/header.css');
 
-@import '_components/footer.css';
+@import url('_components/footer.css');
 
-@import '_pages/home.css';
+@import url('_pages/home.css');

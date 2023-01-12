@@ -1,5 +1,5 @@
 @charset "UTF-8";
 
-@import '_base/settings.css';
+@import url('_base/settings.css');
 
-@import '_base/wp-core.css';
+@import url('_base/wp-core.css');

@@ -56,7 +56,7 @@
     "postcss-hexrgba": "^2.1.0",
     "postcss-import": "^15.1.0",
     "postcss-loader": "^7.0.2",
-    "postcss-preset-env": "^7.8.3",
+    "postcss-preset-env": "^8.0.0",
     "postcss-pseudo-is": "^0.3.0",
     "postcss-pxtorem": "^6.0.0",
     "postcss-reporter": "^7.0.5",

@@ -10,6 +10,7 @@ const postcssPresetEnv = require('postcss-preset-env')({
     'custom-properties': {
       disableDeprecationNotice: true,
     },
+    'has-pseudo-class': true,
   },
 });
 const postcssSortMediaQueries = require('postcss-sort-media-queries');

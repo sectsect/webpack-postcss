@@ -25,6 +25,7 @@
     ]
   },
   "devDependencies": {
+    "@csstools/postcss-global-data": "^2.1.0",
     "@secretlint/secretlint-rule-preset-recommend": "^6.0.2",
     "@sect/modernizr-loader": "^1.0.3",
     "@sect/webpack-sweet-entry": "^5.0.15",

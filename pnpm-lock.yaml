@@ -85,6 +85,9 @@ dependencies:
     version: 3.6.2
 
 devDependencies:
+  '@csstools/postcss-global-data':
+    specifier: ^2.1.0
+    version: 2.1.0(postcss@8.4.29)
   '@secretlint/secretlint-rule-preset-recommend':
     specifier: ^6.0.2
     version: 6.0.2
@@ -407,6 +410,15 @@ packages:
     dependencies:
       postcss: 8.4.29
       postcss-value-parser: 4.2.0
+    dev: true
+
+  /@csstools/postcss-global-data@2.1.0(postcss@8.4.29):
+    resolution: {integrity: sha512-n8SoAaapXATQ/fI8c0GVM+VNfvpNo6fN/79GGTjqatEG8bZNh72b2r+KKLVMcQHvRKjDlXxzurxnf6L5nsxDGA==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      postcss: 8.4.29
     dev: true
 
   /@csstools/postcss-gradients-interpolation-method@4.0.3(postcss@8.4.29):

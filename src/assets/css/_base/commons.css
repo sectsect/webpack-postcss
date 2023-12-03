@@ -133,13 +133,13 @@ Normalization for Third party
   width: 100%;
   height: 100%;
 
-  @nest .is-contain.imagecontainer & {
+  .is-contain.imagecontainer & {
     object-fit: contain;
     /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font-family: 'object-fit: contain';
   }
 
-  @nest .is-cover.imagecontainer & {
+  .is-cover.imagecontainer & {
     object-fit: cover;
     /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font-family: 'object-fit: cover';

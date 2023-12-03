@@ -8,7 +8,7 @@
   height: var(--mobile-header-height);
   overflow: hidden;
 
-  @nest .admin-bar & {
+  .admin-bar & {
     top: 46px;
   }
 }
@@ -43,7 +43,7 @@
     margin: 0 auto;
     overflow: visible;
 
-    @nest .admin-bar & {
+    .admin-bar & {
       top: 0;
     }
   }

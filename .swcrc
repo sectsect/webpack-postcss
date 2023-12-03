@@ -5,7 +5,7 @@
       "syntax": "typescript",
       "tsx": false
     },
-    "target": "es2015",
+    // "target": "es2015",
     "loose": false,
     "minify": {
       "compress": false,
@@ -19,6 +19,8 @@
   "isModule": true,
   "env": {
     "mode": "usage",
+    "targets": "defaults and supports es6-module",
     "coreJs": "3.25"
+    // "debug": true
   }
 }
